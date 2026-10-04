@@ -10,6 +10,7 @@ PANOS = 10                       # leikkieuroa per veto
 KIRJANPITO = "kirjanpito.json"   # tiedosto, johon vedot tallennetaan
 MAX_VALUE = 10       # tätä suurempi value on todennäköisesti virhe -> merkitään tarkistettavaksi
 MAX_TUNNIT = 24      # vain seuraavan 24 tunnin ottelut
+MAX_POIKKEAMA = 0.05   # jos Pinnacle poikkeaa keskiarvosta yli 5 %-yksikköä, sen data on epäilyttävää
 
 # Yhtiöt, joilta paras kerroin saa tulla (nimet täsmälleen kuten tulosteessa).
 # VÄLIAIKAINEN LISTA: päivitetään, kun saadaan oikea lista.
@@ -127,6 +128,12 @@ for ottelu in ottelut:
             if vertailu is not None:
                 oikea = vertailu[nimi]
                 lahde = "Pinnacle"
+                # Jos Pinnacle on yksin eri mieltä kuin muut, käytetään keskiarvoa
+                keskiarvo = sum(reilut[nimi]) / yhtioita
+                if abs(oikea - keskiarvo) > MAX_POIKKEAMA:
+                    oikea = keskiarvo
+                    lahde = "keskiarvo (Pinnacle poikkesi)"
+                    
             else:
                 oikea = sum(reilut[nimi]) / yhtioita
                 lahde = "keskiarvo"
