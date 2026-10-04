@@ -1,0 +1,11 @@
+# Salaisuudet: EI KOSKAAN GitHubiin
+.env
+
+# Pythonin väliaikaistiedostot
+__pycache__/
+
+# Kertoimien välimuisti (haetaan aina uudestaan)
+ottelut.json
+
+# Vanha versio, ei tarvita
+laske_value_vanha.py
