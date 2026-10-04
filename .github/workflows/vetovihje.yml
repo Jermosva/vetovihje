@@ -1,0 +1,48 @@
+name: Vetovihje
+
+on:
+  schedule:
+    # Aika UTC-aikana: 7 ja 15 = klo 10 ja 18 Suomen kesäaikaa
+    - cron: "0 7,15 * * *"
+  # Lisää "Run workflow" -napin, jolla ajon voi käynnistää käsin
+  workflow_dispatch:
+
+# Lupa tallentaa muutokset takaisin repoon
+permissions:
+  contents: write
+
+jobs:
+  aja:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hae koodi
+        uses: actions/checkout@v4
+
+      - name: Asenna Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Asenna kirjastot
+        run: pip install -r requirements.txt
+
+      - name: Tarkista tulokset
+        run: python tarkista_tulokset.py
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+
+      - name: Hae kertoimet
+        run: python hae_kertoimet.py
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+
+      - name: Laske value ja kirjaa vedot
+        run: python laske_value.py
+
+      - name: Tallenna kirjanpito GitHubiin
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add kirjanpito.json
+          git commit -m "Automaattinen päivitys" || echo "Ei muutoksia"
+          git push
