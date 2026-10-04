@@ -56,5 +56,20 @@
     "pvm": "2026-10-04",
     "panos": 10,
     "tila": "avoin"
+  },
+  {
+    "sarja": "NHL",
+    "id": "6cac1fc86136075a23655625562fd8dc",
+    "alkaa": "2026-10-05T00:10:00Z",
+    "ottelu": "Anaheim Ducks - Florida Panthers",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Over",
+    "kerroin": 2.16,
+    "yhtio": "LeoVegas (FI)",
+    "value": 8.8,
+    "lahde": "Pinnacle",
+    "pvm": "2026-10-04",
+    "panos": 10,
+    "tila": "avoin"
   }
 ]
