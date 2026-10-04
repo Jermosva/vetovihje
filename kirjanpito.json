@@ -26,5 +26,35 @@
     "pvm": "2026-10-04",
     "panos": 10,
     "tila": "avoin"
+  },
+  {
+    "sarja": "SHL",
+    "id": "826316af885b1963489499321350413a",
+    "alkaa": "2026-10-08T17:00:00Z",
+    "ottelu": "Djurgårdens IF - Örebro HK",
+    "tyyppi": "1X2",
+    "valinta": "Djurgårdens IF",
+    "kerroin": 2.52,
+    "yhtio": "Coolbet",
+    "value": 4.8,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-04",
+    "panos": 10,
+    "tila": "avoin"
+  },
+  {
+    "sarja": "SHL",
+    "id": "8527978779f9bd7b6334996842ba619b",
+    "alkaa": "2026-10-08T17:00:00Z",
+    "ottelu": "Timrå IK - Frölunda HC",
+    "tyyppi": "1X2",
+    "valinta": "Frölunda HC",
+    "kerroin": 1.94,
+    "yhtio": "Coolbet",
+    "value": 3.3,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-04",
+    "panos": 10,
+    "tila": "avoin"
   }
 ]

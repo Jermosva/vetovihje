@@ -1,6 +1,6 @@
 import json
 import os
-from datetime import date
+from datetime import date, datetime, timezone, timedelta
 
 MAX_MARGINAALI = 10
 MIN_VALUE = 3
@@ -8,6 +8,19 @@ MIN_YHTIOT = 3
 VERTAILUYHTIO = "Pinnacle"   # jos tämä yhtiö on mukana, sen arvio on "oikea"
 PANOS = 10                       # leikkieuroa per veto
 KIRJANPITO = "kirjanpito.json"   # tiedosto, johon vedot tallennetaan
+MAX_VALUE = 10       # tätä suurempi value on todennäköisesti virhe -> merkitään tarkistettavaksi
+MAX_TUNNIT = 24      # vain seuraavan 24 tunnin ottelut
+
+# Yhtiöt, joilta paras kerroin saa tulla (nimet täsmälleen kuten tulosteessa).
+# VÄLIAIKAINEN LISTA: päivitetään, kun saadaan oikea lista.
+KAYTETTAVAT_YHTIOT = [
+    "Veikkaus (FI)",
+    "Coolbet",
+    "Unibet (FI)",
+    "LeoVegas (FI)",
+    "Betsson",
+    "Nordic Bet",
+]
 
 loydetyt = []
 # def = määritellään funktio. Suluissa ovat tiedot, jotka funktio saa käyttöönsä.
@@ -23,12 +36,14 @@ def markkinan_tyyppi(markkina, ottelu):
         # [0] = listan ensimmäinen alkio (Python laskee nollasta)
         return "Yli/alle " + str(vaihtoehdot[0]["point"])
 
-    # Tasoitus: nimetään kotijoukkueen tasoituksen mukaan, esim. "Tasoitus koti -1.5"
-    for v in vaihtoehdot:
-        if v["name"] == ottelu["home_team"]:
-            return "Tasoitus koti " + str(v["point"])
+    if markkina["key"] == "spreads":
+        # Tasoitus: nimetään kotijoukkueen tasoituksen mukaan, esim. "Tasoitus koti -1.5"
+        for v in vaihtoehdot:
+            if v["name"] == ottelu["home_team"]:
+                return "Tasoitus koti " + str(v["point"])
 
-    return "Tasoitus"
+    # Tuntematon markkina: palautetaan None = "ei käytetä"
+    return None
 
 def reilut_todennakoisyydet(vaihtoehdot):
     summa = 0
@@ -47,9 +62,22 @@ def reilut_todennakoisyydet(vaihtoehdot):
 with open("ottelut.json", "r", encoding="utf-8") as tiedosto:
     ottelut = json.load(tiedosto)
 
+# Nykyhetki UTC-aikana ja raja 24 tunnin päähän
+nyt = datetime.now(timezone.utc)
+aikaraja = nyt + timedelta(hours=MAX_TUNNIT)
+
 for ottelu in ottelut:
+    # Muutetaan alkamisaika tekstistä aikaolioksi. "Z" tarkoittaa UTC-aikaa.
+    alkaa = datetime.fromisoformat(ottelu["commence_time"].replace("Z", "+00:00"))
+
+    # Ohitetaan jo alkaneet ja yli vuorokauden päässä olevat ottelut
+    if alkaa < nyt or alkaa > aikaraja:
+        continue
     print()
-    print(ottelu["home_team"], "vs", ottelu["away_team"])
+    # astimezone() muuttaa ajan koneen omaan aikavyöhykkeeseen (Suomi)
+    # strftime muotoilee ajan tekstiksi: %d = päivä, %m = kuukausi, %H:%M = kellonaika
+    aika_fi = alkaa.astimezone().strftime("%d.%m. klo %H:%M")
+    print("[" + ottelu["sport_title"] + "]", ottelu["home_team"], "vs", ottelu["away_team"], "|", aika_fi)
 
     # Kerätään saman vetotyypin markkinat samaan ryhmään:
     # tyyppi -> lista pareja (yhtiön nimi, vaihtoehdot)
@@ -57,6 +85,8 @@ for ottelu in ottelut:
     for yhtio in ottelu["bookmakers"]:
         for markkina in yhtio["markets"]:
             tyyppi = markkinan_tyyppi(markkina, ottelu)   # funktion kutsu
+            if tyyppi is None:
+                continue
             if tyyppi not in ryhmat:
                 ryhmat[tyyppi] = []
             # Kaksi arvoa sulkeissa = pari (tuple)
@@ -77,9 +107,11 @@ for ottelu in ottelut:
             for v in vaihtoehdot:
                 nimi = v["name"]
 
-                if nimi not in parhaat or v["price"] > parhaat[nimi]:
-                    parhaat[nimi] = v["price"]
-                    parhaan_yhtio[nimi] = yhtio_nimi
+                # Paras kerroin vain yhtiöiltä, joita voi oikeasti käyttää
+                if yhtio_nimi in KAYTETTAVAT_YHTIOT:
+                    if nimi not in parhaat or v["price"] > parhaat[nimi]:
+                        parhaat[nimi] = v["price"]
+                        parhaan_yhtio[nimi] = yhtio_nimi
 
                 if marginaali <= MAX_MARGINAALI:
                     if nimi not in reilut:
@@ -107,8 +139,13 @@ for ottelu in ottelut:
 
             merkki = ""
             if value >= MIN_VALUE and luotettava:
-                merkki = "  <-- VALUE"
-                loydetyt.append({
+                if value > MAX_VALUE:
+                    # Epäilyttävän hyvä: näytetään, mutta ei kirjata
+                    merkki = "  <-- TARKISTA (liian hyvä?)"
+                else:
+                    merkki = "  <-- VALUE"
+                    loydetyt.append({
+                    "sarja": ottelu["sport_title"],
                     "id": ottelu["id"],
                     "alkaa": ottelu["commence_time"],
                     "ottelu": ottelu["home_team"] + " - " + ottelu["away_team"],
@@ -133,7 +170,7 @@ if len(loydetyt) == 0:
     print("Ei value-vetoja näillä rajoilla.")
 else:
     for veto in loydetyt:
-        print(veto["ottelu"], "|", veto["tyyppi"], veto["valinta"],
+        print("[" + veto["sarja"] + "]", veto["ottelu"], "|", veto["tyyppi"], veto["valinta"],
               "@", veto["kerroin"], "(" + veto["yhtio"] + ")",
               "| value", veto["value"], "% |", veto["lahde"])
         
