@@ -66,10 +66,16 @@ function naytaPaivat(vedot) {
   // 1. Ryhmitellään vedot päivittäin: "2026-10-04" -> [veto, veto, ...]
   const paivat = {};
   for (const veto of vedot) {
-    if (!(veto.pvm in paivat)) {
-      paivat[veto.pvm] = [];
+    // Pelipäivä Suomen aikaa. "sv-SE" antaa päivämäärän muodossa 2026-10-07,
+    // joka järjestyy oikein. Jos alkamisaika puuttuu, käytetään kirjauspäivää.
+    const paiva = veto.alkaa
+      ? new Date(veto.alkaa).toLocaleDateString("sv-SE")
+      : veto.pvm;
+
+    if (!(paiva in paivat)) {
+      paivat[paiva] = [];
     }
-    paivat[veto.pvm].push(veto);     // push = Pythonin append
+    paivat[paiva].push(veto);
   }
 
   // 2. Uusin päivä ensin

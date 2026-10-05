@@ -9,7 +9,7 @@ VERTAILUYHTIO = "Pinnacle"   # jos tämä yhtiö on mukana, sen arvio on "oikea"
 PANOS = 10                       # leikkieuroa per veto
 KIRJANPITO = "kirjanpito.json"   # tiedosto, johon vedot tallennetaan
 MAX_VALUE = 10       # tätä suurempi value on todennäköisesti virhe -> merkitään tarkistettavaksi
-MAX_TUNNIT = 24      # vain seuraavan 24 tunnin ottelut
+MAX_TUNNIT = 12      # vain seuraavan 12 tunnin ottelut
 MAX_POIKKEAMA = 0.05   # jos Pinnacle poikkeaa keskiarvosta yli 5 %-yksikköä, sen data on epäilyttävää
 
 # Yhtiöt, joilta paras kerroin saa tulla (nimet täsmälleen kuten tulosteessa).
