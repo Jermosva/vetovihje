@@ -14,6 +14,10 @@ SARJATUNNUKSET = {
 }
 # Liigan kausi nimetään päättymisvuoden mukaan: 2026–27 = 2027
 LIIGA_KAUSI = 2027
+# Kerroinpalvelun nimi -> liiga.fi:n nimi (vain ne, jotka eroavat)
+LIIGA_NIMET = {
+    "Kiekko-Espoo": "K-Espoo",
+}
 
 with open(KIRJANPITO, "r", encoding="utf-8") as tiedosto:
     kirjanpito = json.load(tiedosto)
@@ -99,9 +103,12 @@ def hae_liigan_pelit():
 def liiga_tulos(veto, pelit):
     koti_nimi, vieras_nimi = veto["ottelu"].split(" - ")
 
+    # .get(nimi, nimi): jos nimeä ei löydy muunnoslistasta, käytetään sitä sellaisenaan
+    liiga_koti = LIIGA_NIMET.get(koti_nimi, koti_nimi)
+    liiga_vieras = LIIGA_NIMET.get(vieras_nimi, vieras_nimi)
     for peli in pelit:
         # Sama koti- ja vierasjoukkue...
-        if peli["homeTeamName"] != koti_nimi or peli["awayTeamName"] != vieras_nimi:
+        if peli["homeTeamName"] != liiga_koti or peli["awayTeamName"] != liiga_vieras:
             continue
         # ...ja sama päivä (joukkueet kohtaavat kaudella monta kertaa)
         if peli["start"][:10] != veto["alkaa"][:10]:
