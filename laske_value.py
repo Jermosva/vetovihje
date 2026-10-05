@@ -23,6 +23,20 @@ KAYTETTAVAT_YHTIOT = [
     "Nordic Bet",
 ]
 
+# Yli/alle- ja tasoitusvedot lasketaan varsinaisen peliajan (60 min) mukaan.
+# Niissä käytetään VAIN näitä yhtiöitä. Tarkista säännöt ja karsi lista!
+YHTIOT_60MIN = [
+    "Betsson",
+    "Nordic Bet",
+    "Unibet (FI)",
+    "LeoVegas (FI)",
+    "Veikkaus (FI)",
+    "Coolbet",
+    "888sport",
+    "Tipico",
+    "1xBet",
+]
+
 loydetyt = []
 # def = määritellään funktio. Suluissa ovat tiedot, jotka funktio saa käyttöönsä.
 def markkinan_tyyppi(markkina, ottelu):
@@ -96,10 +110,15 @@ for ottelu in ottelut:
         reilut = {}
         parhaat = {}
         parhaan_yhtio = {}
-        vertailu = None      # None = "ei mitään vielä"
+        vertailu = None     # None = "ei mitään vielä"
+        # Vaatiiko tämä vetotyyppi 60 min säännön?
+        vaatii_60min = tyyppi.startswith("Yli/alle") or tyyppi.startswith("Tasoitus")
 
         # Pari puretaan suoraan kahteen muuttujaan
         for yhtio_nimi, vaihtoehdot in ryhmat[tyyppi]:
+            # Ohitetaan yhtiöt, joiden säännöt voivat sisältää jatkoajan
+            if vaatii_60min and yhtio_nimi not in YHTIOT_60MIN:
+                continue
             yhtion_reilut, marginaali = reilut_todennakoisyydet(vaihtoehdot)
 
             if yhtio_nimi == VERTAILUYHTIO:

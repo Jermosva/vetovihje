@@ -126,14 +126,18 @@ with open(KIRJANPITO, "w", encoding="utf-8") as tiedosto:
 saldo = 0
 pelattuja = 0
 osuneita = 0
+tarkistettavia = 0
 for veto in kirjanpito:
     if "voitto" in veto:
         saldo += veto["voitto"]
         pelattuja += 1
         if veto["tila"] == "osui":
             osuneita += 1
+    if veto["tila"] == "tarkista":
+        tarkistettavia += 1
 
 print()
+print("Odottaa käsin tarkistusta:", tarkistettavia)
 print("Nyt ratkaistu:", ratkaistuja)
 print("Ratkaistuja vetoja yhteensä:", pelattuja, "| osuneita:", osuneita)
 print("Leikkirahasaldo:", round(saldo, 2), "€")
