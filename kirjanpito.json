@@ -71,7 +71,8 @@
     "lahde": "Pinnacle",
     "pvm": "2026-10-04",
     "panos": 10,
-    "tila": "ei osunut"
+    "tila": "ei osunut",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -86,7 +87,6 @@
     "lahde": "Pinnacle",
     "pvm": "2026-10-05",
     "panos": 10,
-    "tila": "avoin",
-    "voitto": -10
+    "tila": "avoin"
   }
 ]

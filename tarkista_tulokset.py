@@ -1,125 +1,204 @@
 import json
 import os
 import requests
+from datetime import datetime, timedelta
 from dotenv import load_dotenv
 
 load_dotenv()
 API_AVAIN = os.getenv("ODDS_API_KEY")
 KIRJANPITO = "kirjanpito.json"
 
-# Sarjan nimi kirjanpidossa -> sarjan tunnus API:ssa
+# Sarjat, joiden tulokset haetaan The Odds API:sta (NHL:lle on oma lähde)
 SARJATUNNUKSET = {
-    "NHL": "icehockey_nhl",
     "SHL": "icehockey_sweden_hockey_league",
 }
 
 with open(KIRJANPITO, "r", encoding="utf-8") as tiedosto:
     kirjanpito = json.load(tiedosto)
-tarvittavat = []
-for veto in kirjanpito:
-    # .get() koska vanhoilta Liiga-vedoilta puuttuu "sarja"-kenttä
-    sarja = veto.get("sarja")
-    if veto["tila"] == "avoin" and sarja in SARJATUNNUKSET:
-        tunnus = SARJATUNNUKSET[sarja]
-        if tunnus not in tarvittavat:
-            tarvittavat.append(tunnus)
-# Tallennetaan päättyneet ottelut sanakirjaan: ottelun id -> ottelun tiedot
-tulokset = {}
 
-for tunnus in tarvittavat:
-    # daysFrom=3 = hae myös enintään 3 päivää sitten päättyneet ottelut
-    osoite = (
-        "https://api.the-odds-api.com/v4/sports/" + tunnus + "/scores/"
-        + "?apiKey=" + API_AVAIN
-        + "&daysFrom=3"
-    )
-    vastaus = requests.get(osoite)
-
-    if vastaus.status_code != 200:
-        print("VIRHE:", tunnus, vastaus.status_code, vastaus.text)
-        continue
-
-    for ottelu in vastaus.json():
-        if ottelu["completed"]:          # True = ottelu on päättynyt
-            tulokset[ottelu["id"]] = ottelu
-
-print("Haettu", len(tulokset), "päättynyttä ottelua")
-def ratkaise(veto, ottelu):
-    # Maalit joukkueittain: joukkueen nimi -> maalit
+def odds_tulos(ottelu):
     maalit = {}
     for rivi in ottelu["scores"]:
         maalit[rivi["name"]] = int(rivi["score"])
 
     koti = maalit[ottelu["home_team"]]
     vieras = maalit[ottelu["away_team"]]
-    ero = abs(koti - vieras)
-    yhteensa = koti + vieras
 
+    return {
+        "koti_nimi": ottelu["home_team"],
+        "vieras_nimi": ottelu["away_team"],
+        "koti": koti,
+        "vieras": vieras,
+        # Tämä lähde ei kerro jatkoajasta: 60 min tulos on varma vain 2+ maalin erolla
+        "koti_60": koti,
+        "vieras_60": vieras,
+        "varma60": abs(koti - vieras) >= 2,
+    }
+
+def nhl_tulos(veto):
+    koti_nimi, vieras_nimi = veto["ottelu"].split(" - ")
+    alkaa = datetime.fromisoformat(veto["alkaa"].replace("Z", "+00:00"))
+
+    # NHL käyttää Pohjois-Amerikan päivämäärää. Esim. Suomen yöllä alkava peli
+    # on siellä vielä edellistä päivää, joten katsotaan molemmat päivät.
+    for paiva in [alkaa, alkaa - timedelta(days=1)]:
+        osoite = "https://api-web.nhle.com/v1/score/" + paiva.strftime("%Y-%m-%d")
+        vastaus = requests.get(osoite)
+        if vastaus.status_code != 200:
+            continue
+
+        for peli in vastaus.json()["games"]:
+            koti = peli["homeTeam"]
+            vieras = peli["awayTeam"]
+
+            # Onko tämä oikea peli?
+            if not koti_nimi.endswith(koti["name"]["default"]):
+                continue
+            if not vieras_nimi.endswith(vieras["name"]["default"]):
+                continue
+
+            # Peli löytyi, mutta onko se päättynyt?
+            if peli["gameState"] not in ["OFF", "FINAL"]:
+                return None
+
+            k = koti["score"]
+            v = vieras["score"]
+
+            if peli["gameOutcome"]["lastPeriodType"] == "REG":
+                k60 = k
+                v60 = v
+            else:
+                # Jatkoaika tai voittolaukaukset: 60 min jälkeen oli tasan
+                k60 = min(k, v)
+                v60 = min(k, v)
+
+            return {
+                "koti_nimi": koti_nimi,
+                "vieras_nimi": vieras_nimi,
+                "koti": k,
+                "vieras": v,
+                "koti_60": k60,
+                "vieras_60": v60,
+                "varma60": True,
+            }
+
+    return None   # peliä ei löytynyt
+def ratkaise(veto, tulos):
     tyyppi = veto["tyyppi"]
     valinta = veto["valinta"]
 
-    # Yhden maalin ero voi tarkoittaa jatkoaikaa -> vain Voittaja on varma
-    if ero <= 1 and tyyppi != "Voittaja":
+    # Kaikki paitsi Voittaja ratkaistaan 60 min tuloksella
+    if tyyppi != "Voittaja" and not tulos["varma60"]:
         return "tarkista"
 
-    # Voittaja ja 1X2
-    if tyyppi == "Voittaja" or tyyppi == "1X2":
-        if koti > vieras:
-            voittaja = ottelu["home_team"]
+    # Voittaja: lopputulos jatkoaikoineen
+    if tyyppi == "Voittaja":
+        if tulos["koti"] > tulos["vieras"]:
+            voittaja = tulos["koti_nimi"]
         else:
-            voittaja = ottelu["away_team"]
-
+            voittaja = tulos["vieras_nimi"]
         if valinta == voittaja:
             return "osui"
-        return "ei osunut"      # myös "Draw", koska ero oli vähintään 2
+        return "ei osunut"
 
-    # Yli/alle, esim. "Yli/alle 5.5"
+    # Tästä eteenpäin käytetään varsinaisen peliajan tulosta
+    koti = tulos["koti_60"]
+    vieras = tulos["vieras_60"]
+
+    if tyyppi == "1X2":
+        if koti > vieras:
+            oikea = tulos["koti_nimi"]
+        elif koti < vieras:
+            oikea = tulos["vieras_nimi"]
+        else:
+            oikea = "Draw"
+        if valinta == oikea:
+            return "osui"
+        return "ei osunut"
+
     if tyyppi.startswith("Yli/alle"):
         raja = float(tyyppi.split(" ")[1])
+        yhteensa = koti + vieras
         if yhteensa == raja:
-            return "mitätöity"   # tasaraja, esim. 6.0 ja 6 maalia -> panos palautetaan
+            return "mitätöity"
         if valinta == "Over" and yhteensa > raja:
             return "osui"
         if valinta == "Under" and yhteensa < raja:
             return "osui"
         return "ei osunut"
 
-    # Tasoitus, esim. "Tasoitus koti -1.5"
     if tyyppi.startswith("Tasoitus"):
-        raja = float(tyyppi.split(" ")[2])   # kotijoukkueen tasoitus
-        if valinta == ottelu["home_team"]:
-            tulos = koti + raja - vieras
+        raja = float(tyyppi.split(" ")[2])
+        if valinta == tulos["koti_nimi"]:
+            erotus = koti + raja - vieras
         else:
-            tulos = vieras - raja - koti     # vierasjoukkueella on vastakkainen tasoitus
-        if tulos > 0:
+            erotus = vieras - raja - koti
+        if erotus > 0:
             return "osui"
-        if tulos == 0:
+        if erotus == 0:
             return "mitätöity"
         return "ei osunut"
 
-    # Tuntematon vetotyyppi
     return "tarkista"
+
+tarvittavat = []
+for veto in kirjanpito:
+    sarja = veto.get("sarja")
+    if veto["tila"] == "avoin" and sarja in SARJATUNNUKSET:
+        tunnus = SARJATUNNUKSET[sarja]
+        if tunnus not in tarvittavat:
+            tarvittavat.append(tunnus)
+
+tulokset = {}
+for tunnus in tarvittavat:
+    osoite = (
+        "https://api.the-odds-api.com/v4/sports/" + tunnus + "/scores/"
+        + "?apiKey=" + API_AVAIN
+        + "&daysFrom=3"
+    )
+    vastaus = requests.get(osoite)
+    if vastaus.status_code != 200:
+        print("VIRHE:", tunnus, vastaus.status_code, vastaus.text)
+        continue
+    for ottelu in vastaus.json():
+        if ottelu["completed"]:
+            tulokset[ottelu["id"]] = odds_tulos(ottelu)   # suoraan yhteiseen muotoon
 ratkaistuja = 0
 
 for veto in kirjanpito:
-    if veto["tila"] != "avoin":
-        continue                  # jo ratkaistu aiemmin
-    if veto["id"] not in tulokset:
-        continue                  # ottelu ei ole vielä päättynyt
+    if veto["tila"] not in ["avoin", "tarkista"]:
+        continue
 
-    tila = ratkaise(veto, tulokset[veto["id"]])
+    # Valitaan lähde sarjan mukaan
+    if veto.get("sarja") == "NHL":
+        tulos = nhl_tulos(veto)
+    elif veto["id"] in tulokset:
+        tulos = tulokset[veto["id"]]
+    else:
+        tulos = None
+
+    if tulos is None:
+        continue          # ei vielä päättynyt tai ei löytynyt
+
+    tila = ratkaise(veto, tulos)
+
+    # Jos veto oli jo "tarkista" eikä tieto parantunut, ei tehdä mitään
+    if tila == veto["tila"]:
+        continue
+
     veto["tila"] = tila
-
     if tila == "osui":
         veto["voitto"] = round(veto["panos"] * veto["kerroin"] - veto["panos"], 2)
     elif tila == "ei osunut":
         veto["voitto"] = -veto["panos"]
     elif tila == "mitätöity":
         veto["voitto"] = 0
-    # "tarkista": voittoa ei merkitä, vaan katsot sen itse
 
     ratkaistuja += 1
-    print(veto["ottelu"], "|", veto["tyyppi"], veto["valinta"], "->", tila)
+    print(veto["ottelu"], "|", veto["tyyppi"], veto["valinta"],
+          "| tulos", tulos["koti"], "-", tulos["vieras"],
+          "(60 min:", tulos["koti_60"], "-", tulos["vieras_60"], ") ->", tila)
+
 with open(KIRJANPITO, "w", encoding="utf-8") as tiedosto:
     json.dump(kirjanpito, tiedosto, ensure_ascii=False, indent=2)
 
@@ -137,7 +216,8 @@ for veto in kirjanpito:
         tarkistettavia += 1
 
 print()
-print("Odottaa käsin tarkistusta:", tarkistettavia)
 print("Nyt ratkaistu:", ratkaistuja)
 print("Ratkaistuja vetoja yhteensä:", pelattuja, "| osuneita:", osuneita)
 print("Leikkirahasaldo:", round(saldo, 2), "€")
+print("Odottaa käsin tarkistusta:", tarkistettavia)
+          

@@ -8,4 +8,8 @@ __pycache__/
 ottelut.json
 
 # Vanha versio, ei tarvita
-laske_value_vanha.py
+vanha_laske_value.py
+
+vanha_hae_kertoimet.py
+
+vanha_tarkista_tulokset.py
