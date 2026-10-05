@@ -70,6 +70,21 @@
     "lahde": "Pinnacle",
     "pvm": "2026-10-04",
     "panos": 10,
+    "tila": "tarkista"
+  },
+  {
+    "sarja": "NHL",
+    "id": "3da179dc46d7f7a5f06637fcd97ce367",
+    "alkaa": "2026-10-05T23:40:00Z",
+    "ottelu": "Pittsburgh Penguins - Winnipeg Jets",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Over",
+    "kerroin": 2.26,
+    "yhtio": "Coolbet",
+    "value": 9.5,
+    "lahde": "Pinnacle",
+    "pvm": "2026-10-05",
+    "panos": 10,
     "tila": "avoin"
   }
 ]
