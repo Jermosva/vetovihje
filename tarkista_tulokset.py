@@ -7,16 +7,24 @@ from dotenv import load_dotenv
 load_dotenv()
 API_AVAIN = os.getenv("ODDS_API_KEY")
 KIRJANPITO = "kirjanpito.json"
+SARJATUNNUKSET = {}
 
-# Sarjat, joiden tulokset haetaan The Odds API:sta (NHL:lle on oma lähde)
-SARJATUNNUKSET = {
-    "SHL": "icehockey_sweden_hockey_league",
-}
 # Liigan kausi nimetään päättymisvuoden mukaan: 2026–27 = 2027
 LIIGA_KAUSI = 2027
 # Kerroinpalvelun nimi -> liiga.fi:n nimi (vain ne, jotka eroavat)
 LIIGA_NIMET = {
     "Kiekko-Espoo": "K-Espoo",
+}
+# SHL:n kausitunnus (seasonUuid) vaihtuu joka kausi
+SHL_OSOITE = ("https://www.shl.se/api/sports-v2/game-schedule"
+              "?seasonUuid=ndcf81nlb3&seriesUuid=qQ9-bb0bzEWUk"
+              "&gameTypeUuid=qQ9-af37Ti40B&gamePlace=all&played=all")
+
+# Kerroinpalvelun nimi -> shl.se:n nimi (vain ne, jotka eroavat)
+SHL_NIMET = {
+    "Luleå HF": "Luleå Hockey",
+    "Örebro HK": "Örebro Hockey",
+    "IF Björklöven": "Björklöven",
 }
 
 with open(KIRJANPITO, "r", encoding="utf-8") as tiedosto:
@@ -139,6 +147,53 @@ def liiga_tulos(veto, pelit):
 
     return None
 
+def hae_shl_pelit():
+    vastaus = requests.get(SHL_OSOITE)
+    if vastaus.status_code != 200:
+        print("VIRHE: SHL:n tulokset", vastaus.status_code)
+        return []
+    return vastaus.json()["gameInfo"]
+
+
+def shl_tulos(veto, pelit):
+    koti_nimi, vieras_nimi = veto["ottelu"].split(" - ")
+    shl_koti = SHL_NIMET.get(koti_nimi, koti_nimi)
+    shl_vieras = SHL_NIMET.get(vieras_nimi, vieras_nimi)
+
+    for peli in pelit:
+        koti = peli["homeTeamInfo"]
+        vieras = peli["awayTeamInfo"]
+
+        if koti["names"]["long"] != shl_koti or vieras["names"]["long"] != shl_vieras:
+            continue
+        if peli["rawStartDateTime"][:10] != veto["alkaa"][:10]:
+            continue
+
+        if peli["state"] != "post-game":
+            return None
+
+        k = koti["score"]
+        v = vieras["score"]
+
+        if peli["overtime"] or peli["shootout"]:
+            k60 = min(k, v)
+            v60 = min(k, v)
+        else:
+            k60 = k
+            v60 = v
+
+        return {
+            "koti_nimi": koti_nimi,
+            "vieras_nimi": vieras_nimi,
+            "koti": k,
+            "vieras": v,
+            "koti_60": k60,
+            "vieras_60": v60,
+            "varma60": True,
+        }
+
+    return None
+
 def ratkaise(veto, tulos):
     tyyppi = veto["tyyppi"]
     valinta = veto["valinta"]
@@ -221,6 +276,7 @@ for tunnus in tarvittavat:
             tulokset[ottelu["id"]] = odds_tulos(ottelu)   # suoraan yhteiseen muotoon
 ratkaistuja = 0
 liigan_pelit = None   # haetaan vasta, kun ensimmäinen Liiga-veto tulee vastaan
+shl_pelit = None
 
 for veto in kirjanpito:
     if veto["tila"] not in ["avoin", "tarkista"]:
@@ -234,6 +290,10 @@ for veto in kirjanpito:
         if liigan_pelit is None:
             liigan_pelit = hae_liigan_pelit()
         tulos = liiga_tulos(veto, liigan_pelit)
+    elif veto.get("sarja") == "SHL":
+        if shl_pelit is None:
+            shl_pelit = hae_shl_pelit()
+        tulos = shl_tulos(veto, shl_pelit)
     elif veto["id"] in tulokset:
         tulos = tulokset[veto["id"]]
     else:
