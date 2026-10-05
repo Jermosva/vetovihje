@@ -12,6 +12,8 @@ KIRJANPITO = "kirjanpito.json"
 SARJATUNNUKSET = {
     "SHL": "icehockey_sweden_hockey_league",
 }
+# Liigan kausi nimetään päättymisvuoden mukaan: 2026–27 = 2027
+LIIGA_KAUSI = 2027
 
 with open(KIRJANPITO, "r", encoding="utf-8") as tiedosto:
     kirjanpito = json.load(tiedosto)
@@ -83,6 +85,53 @@ def nhl_tulos(veto):
             }
 
     return None   # peliä ei löytynyt
+
+def hae_liigan_pelit():
+    osoite = ("https://liiga.fi/api/v2/schedule?tournament=runkosarja&season="
+              + str(LIIGA_KAUSI))
+    vastaus = requests.get(osoite)
+    if vastaus.status_code != 200:
+        print("VIRHE: Liigan tulokset", vastaus.status_code)
+        return []          # tyhjä lista: ei tuloksia, mutta ohjelma ei kaadu
+    return vastaus.json()
+
+
+def liiga_tulos(veto, pelit):
+    koti_nimi, vieras_nimi = veto["ottelu"].split(" - ")
+
+    for peli in pelit:
+        # Sama koti- ja vierasjoukkue...
+        if peli["homeTeamName"] != koti_nimi or peli["awayTeamName"] != vieras_nimi:
+            continue
+        # ...ja sama päivä (joukkueet kohtaavat kaudella monta kertaa)
+        if peli["start"][:10] != veto["alkaa"][:10]:
+            continue
+
+        if not peli["ended"]:
+            return None
+
+        k = peli["homeTeamGoals"]
+        v = peli["awayTeamGoals"]
+
+        if peli["finishedType"] == "ENDED_DURING_REGULAR_GAME_TIME":
+            k60 = k
+            v60 = v
+        else:
+            k60 = min(k, v)
+            v60 = min(k, v)
+
+        return {
+            "koti_nimi": koti_nimi,
+            "vieras_nimi": vieras_nimi,
+            "koti": k,
+            "vieras": v,
+            "koti_60": k60,
+            "vieras_60": v60,
+            "varma60": True,
+        }
+
+    return None
+
 def ratkaise(veto, tulos):
     tyyppi = veto["tyyppi"]
     valinta = veto["valinta"]
@@ -164,6 +213,7 @@ for tunnus in tarvittavat:
         if ottelu["completed"]:
             tulokset[ottelu["id"]] = odds_tulos(ottelu)   # suoraan yhteiseen muotoon
 ratkaistuja = 0
+liigan_pelit = None   # haetaan vasta, kun ensimmäinen Liiga-veto tulee vastaan
 
 for veto in kirjanpito:
     if veto["tila"] not in ["avoin", "tarkista"]:
@@ -172,6 +222,11 @@ for veto in kirjanpito:
     # Valitaan lähde sarjan mukaan
     if veto.get("sarja") == "NHL":
         tulos = nhl_tulos(veto)
+    elif veto.get("sarja") == "Liiga":
+        # Koko kausi tulee yhdellä haulla, joten haetaan se vain kerran
+        if liigan_pelit is None:
+            liigan_pelit = hae_liigan_pelit()
+        tulos = liiga_tulos(veto, liigan_pelit)
     elif veto["id"] in tulokset:
         tulos = tulokset[veto["id"]]
     else:

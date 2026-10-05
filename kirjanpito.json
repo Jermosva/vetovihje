@@ -1,5 +1,6 @@
 [
   {
+    "sarja": "Liiga",
     "id": "f38c0a50de149633feaa423957596b39",
     "alkaa": "2026-10-07T15:30:00Z",
     "ottelu": "Sport - Ilves",
@@ -14,6 +15,7 @@
     "tila": "avoin"
   },
   {
+    "sarja": "Liiga",
     "id": "d733667a27399eeda53287a51f107d31",
     "alkaa": "2026-10-07T15:30:00Z",
     "ottelu": "Kärpät - Kiekko-Espoo",
