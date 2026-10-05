@@ -1,0 +1,128 @@
+/* Värit yhteen paikkaan: muuta tästä, niin muuttuu koko sivu */
+:root {
+  --tausta: #121a14;
+  --kortti: #f4f6f8;
+  --viiva: #e1e5e8;
+  --vihrea: #5a9e3e;
+  --punainen: #c0392b;
+  --teksti: #1c1c1c;
+  --heikko: #5f6770;
+}
+
+body {
+  margin: 0;
+  padding: 16px;
+  background: var(--tausta);
+  color: var(--teksti);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+h1 {
+  color: white;
+  margin: 0 0 16px;
+}
+
+/* Yläosan kolme laatikkoa vierekkäin */
+#yhteenveto {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.laatikko {
+  background: var(--kortti);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.laatikko span {
+  display: block;
+  font-size: 13px;
+  color: var(--heikko);
+}
+
+.laatikko strong {
+  font-size: 18px;
+}
+
+.plus { color: var(--vihrea); }
+.miinus { color: var(--punainen); }
+
+/* Päivälista */
+#paivat {
+  background: var(--kortti);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.paiva {
+  border-left: 6px solid transparent;
+  border-bottom: 1px solid var(--viiva);
+}
+
+.paiva.plussa {
+  border-left-color: var(--vihrea);
+  background: #eef6e8;
+}
+
+.paiva.miinus {
+  border-left-color: var(--punainen);
+  background: #fbeeee;
+}
+
+summary {
+  list-style: none;          /* piilotetaan selaimen oma kolmio */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+summary::-webkit-details-marker { display: none; }
+
+/* Plus kiinni ollessa, miinus auki ollessa */
+summary::after {
+  content: "+";
+  font-size: 24px;
+}
+
+details[open] summary::after {
+  content: "−";
+}
+
+.paivan-saldo {
+  margin-left: auto;          /* työntää saldon oikeaan reunaan */
+  font-size: 15px;
+  color: var(--heikko);
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 16px 12px;
+}
+
+li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-top: 1px solid var(--viiva);
+}
+
+.ottelu { font-weight: 600; }
+
+.tiedot {
+  font-size: 13px;
+  color: var(--heikko);
+}
+
+.voitto {
+  margin-left: auto;
+  white-space: nowrap;        /* summa ei katkea kahdelle riville */
+  font-weight: 600;
+}
