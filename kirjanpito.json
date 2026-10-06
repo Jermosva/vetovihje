@@ -90,5 +90,20 @@
     "panos": 10,
     "tila": "ei osunut",
     "voitto": -10
+  },
+  {
+    "sarja": "NHL",
+    "id": "ab12d4dc632ea010114de1409ca7a64b",
+    "alkaa": "2026-10-06T23:40:00Z",
+    "ottelu": "New York Rangers - New York Islanders",
+    "tyyppi": "Voittaja",
+    "valinta": "New York Islanders",
+    "kerroin": 2.45,
+    "yhtio": "Veikkaus (FI)",
+    "value": 3.8,
+    "lahde": "Pinnacle",
+    "pvm": "2026-10-06",
+    "panos": 10,
+    "tila": "avoin"
   }
 ]
