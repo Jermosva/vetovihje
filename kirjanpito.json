@@ -12,7 +12,8 @@
     "lahde": "Pinnacle",
     "pvm": "2026-10-04",
     "panos": 10,
-    "tila": "avoin"
+    "tila": "ei osunut",
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -27,7 +28,8 @@
     "lahde": "Pinnacle",
     "pvm": "2026-10-04",
     "panos": 10,
-    "tila": "avoin"
+    "tila": "osui",
+    "voitto": 8.0
   },
   {
     "sarja": "SHL",
