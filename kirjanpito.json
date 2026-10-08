@@ -108,5 +108,50 @@
     "panos": 10,
     "tila": "ei osunut",
     "voitto": -10
+  },
+  {
+    "sarja": "Liiga",
+    "id": "f16e5e9b2881551e86f2aaf5231626d7",
+    "alkaa": "2026-10-08T15:30:00Z",
+    "ottelu": "SaiPa - JYP",
+    "tyyppi": "Voittaja",
+    "valinta": "SaiPa",
+    "kerroin": 1.81,
+    "yhtio": "Nordic Bet",
+    "value": 3.3,
+    "lahde": "Pinnacle",
+    "pvm": "2026-10-08",
+    "panos": 10,
+    "tila": "avoin"
+  },
+  {
+    "sarja": "NHL",
+    "id": "841087bae12b56c16406af177d78ea01",
+    "alkaa": "2026-10-08T23:09:00Z",
+    "ottelu": "Buffalo Sabres - Dallas Stars",
+    "tyyppi": "Voittaja",
+    "valinta": "Dallas Stars",
+    "kerroin": 2.04,
+    "yhtio": "Veikkaus (FI)",
+    "value": 7.0,
+    "lahde": "Pinnacle",
+    "pvm": "2026-10-08",
+    "panos": 10,
+    "tila": "avoin"
+  },
+  {
+    "sarja": "SHL",
+    "id": "f2070c606d6f937d0221b36411aa59fb",
+    "alkaa": "2026-10-08T17:00:00Z",
+    "ottelu": "Luleå HF - Malmö Redhawks",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.45,
+    "yhtio": "Coolbet",
+    "value": 4.3,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-08",
+    "panos": 10,
+    "tila": "avoin"
   }
 ]
