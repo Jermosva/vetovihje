@@ -203,5 +203,20 @@
     "pvm": "2026-10-09",
     "panos": 10,
     "tila": "avoin"
+  },
+  {
+    "sarja": "Liiga",
+    "id": "09a203a9a3c3e30ed10bac5cefe3a1a4",
+    "alkaa": "2026-10-09T15:30:00Z",
+    "ottelu": "KooKoo - Jukurit",
+    "tyyppi": "1X2",
+    "valinta": "Jukurit",
+    "kerroin": 3.55,
+    "yhtio": "Coolbet",
+    "value": 5.5,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-09",
+    "panos": 10,
+    "tila": "avoin"
   }
 ]
