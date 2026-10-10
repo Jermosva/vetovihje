@@ -172,7 +172,8 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-09",
     "panos": 10,
-    "tila": "avoin"
+    "tila": "osui",
+    "voitto": 12.2
   },
   {
     "sarja": "Liiga",
@@ -187,7 +188,8 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-09",
     "panos": 10,
-    "tila": "avoin"
+    "tila": "ei osunut",
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -202,7 +204,8 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-09",
     "panos": 10,
-    "tila": "avoin"
+    "tila": "ei osunut",
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -216,6 +219,37 @@
     "value": 5.5,
     "lahde": "keskiarvo",
     "pvm": "2026-10-09",
+    "panos": 10,
+    "tila": "ei osunut",
+    "voitto": -10
+  },
+  {
+    "sarja": "Liiga",
+    "id": "2e210f5fa6127a7e7cd0cfaceb933a18",
+    "alkaa": "2026-10-10T14:00:00Z",
+    "ottelu": "Jukurit - Kärpät",
+    "tyyppi": "1X2",
+    "valinta": "Jukurit",
+    "kerroin": 2.9,
+    "yhtio": "Coolbet",
+    "value": 3.7,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-10",
+    "panos": 10,
+    "tila": "avoin"
+  },
+  {
+    "sarja": "Liiga",
+    "id": "348107f96457c76c781a4530d88700a6",
+    "alkaa": "2026-10-10T14:00:00Z",
+    "ottelu": "Tappara - TPS",
+    "tyyppi": "1X2",
+    "valinta": "TPS",
+    "kerroin": 3.7,
+    "yhtio": "Coolbet",
+    "value": 3.1,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-10",
     "panos": 10,
     "tila": "avoin"
   }
