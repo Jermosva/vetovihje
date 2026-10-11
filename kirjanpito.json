@@ -236,7 +236,8 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-10",
     "panos": 10,
-    "tila": "avoin"
+    "tila": "ei osunut",
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -251,6 +252,7 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-10",
     "panos": 10,
-    "tila": "avoin"
+    "tila": "ei osunut",
+    "voitto": -10
   }
 ]
