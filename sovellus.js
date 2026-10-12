@@ -197,7 +197,9 @@ function erittelyTaulukko(otsikko, ryhmat) {
 function naytaErittely(vedot) {
   // Elo-mallin vedoilla on lähteenä "Elo-malli", kaikki muut ovat kerroinvertailua
   const menetelmat = laskeRyhmat(vedot,
-    veto => veto.lahde === "Elo-malli" ? "Elo-malli" : "Kerroinvertailu");
+    veto => (veto.lahde === "Elo-malli" || veto.lahde === "Poisson-malli")
+      ? veto.lahde
+      : "Kerroinvertailu");
 
   // Vanhoilta vedoilta voi puuttua sarja
   const sarjat = laskeRyhmat(vedot, veto => veto.sarja || "Muu");

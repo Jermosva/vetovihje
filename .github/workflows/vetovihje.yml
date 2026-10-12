@@ -38,9 +38,6 @@ jobs:
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
 
-      - name: Päivitä Elo-malli
-        run: python malli.py
-
       - name: Päivitä Poisson-malli
         run: python poisson_malli.py
 

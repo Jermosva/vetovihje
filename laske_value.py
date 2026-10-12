@@ -2,6 +2,9 @@ import json
 import os
 from datetime import date, datetime, timezone, timedelta
 
+# Oman Poisson-mallin funktiot (poisson_malli.py samassa kansiossa)
+from poisson_malli import maaliodotukset, todennakoisyydet
+
 # ===== ASETUKSET =====
 MAX_MARGINAALI = 10          # yhtiöt, joiden marginaali on tätä suurempi, eivät vaikuta "oikeaan" arvioon
 MIN_VALUE = 3                # kerroinvertailun value vähintään 3 %
@@ -13,7 +16,7 @@ MAX_TUNNIT = 12              # vain seuraavan 12 tunnin ottelut
 PANOS = 10                   # leikkieuroa per veto
 KIRJANPITO = "kirjanpito.json"   # oikeat leikkirahavedot
 VARJO = "varjo.json"             # kaikki ehdokkaat tilastoa varten
-VERSIO = 2                       # kasvata, kun value-logiikka muuttuu oleellisesti
+VERSIO = 3                       # 3 = Poisson-malli Liigaan
 
 # Yhtiöt, joilta paras kerroin saa tulla (nimet täsmälleen kuten tulosteessa)
 KAYTETTAVAT_YHTIOT = [
@@ -45,10 +48,11 @@ YHTIOT_60MIN = [
     "1xBet",
 ]
 
-# Oma Elo-malli: vain Liiga ja Voittaja-veto
+# Oma Poisson-malli (Liiga): kaikki vetotyypit
 MALLIN_PAINO = 0.2       # yhdistetty arvio = 80 % markkina + 20 % malli
 MALLI_MIN_VALUE = 4      # yhdistetyn arvion alaraja
 MALLI_MAX_VALUE = 10     # tätä suurempi = epäilyttävä, ei kirjata
+MALLI_MAX_POIKKEAMA = 0.08   # malli saa poiketa markkinasta enintään 8 %-yksikköä
 
 # Kerroinpalvelun nimi -> malliin tallennettu (liiga.fi:n) nimi
 MALLIN_NIMET = {
@@ -56,11 +60,11 @@ MALLIN_NIMET = {
 }
 
 # Luetaan malli, jos se on olemassa
-if os.path.exists("elo.json"):
-    with open("elo.json", "r", encoding="utf-8") as tiedosto:
-        MALLI = json.load(tiedosto)
+if os.path.exists("poisson.json"):
+    with open("poisson.json", "r", encoding="utf-8") as tiedosto:
+        PMALLI = json.load(tiedosto)
 else:
-    MALLI = None
+    PMALLI = None
 
 loydetyt = []     # vedot, jotka ylittävät rajat -> oikeaan kirjanpitoon
 ehdokkaat = []    # kaikki positiiviset valuet -> varjokirjanpitoon
@@ -101,19 +105,46 @@ def reilut_todennakoisyydet(vaihtoehdot):
     return reilut, marginaali
 
 
-def mallin_kotivoitto(koti, vieras):
-    if MALLI is None:
+def mallin_arviot(ottelu, tyyppi):
+    # Palauttaa mallin todennäköisyydet tämän vetotyypin vaihtoehdoille,
+    # esim. {"Ilves": 0.55, "Sport": 0.45}. None = malli ei osaa arvioida.
+    if PMALLI is None or ottelu["sport_title"] != "Liiga":
         return None
-    koti = MALLIN_NIMET.get(koti, koti)
-    vieras = MALLIN_NIMET.get(vieras, vieras)
-    elo = MALLI["elo"]
+
+    koti = ottelu["home_team"]
+    vieras = ottelu["away_team"]
+    m_koti = MALLIN_NIMET.get(koti, koti)
+    m_vieras = MALLIN_NIMET.get(vieras, vieras)
 
     # Jos joukkuetta ei löydy mallista, ei arvata
-    if koti not in elo or vieras not in elo:
+    if m_koti not in PMALLI["hyok"] or m_vieras not in PMALLI["hyok"]:
         return None
 
-    ero = elo[koti] + MALLI["kotietu"] - elo[vieras]
-    return 1 / (1 + 10 ** (-ero / 400))
+    lk, lv = maaliodotukset(PMALLI, m_koti, m_vieras)
+    t = todennakoisyydet(lk, lv, PMALLI["tasapelikerroin"])
+    jakauma = t["jakauma"]
+
+    if tyyppi == "Voittaja":
+        return {koti: t["koti_voittaja"], vieras: 1 - t["koti_voittaja"]}
+
+    if tyyppi == "1X2":
+        return {koti: t["koti60"], vieras: t["vieras60"], "Draw": t["tasan"]}
+
+    if tyyppi.startswith("Yli/alle"):
+        raja = float(tyyppi.split(" ")[1])
+        yli = sum(tn for (k, v), tn in jakauma.items() if k + v > raja)
+        ali = sum(tn for (k, v), tn in jakauma.items() if k + v < raja)
+        # Tasan rajalla = panos palautetaan, joten se jätetään pois
+        return {"Over": yli / (yli + ali), "Under": ali / (yli + ali)}
+
+    if tyyppi.startswith("Tasoitus"):
+        raja = float(tyyppi.split(" ")[2])     # kotijoukkueen tasoitus
+        koti_ok = sum(tn for (k, v), tn in jakauma.items() if k + raja - v > 0)
+        vieras_ok = sum(tn for (k, v), tn in jakauma.items() if k + raja - v < 0)
+        return {koti: koti_ok / (koti_ok + vieras_ok),
+                vieras: vieras_ok / (koti_ok + vieras_ok)}
+
+    return None
 
 
 def tee_veto(ottelu, tyyppi, valinta, kerroin, yhtio, value, lahde):
@@ -244,47 +275,44 @@ for ottelu in ottelut:
                   "| yhtiöitä", yhtioita,
                   merkki)
 
-        # --- Oma malli: vain Liigan voittajavedot ---
-        if tyyppi == "Voittaja" and ottelu["sport_title"] == "Liiga":
-            koti_tn = mallin_kotivoitto(ottelu["home_team"], ottelu["away_team"])
+        # --- Oma Poisson-malli: Liigan kaikki vetotyypit ---
+        arviot = mallin_arviot(ottelu, tyyppi)
 
-            if koti_tn is not None:
-                for nimi in parhaat:
-                    # Kotijoukkueelle mallin luku, vierasjoukkueelle loput
-                    if nimi == ottelu["home_team"]:
-                        malli_tn = koti_tn
-                    else:
-                        malli_tn = 1 - koti_tn
+        if arviot is not None:
+            for nimi in parhaat:
+                # Tarvitaan sekä mallin että markkinan arvio
+                if nimi not in arviot or nimi not in markkinan_tn:
+                    continue
 
-                    # Ilman markkinan arviota ei voi yhdistää
-                    if nimi not in markkinan_tn:
-                        continue
+                malli_tn = arviot[nimi]
+                markkina_tn = markkinan_tn[nimi]
+                yhdistetty = (1 - MALLIN_PAINO) * markkina_tn + MALLIN_PAINO * malli_tn
 
-                    markkina_tn = markkinan_tn[nimi]
-                    yhdistetty = (1 - MALLIN_PAINO) * markkina_tn + MALLIN_PAINO * malli_tn
+                paras = parhaat[nimi]
+                malli_value = (yhdistetty * paras - 1) * 100
 
-                    paras = parhaat[nimi]
-                    malli_value = (yhdistetty * paras - 1) * 100
+                merkki = ""
+                if abs(malli_tn - markkina_tn) > MALLI_MAX_POIKKEAMA:
+                    # Malli ei näe kokoonpanoja eikä kesän siirtoja: iso ero = mallin sokea piste
+                    merkki = "  <-- OHITETAAN (malli liian eri mieltä kuin markkina)"
+                elif malli_value > MALLI_MAX_VALUE:
+                    merkki = "  <-- TARKISTA (malli ja markkina liian eri mieltä)"
+                elif malli_value >= MALLI_MIN_VALUE:
+                    merkki = "  <-- MALLIN YLIKERROIN"
+                    loydetyt.append(tee_veto(ottelu, tyyppi, nimi, paras,
+                                             parhaan_yhtio[nimi], malli_value, "Poisson-malli"))
 
-                    merkki = ""
-                    if malli_value > MALLI_MAX_VALUE:
-                        merkki = "  <-- TARKISTA (malli ja markkina liian eri mieltä)"
-                    elif malli_value >= MALLI_MIN_VALUE:
-                        merkki = "  <-- MALLIN YLIKERROIN"
-                        loydetyt.append(tee_veto(ottelu, tyyppi, nimi, paras,
-                                                 parhaan_yhtio[nimi], malli_value, "Elo-malli"))
+                if 0 < malli_value <= MALLI_MAX_VALUE:
+                    ehdokkaat.append(tee_veto(ottelu, tyyppi, nimi, paras,
+                                              parhaan_yhtio[nimi], malli_value, "Poisson-malli"))
 
-                    if 0 < malli_value <= MALLI_MAX_VALUE:
-                        ehdokkaat.append(tee_veto(ottelu, tyyppi, nimi, paras,
-                                                  parhaan_yhtio[nimi], malli_value, "Elo-malli"))
-
-                    print("    MALLI |", nimi,
-                          "| markkina", round(markkina_tn * 100, 1), "%",
-                          "| malli", round(malli_tn * 100, 1), "%",
-                          "| yhdistetty", round(yhdistetty * 100, 1), "%",
-                          "| paras", paras, "(" + parhaan_yhtio[nimi] + ")",
-                          "| value", round(malli_value, 1), "%",
-                          merkki)
+                print("    MALLI", tyyppi, "|", nimi,
+                      "| markkina", round(markkina_tn * 100, 1), "%",
+                      "| malli", round(malli_tn * 100, 1), "%",
+                      "| yhdistetty", round(yhdistetty * 100, 1), "%",
+                      "| paras", paras, "(" + parhaan_yhtio[nimi] + ")",
+                      "| value", round(malli_value, 1), "%",
+                      merkki)
 
 
 # ===== YHTEENVETO =====
@@ -348,11 +376,11 @@ else:
 # set = joukko, jossa sama arvo voi olla vain kerran
 avaimet = set()
 for rivi in varjo:
-    avaimet.add(rivi["id"] + rivi["tyyppi"] + rivi["valinta"])
+    avaimet.add(rivi["id"] + rivi["tyyppi"] + rivi["valinta"] + rivi["lahde"])
 
 uusia_varjo = 0
 for ehdokas in ehdokkaat:
-    avain = ehdokas["id"] + ehdokas["tyyppi"] + ehdokas["valinta"]
+    avain = ehdokas["id"] + ehdokas["tyyppi"] + ehdokas["valinta"] + ehdokas["lahde"]
     if avain in avaimet:
         continue            # sama ehdokas on jo kirjattu aiemmalla ajolla
     ehdokas["pvm"] = str(date.today())

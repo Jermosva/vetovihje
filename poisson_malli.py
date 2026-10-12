@@ -226,54 +226,55 @@ def pisteyta(ennusteet, tasapelikerroin):
 
 
 # ===== PÄÄOHJELMA =====
-pelit = []
-for kausi in KAUDET:
-    for peli in hae_kausi(kausi):
-        pelit.append(muunna(peli))
+if __name__ == "__main__":
+    pelit = []
+    for kausi in KAUDET:
+        for peli in hae_kausi(kausi):
+            pelit.append(muunna(peli))
 
-nyt = datetime.now(timezone.utc)
-malli = sovita(pelit, nyt)
+    nyt = datetime.now(timezone.utc)
+    malli = sovita(pelit, nyt)
 
-# Tallennetaan malli, jotta laske_value.py voi käyttää sitä
-with open("poisson.json", "w", encoding="utf-8") as tiedosto:
-    json.dump({
-        "koti_ka": malli["koti_ka"],
-        "vieras_ka": malli["vieras_ka"],
-        "hyok": malli["hyok"],
-        "puol": malli["puol"],
-        "tasapelikerroin": TASAPELIKERROIN,
-    }, tiedosto, ensure_ascii=False, indent=2)
+    # Tallennetaan malli, jotta laske_value.py voi käyttää sitä
+    with open("poisson.json", "w", encoding="utf-8") as tiedosto:
+        json.dump({
+            "koti_ka": malli["koti_ka"],
+            "vieras_ka": malli["vieras_ka"],
+            "hyok": malli["hyok"],
+            "puol": malli["puol"],
+            "tasapelikerroin": TASAPELIKERROIN,
+        }, tiedosto, ensure_ascii=False, indent=2)
 
-print("Pelejä:", len(pelit))
-print("Keskimäärin maaleja 60 min: koti", round(malli["koti_ka"], 2),
-      "| vieras", round(malli["vieras_ka"], 2))
-
-print()
-print("Joukkueet (hyökkäys yli 1 = tekee keskimääräistä enemmän,")
-print("           puolustus alle 1 = päästää keskimääräistä vähemmän):")
-for j in sorted(malli["hyok"], key=lambda j: malli["hyok"][j] / malli["puol"][j], reverse=True):
-    print(f"  {j:12} hyökkäys {malli['hyok'][j]:.2f}   puolustus {malli['puol'][j]:.2f}")
-
-print()
-e = ennusta(malli, "KooKoo", "Jukurit")
-print("Esimerkki KooKoo - Jukurit (tasapelikerroin", TASAPELIKERROIN, "):")
-print(f"  Maaliodotukset {e['lk']:.2f} - {e['lv']:.2f}")
-print(f"  1X2: koti {e['koti60']:.1%}  tasan {e['tasan']:.1%}  vieras {e['vieras60']:.1%}")
-print(f"  Voittaja (jatkoajat mukaan): KooKoo {e['koti_voittaja']:.1%}")
-
-if TESTAA:
-    print()
-    print("===== WALK-FORWARD-TESTI =====")
-    print("Kokeillaan 9 yhdistelmää, tämä kestää muutaman minuutin...")
-    print()
-    print("Puoliintuminen | Kutistus | 1X2 Brier | Voittaja Brier | Tasapelit enn. / tot.")
-
-    for puoliintuminen in [150, 180, 240]:
-        for kutistus in [10, 20, 40]:
-            ennusteet = keraa_ennusteet(pelit, puoliintuminen, kutistus)
-            t = pisteyta(ennusteet, TASAPELIKERROIN)
-            print(f"     {puoliintuminen:3} pv     |    {kutistus:2}    |  {t['1x2']:.4f}   |"
-                  f"     {t['voittaja']:.4f}     |   {t['ennustettu_tasan']:.1%} / {t['toteutunut_tasan']:.1%}")
+    print("Pelejä:", len(pelit))
+    print("Keskimäärin maaleja 60 min: koti", round(malli["koti_ka"], 2),
+        "| vieras", round(malli["vieras_ka"], 2))
 
     print()
-    print(f"Perustaso 1X2 Brier: {t['perus']:.4f}")
+    print("Joukkueet (hyökkäys yli 1 = tekee keskimääräistä enemmän,")
+    print("           puolustus alle 1 = päästää keskimääräistä vähemmän):")
+    for j in sorted(malli["hyok"], key=lambda j: malli["hyok"][j] / malli["puol"][j], reverse=True):
+        print(f"  {j:12} hyökkäys {malli['hyok'][j]:.2f}   puolustus {malli['puol'][j]:.2f}")
+
+    print()
+    e = ennusta(malli, "KooKoo", "Jukurit")
+    print("Esimerkki KooKoo - Jukurit (tasapelikerroin", TASAPELIKERROIN, "):")
+    print(f"  Maaliodotukset {e['lk']:.2f} - {e['lv']:.2f}")
+    print(f"  1X2: koti {e['koti60']:.1%}  tasan {e['tasan']:.1%}  vieras {e['vieras60']:.1%}")
+    print(f"  Voittaja (jatkoajat mukaan): KooKoo {e['koti_voittaja']:.1%}")
+
+    if TESTAA:
+        print()
+        print("===== WALK-FORWARD-TESTI =====")
+        print("Kokeillaan 9 yhdistelmää, tämä kestää muutaman minuutin...")
+        print()
+        print("Puoliintuminen | Kutistus | 1X2 Brier | Voittaja Brier | Tasapelit enn. / tot.")
+
+        for puoliintuminen in [150, 180, 240]:
+            for kutistus in [10, 20, 40]:
+                ennusteet = keraa_ennusteet(pelit, puoliintuminen, kutistus)
+                t = pisteyta(ennusteet, TASAPELIKERROIN)
+                print(f"     {puoliintuminen:3} pv     |    {kutistus:2}    |  {t['1x2']:.4f}   |"
+                    f"     {t['voittaja']:.4f}     |   {t['ennustettu_tasan']:.1%} / {t['toteutunut_tasan']:.1%}")
+
+        print()
+        print(f"Perustaso 1X2 Brier: {t['perus']:.4f}")
