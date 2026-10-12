@@ -38,6 +38,9 @@ jobs:
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
 
+      - name: Päivitä Elo-malli
+        run: python malli.py
+
       - name: Laske value ja kirjaa vedot
         run: python laske_value.py
 

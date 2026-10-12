@@ -37,6 +37,23 @@ YHTIOT_60MIN = [
     "1xBet",
 ]
 
+# Oma Elo-malli: vain Liiga ja Voittaja-veto
+MALLIN_PAINO = 0.2       # yhdistetty arvio = 80 % markkina + 20 % malli
+MALLI_MIN_VALUE = 4      # yhdistetyn arvion alaraja
+MALLI_MAX_VALUE = 10     # tätä suurempi = epäilyttävä, ei kirjata
+
+# Kerroinpalvelun nimi -> malliin tallennettu (liiga.fi:n) nimi
+MALLIN_NIMET = {
+    "Kiekko-Espoo": "K-Espoo",
+}
+
+# Luetaan malli, jos se on olemassa
+if os.path.exists("elo.json"):
+    with open("elo.json", "r", encoding="utf-8") as tiedosto:
+        MALLI = json.load(tiedosto)
+else:
+    MALLI = None
+
 loydetyt = []
 # def = määritellään funktio. Suluissa ovat tiedot, jotka funktio saa käyttöönsä.
 def markkinan_tyyppi(markkina, ottelu):
@@ -73,6 +90,20 @@ def reilut_todennakoisyydet(vaihtoehdot):
 
     # Funktio voi palauttaa kaksi asiaa kerralla pilkulla erotettuna
     return reilut, marginaali
+
+def mallin_kotivoitto(koti, vieras):
+    if MALLI is None:
+        return None
+    koti = MALLIN_NIMET.get(koti, koti)
+    vieras = MALLIN_NIMET.get(vieras, vieras)
+    elo = MALLI["elo"]
+
+    # Jos joukkuetta ei löydy mallista, ei arvata
+    if koti not in elo or vieras not in elo:
+        return None
+
+    ero = elo[koti] + MALLI["kotietu"] - elo[vieras]
+    return 1 / (1 + 10 ** (-ero / 400))
 
 with open("ottelut.json", "r", encoding="utf-8") as tiedosto:
     ottelut = json.load(tiedosto)
@@ -137,6 +168,9 @@ for ottelu in ottelut:
                     if nimi not in reilut:
                         reilut[nimi] = []
                     reilut[nimi].append(yhtion_reilut[nimi])
+
+        markkinan_tn = {}   # vaihtoehto -> markkinan reilu todennäköisyys
+        
         for nimi in parhaat:
             if nimi not in reilut:
                 continue
@@ -156,6 +190,8 @@ for ottelu in ottelut:
             else:
                 oikea = sum(reilut[nimi]) / yhtioita
                 lahde = "keskiarvo"
+
+            markkinan_tn[nimi] = oikea
 
             paras = parhaat[nimi]
             value = (oikea * paras - 1) * 100
@@ -189,6 +225,54 @@ for ottelu in ottelut:
                   "| value", round(value, 1), "%",
                   "| yhtiöitä", yhtioita,
                   merkki)
+
+        # --- Oma malli: vain Liigan voittajavedot ---
+        if tyyppi == "Voittaja" and ottelu["sport_title"] == "Liiga":
+            koti_tn = mallin_kotivoitto(ottelu["home_team"], ottelu["away_team"])
+
+            if koti_tn is not None:
+                for nimi in parhaat:
+                    # Kotijoukkueelle mallin luku, vierasjoukkueelle loput
+                    if nimi == ottelu["home_team"]:
+                        malli_tn = koti_tn
+                    else:
+                        malli_tn = 1 - koti_tn
+
+                    # Ilman markkinan arviota ei voi yhdistää
+                    if nimi not in markkinan_tn:
+                        continue
+
+                    markkina_tn = markkinan_tn[nimi]
+                    yhdistetty = (1 - MALLIN_PAINO) * markkina_tn + MALLIN_PAINO * malli_tn
+
+                    paras = parhaat[nimi]
+                    malli_value = (yhdistetty * paras - 1) * 100
+
+                    merkki = ""
+                    if malli_value > MALLI_MAX_VALUE:
+                        merkki = "  <-- TARKISTA (malli ja markkina liian eri mieltä)"
+                    elif malli_value >= MALLI_MIN_VALUE:
+                        merkki = "  <-- MALLIN YLIKERROIN"
+                        loydetyt.append({
+                            "sarja": ottelu["sport_title"],
+                            "id": ottelu["id"],
+                            "alkaa": ottelu["commence_time"],
+                            "ottelu": ottelu["home_team"] + " - " + ottelu["away_team"],
+                            "tyyppi": tyyppi,
+                            "valinta": nimi,
+                            "kerroin": paras,
+                            "yhtio": parhaan_yhtio[nimi],
+                            "value": round(malli_value, 1),
+                            "lahde": "Elo-malli",
+                        })
+
+                    print("    MALLI |", nimi,
+                          "| markkina", round(markkina_tn * 100, 1), "%",
+                          "| malli", round(malli_tn * 100, 1), "%",
+                          "| yhdistetty", round(yhdistetty * 100, 1), "%",
+                          "| paras", paras, "(" + parhaan_yhtio[nimi] + ")",
+                          "| value", round(malli_value, 1), "%",
+                          merkki)
 print()
 print("===== PÄIVÄN VALUE-VEDOT =====")
 
