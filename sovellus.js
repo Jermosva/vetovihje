@@ -202,9 +202,13 @@ function naytaErittely(vedot) {
   // Vanhoilta vedoilta voi puuttua sarja
   const sarjat = laskeRyhmat(vedot, veto => veto.sarja || "Muu");
 
+  // Vanhoilla vedoilla ei ole versiota, joten ne merkitään versioksi 1
+  const versiot = laskeRyhmat(vedot, veto => "Versio " + (veto.versio || 1));
+
   document.getElementById("erittely").innerHTML =
     erittelyTaulukko("Menetelmittäin", menetelmat) +
-    erittelyTaulukko("Sarjoittain", sarjat);
+    erittelyTaulukko("Sarjoittain", sarjat) +
+    erittelyTaulukko("Versioittain", versiot);
 }
 
 // async = funktio, joka voi odottaa (await) esim. verkkohakua

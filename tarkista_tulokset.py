@@ -274,55 +274,75 @@ for tunnus in tarvittavat:
     for ottelu in vastaus.json():
         if ottelu["completed"]:
             tulokset[ottelu["id"]] = odds_tulos(ottelu)   # suoraan yhteiseen muotoon
-ratkaistuja = 0
-liigan_pelit = None   # haetaan vasta, kun ensimmäinen Liiga-veto tulee vastaan
-shl_pelit = None
+# Kauden pelit haetaan vain kerran, vaikka vetoja olisi paljon
+valimuisti = {}
 
-for veto in kirjanpito:
-    if veto["tila"] not in ["avoin", "tarkista"]:
-        continue
 
-    # Valitaan lähde sarjan mukaan
-    if veto.get("sarja") == "NHL":
-        tulos = nhl_tulos(veto)
-    elif veto.get("sarja") == "Liiga":
-        # Koko kausi tulee yhdellä haulla, joten haetaan se vain kerran
-        if liigan_pelit is None:
-            liigan_pelit = hae_liigan_pelit()
-        tulos = liiga_tulos(veto, liigan_pelit)
-    elif veto.get("sarja") == "SHL":
-        if shl_pelit is None:
-            shl_pelit = hae_shl_pelit()
-        tulos = shl_tulos(veto, shl_pelit)
-    elif veto["id"] in tulokset:
-        tulos = tulokset[veto["id"]]
-    else:
-        tulos = None
+def hae_tulos(veto):
+    sarja = veto.get("sarja")
+    if sarja == "NHL":
+        return nhl_tulos(veto)
+    if sarja == "Liiga":
+        if "Liiga" not in valimuisti:
+            valimuisti["Liiga"] = hae_liigan_pelit()
+        return liiga_tulos(veto, valimuisti["Liiga"])
+    if sarja == "SHL":
+        if "SHL" not in valimuisti:
+            valimuisti["SHL"] = hae_shl_pelit()
+        return shl_tulos(veto, valimuisti["SHL"])
+    if veto["id"] in tulokset:
+        return tulokset[veto["id"]]
+    return None
 
-    if tulos is None:
-        continue          # ei vielä päättynyt tai ei löytynyt
 
-    tila = ratkaise(veto, tulos)
+def paivita(vedot, tulosta):
+    ratkaistuja = 0
+    for veto in vedot:
+        if veto["tila"] not in ["avoin", "tarkista"]:
+            continue
 
-    # Jos veto oli jo "tarkista" eikä tieto parantunut, ei tehdä mitään
-    if tila == veto["tila"]:
-        continue
+        tulos = hae_tulos(veto)
+        if tulos is None:
+            continue
 
-    veto["tila"] = tila
-    if tila == "osui":
-        veto["voitto"] = round(veto["panos"] * veto["kerroin"] - veto["panos"], 2)
-    elif tila == "ei osunut":
-        veto["voitto"] = -veto["panos"]
-    elif tila == "mitätöity":
-        veto["voitto"] = 0
+        tila = ratkaise(veto, tulos)
+        if tila == veto["tila"]:
+            continue
 
-    ratkaistuja += 1
-    print(veto["ottelu"], "|", veto["tyyppi"], veto["valinta"],
-          "| tulos", tulos["koti"], "-", tulos["vieras"],
-          "(60 min:", tulos["koti_60"], "-", tulos["vieras_60"], ") ->", tila)
+        veto["tila"] = tila
+        if tila == "osui":
+            veto["voitto"] = round(veto["panos"] * veto["kerroin"] - veto["panos"], 2)
+        elif tila == "ei osunut":
+            veto["voitto"] = -veto["panos"]
+        elif tila == "mitätöity":
+            veto["voitto"] = 0
 
+        ratkaistuja += 1
+        if tulosta:
+            print(veto["ottelu"], "|", veto["tyyppi"], veto["valinta"],
+                  "| tulos", tulos["koti"], "-", tulos["vieras"],
+                  "(60 min:", tulos["koti_60"], "-", tulos["vieras_60"], ") ->", tila)
+    return ratkaistuja
+
+
+# Oikea kirjanpito
+ratkaistuja = paivita(kirjanpito, tulosta=True)
 with open(KIRJANPITO, "w", encoding="utf-8") as tiedosto:
     json.dump(kirjanpito, tiedosto, ensure_ascii=False, indent=2)
+
+# Varjokirjanpito (ei tulosteta jokaista riviä, niitä on paljon)
+VARJO = "varjo.json"
+if os.path.exists(VARJO):
+    with open(VARJO, "r", encoding="utf-8") as tiedosto:
+        varjo = json.load(tiedosto)
+    varjo_ratkaistuja = paivita(varjo, tulosta=False)
+    with open(VARJO, "w", encoding="utf-8") as tiedosto:
+        json.dump(varjo, tiedosto, ensure_ascii=False, indent=2)
+    print("Varjokirjanpidosta ratkaistu:", varjo_ratkaistuja)
+saldo = 0                          # <-- TÄSTÄ ALASPÄIN KAIKKI JÄÄ ENNALLEEN
+pelattuja = 0
+
+print("Odottaa käsin tarkistusta:", tarkistettavia)
 
 saldo = 0
 pelattuja = 0
