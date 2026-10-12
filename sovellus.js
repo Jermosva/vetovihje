@@ -24,6 +24,7 @@ function euro(luku) {
   // toFixed(2) = kaksi desimaalia, replace vaihtaa pisteen pilkuksi
   return etumerkki + luku.toFixed(2).replace(".", ",") + " €";
 }
+
 function naytaYhteenveto(vedot) {
   let saldo = 0;
   let ratkaistut = 0;
@@ -62,8 +63,9 @@ function naytaYhteenveto(vedot) {
     </div>
   `;
 }
+
 function naytaPaivat(vedot) {
-  // 1. Ryhmitellään vedot päivittäin: "2026-10-04" -> [veto, veto, ...]
+  // 1. Ryhmitellään vedot pelipäivän mukaan
   const paivat = {};
   for (const veto of vedot) {
     // Pelipäivä Suomen aikaa. "sv-SE" antaa päivämäärän muodossa 2026-10-07,
@@ -134,6 +136,77 @@ function naytaPaivat(vedot) {
 
   document.getElementById("paivat").innerHTML = html;
 }
+
+// Laskee ratkaistuista vedoista luvut ryhmittäin.
+// ryhmanNimi on funktio, joka kertoo, mihin ryhmään veto kuuluu.
+function laskeRyhmat(vedot, ryhmanNimi) {
+  const ryhmat = {};
+
+  for (const veto of vedot) {
+    if (!("voitto" in veto)) {
+      continue;                       // vain ratkaistut vedot
+    }
+
+    const nimi = ryhmanNimi(veto);
+    if (!(nimi in ryhmat)) {
+      ryhmat[nimi] = { vedot: 0, osumat: 0, saldo: 0, panokset: 0 };
+    }
+
+    const r = ryhmat[nimi];
+    r.vedot += 1;
+    if (veto.tila === "osui") {
+      r.osumat += 1;
+    }
+    r.saldo += veto.voitto;
+    r.panokset += veto.panos;
+  }
+
+  return ryhmat;
+}
+
+// Rakentaa yhden taulukon HTML:n
+function erittelyTaulukko(otsikko, ryhmat) {
+  let rivit = "";
+
+  for (const nimi in ryhmat) {
+    const r = ryhmat[nimi];
+    const roi = r.panokset > 0 ? r.saldo / r.panokset * 100 : 0;
+    const luokka = r.saldo >= 0 ? "plus" : "miinus";
+
+    rivit += `
+      <tr>
+        <td>${nimi}</td>
+        <td>${r.osumat}/${r.vedot}</td>
+        <td class="${luokka}">${euro(r.saldo)}</td>
+        <td class="${luokka}">${roi.toFixed(1).replace(".", ",")} %</td>
+      </tr>`;
+  }
+
+  return `
+    <div class="erittely-kortti">
+      <h2>${otsikko}</h2>
+      <table>
+        <thead>
+          <tr><th></th><th>Osumat</th><th>Saldo</th><th>ROI</th></tr>
+        </thead>
+        <tbody>${rivit}</tbody>
+      </table>
+    </div>`;
+}
+
+function naytaErittely(vedot) {
+  // Elo-mallin vedoilla on lähteenä "Elo-malli", kaikki muut ovat kerroinvertailua
+  const menetelmat = laskeRyhmat(vedot,
+    veto => veto.lahde === "Elo-malli" ? "Elo-malli" : "Kerroinvertailu");
+
+  // Vanhoilta vedoilta voi puuttua sarja
+  const sarjat = laskeRyhmat(vedot, veto => veto.sarja || "Muu");
+
+  document.getElementById("erittely").innerHTML =
+    erittelyTaulukko("Menetelmittäin", menetelmat) +
+    erittelyTaulukko("Sarjoittain", sarjat);
+}
+
 // async = funktio, joka voi odottaa (await) esim. verkkohakua
 async function lataa() {
   try {
@@ -141,6 +214,7 @@ async function lataa() {
     const vastaus = await fetch(OSOITE + "?t=" + Date.now());
     const vedot = await vastaus.json();
     naytaYhteenveto(vedot);
+    naytaErittely(vedot);
     naytaPaivat(vedot);
   } catch (virhe) {
     // try/catch = jos jokin epäonnistuu, näytetään virhe sivun kaatumisen sijaan
