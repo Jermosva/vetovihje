@@ -12,7 +12,56 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-12",
     "panos": 10,
+    "tila": "ei osunut",
+    "versio": 2,
+    "voitto": -10
+  },
+  {
+    "sarja": "NHL",
+    "id": "9cc2460df91fb95f776e0e893a60985c",
+    "alkaa": "2026-10-13T22:25:00Z",
+    "ottelu": "Columbus Blue Jackets - Florida Panthers",
+    "tyyppi": "Voittaja",
+    "valinta": "Columbus Blue Jackets",
+    "kerroin": 1.87,
+    "yhtio": "Veikkaus (FI)",
+    "value": 2.5,
+    "lahde": "Pinnacle",
+    "pvm": "2026-10-13",
+    "panos": 10,
     "tila": "avoin",
-    "versio": 2
+    "versio": 3
+  },
+  {
+    "sarja": "NHL",
+    "id": "b9d4f3cf4a46b1fd55b2020f0a70783a",
+    "alkaa": "2026-10-13T23:25:00Z",
+    "ottelu": "New York Rangers - Tampa Bay Lightning",
+    "tyyppi": "1X2",
+    "valinta": "Tampa Bay Lightning",
+    "kerroin": 2.1,
+    "yhtio": "1xBet",
+    "value": 0.5,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-13",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 3
+  },
+  {
+    "sarja": "NHL",
+    "id": "52b4edae40c883606966ff2b620547a5",
+    "alkaa": "2026-10-14T01:10:00Z",
+    "ottelu": "Utah Mammoth - Toronto Maple Leafs",
+    "tyyppi": "Voittaja",
+    "valinta": "Toronto Maple Leafs",
+    "kerroin": 2.47,
+    "yhtio": "Veikkaus (FI)",
+    "value": 0.6,
+    "lahde": "Pinnacle",
+    "pvm": "2026-10-13",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 3
   }
 ]
