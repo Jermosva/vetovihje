@@ -267,7 +267,7 @@ for ottelu in ottelut:
             luotettava = (vertailu is not None) or (yhtioita >= MIN_YHTIOT)
 
             merkki = ""
-            if value > 0 and luotettava:
+            if value >= MIN_VALUE and luotettava:
                 if value > MAX_VALUE:
                     merkki = "  <-- TARKISTA (liian hyvä?)"
                 else:
@@ -275,8 +275,8 @@ for ottelu in ottelut:
                     loydetyt.append(tee_veto(ottelu, tyyppi, nimi, paras,
                                              parhaan_yhtio[nimi], value, lahde))
 
-            # --- Oma Poisson-malli: Liiga ja SHL ---
-            if 0 < value <= MAX_VALUE and luotettava:
+            # Varjokirjanpitoon kaikki positiiviset (myös yli 10 %, analyysiä varten)
+            if value > 0 and luotettava:
                 ehdokkaat.append(tee_veto(ottelu, tyyppi, nimi, paras,
                                           parhaan_yhtio[nimi], value, lahde))
 
