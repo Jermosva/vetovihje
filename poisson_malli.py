@@ -1,10 +1,19 @@
 import json
 import math
 import requests
+import os
 from datetime import datetime, timezone
 
 # ===== ASETUKSET =====
 KAUDET = [2024, 2025, 2026, 2027]
+# SHL:n kaudet: avain = päättymisvuosi (kuten Liigassa), arvo = shl.se:n kausitunnus
+SHL_KAUDET = {
+    2024: "qcz-3NvSZ2Cmh",   # 2023/2024
+    2025: "qeb-73bZkIm9A",   # 2024/2025
+    2026: "xs4m9qupsi",      # 2025/2026
+    2027: "ndcf81nlb3",      # 2026/2027
+}
+TESTATTAVA_SARJA = "SHL"     # kumpaa sarjaa walk-forward-testi koskee: "Liiga" tai "SHL"
 PUOLIINTUMINEN = 180     # päivää: näin vanha peli painaa puolet tuoreesta
 KUTISTUS = 20             # "keskiarvopelejä", joilla harvoin pelanneet vedetään kohti keskitasoa
 KIERROKSET = 30          # montako kertaa voimat lasketaan uudelleen
@@ -12,6 +21,11 @@ MAX_MAALIT = 12          # tulosjakaumassa lasketaan maalimäärät 0–11
 TASAPELIKERROIN = 1.3    # >1 lisää tasapelejä (Poisson aliarvioi niitä jääkiekossa)
 KAUSIKERROIN = 0.5       # edellisen kauden pelien lisäpaino (1.0 = ei vaikutusta)
 ALKUKAUSI_KUUKAUDET = [9, 10]   # syys- ja lokakuu = "kauden alku" testissä
+# Testeissä löydetyt sarjakohtaiset asetukset
+SARJA_ASETUKSET = {
+    "Liiga": {"kausikerroin": 0.5, "tasapelikerroin": 1.3},
+    "SHL":   {"kausikerroin": 1.0, "tasapelikerroin": 1.15},
+}
 
 TESTAA = False            # True = aja walk-forward-testi (hidas), False = vain sovitus
 ARVIOINTI_ALKAA = datetime(2025, 9, 1, tzinfo=timezone.utc)   # arvioidaan kaksi viimeistä kautta
@@ -61,6 +75,61 @@ def muunna(peli):
         "paiva": paiva,
         "kausi": kausi_vuosi(paiva),
     }
+
+def hae_shl_kausi(tunnus):
+    osoite = ("https://www.shl.se/api/sports-v2/game-schedule?seasonUuid=" + tunnus
+              + "&seriesUuid=qQ9-bb0bzEWUk&gameTypeUuid=qQ9-af37Ti40B"
+              + "&gamePlace=all&played=all")
+    vastaus = requests.get(osoite)
+    if vastaus.status_code != 200:
+        print("VIRHE: SHL-kausi", tunnus, vastaus.status_code)
+        return []
+    # Vain pelatut pelit
+    return [peli for peli in vastaus.json()["gameInfo"] if peli["state"] == "post-game"]
+
+
+def muunna_shl(peli):
+    # Sama muoto kuin muunna(), jotta malli ei tiedä eikä välitä, mistä sarjasta peli on
+    koti = peli["homeTeamInfo"]
+    vieras = peli["awayTeamInfo"]
+    k = koti["score"]
+    v = vieras["score"]
+    jatkoaika = peli["overtime"] or peli["shootout"]
+
+    if jatkoaika:
+        pienempi = min(k, v)
+        k60 = pienempi
+        v60 = pienempi
+    else:
+        k60 = k
+        v60 = v
+
+    paiva = datetime.fromisoformat(peli["rawStartDateTime"].replace("Z", "+00:00"))
+
+    return {
+        "koti": koti["names"]["long"],
+        "vieras": vieras["names"]["long"],
+        "k60": k60,
+        "v60": v60,
+        "koti_voitti": k > v,
+        "jatkoaika": jatkoaika,
+        "paiva": paiva,
+        "kausi": kausi_vuosi(paiva),
+    }
+
+
+def hae_pelit(sarja):
+    # Hakee ja muuntaa kaikkien kausien pelit samaan muotoon
+    pelit = []
+    if sarja == "Liiga":
+        for kausi in KAUDET:
+            for peli in hae_kausi(kausi):
+                pelit.append(muunna(peli))
+    elif sarja == "SHL":
+        for kausi in SHL_KAUDET:
+            for peli in hae_shl_kausi(SHL_KAUDET[kausi]):
+                pelit.append(muunna_shl(peli))
+    return pelit
 
 
 # ===== MALLIN SOVITUS (hidas osa) =====
@@ -246,57 +315,70 @@ def pisteyta(ennusteet, tasapelikerroin):
 
 # ===== PÄÄOHJELMA =====
 if __name__ == "__main__":
-    pelit = []
-    for kausi in KAUDET:
-        for peli in hae_kausi(kausi):
-            pelit.append(muunna(peli))
-
     nyt = datetime.now(timezone.utc)
-    malli = sovita(pelit, nyt)
 
-    # Tallennetaan malli, jotta laske_value.py voi käyttää sitä
-    with open("poisson.json", "w", encoding="utf-8") as tiedosto:
-        json.dump({
+    # Aloitetaan edellisestä tallennuksesta: jos jonkin sarjan haku epäonnistuu,
+    # sen vanha malli jää voimaan eikä katoa
+    tallennettavat = {}
+    if os.path.exists("poisson.json"):
+        with open("poisson.json", "r", encoding="utf-8") as tiedosto:
+            vanha = json.load(tiedosto)
+        if "hyok" not in vanha:      # vanha muoto (pelkkä Liiga) ohitetaan
+            tallennettavat = vanha
+
+    for sarja in SARJA_ASETUKSET:
+        asetukset = SARJA_ASETUKSET[sarja]
+        pelit = hae_pelit(sarja)
+        if len(pelit) == 0:
+            print("VAROITUS:", sarja, "- pelejä ei saatu, vanha malli jää voimaan")
+            continue
+
+        malli = sovita(pelit, nyt, kausikerroin=asetukset["kausikerroin"])
+        tallennettavat[sarja] = {
             "koti_ka": malli["koti_ka"],
             "vieras_ka": malli["vieras_ka"],
             "hyok": malli["hyok"],
             "puol": malli["puol"],
-            "tasapelikerroin": TASAPELIKERROIN,
-        }, tiedosto, ensure_ascii=False, indent=2)
+            "tasapelikerroin": asetukset["tasapelikerroin"],
+        }
 
-    print("Pelejä:", len(pelit))
-    print("Keskimäärin maaleja 60 min: koti", round(malli["koti_ka"], 2),
-        "| vieras", round(malli["vieras_ka"], 2))
+        print()
+        print("=====", sarja, "=====")
+        print("Pelejä:", len(pelit))
+        print("Keskimäärin maaleja 60 min: koti", round(malli["koti_ka"], 2),
+              "| vieras", round(malli["vieras_ka"], 2))
+        for j in sorted(malli["hyok"], key=lambda j: malli["hyok"][j] / malli["puol"][j], reverse=True):
+            print(f"  {j:16} hyökkäys {malli['hyok'][j]:.2f}   puolustus {malli['puol'][j]:.2f}")
 
+    # Tallennetaan kaikki mallit samaan tiedostoon, jotta laske_value.py voi käyttää niitä
+    with open("poisson.json", "w", encoding="utf-8") as tiedosto:
+        json.dump(tallennettavat, tiedosto, ensure_ascii=False, indent=2)
     print()
-    print("Joukkueet (hyökkäys yli 1 = tekee keskimääräistä enemmän,")
-    print("           puolustus alle 1 = päästää keskimääräistä vähemmän):")
-    for j in sorted(malli["hyok"], key=lambda j: malli["hyok"][j] / malli["puol"][j], reverse=True):
-        print(f"  {j:12} hyökkäys {malli['hyok'][j]:.2f}   puolustus {malli['puol'][j]:.2f}")
-
-    print()
-    e = ennusta(malli, "KooKoo", "Jukurit")
-    print("Esimerkki KooKoo - Jukurit (tasapelikerroin", TASAPELIKERROIN, "):")
-    print(f"  Maaliodotukset {e['lk']:.2f} - {e['lv']:.2f}")
-    print(f"  1X2: koti {e['koti60']:.1%}  tasan {e['tasan']:.1%}  vieras {e['vieras60']:.1%}")
-    print(f"  Voittaja (jatkoajat mukaan): KooKoo {e['koti_voittaja']:.1%}")
-
+    print("Malli tallennettu sarjoille:", ", ".join(tallennettavat))
+    
     if TESTAA:
+        testipelit = hae_pelit(TESTATTAVA_SARJA)
         print()
-        print("===== KAUDENVAIHDETESTI =====")
-        print("Kokeillaan 5 kausikerrointa, tämä kestää useita minuutteja...")
-        print()
-        print("Kausikerroin | Alku 1X2 | Alku Voittaja | Koko 1X2 | Koko Voittaja")
+        print("===== WALK-FORWARD-TESTI:", TESTATTAVA_SARJA, "=====")
+        print("Pelejä yhteensä:", len(testipelit))
 
-        for kausikerroin in [1.0, 0.7, 0.5, 0.3, 0.15]:
-            alku_enn = keraa_ennusteet(pelit, PUOLIINTUMINEN, KUTISTUS,
-                                       kausikerroin, vain_alkukausi=True)
-            koko_enn = keraa_ennusteet(pelit, PUOLIINTUMINEN, KUTISTUS, kausikerroin)
-            alku = pisteyta(alku_enn, TASAPELIKERROIN)
-            koko = pisteyta(koko_enn, TASAPELIKERROIN)
-            print(f"    {kausikerroin:4.2f}     |  {alku['1x2']:.4f}  |    {alku['voittaja']:.4f}     |"
-                  f"  {koko['1x2']:.4f}  |    {koko['voittaja']:.4f}")
+        # Tarkistus: näyttävätkö joukkueiden voimat järkeviltä?
+        testimalli = sovita(testipelit, nyt)
+        print("Keskimäärin maaleja 60 min: koti", round(testimalli["koti_ka"], 2),
+              "| vieras", round(testimalli["vieras_ka"], 2))
+        for j in sorted(testimalli["hyok"],
+                        key=lambda j: testimalli["hyok"][j] / testimalli["puol"][j], reverse=True):
+            print(f"  {j:16} hyökkäys {testimalli['hyok'][j]:.2f}   puolustus {testimalli['puol'][j]:.2f}")
 
         print()
-        print("Arvioituja pelejä: alkukausi", len(alku_enn), "| koko", len(koko_enn))
-        print(f"Perustaso 1X2: alkukausi {alku['perus']:.4f} | koko {koko['perus']:.4f}")
+        print("Tasapelikerrointesti (kausikerroin 1.0), tämä kestää pari minuuttia...")
+        koko_enn = keraa_ennusteet(testipelit, PUOLIINTUMINEN, KUTISTUS, 1.0)
+        print("Tasapelikerroin | 1X2 Brier | Voittaja Brier | Tasapelit enn. / tot.")
+
+        for tasapelikerroin in [1.0, 1.1, 1.15, 1.2, 1.3]:
+            t = pisteyta(koko_enn, tasapelikerroin)
+            print(f"     {tasapelikerroin:4.2f}       |  {t['1x2']:.4f}   |    {t['voittaja']:.4f}      |"
+                  f"   {t['ennustettu_tasan']:.1%} / {t['toteutunut_tasan']:.1%}")
+
+        print()
+        print(f"Perustaso 1X2: {t['perus']:.4f}")

@@ -16,7 +16,7 @@ MAX_TUNNIT = 12              # vain seuraavan 12 tunnin ottelut
 PANOS = 10                   # leikkieuroa per veto
 KIRJANPITO = "kirjanpito.json"   # oikeat leikkirahavedot
 VARJO = "varjo.json"             # kaikki ehdokkaat tilastoa varten
-VERSIO = 3                       # 3 = Poisson-malli Liigaan
+VERSIO = 4                      # 3 = Poisson-malli Liigaan
 
 # Yhtiöt, joilta paras kerroin saa tulla (nimet täsmälleen kuten tulosteessa)
 KAYTETTAVAT_YHTIOT = [
@@ -54,17 +54,24 @@ MALLI_MIN_VALUE = 4      # yhdistetyn arvion alaraja
 MALLI_MAX_VALUE = 10     # tätä suurempi = epäilyttävä, ei kirjata
 MALLI_MAX_POIKKEAMA = 0.08   # malli saa poiketa markkinasta enintään 8 %-yksikköä
 
-# Kerroinpalvelun nimi -> malliin tallennettu (liiga.fi:n) nimi
+# Kerroinpalvelun nimi -> malliin tallennettu nimi (liiga.fi / shl.se), sarjoittain
 MALLIN_NIMET = {
-    "Kiekko-Espoo": "K-Espoo",
+    "Liiga": {
+        "Kiekko-Espoo": "K-Espoo",
+    },
+    "SHL": {
+        "Luleå HF": "Luleå Hockey",
+        "Örebro HK": "Örebro Hockey",
+        "IF Björklöven": "Björklöven",
+    },
 }
 
-# Luetaan malli, jos se on olemassa
+# Luetaan mallit: {"Liiga": {...}, "SHL": {...}}
 if os.path.exists("poisson.json"):
     with open("poisson.json", "r", encoding="utf-8") as tiedosto:
-        PMALLI = json.load(tiedosto)
+        PMALLIT = json.load(tiedosto)
 else:
-    PMALLI = None
+    PMALLIT = {}
 
 loydetyt = []     # vedot, jotka ylittävät rajat -> oikeaan kirjanpitoon
 ehdokkaat = []    # kaikki positiiviset valuet -> varjokirjanpitoon
@@ -108,20 +115,25 @@ def reilut_todennakoisyydet(vaihtoehdot):
 def mallin_arviot(ottelu, tyyppi):
     # Palauttaa mallin todennäköisyydet tämän vetotyypin vaihtoehdoille,
     # esim. {"Ilves": 0.55, "Sport": 0.45}. None = malli ei osaa arvioida.
-    if PMALLI is None or ottelu["sport_title"] != "Liiga":
+    sarja = ottelu["sport_title"]
+    if sarja not in PMALLIT:
         return None
+    pmalli = PMALLIT[sarja]
+    nimet = MALLIN_NIMET.get(sarja, {})
 
     koti = ottelu["home_team"]
     vieras = ottelu["away_team"]
-    m_koti = MALLIN_NIMET.get(koti, koti)
-    m_vieras = MALLIN_NIMET.get(vieras, vieras)
+    m_koti = nimet.get(koti, koti)
+    m_vieras = nimet.get(vieras, vieras)
 
-    # Jos joukkuetta ei löydy mallista, ei arvata
-    if m_koti not in PMALLI["hyok"] or m_vieras not in PMALLI["hyok"]:
+    # Jos joukkuetta ei löydy mallista, ei arvata. Tulostetaan, jotta puuttuva
+    # nimimuunnos huomataan heti.
+    if m_koti not in pmalli["hyok"] or m_vieras not in pmalli["hyok"]:
+        print("    (malli ei tunne joukkuetta:", m_koti, "/", m_vieras, ")")
         return None
 
-    lk, lv = maaliodotukset(PMALLI, m_koti, m_vieras)
-    t = todennakoisyydet(lk, lv, PMALLI["tasapelikerroin"])
+    lk, lv = maaliodotukset(pmalli, m_koti, m_vieras)
+    t = todennakoisyydet(lk, lv, pmalli["tasapelikerroin"])
     jakauma = t["jakauma"]
 
     if tyyppi == "Voittaja":
@@ -255,7 +267,7 @@ for ottelu in ottelut:
             luotettava = (vertailu is not None) or (yhtioita >= MIN_YHTIOT)
 
             merkki = ""
-            if value >= MIN_VALUE and luotettava:
+            if value > 0 and luotettava:
                 if value > MAX_VALUE:
                     merkki = "  <-- TARKISTA (liian hyvä?)"
                 else:
@@ -263,7 +275,7 @@ for ottelu in ottelut:
                     loydetyt.append(tee_veto(ottelu, tyyppi, nimi, paras,
                                              parhaan_yhtio[nimi], value, lahde))
 
-            # Varjokirjanpitoon kaikki positiiviset (paitsi epäilyttävän suuret)
+            # --- Oma Poisson-malli: Liiga ja SHL ---
             if 0 < value <= MAX_VALUE and luotettava:
                 ehdokkaat.append(tee_veto(ottelu, tyyppi, nimi, paras,
                                           parhaan_yhtio[nimi], value, lahde))
@@ -302,7 +314,7 @@ for ottelu in ottelut:
                     loydetyt.append(tee_veto(ottelu, tyyppi, nimi, paras,
                                              parhaan_yhtio[nimi], malli_value, "Poisson-malli"))
 
-                if 0 < malli_value <= MALLI_MAX_VALUE:
+                if malli_value > 0:
                     ehdokkaat.append(tee_veto(ottelu, tyyppi, nimi, paras,
                                               parhaan_yhtio[nimi], malli_value, "Poisson-malli"))
 
