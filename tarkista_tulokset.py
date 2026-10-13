@@ -339,10 +339,6 @@ if os.path.exists(VARJO):
     with open(VARJO, "w", encoding="utf-8") as tiedosto:
         json.dump(varjo, tiedosto, ensure_ascii=False, indent=2)
     print("Varjokirjanpidosta ratkaistu:", varjo_ratkaistuja)
-saldo = 0                          # <-- TÄSTÄ ALASPÄIN KAIKKI JÄÄ ENNALLEEN
-pelattuja = 0
-
-print("Odottaa käsin tarkistusta:", tarkistettavia)
 
 saldo = 0
 pelattuja = 0
@@ -362,4 +358,3 @@ print("Nyt ratkaistu:", ratkaistuja)
 print("Ratkaistuja vetoja yhteensä:", pelattuja, "| osuneita:", osuneita)
 print("Leikkirahasaldo:", round(saldo, 2), "€")
 print("Odottaa käsin tarkistusta:", tarkistettavia)
-          
