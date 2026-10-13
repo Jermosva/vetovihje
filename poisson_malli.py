@@ -10,6 +10,8 @@ KUTISTUS = 20             # "keskiarvopelejä", joilla harvoin pelanneet vedetä
 KIERROKSET = 30          # montako kertaa voimat lasketaan uudelleen
 MAX_MAALIT = 12          # tulosjakaumassa lasketaan maalimäärät 0–11
 TASAPELIKERROIN = 1.3    # >1 lisää tasapelejä (Poisson aliarvioi niitä jääkiekossa)
+KAUSIKERROIN = 0.5       # edellisen kauden pelien lisäpaino (1.0 = ei vaikutusta)
+ALKUKAUSI_KUUKAUDET = [9, 10]   # syys- ja lokakuu = "kauden alku" testissä
 
 TESTAA = False            # True = aja walk-forward-testi (hidas), False = vain sovitus
 ARVIOINTI_ALKAA = datetime(2025, 9, 1, tzinfo=timezone.utc)   # arvioidaan kaksi viimeistä kautta
@@ -24,6 +26,13 @@ def hae_kausi(kausi):
         print("VIRHE: kausi", kausi, vastaus.status_code)
         return []
     return [peli for peli in vastaus.json() if peli["ended"]]
+
+def kausi_vuosi(paiva):
+    # Liigan kausi nimetään päättymisvuoden mukaan:
+    # syyskuu 2026 -> kausi 2027, helmikuu 2027 -> kausi 2027
+    if paiva.month >= 7:
+        return paiva.year + 1
+    return paiva.year
 
 
 def muunna(peli):
@@ -40,6 +49,8 @@ def muunna(peli):
         k60 = k
         v60 = v
 
+    paiva = datetime.fromisoformat(peli["start"].replace("Z", "+00:00"))
+
     return {
         "koti": peli["homeTeamName"],
         "vieras": peli["awayTeamName"],
@@ -47,17 +58,21 @@ def muunna(peli):
         "v60": v60,
         "koti_voitti": k > v,     # lopputulos jatkoaikoineen
         "jatkoaika": jatkoaika,
-        "paiva": datetime.fromisoformat(peli["start"].replace("Z", "+00:00")),
+        "paiva": paiva,
+        "kausi": kausi_vuosi(paiva),
     }
 
 
 # ===== MALLIN SOVITUS (hidas osa) =====
-def sovita(pelit, hetki, puoliintuminen=PUOLIINTUMINEN, kutistus=KUTISTUS):
+def sovita(pelit, hetki, puoliintuminen=PUOLIINTUMINEN, kutistus=KUTISTUS,
+           kausikerroin=KAUSIKERROIN):
     # 1. Aikapainot: tuore peli painaa 1, PUOLIINTUMINEN päivää vanha 0,5 jne.
     painot = []
+    nykyinen_kausi = kausi_vuosi(hetki)
     for p in pelit:
         ika_paivina = (hetki - p["paiva"]).days
-        painot.append(0.5 ** (ika_paivina / puoliintuminen))
+        kausiero = nykyinen_kausi - p["kausi"]      # 0 = tämä kausi, 1 = viime kausi...
+        painot.append(0.5 ** (ika_paivina / puoliintuminen) * kausikerroin ** kausiero)
 
     # 2. Keskimääräiset maalit kotona ja vieraissa (painotettuina)
     paino_summa = sum(painot)
@@ -149,7 +164,8 @@ def ennusta(malli, koti, vieras, tasapelikerroin=TASAPELIKERROIN):
 
 
 # ===== WALK-FORWARD-TESTI =====
-def keraa_ennusteet(pelit, puoliintuminen=PUOLIINTUMINEN, kutistus=KUTISTUS):
+def keraa_ennusteet(pelit, puoliintuminen=PUOLIINTUMINEN, kutistus=KUTISTUS,
+                    kausikerroin=KAUSIKERROIN, vain_alkukausi=False):
     # HIDAS: sovittaa mallin jokaiselle pelipäivälle vain aiemmilla peleillä
     # ja tallentaa maaliodotukset. Ajetaan vain kerran.
     pelit = sorted(pelit, key=lambda p: p["paiva"])
@@ -162,10 +178,13 @@ def keraa_ennusteet(pelit, puoliintuminen=PUOLIINTUMINEN, kutistus=KUTISTUS):
         if p["paiva"] < ARVIOINTI_ALKAA:
             continue
 
+        if vain_alkukausi and p["paiva"].month not in ALKUKAUSI_KUUKAUDET:
+            continue
+
         paiva = p["paiva"].date()
         if paiva != mallin_paiva:
             aiemmat = [q for q in pelit if q["paiva"].date() < paiva]
-            malli = sovita(aiemmat, p["paiva"], puoliintuminen, kutistus)
+            malli = sovita(aiemmat, p["paiva"], puoliintuminen, kutistus, kausikerroin)
             mallin_paiva = paiva
             n = len(aiemmat)
             perus = {
@@ -264,17 +283,20 @@ if __name__ == "__main__":
 
     if TESTAA:
         print()
-        print("===== WALK-FORWARD-TESTI =====")
-        print("Kokeillaan 9 yhdistelmää, tämä kestää muutaman minuutin...")
+        print("===== KAUDENVAIHDETESTI =====")
+        print("Kokeillaan 5 kausikerrointa, tämä kestää useita minuutteja...")
         print()
-        print("Puoliintuminen | Kutistus | 1X2 Brier | Voittaja Brier | Tasapelit enn. / tot.")
+        print("Kausikerroin | Alku 1X2 | Alku Voittaja | Koko 1X2 | Koko Voittaja")
 
-        for puoliintuminen in [150, 180, 240]:
-            for kutistus in [10, 20, 40]:
-                ennusteet = keraa_ennusteet(pelit, puoliintuminen, kutistus)
-                t = pisteyta(ennusteet, TASAPELIKERROIN)
-                print(f"     {puoliintuminen:3} pv     |    {kutistus:2}    |  {t['1x2']:.4f}   |"
-                    f"     {t['voittaja']:.4f}     |   {t['ennustettu_tasan']:.1%} / {t['toteutunut_tasan']:.1%}")
+        for kausikerroin in [1.0, 0.7, 0.5, 0.3, 0.15]:
+            alku_enn = keraa_ennusteet(pelit, PUOLIINTUMINEN, KUTISTUS,
+                                       kausikerroin, vain_alkukausi=True)
+            koko_enn = keraa_ennusteet(pelit, PUOLIINTUMINEN, KUTISTUS, kausikerroin)
+            alku = pisteyta(alku_enn, TASAPELIKERROIN)
+            koko = pisteyta(koko_enn, TASAPELIKERROIN)
+            print(f"    {kausikerroin:4.2f}     |  {alku['1x2']:.4f}  |    {alku['voittaja']:.4f}     |"
+                  f"  {koko['1x2']:.4f}  |    {koko['voittaja']:.4f}")
 
         print()
-        print(f"Perustaso 1X2 Brier: {t['perus']:.4f}")
+        print("Arvioituja pelejä: alkukausi", len(alku_enn), "| koko", len(koko_enn))
+        print(f"Perustaso 1X2: alkukausi {alku['perus']:.4f} | koko {koko['perus']:.4f}")
