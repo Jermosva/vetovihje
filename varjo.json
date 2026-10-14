@@ -258,5 +258,21 @@
     "panos": 10,
     "tila": "avoin",
     "versio": 4
+  },
+  {
+    "sarja": "NHL",
+    "id": "11b474310b2b60cbae546d9c517444c6",
+    "alkaa": "2026-10-14T23:40:00Z",
+    "ottelu": "Washington Capitals - Montréal Canadiens",
+    "tyyppi": "Tasoitus koti -1.5",
+    "valinta": "Washington Capitals",
+    "kerroin": 2.95,
+    "yhtio": "LeoVegas (FI)",
+    "value": 0.6,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-14",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
   }
 ]
