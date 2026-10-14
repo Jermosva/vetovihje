@@ -254,5 +254,21 @@
     "panos": 10,
     "tila": "ei osunut",
     "voitto": -10
+  },
+  {
+    "sarja": "Liiga",
+    "id": "8d17df8d5a42169e98f1150990c96c73",
+    "alkaa": "2026-10-14T15:30:00Z",
+    "ottelu": "KalPa - Ässät",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.1,
+    "yhtio": "1xBet",
+    "value": 5.1,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-14",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
   }
 ]
