@@ -287,5 +287,21 @@
     "panos": 10,
     "tila": "avoin",
     "versio": 4
+  },
+  {
+    "sarja": "NHL",
+    "id": "31352e6ab98e96d7f2505fa0432b96e2",
+    "alkaa": "2026-10-16T02:10:00Z",
+    "ottelu": "Vegas Golden Knights - Calgary Flames",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 5.75,
+    "yhtio": "LeoVegas (FI)",
+    "value": 3.5,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-15",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
   }
 ]
