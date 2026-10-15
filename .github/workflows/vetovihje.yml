@@ -3,7 +3,7 @@ name: Vetovihje
 on:
   schedule:
     # Aika UTC-aikana: 7 ja 15 = klo 10 ja 18 Suomen kesäaikaa
-    - cron: "0 7,15 * * *"
+    - cron: "7 13,18 * * *"
   # Lisää "Run workflow" -napin, jolla ajon voi käynnistää käsin
   workflow_dispatch:
 
