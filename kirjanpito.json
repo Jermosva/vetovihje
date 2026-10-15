@@ -271,5 +271,21 @@
     "tila": "ei osunut",
     "versio": 4,
     "voitto": -10
+  },
+  {
+    "sarja": "SHL",
+    "id": "84109d9286b1dcca78a98471b3b60353",
+    "alkaa": "2026-10-15T17:00:00Z",
+    "ottelu": "Malmö Redhawks - Örebro HK",
+    "tyyppi": "Voittaja",
+    "valinta": "Örebro HK",
+    "kerroin": 2.25,
+    "yhtio": "Betsson",
+    "value": 9.3,
+    "lahde": "Pinnacle",
+    "pvm": "2026-10-15",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
   }
 ]
