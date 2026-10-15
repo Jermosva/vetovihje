@@ -268,7 +268,8 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-14",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   }
 ]

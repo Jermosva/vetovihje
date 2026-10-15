@@ -80,8 +80,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-14",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -96,8 +97,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-14",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -112,8 +114,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-14",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 32.5
   },
   {
     "sarja": "Liiga",
@@ -128,8 +131,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-14",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -144,8 +148,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-14",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 10.5
   },
   {
     "sarja": "Liiga",
@@ -160,8 +165,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-14",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -176,8 +182,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-14",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -192,8 +199,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-14",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -208,8 +216,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-14",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -224,8 +233,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-14",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -240,8 +250,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-14",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -256,8 +267,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-14",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -271,6 +283,183 @@
     "value": 0.6,
     "lahde": "keskiarvo",
     "pvm": "2026-10-14",
+    "panos": 10,
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
+  },
+  {
+    "sarja": "Liiga",
+    "id": "463b773313e7bd8b786ba7d8baab62ac",
+    "alkaa": "2026-10-15T15:30:00Z",
+    "ottelu": "SaiPa - HPK",
+    "tyyppi": "1X2",
+    "valinta": "SaiPa",
+    "kerroin": 1.92,
+    "yhtio": "Coolbet",
+    "value": 2.0,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-15",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "Liiga",
+    "id": "03ce652fb2b66356523b42c16c81eb4b",
+    "alkaa": "2026-10-15T15:30:00Z",
+    "ottelu": "Sport - KooKoo",
+    "tyyppi": "Voittaja",
+    "valinta": "KooKoo",
+    "kerroin": 2.15,
+    "yhtio": "888sport",
+    "value": 0.5,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-15",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "Liiga",
+    "id": "03ce652fb2b66356523b42c16c81eb4b",
+    "alkaa": "2026-10-15T15:30:00Z",
+    "ottelu": "Sport - KooKoo",
+    "tyyppi": "1X2",
+    "valinta": "KooKoo",
+    "kerroin": 2.95,
+    "yhtio": "Tipico",
+    "value": 5.2,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-15",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "SHL",
+    "id": "59dfb97f8e148df831cc08398461c37b",
+    "alkaa": "2026-10-15T17:00:00Z",
+    "ottelu": "Färjestad BK - Luleå HF",
+    "tyyppi": "1X2",
+    "valinta": "Färjestad BK",
+    "kerroin": 1.65,
+    "yhtio": "Coolbet",
+    "value": 0.7,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-15",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "SHL",
+    "id": "59dfb97f8e148df831cc08398461c37b",
+    "alkaa": "2026-10-15T17:00:00Z",
+    "ottelu": "Färjestad BK - Luleå HF",
+    "tyyppi": "1X2",
+    "valinta": "Färjestad BK",
+    "kerroin": 1.65,
+    "yhtio": "Coolbet",
+    "value": 0.8,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-15",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "SHL",
+    "id": "705dd6209f6bfc8af111f3e927863d4f",
+    "alkaa": "2026-10-15T17:00:00Z",
+    "ottelu": "IF Björklöven - Rögle BK",
+    "tyyppi": "Voittaja",
+    "valinta": "IF Björklöven",
+    "kerroin": 2.38,
+    "yhtio": "888sport",
+    "value": 2.8,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-15",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "SHL",
+    "id": "705dd6209f6bfc8af111f3e927863d4f",
+    "alkaa": "2026-10-15T17:00:00Z",
+    "ottelu": "IF Björklöven - Rögle BK",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.4,
+    "yhtio": "Coolbet",
+    "value": 0.8,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-15",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "SHL",
+    "id": "705dd6209f6bfc8af111f3e927863d4f",
+    "alkaa": "2026-10-15T17:00:00Z",
+    "ottelu": "IF Björklöven - Rögle BK",
+    "tyyppi": "1X2",
+    "valinta": "IF Björklöven",
+    "kerroin": 3.3,
+    "yhtio": "LeoVegas (FI)",
+    "value": 3.9,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-15",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "SHL",
+    "id": "705dd6209f6bfc8af111f3e927863d4f",
+    "alkaa": "2026-10-15T17:00:00Z",
+    "ottelu": "IF Björklöven - Rögle BK",
+    "tyyppi": "Tasoitus koti 1.0",
+    "valinta": "IF Björklöven",
+    "kerroin": 1.64,
+    "yhtio": "Coolbet",
+    "value": 0.2,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-15",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "SHL",
+    "id": "9b6166be2d5f35cdd8e752b4f0c880dc",
+    "alkaa": "2026-10-15T17:00:00Z",
+    "ottelu": "Växjö Lakers - Skellefteå AIK",
+    "tyyppi": "1X2",
+    "valinta": "Skellefteå AIK",
+    "kerroin": 2.3,
+    "yhtio": "1xBet",
+    "value": 0.4,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-15",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "SHL",
+    "id": "9b6166be2d5f35cdd8e752b4f0c880dc",
+    "alkaa": "2026-10-15T17:00:00Z",
+    "ottelu": "Växjö Lakers - Skellefteå AIK",
+    "tyyppi": "1X2",
+    "valinta": "Skellefteå AIK",
+    "kerroin": 2.3,
+    "yhtio": "1xBet",
+    "value": 1.7,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-15",
     "panos": 10,
     "tila": "avoin",
     "versio": 4
