@@ -285,8 +285,9 @@
     "lahde": "Pinnacle",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -300,6 +301,23 @@
     "value": 3.5,
     "lahde": "keskiarvo",
     "pvm": "2026-10-15",
+    "panos": 10,
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
+  },
+  {
+    "sarja": "Liiga",
+    "id": "2a1f16340f973dc486f11d272885aed2",
+    "alkaa": "2026-10-16T15:30:00Z",
+    "ottelu": "HPK - Ilves",
+    "tyyppi": "1X2",
+    "valinta": "HPK",
+    "kerroin": 4.1,
+    "yhtio": "Coolbet",
+    "value": 4.1,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-16",
     "panos": 10,
     "tila": "avoin",
     "versio": 4

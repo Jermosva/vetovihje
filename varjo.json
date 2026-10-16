@@ -352,8 +352,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "SHL",
@@ -368,8 +369,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "SHL",
@@ -384,8 +386,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "SHL",
@@ -400,8 +403,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "SHL",
@@ -416,8 +420,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "SHL",
@@ -432,8 +437,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "mitätöity",
+    "versio": 4,
+    "voitto": 0
   },
   {
     "sarja": "SHL",
@@ -448,8 +454,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 13.0
   },
   {
     "sarja": "SHL",
@@ -464,8 +471,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 13.0
   },
   {
     "sarja": "NHL",
@@ -480,8 +488,9 @@
     "lahde": "Pinnacle",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 10.8
   },
   {
     "sarja": "NHL",
@@ -496,8 +505,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -512,8 +522,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "SHL",
@@ -528,8 +539,9 @@
     "lahde": "Pinnacle",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "SHL",
@@ -544,8 +556,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 5.5
   },
   {
     "sarja": "SHL",
@@ -560,8 +573,9 @@
     "lahde": "Pinnacle",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "SHL",
@@ -576,8 +590,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "SHL",
@@ -592,8 +607,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 21.0
   },
   {
     "sarja": "SHL",
@@ -608,8 +624,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 13.4
   },
   {
     "sarja": "SHL",
@@ -624,8 +641,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 8.0
   },
   {
     "sarja": "SHL",
@@ -640,8 +658,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -784,8 +803,9 @@
     "lahde": "Pinnacle",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -799,6 +819,183 @@
     "value": 0.3,
     "lahde": "keskiarvo",
     "pvm": "2026-10-15",
+    "panos": 10,
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 5.7
+  },
+  {
+    "sarja": "Liiga",
+    "id": "2a1f16340f973dc486f11d272885aed2",
+    "alkaa": "2026-10-16T15:30:00Z",
+    "ottelu": "HPK - Ilves",
+    "tyyppi": "1X2",
+    "valinta": "HPK",
+    "kerroin": 4.1,
+    "yhtio": "Coolbet",
+    "value": 4.1,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-16",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "Liiga",
+    "id": "2a1f16340f973dc486f11d272885aed2",
+    "alkaa": "2026-10-16T15:30:00Z",
+    "ottelu": "HPK - Ilves",
+    "tyyppi": "Voittaja",
+    "valinta": "HPK",
+    "kerroin": 2.89,
+    "yhtio": "Nordic Bet",
+    "value": 1.5,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-16",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "Liiga",
+    "id": "129703c80f45d13e834f7d4418732064",
+    "alkaa": "2026-10-16T15:30:00Z",
+    "ottelu": "Jokerit - Ässät",
+    "tyyppi": "Tasoitus koti -1.5",
+    "valinta": "Ässät",
+    "kerroin": 1.41,
+    "yhtio": "LeoVegas (FI)",
+    "value": 0.6,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-16",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "Liiga",
+    "id": "0c26187fe60f96804ed236a83b1e9561",
+    "alkaa": "2026-10-16T15:30:00Z",
+    "ottelu": "TPS - Kiekko-Espoo",
+    "tyyppi": "1X2",
+    "valinta": "TPS",
+    "kerroin": 2.22,
+    "yhtio": "Coolbet",
+    "value": 0.0,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-16",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "NHL",
+    "id": "343be4cf732ddd9fd0a058953456d811",
+    "alkaa": "2026-10-17T01:10:00Z",
+    "ottelu": "Colorado Avalanche - Pittsburgh Penguins",
+    "tyyppi": "1X2",
+    "valinta": "Pittsburgh Penguins",
+    "kerroin": 4.1,
+    "yhtio": "LeoVegas (FI)",
+    "value": 1.6,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-16",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "SHL",
+    "id": "6a5f0d9f11493bfa89cc1fc9fa7ea88f",
+    "alkaa": "2026-10-17T13:15:00Z",
+    "ottelu": "Djurgårdens IF - Malmö Redhawks",
+    "tyyppi": "1X2",
+    "valinta": "Djurgårdens IF",
+    "kerroin": 2.36,
+    "yhtio": "Coolbet",
+    "value": 2.6,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-16",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "SHL",
+    "id": "6a5f0d9f11493bfa89cc1fc9fa7ea88f",
+    "alkaa": "2026-10-17T13:15:00Z",
+    "ottelu": "Djurgårdens IF - Malmö Redhawks",
+    "tyyppi": "1X2",
+    "valinta": "Djurgårdens IF",
+    "kerroin": 2.36,
+    "yhtio": "Coolbet",
+    "value": 0.9,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-16",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "SHL",
+    "id": "6a5f0d9f11493bfa89cc1fc9fa7ea88f",
+    "alkaa": "2026-10-17T13:15:00Z",
+    "ottelu": "Djurgårdens IF - Malmö Redhawks",
+    "tyyppi": "1X2",
+    "valinta": "Malmö Redhawks",
+    "kerroin": 2.85,
+    "yhtio": "LeoVegas (FI)",
+    "value": 0.7,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-16",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "SHL",
+    "id": "0dd367a75f4553579b3a21305b037f7c",
+    "alkaa": "2026-10-17T13:15:00Z",
+    "ottelu": "Frölunda HC - Skellefteå AIK",
+    "tyyppi": "Voittaja",
+    "valinta": "Frölunda HC",
+    "kerroin": 1.91,
+    "yhtio": "888sport",
+    "value": 0.3,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-16",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "SHL",
+    "id": "0dd367a75f4553579b3a21305b037f7c",
+    "alkaa": "2026-10-17T13:15:00Z",
+    "ottelu": "Frölunda HC - Skellefteå AIK",
+    "tyyppi": "1X2",
+    "valinta": "Frölunda HC",
+    "kerroin": 2.63,
+    "yhtio": "LeoVegas (FI)",
+    "value": 1.6,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-16",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "SHL",
+    "id": "ae07e9d549742aac388960686082bb84",
+    "alkaa": "2026-10-17T13:15:00Z",
+    "ottelu": "Luleå HF - HV71",
+    "tyyppi": "Yli/alle 5.5",
+    "valinta": "Over",
+    "kerroin": 2.17,
+    "yhtio": "LeoVegas (FI)",
+    "value": 0.7,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-16",
     "panos": 10,
     "tila": "avoin",
     "versio": 4
