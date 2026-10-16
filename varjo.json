@@ -675,8 +675,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 10.2
   },
   {
     "sarja": "Liiga",
@@ -691,8 +692,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 18.0
   },
   {
     "sarja": "Liiga",
@@ -707,8 +709,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 18.0
   },
   {
     "sarja": "Liiga",
@@ -723,8 +726,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -739,8 +743,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -755,8 +760,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 29.5
   },
   {
     "sarja": "Liiga",
@@ -771,8 +777,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-15",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 29.5
   },
   {
     "sarja": "Liiga",
@@ -837,8 +844,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-16",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 31.0
   },
   {
     "sarja": "Liiga",
@@ -853,8 +861,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-16",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 18.9
   },
   {
     "sarja": "Liiga",
@@ -869,8 +878,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-16",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 4.1
   },
   {
     "sarja": "Liiga",
@@ -885,8 +895,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-16",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 12.2
   },
   {
     "sarja": "NHL",
@@ -994,6 +1005,150 @@
     "kerroin": 2.17,
     "yhtio": "LeoVegas (FI)",
     "value": 0.7,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-16",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "Liiga",
+    "id": "c3ff17a0cc786c590743c13e2a9c44dc",
+    "alkaa": "2026-10-17T14:00:00Z",
+    "ottelu": "SaiPa - HIFK",
+    "tyyppi": "1X2",
+    "valinta": "SaiPa",
+    "kerroin": 1.9,
+    "yhtio": "Coolbet",
+    "value": 3.1,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-16",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "Liiga",
+    "id": "c3ff17a0cc786c590743c13e2a9c44dc",
+    "alkaa": "2026-10-17T14:00:00Z",
+    "ottelu": "SaiPa - HIFK",
+    "tyyppi": "1X2",
+    "valinta": "SaiPa",
+    "kerroin": 1.9,
+    "yhtio": "Coolbet",
+    "value": 4.5,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-16",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "Liiga",
+    "id": "ebbe0146e188e7cd8a219ece613c268c",
+    "alkaa": "2026-10-17T14:00:00Z",
+    "ottelu": "KalPa - Pelicans",
+    "tyyppi": "Voittaja",
+    "valinta": "Pelicans",
+    "kerroin": 2.1,
+    "yhtio": "Nordic Bet",
+    "value": 0.8,
+    "lahde": "Pinnacle",
+    "pvm": "2026-10-16",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "NHL",
+    "id": "343be4cf732ddd9fd0a058953456d811",
+    "alkaa": "2026-10-17T01:10:00Z",
+    "ottelu": "Colorado Avalanche - Pittsburgh Penguins",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 2.0,
+    "yhtio": "888sport",
+    "value": 3.0,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-16",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "NHL",
+    "id": "7c44228f4c2e89133b34a3c70bfb30c5",
+    "alkaa": "2026-10-17T02:10:00Z",
+    "ottelu": "Anaheim Ducks - Boston Bruins",
+    "tyyppi": "Tasoitus koti -1.5",
+    "valinta": "Anaheim Ducks",
+    "kerroin": 3.2,
+    "yhtio": "LeoVegas (FI)",
+    "value": 2.9,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-16",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "NHL",
+    "id": "841c71c033cf05ad1313e3d5ecd2d9ab",
+    "alkaa": "2026-10-17T17:10:00Z",
+    "ottelu": "Washington Capitals - New Jersey Devils",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.62,
+    "yhtio": "1xBet",
+    "value": 3.7,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-16",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "SHL",
+    "id": "b6c240feabcfe3e86753b4b4a850fe49",
+    "alkaa": "2026-10-17T16:00:00Z",
+    "ottelu": "Timrå IK - IF Björklöven",
+    "tyyppi": "Tasoitus koti -1.5",
+    "valinta": "IF Björklöven",
+    "kerroin": 1.57,
+    "yhtio": "LeoVegas (FI)",
+    "value": 0.7,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-16",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "SHL",
+    "id": "b6c240feabcfe3e86753b4b4a850fe49",
+    "alkaa": "2026-10-17T16:00:00Z",
+    "ottelu": "Timrå IK - IF Björklöven",
+    "tyyppi": "1X2",
+    "valinta": "IF Björklöven",
+    "kerroin": 3.62,
+    "yhtio": "Marathon Bet",
+    "value": 5.2,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-16",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "SHL",
+    "id": "b6c240feabcfe3e86753b4b4a850fe49",
+    "alkaa": "2026-10-17T16:00:00Z",
+    "ottelu": "Timrå IK - IF Björklöven",
+    "tyyppi": "Tasoitus koti -1.0",
+    "valinta": "IF Björklöven",
+    "kerroin": 1.74,
+    "yhtio": "Coolbet",
+    "value": 1.3,
     "lahde": "Poisson-malli",
     "pvm": "2026-10-16",
     "panos": 10,
