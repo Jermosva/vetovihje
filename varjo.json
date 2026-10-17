@@ -930,8 +930,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-16",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "SHL",
@@ -946,8 +947,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-16",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "SHL",
@@ -962,8 +964,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-16",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "SHL",
@@ -978,8 +981,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-16",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 9.1
   },
   {
     "sarja": "SHL",
@@ -994,8 +998,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-16",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "SHL",
@@ -1010,8 +1015,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-16",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 11.7
   },
   {
     "sarja": "Liiga",
@@ -1026,8 +1032,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-16",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 9.0
   },
   {
     "sarja": "Liiga",
@@ -1042,8 +1049,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-16",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 9.0
   },
   {
     "sarja": "Liiga",
@@ -1058,8 +1066,9 @@
     "lahde": "Pinnacle",
     "pvm": "2026-10-16",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -1172,8 +1181,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-17",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 5.4
   },
   {
     "sarja": "Liiga",
@@ -1188,8 +1198,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-17",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -1204,8 +1215,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-17",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -1220,8 +1232,9 @@
     "lahde": "Pinnacle",
     "pvm": "2026-10-17",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -1236,8 +1249,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-17",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -1252,8 +1266,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-17",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 13.8
   },
   {
     "sarja": "Liiga",
@@ -1268,8 +1283,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-17",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -1284,8 +1300,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-17",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 11.8
   },
   {
     "sarja": "Liiga",
@@ -1300,8 +1317,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-17",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -1316,8 +1334,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-17",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 11.8
   },
   {
     "sarja": "Liiga",
@@ -1332,8 +1351,9 @@
     "lahde": "Pinnacle",
     "pvm": "2026-10-17",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -1348,8 +1368,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-17",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -1364,8 +1385,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-17",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -1380,8 +1402,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-17",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 38.0
   },
   {
     "sarja": "Liiga",
@@ -1396,8 +1419,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-17",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -1412,8 +1436,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-17",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 38.0
   },
   {
     "sarja": "Liiga",
@@ -1428,8 +1453,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-17",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -1444,8 +1470,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-17",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -1460,8 +1487,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-17",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -1476,8 +1504,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-17",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -1492,8 +1521,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-17",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 23.5
   },
   {
     "sarja": "Liiga",
@@ -1508,8 +1538,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-17",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -1524,8 +1555,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-17",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -1649,6 +1681,102 @@
     "kerroin": 2.0,
     "yhtio": "888sport",
     "value": 4.6,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-17",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "NHL",
+    "id": "c9ba2e7837386a5948a9c2233c36314c",
+    "alkaa": "2026-10-17T19:40:00Z",
+    "ottelu": "Winnipeg Jets - Carolina Hurricanes",
+    "tyyppi": "1X2",
+    "valinta": "Carolina Hurricanes",
+    "kerroin": 1.9,
+    "yhtio": "1xBet",
+    "value": 0.4,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-17",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "NHL",
+    "id": "a803d2ced256aea33428fbca55aba33e",
+    "alkaa": "2026-10-17T20:10:00Z",
+    "ottelu": "Tampa Bay Lightning - Vancouver Canucks",
+    "tyyppi": "1X2",
+    "valinta": "Tampa Bay Lightning",
+    "kerroin": 1.48,
+    "yhtio": "1xBet",
+    "value": 0.5,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-17",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "NHL",
+    "id": "a803d2ced256aea33428fbca55aba33e",
+    "alkaa": "2026-10-17T20:10:00Z",
+    "ottelu": "Tampa Bay Lightning - Vancouver Canucks",
+    "tyyppi": "1X2",
+    "valinta": "Vancouver Canucks",
+    "kerroin": 6.4,
+    "yhtio": "LeoVegas (FI)",
+    "value": 2.3,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-17",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "NHL",
+    "id": "a803d2ced256aea33428fbca55aba33e",
+    "alkaa": "2026-10-17T20:10:00Z",
+    "ottelu": "Tampa Bay Lightning - Vancouver Canucks",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 1.91,
+    "yhtio": "888sport",
+    "value": 1.1,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-17",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "NHL",
+    "id": "95168b13c92e52aca0ad08f18b66ccd4",
+    "alkaa": "2026-10-17T23:10:00Z",
+    "ottelu": "Philadelphia Flyers - Ottawa Senators",
+    "tyyppi": "Tasoitus koti 1.5",
+    "valinta": "Ottawa Senators",
+    "kerroin": 2.8,
+    "yhtio": "LeoVegas (FI)",
+    "value": 2.1,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-17",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "NHL",
+    "id": "b5419971529fadc0610c47b095627156",
+    "alkaa": "2026-10-18T02:10:00Z",
+    "ottelu": "Utah Mammoth - Edmonton Oilers",
+    "tyyppi": "Tasoitus koti -1.5",
+    "valinta": "Utah Mammoth",
+    "kerroin": 2.9,
+    "yhtio": "LeoVegas (FI)",
+    "value": 2.6,
     "lahde": "keskiarvo",
     "pvm": "2026-10-17",
     "panos": 10,

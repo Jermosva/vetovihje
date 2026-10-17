@@ -336,8 +336,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-16",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "osui",
+    "versio": 4,
+    "voitto": 9.0
   },
   {
     "sarja": "NHL",
@@ -368,8 +369,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-17",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -384,8 +386,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-17",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -400,8 +403,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-17",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
