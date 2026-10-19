@@ -475,5 +475,37 @@
     "tila": "ei osunut",
     "versio": 4,
     "voitto": -10
+  },
+  {
+    "sarja": "NHL",
+    "id": "7ac756ef7eb5d5b1042e68d86d561147",
+    "alkaa": "2026-10-19T23:40:00Z",
+    "ottelu": "Toronto Maple Leafs - San Jose Sharks",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 2.1,
+    "yhtio": "888sport",
+    "value": 7.3,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
+  },
+  {
+    "sarja": "NHL",
+    "id": "0e2b3099b25e9827dc4a6abd7fabfa51",
+    "alkaa": "2026-10-20T01:10:00Z",
+    "ottelu": "Utah Mammoth - Pittsburgh Penguins",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 2.0,
+    "yhtio": "888sport",
+    "value": 3.8,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 4
   }
 ]
