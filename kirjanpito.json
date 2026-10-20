@@ -609,7 +609,10 @@
     "pvm": "2026-10-20",
     "panos": 10,
     "tila": "avoin",
-    "versio": 4
+    "versio": 4,
+    "reilu_nyt": 0.5487,
+    "clv": 4.8,
+    "clv_aika": "2026-10-20T21:03:17.027880+00:00"
   },
   {
     "sarja": "NHL",
@@ -625,7 +628,10 @@
     "pvm": "2026-10-20",
     "panos": 10,
     "tila": "avoin",
-    "versio": 4
+    "versio": 4,
+    "reilu_nyt": 0.5241,
+    "clv": 4.8,
+    "clv_aika": "2026-10-20T21:03:17.027880+00:00"
   },
   {
     "sarja": "NHL",
@@ -641,7 +647,10 @@
     "pvm": "2026-10-20",
     "panos": 10,
     "tila": "avoin",
-    "versio": 4
+    "versio": 4,
+    "reilu_nyt": 0.5535,
+    "clv": 5.7,
+    "clv_aika": "2026-10-20T21:03:17.027880+00:00"
   },
   {
     "sarja": "SHL",
@@ -656,8 +665,9 @@
     "lahde": "Pinnacle",
     "pvm": "2026-10-20",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 4
+    "tila": "ei osunut",
+    "versio": 4,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -673,6 +683,57 @@
     "pvm": "2026-10-20",
     "panos": 10,
     "tila": "avoin",
-    "versio": 4
+    "versio": 4,
+    "reilu_nyt": 0.3006,
+    "clv": 11.2,
+    "clv_aika": "2026-10-20T21:03:17.027880+00:00"
+  },
+  {
+    "sarja": "Liiga",
+    "id": "5351fba927e3d526d589134f2f3de430",
+    "alkaa": "2026-10-21T15:30:00Z",
+    "ottelu": "Tappara - Ässät",
+    "tyyppi": "Voittaja",
+    "valinta": "Ässät",
+    "kerroin": 2.3,
+    "yhtio": "Veikkaus (FI)",
+    "value": 6.2,
+    "lahde": "Pinnacle",
+    "pvm": "2026-10-21",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 6
+  },
+  {
+    "sarja": "NHL",
+    "id": "1ee9e671dfe8ad2d9c73f910baa56e1b",
+    "alkaa": "2026-10-20T23:10:00Z",
+    "ottelu": "New Jersey Devils - Colorado Avalanche",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 1.91,
+    "yhtio": "888sport",
+    "value": 6.0,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-21",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 6
+  },
+  {
+    "sarja": "NHL",
+    "id": "b1c2bb946e4f5824800dab22ae585454",
+    "alkaa": "2026-10-21T01:50:00Z",
+    "ottelu": "Seattle Kraken - Detroit Red Wings",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 1.91,
+    "yhtio": "888sport",
+    "value": 6.7,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-21",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 6
   }
 ]
