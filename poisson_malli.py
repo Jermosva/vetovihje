@@ -13,7 +13,17 @@ SHL_KAUDET = {
     2026: "xs4m9qupsi",      # 2025/2026
     2027: "ndcf81nlb3",      # 2026/2027
 }
-TESTATTAVA_SARJA = "Liiga"     # kumpaa sarjaa walk-forward-testi koskee: "Liiga" tai "SHL"
+
+# NHL:n kaudet muodossa 20252026 = kausi 2025–26
+NHL_KAUDET = [20232024, 20242025, 20252026, 20262027]
+
+# Vanha nimi -> nykyinen nimi (sama joukkue, uusi nimi)
+NHL_NIMET = {
+    "Arizona Coyotes": "Utah Mammoth",
+    "Utah Hockey Club": "Utah Mammoth",
+}
+
+TESTATTAVA_SARJA = "NHL"     # kumpaa sarjaa walk-forward-testi koskee: "Liiga" tai "SHL"
 PUOLIINTUMINEN = 180     # päivää: näin vanha peli painaa puolet tuoreesta
 KUTISTUS = 20             # "keskiarvopelejä", joilla harvoin pelanneet vedetään kohti keskitasoa
 KIERROKSET = 30          # montako kertaa voimat lasketaan uudelleen
@@ -25,9 +35,10 @@ ALKUKAUSI_KUUKAUDET = [9, 10]   # syys- ja lokakuu = "kauden alku" testissä
 SARJA_ASETUKSET = {
     "Liiga": {"kausikerroin": 0.5, "tasapelikerroin": 1.3, "vasymys": 0.02},
     "SHL":   {"kausikerroin": 1.0, "tasapelikerroin": 1.15, "vasymys": 0.0},
+    "NHL":   {"kausikerroin": 0.5, "tasapelikerroin": 1.7,  "vasymys": 0.04},
 }
 
-TESTAA = True            # True = aja walk-forward-testi (hidas), False = vain sovitus
+TESTAA = False            # True = aja walk-forward-testi (hidas), False = vain sovitus
 ARVIOINTI_ALKAA = datetime(2025, 9, 1, tzinfo=timezone.utc)   # arvioidaan kaksi viimeistä kautta
 
 
@@ -117,6 +128,62 @@ def muunna_shl(peli):
         "kausi": kausi_vuosi(paiva),
     }
 
+def hae_nhl_joukkueet():
+    # NHL:n joukkueet: id-numero -> koko nimi, esim. 10 -> "Toronto Maple Leafs"
+    vastaus = requests.get("https://api.nhle.com/stats/rest/en/team")
+    if vastaus.status_code != 200:
+        print("VIRHE: NHL:n joukkueet", vastaus.status_code)
+        return {}
+    nimet = {}
+    for joukkue in vastaus.json()["data"]:
+        nimet[joukkue["id"]] = joukkue["fullName"]
+    return nimet
+
+
+def hae_nhl_kausi(kausi):
+    osoite = ("https://api.nhle.com/stats/rest/en/game?cayenneExp=season="
+              + str(kausi) + "%20and%20gameType=2")
+    vastaus = requests.get(osoite)
+    if vastaus.status_code != 200:
+        print("VIRHE: NHL-kausi", kausi, vastaus.status_code)
+        return []
+    # gameStateId 6 tai 7 = peli päättynyt
+    return [peli for peli in vastaus.json()["data"] if peli["gameStateId"] in [6, 7]]
+
+
+def muunna_nhl(peli, joukkueet):
+    koti = joukkueet[peli["homeTeamId"]]
+    vieras = joukkueet[peli["visitingTeamId"]]
+    koti = NHL_NIMET.get(koti, koti)
+    vieras = NHL_NIMET.get(vieras, vieras)
+
+    k = peli["homeScore"]
+    v = peli["visitingScore"]
+    jatkoaika = peli["period"] > 3      # 4 = jatkoaika, 5 = voittolaukaukset
+
+    if jatkoaika:
+        pienempi = min(k, v)
+        k60 = pienempi
+        v60 = pienempi
+    else:
+        k60 = k
+        v60 = v
+
+    # NHL:n oma pelipäivä (itärannikon aika). Kellonajaksi keskipäivä, jotta
+    # .date() antaa aina oikean päivän eikä UTC:n "huomista".
+    paiva = datetime.fromisoformat(peli["gameDate"] + "T12:00:00+00:00")
+
+    return {
+        "koti": koti,
+        "vieras": vieras,
+        "k60": k60,
+        "v60": v60,
+        "koti_voitti": k > v,
+        "jatkoaika": jatkoaika,
+        "paiva": paiva,
+        "kausi": kausi_vuosi(paiva),
+    }
+
 
 def hae_pelit(sarja):
     # Hakee ja muuntaa kaikkien kausien pelit samaan muotoon
@@ -129,6 +196,11 @@ def hae_pelit(sarja):
         for kausi in SHL_KAUDET:
             for peli in hae_shl_kausi(SHL_KAUDET[kausi]):
                 pelit.append(muunna_shl(peli))
+    elif sarja == "NHL":
+        joukkueet = hae_nhl_joukkueet()
+        for kausi in NHL_KAUDET:
+            for peli in hae_nhl_kausi(kausi):
+                pelit.append(muunna_nhl(peli, joukkueet))
 
     # Merkitään jokaiseen peliin, pelasiko joukkue edellisenä päivänä
     pelipaivat = {}
@@ -391,7 +463,7 @@ if __name__ == "__main__":
         json.dump(tallennettavat, tiedosto, ensure_ascii=False, indent=2)
     print()
     print("Malli tallennettu sarjoille:", ", ".join(tallennettavat))
-    
+
     if TESTAA:
         testipelit = hae_pelit(TESTATTAVA_SARJA)
         print()
@@ -407,21 +479,24 @@ if __name__ == "__main__":
             print(f"  {j:16} hyökkäys {testimalli['hyok'][j]:.2f}   puolustus {testimalli['puol'][j]:.2f}")
 
         print()
-        asetukset = SARJA_ASETUKSET[TESTATTAVA_SARJA]
-        print("Väsymystesti, tämä kestää pari minuuttia...")
-        koko_enn = keraa_ennusteet(testipelit, PUOLIINTUMINEN, KUTISTUS, asetukset["kausikerroin"])
+        print("NHL-testi, tämä kestää useita minuutteja...")
 
-        # Vain pelit, joissa TASAN toinen joukkue pelasi eilen: niissä korjaus vaikuttaa eniten
-        epatasaiset = [e for e in koko_enn if e["koti_eilen"] != e["vieras_eilen"]]
-        print("Arvioituja pelejä", len(koko_enn), "| joista vain toinen pelasi eilen", len(epatasaiset))
+        for kausikerroin in [0.5]:
+            enn = keraa_ennusteet(testipelit, PUOLIINTUMINEN, KUTISTUS, kausikerroin)
+            ep = [e for e in enn if e["koti_eilen"] != e["vieras_eilen"]]
+
+            print()
+            print("Kausikerroin", kausikerroin, "| arvioituja pelejä", len(enn),
+                  "| joista vain toinen pelasi eilen", len(ep))
+            print("Tasapelik. | Väsymys | 1X2 Brier | Voittaja Brier | Epätas. 1X2 | Tasapelit enn. / tot.")
+
+            for tasapelikerroin in [1.5, 1.6, 1.7, 1.8]:
+                for vasymys in [0.03, 0.045, 0.06, 0.08]:
+                    t = pisteyta(enn, tasapelikerroin, vasymys)
+                    ep_1x2 = pisteyta(ep, tasapelikerroin, vasymys)["1x2"] if ep else 0
+                    print(f"   {tasapelikerroin:4.2f}    |  {vasymys:.2f}   |  {t['1x2']:.5f}  |"
+                          f"    {t['voittaja']:.5f}    |   {ep_1x2:.5f}   |"
+                          f"  {t['ennustettu_tasan']:.1%} / {t['toteutunut_tasan']:.1%}")
+
         print()
-        print("Väsymys | Kaikki 1X2 | Kaikki Voittaja | Epätasaiset 1X2 | Epätasaiset Voittaja")
-
-        for vasymys in [0.0, 0.01, 0.02, 0.03, 0.04, 0.05]:
-            kaikki = pisteyta(koko_enn, asetukset["tasapelikerroin"], vasymys)
-            ep = pisteyta(epatasaiset, asetukset["tasapelikerroin"], vasymys)
-            print(f"  {vasymys:.2f}  |  {kaikki['1x2']:.5f}   |    {kaikki['voittaja']:.5f}     |"
-                  f"     {ep['1x2']:.5f}     |     {ep['voittaja']:.5f}")
-
-        print()
-        print(f"Perustaso 1X2: {kaikki['perus']:.5f}")
+        print(f"Perustaso 1X2: {t['perus']:.5f}")

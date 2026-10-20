@@ -16,7 +16,7 @@ MAX_TUNNIT = 24              # vain seuraavan 24 tunnin ottelut
 PANOS = 10                   # leikkieuroa per veto
 KIRJANPITO = "kirjanpito.json"   # oikeat leikkirahavedot
 VARJO = "varjo.json"             # kaikki ehdokkaat tilastoa varten
-VERSIO = 5                     # 3 = Poisson-malli Liigaan
+VERSIO = 6                     # 3 = Poisson-malli Liigaan
 
 # Yhtiöt, joilta paras kerroin saa tulla (nimet täsmälleen kuten tulosteessa)
 KAYTETTAVAT_YHTIOT = [
@@ -63,6 +63,9 @@ MALLIN_NIMET = {
         "Luleå HF": "Luleå Hockey",
         "Örebro HK": "Örebro Hockey",
         "IF Björklöven": "Björklöven",
+    },
+        "NHL": {
+        "St Louis Blues": "St. Louis Blues",
     },
 }
 
@@ -136,7 +139,11 @@ def mallin_arviot(ottelu, tyyppi):
 
     # Väsymys: pelasiko joukkue ottelupäivää edeltävänä päivänä?
     alkaa = datetime.fromisoformat(ottelu["commence_time"].replace("Z", "+00:00"))
-    eilen = (alkaa.date() - timedelta(days=1)).isoformat()
+    # Pelipäivä Pohjois-Amerikan aikaan: UTC miinus 6 tuntia. NHL-peli, joka alkaa
+    # klo 00.30 UTC, on siellä vielä edellistä päivää. Liigaan ja SHL:ään tämä
+    # ei vaikuta, koska niiden pelit alkavat iltapäivällä UTC-aikaa.
+    pelipaiva = (alkaa - timedelta(hours=6)).date()
+    eilen = (pelipaiva - timedelta(days=1)).isoformat()
     viimeisimmat = pmalli.get("viimeisin_peli", {})
     koti_eilen = viimeisimmat.get(m_koti) == eilen
     vieras_eilen = viimeisimmat.get(m_vieras) == eilen
