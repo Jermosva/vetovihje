@@ -75,7 +75,7 @@ else:
 
 loydetyt = []     # vedot, jotka ylittävät rajat -> oikeaan kirjanpitoon
 ehdokkaat = []    # kaikki positiiviset valuet -> varjokirjanpitoon
-
+nykyiset = {}     # (ottelun id, vetotyyppi, valinta) -> markkinan todennäköisyys nyt
 
 # ===== FUNKTIOT =====
 def markkinan_tyyppi(markkina, ottelu):
@@ -173,6 +173,25 @@ def tee_veto(ottelu, tyyppi, valinta, kerroin, yhtio, value, lahde):
         "lahde": lahde,
     }
 
+def paivita_clv(vedot):
+    # CLV = kuinka hyvä saamamme kerroin on markkinan UUSIMMAN arvion mukaan.
+    # Päivitetään vain avoimet vedot, joiden ottelu on yhä tulossa.
+    # Viimeisin päivitys ennen pelin alkua jää voimaan.
+    paivitettyja = 0
+    for veto in vedot:
+        if veto["tila"] != "avoin":
+            continue
+        avain = (veto["id"], veto["tyyppi"], veto["valinta"])
+        if avain not in nykyiset:
+            continue        # ottelu jo alkanut tai valintaa ei löydy enää
+
+        tn_nyt = nykyiset[avain]
+        veto["reilu_nyt"] = round(tn_nyt, 4)
+        veto["clv"] = round((tn_nyt * veto["kerroin"] - 1) * 100, 1)
+        veto["clv_aika"] = nyt.isoformat()
+        paivitettyja += 1
+    return paivitettyja
+
 
 # ===== OTTELUIDEN KÄSITTELY =====
 with open("ottelut.json", "r", encoding="utf-8") as tiedosto:
@@ -258,7 +277,7 @@ for ottelu in ottelut:
                 oikea = sum(reilut[nimi]) / yhtioita
                 lahde = "keskiarvo"
 
-            markkinan_tn[nimi] = oikea
+            nykyiset[(ottelu["id"], tyyppi, nimi)] = oikea
 
             paras = parhaat[nimi]
             value = (oikea * paras - 1) * 100
@@ -354,6 +373,8 @@ if os.path.exists(KIRJANPITO):
 else:
     kirjanpito = []
 
+clv_kirjanpito = paivita_clv(kirjanpito)
+
 kirjatut = []
 for rivi in kirjanpito:
     kirjatut.append(rivi["id"])
@@ -384,6 +405,7 @@ if os.path.exists(VARJO):
         varjo = json.load(tiedosto)
 else:
     varjo = []
+clv_varjo = paivita_clv(varjo)
 
 # set = joukko, jossa sama arvo voi olla vain kerran
 avaimet = set()
@@ -407,3 +429,21 @@ with open(VARJO, "w", encoding="utf-8") as tiedosto:
     json.dump(varjo, tiedosto, ensure_ascii=False, indent=2)
 
 print("Varjokirjanpitoon lisätty", uusia_varjo, "ehdokasta. Yhteensä", len(varjo), ".")
+
+# ===== CLV-YHTEENVETO =====
+print()
+print("CLV päivitetty: kirjanpito", clv_kirjanpito, "| varjo", clv_varjo)
+
+clv_ryhmat = {}   # menetelmä -> lista CLV-arvoja
+for rivi in varjo:
+    if "clv" not in rivi:
+        continue
+    nimi = "Poisson-malli" if rivi["lahde"] == "Poisson-malli" else "Kerroinvertailu"
+    if nimi not in clv_ryhmat:
+        clv_ryhmat[nimi] = []
+    clv_ryhmat[nimi].append(rivi["clv"])
+
+for nimi in clv_ryhmat:
+    lista = clv_ryhmat[nimi]
+    print("  Keskimääräinen CLV,", nimi + ":", round(sum(lista) / len(lista), 1),
+          "% (" + str(len(lista)), "vetoa)")
