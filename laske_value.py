@@ -3,7 +3,7 @@ import os
 from datetime import date, datetime, timezone, timedelta
 
 # Oman Poisson-mallin funktiot (poisson_malli.py samassa kansiossa)
-from poisson_malli import maaliodotukset, todennakoisyydet
+from poisson_malli import maaliodotukset, todennakoisyydet, vasymyskorjaus
 
 # ===== ASETUKSET =====
 MAX_MARGINAALI = 10          # yhtiöt, joiden marginaali on tätä suurempi, eivät vaikuta "oikeaan" arvioon
@@ -16,7 +16,7 @@ MAX_TUNNIT = 24              # vain seuraavan 24 tunnin ottelut
 PANOS = 10                   # leikkieuroa per veto
 KIRJANPITO = "kirjanpito.json"   # oikeat leikkirahavedot
 VARJO = "varjo.json"             # kaikki ehdokkaat tilastoa varten
-VERSIO = 4                      # 3 = Poisson-malli Liigaan
+VERSIO = 5                     # 3 = Poisson-malli Liigaan
 
 # Yhtiöt, joilta paras kerroin saa tulla (nimet täsmälleen kuten tulosteessa)
 KAYTETTAVAT_YHTIOT = [
@@ -133,6 +133,18 @@ def mallin_arviot(ottelu, tyyppi):
         return None
 
     lk, lv = maaliodotukset(pmalli, m_koti, m_vieras)
+
+    # Väsymys: pelasiko joukkue ottelupäivää edeltävänä päivänä?
+    alkaa = datetime.fromisoformat(ottelu["commence_time"].replace("Z", "+00:00"))
+    eilen = (alkaa.date() - timedelta(days=1)).isoformat()
+    viimeisimmat = pmalli.get("viimeisin_peli", {})
+    koti_eilen = viimeisimmat.get(m_koti) == eilen
+    vieras_eilen = viimeisimmat.get(m_vieras) == eilen
+    lk, lv = vasymyskorjaus(lk, lv, koti_eilen, vieras_eilen, pmalli.get("vasymys", 0))
+
+    if koti_eilen or vieras_eilen:
+        print("    (väsymyskorjaus:", m_koti if koti_eilen else "", m_vieras if vieras_eilen else "",
+              "pelasi eilen)")
     t = todennakoisyydet(lk, lv, pmalli["tasapelikerroin"])
     jakauma = t["jakauma"]
 
