@@ -608,11 +608,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-20",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 4,
     "reilu_nyt": 0.5487,
     "clv": 4.8,
-    "clv_aika": "2026-10-20T21:03:17.027880+00:00"
+    "clv_aika": "2026-10-20T21:03:17.027880+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -627,11 +628,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-20",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 4,
     "reilu_nyt": 0.5241,
     "clv": 4.8,
-    "clv_aika": "2026-10-20T21:03:17.027880+00:00"
+    "clv_aika": "2026-10-20T21:03:17.027880+00:00",
+    "voitto": 10.0
   },
   {
     "sarja": "NHL",
@@ -646,11 +648,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-20",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 4,
     "reilu_nyt": 0.5535,
     "clv": 5.7,
-    "clv_aika": "2026-10-20T21:03:17.027880+00:00"
+    "clv_aika": "2026-10-20T21:03:17.027880+00:00",
+    "voitto": -10
   },
   {
     "sarja": "SHL",
@@ -682,11 +685,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-20",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 4,
     "reilu_nyt": 0.3006,
     "clv": 11.2,
-    "clv_aika": "2026-10-20T21:03:17.027880+00:00"
+    "clv_aika": "2026-10-20T21:03:17.027880+00:00",
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -702,7 +706,10 @@
     "pvm": "2026-10-21",
     "panos": 10,
     "tila": "avoin",
-    "versio": 6
+    "versio": 6,
+    "reilu_nyt": 0.4482,
+    "clv": 3.1,
+    "clv_aika": "2026-10-21T14:14:03.963512+00:00"
   },
   {
     "sarja": "NHL",
@@ -717,8 +724,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-21",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 6
+    "tila": "ei osunut",
+    "versio": 6,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -733,7 +741,8 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-21",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 6
+    "tila": "osui",
+    "versio": 6,
+    "voitto": 9.1
   }
 ]
