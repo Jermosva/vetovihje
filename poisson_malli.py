@@ -23,7 +23,7 @@ NHL_NIMET = {
     "Utah Hockey Club": "Utah Mammoth",
 }
 
-TESTATTAVA_SARJA = "NHL"     # kumpaa sarjaa walk-forward-testi koskee: "Liiga" tai "SHL"
+TESTATTAVA_SARJA = "Liiga"     # kumpaa sarjaa walk-forward-testi koskee: "Liiga" tai "SHL"
 PUOLIINTUMINEN = 180     # päivää: näin vanha peli painaa puolet tuoreesta
 KUTISTUS = 20             # "keskiarvopelejä", joilla harvoin pelanneet vedetään kohti keskitasoa
 KIERROKSET = 30          # montako kertaa voimat lasketaan uudelleen
@@ -33,9 +33,9 @@ KAUSIKERROIN = 0.5       # edellisen kauden pelien lisäpaino (1.0 = ei vaikutus
 ALKUKAUSI_KUUKAUDET = [9, 10]   # syys- ja lokakuu = "kauden alku" testissä
 # Testeissä löydetyt sarjakohtaiset asetukset
 SARJA_ASETUKSET = {
-    "Liiga": {"kausikerroin": 0.5, "tasapelikerroin": 1.3, "vasymys": 0.02},
-    "SHL":   {"kausikerroin": 1.0, "tasapelikerroin": 1.15, "vasymys": 0.0},
-    "NHL":   {"kausikerroin": 0.5, "tasapelikerroin": 1.7,  "vasymys": 0.04},
+    "Liiga": {"kausikerroin": 0.5, "tasapelikerroin": 1.3,  "vasymys": 0.02, "xg_paino": 0.8},
+    "SHL":   {"kausikerroin": 1.0, "tasapelikerroin": 1.15, "vasymys": 0.0,  "xg_paino": 0.0},
+    "NHL":   {"kausikerroin": 0.5, "tasapelikerroin": 1.7,  "vasymys": 0.04, "xg_paino": 0.0},
 }
 
 TESTAA = False            # True = aja walk-forward-testi (hidas), False = vain sovitus
@@ -85,6 +85,8 @@ def muunna(peli):
         "jatkoaika": jatkoaika,
         "paiva": paiva,
         "kausi": kausi_vuosi(paiva),
+        "kxg": peli.get("expectedHomeTeamGoals"),
+        "vxg": peli.get("expectedAwayTeamGoals"),
     }
 
 def hae_shl_kausi(tunnus):
@@ -126,6 +128,8 @@ def muunna_shl(peli):
         "jatkoaika": jatkoaika,
         "paiva": paiva,
         "kausi": kausi_vuosi(paiva),
+        "kxg": None,
+        "vxg": None,
     }
 
 def hae_nhl_joukkueet():
@@ -182,7 +186,20 @@ def muunna_nhl(peli, joukkueet):
         "jatkoaika": jatkoaika,
         "paiva": paiva,
         "kausi": kausi_vuosi(paiva),
+        "kxg": None,
+        "vxg": None,
     }
+
+def aseta_xg(pelit, xg_paino):
+    # Mallin "maalit" = sekoitus oikeista maaleista ja odotetuista maaleista (xG).
+    # xg_paino 0 = vain oikeat maalit, 1 = vain xG. Jos xG puuttuu, käytetään oikeita.
+    for p in pelit:
+        if p["kxg"] is None or p["vxg"] is None:
+            p["k_malli"] = p["k60"]
+            p["v_malli"] = p["v60"]
+        else:
+            p["k_malli"] = (1 - xg_paino) * p["k60"] + xg_paino * p["kxg"]
+            p["v_malli"] = (1 - xg_paino) * p["v60"] + xg_paino * p["vxg"]
 
 
 def hae_pelit(sarja):
@@ -215,12 +232,16 @@ def hae_pelit(sarja):
         p["koti_eilen"] = eilen in pelipaivat[p["koti"]]
         p["vieras_eilen"] = eilen in pelipaivat[p["vieras"]]
 
+    aseta_xg(pelit, 0)      # oletus: vain oikeat maalit
     return pelit
 
 # ===== MALLIN SOVITUS (hidas osa) =====
 def sovita(pelit, hetki, puoliintuminen=PUOLIINTUMINEN, kutistus=KUTISTUS,
            kausikerroin=KAUSIKERROIN):
-    # 1. Aikapainot: tuore peli painaa 1, PUOLIINTUMINEN päivää vanha 0,5 jne.
+    # Voimat lasketaan kentistä k_malli ja v_malli: oikeat maalit tai
+    # sekoitus oikeista maaleista ja xG:stä (ks. aseta_xg).
+
+    # 1. Aikapainot: tuore peli painaa 1, puoliintuminen päivää vanha 0,5 jne.
     painot = []
     nykyinen_kausi = kausi_vuosi(hetki)
     for p in pelit:
@@ -228,10 +249,13 @@ def sovita(pelit, hetki, puoliintuminen=PUOLIINTUMINEN, kutistus=KUTISTUS,
         kausiero = nykyinen_kausi - p["kausi"]      # 0 = tämä kausi, 1 = viime kausi...
         painot.append(0.5 ** (ika_paivina / puoliintuminen) * kausikerroin ** kausiero)
 
-    # 2. Keskimääräiset maalit kotona ja vieraissa (painotettuina)
+    # 2. Keskiarvot: mallin maaleista voimien laskentaan,
+    #    oikeista maaleista ennusteen maalimäärään
     paino_summa = sum(painot)
-    koti_ka = sum(w * p["k60"] for w, p in zip(painot, pelit)) / paino_summa
-    vieras_ka = sum(w * p["v60"] for w, p in zip(painot, pelit)) / paino_summa
+    koti_ka = sum(w * p["k_malli"] for w, p in zip(painot, pelit)) / paino_summa
+    vieras_ka = sum(w * p["v_malli"] for w, p in zip(painot, pelit)) / paino_summa
+    koti_ka_oikea = sum(w * p["k60"] for w, p in zip(painot, pelit)) / paino_summa
+    vieras_ka_oikea = sum(w * p["v60"] for w, p in zip(painot, pelit)) / paino_summa
 
     # 3. Kaikki aloittavat keskitasolta
     joukkueet = set()
@@ -246,9 +270,9 @@ def sovita(pelit, hetki, puoliintuminen=PUOLIINTUMINEN, kutistus=KUTISTUS,
         tehty = {j: 0.0 for j in joukkueet}
         odotettu = {j: 0.0 for j in joukkueet}
         for w, p in zip(painot, pelit):
-            tehty[p["koti"]] += w * p["k60"]
+            tehty[p["koti"]] += w * p["k_malli"]
             odotettu[p["koti"]] += w * koti_ka * puol[p["vieras"]]
-            tehty[p["vieras"]] += w * p["v60"]
+            tehty[p["vieras"]] += w * p["v_malli"]
             odotettu[p["vieras"]] += w * vieras_ka * puol[p["koti"]]
         for j in joukkueet:
             hyok[j] = (tehty[j] + kutistus) / (odotettu[j] + kutistus)
@@ -256,15 +280,14 @@ def sovita(pelit, hetki, puoliintuminen=PUOLIINTUMINEN, kutistus=KUTISTUS,
         paastetty = {j: 0.0 for j in joukkueet}
         odotettu = {j: 0.0 for j in joukkueet}
         for w, p in zip(painot, pelit):
-            paastetty[p["koti"]] += w * p["v60"]
+            paastetty[p["koti"]] += w * p["v_malli"]
             odotettu[p["koti"]] += w * vieras_ka * hyok[p["vieras"]]
-            paastetty[p["vieras"]] += w * p["k60"]
+            paastetty[p["vieras"]] += w * p["k_malli"]
             odotettu[p["vieras"]] += w * koti_ka * hyok[p["koti"]]
         for j in joukkueet:
             puol[j] = (paastetty[j] + kutistus) / (odotettu[j] + kutistus)
 
-    return {"koti_ka": koti_ka, "vieras_ka": vieras_ka, "hyok": hyok, "puol": puol}
-
+    return {"koti_ka": koti_ka_oikea, "vieras_ka": vieras_ka_oikea, "hyok": hyok, "puol": puol}
 
 # ===== ENNUSTE (nopea osa) =====
 def poisson(maalit, odotus):
@@ -432,6 +455,8 @@ if __name__ == "__main__":
             print("VAROITUS:", sarja, "- pelejä ei saatu, vanha malli jää voimaan")
             continue
 
+        aseta_xg(pelit, asetukset["xg_paino"])
+
         malli = sovita(pelit, nyt, kausikerroin=asetukset["kausikerroin"])
         # Jokaisen joukkueen viimeisin pelattu päivä (väsymyskorjausta varten)
         viimeisimmat = {}
@@ -479,24 +504,19 @@ if __name__ == "__main__":
             print(f"  {j:16} hyökkäys {testimalli['hyok'][j]:.2f}   puolustus {testimalli['puol'][j]:.2f}")
 
         print()
-        print("NHL-testi, tämä kestää useita minuutteja...")
+        asetukset = SARJA_ASETUKSET[TESTATTAVA_SARJA]
+        xg_pelit = sum(1 for p in testipelit if p["kxg"] is not None)
+        print("xG löytyy", xg_pelit, "/", len(testipelit), "pelistä")
+        print("xG-testi, 5 ajoa, tämä kestää useita minuutteja...")
+        print()
+        print("xG-paino | 1X2 Brier | Voittaja Brier | Tasapelit enn. / tot.")
 
-        for kausikerroin in [0.5]:
-            enn = keraa_ennusteet(testipelit, PUOLIINTUMINEN, KUTISTUS, kausikerroin)
-            ep = [e for e in enn if e["koti_eilen"] != e["vieras_eilen"]]
-
-            print()
-            print("Kausikerroin", kausikerroin, "| arvioituja pelejä", len(enn),
-                  "| joista vain toinen pelasi eilen", len(ep))
-            print("Tasapelik. | Väsymys | 1X2 Brier | Voittaja Brier | Epätas. 1X2 | Tasapelit enn. / tot.")
-
-            for tasapelikerroin in [1.5, 1.6, 1.7, 1.8]:
-                for vasymys in [0.03, 0.045, 0.06, 0.08]:
-                    t = pisteyta(enn, tasapelikerroin, vasymys)
-                    ep_1x2 = pisteyta(ep, tasapelikerroin, vasymys)["1x2"] if ep else 0
-                    print(f"   {tasapelikerroin:4.2f}    |  {vasymys:.2f}   |  {t['1x2']:.5f}  |"
-                          f"    {t['voittaja']:.5f}    |   {ep_1x2:.5f}   |"
-                          f"  {t['ennustettu_tasan']:.1%} / {t['toteutunut_tasan']:.1%}")
+        for xg_paino in [0.0, 0.3, 0.5, 0.7, 1.0]:
+            aseta_xg(testipelit, xg_paino)
+            enn = keraa_ennusteet(testipelit, PUOLIINTUMINEN, KUTISTUS, asetukset["kausikerroin"])
+            t = pisteyta(enn, asetukset["tasapelikerroin"], asetukset["vasymys"])
+            print(f"   {xg_paino:.1f}   |  {t['1x2']:.5f}  |    {t['voittaja']:.5f}    |"
+                  f"  {t['ennustettu_tasan']:.1%} / {t['toteutunut_tasan']:.1%}")
 
         print()
         print(f"Perustaso 1X2: {t['perus']:.5f}")

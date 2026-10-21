@@ -16,7 +16,7 @@ MAX_TUNNIT = 24              # vain seuraavan 24 tunnin ottelut
 PANOS = 10                   # leikkieuroa per veto
 KIRJANPITO = "kirjanpito.json"   # oikeat leikkirahavedot
 VARJO = "varjo.json"             # kaikki ehdokkaat tilastoa varten
-VERSIO = 6                       # 6 = Poisson-malli NHL:ään
+VERSIO = 7                       # 6 = Poisson-malli NHL:ään
 
 # Yhtiöt, joilta paras kerroin saa tulla (nimet täsmälleen kuten tulosteessa)
 KAYTETTAVAT_YHTIOT = [
