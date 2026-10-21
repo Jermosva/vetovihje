@@ -87,6 +87,7 @@ def muunna(peli):
         "kausi": kausi_vuosi(paiva),
         "kxg": peli.get("expectedHomeTeamGoals"),
         "vxg": peli.get("expectedAwayTeamGoals"),
+                "id_avain": str(peli["season"]) + "_" + str(peli["id"]),
     }
 
 def hae_shl_kausi(tunnus):
@@ -130,6 +131,7 @@ def muunna_shl(peli):
         "kausi": kausi_vuosi(paiva),
         "kxg": None,
         "vxg": None,
+        "id_avain": None,
     }
 
 def hae_nhl_joukkueet():
@@ -188,6 +190,7 @@ def muunna_nhl(peli, joukkueet):
         "kausi": kausi_vuosi(paiva),
         "kxg": None,
         "vxg": None,
+        "id_avain": None,
     }
 
 def aseta_xg(pelit, xg_paino):
@@ -231,6 +234,17 @@ def hae_pelit(sarja):
         eilen = p["paiva"].date() - timedelta(days=1)
         p["koti_eilen"] = eilen in pelipaivat[p["koti"]]
         p["vieras_eilen"] = eilen in pelipaivat[p["vieras"]]
+
+    # Aloittavat maalivahdit (vain Liiga, tiedosto tehdään hae_maalivahdit.py:llä)
+    maalivahdit = {}
+    if sarja == "Liiga" and os.path.exists("liiga_maalivahdit.json"):
+        with open("liiga_maalivahdit.json", "r", encoding="utf-8") as tiedosto:
+            maalivahdit = json.load(tiedosto)
+
+    for p in pelit:
+        tieto = maalivahdit.get(p["id_avain"]) if p["id_avain"] else None
+        p["koti_mv"] = tieto["koti"]["id"] if tieto and tieto["koti"] else None
+        p["vieras_mv"] = tieto["vieras"]["id"] if tieto and tieto["vieras"] else None
 
     aseta_xg(pelit, 0)      # oletus: vain oikeat maalit
     return pelit
@@ -312,6 +326,92 @@ def vasymyskorjaus(lk, lv, koti_eilen, vieras_eilen, vasymys):
         lk *= 1 + vasymys
     return lk, lv
 
+def maalivahtien_summat(pelit):
+    # Jokaiselle maalivahdille: (odotetut − päästetyt maalit, odotetut maalit),
+    # keskitettynä niin, että liigan keskitaso on 0.
+    erotus = {}
+    odotettu = {}
+    kaikki_erotus = 0
+    kaikki_odotettu = 0
+    for p in pelit:
+        if p["kxg"] is None:
+            continue
+        # Kotimaalivahti kohtasi vieraiden maalipaikat ja päinvastoin
+        for mv, paastetyt, xg_vastaan in [(p["koti_mv"], p["v60"], p["vxg"]),
+                                          (p["vieras_mv"], p["k60"], p["kxg"])]:
+            kaikki_erotus += xg_vastaan - paastetyt
+            kaikki_odotettu += xg_vastaan
+            if mv is None:
+                continue
+            erotus[mv] = erotus.get(mv, 0) + (xg_vastaan - paastetyt)
+            odotettu[mv] = odotettu.get(mv, 0) + xg_vastaan
+
+    if kaikki_odotettu == 0:
+        return {}
+    keskitaso = kaikki_erotus / kaikki_odotettu
+    return {mv: (erotus[mv] - keskitaso * odotettu[mv], odotettu[mv]) for mv in erotus}
+
+
+def mv_taso(summat, kutistus):
+    # Maalivahdin taso: +0.05 = päästää 5 % odotettua vähemmän
+    if summat is None:
+        return 0
+    erotus, odotettu = summat
+    return erotus / (odotettu + kutistus)
+
+def todennakoinen_aloittaja(aiemmat, joukkue, paiva, kierratys, n=5):
+    # Arvaa aloittajan joukkueen viimeisestä n pelistä: useimmin aloittanut,
+    # tasatilanteessa tuorein. Kierrätys: jos joukkue pelasi eilen, eilinen
+    # aloittaja oletetaan lepäävän (jos joukkueella on muitakin vahteja).
+    viimeiset = []      # (maalivahti, pelipäivä), uusin ensin
+    for q in reversed(aiemmat):
+        if q["koti"] == joukkue:
+            viimeiset.append((q["koti_mv"], q["paiva"].date()))
+        elif q["vieras"] == joukkue:
+            viimeiset.append((q["vieras_mv"], q["paiva"].date()))
+        if len(viimeiset) == n:
+            break
+
+    if len(viimeiset) == 0:
+        return None
+
+    ehdokkaat = [mv for mv, _ in viimeiset]
+    if kierratys and viimeiset[0][1] == paiva - timedelta(days=1):
+        eilinen = viimeiset[0][0]
+        muut = [mv for mv in ehdokkaat if mv != eilinen]
+        if muut:
+            ehdokkaat = muut
+
+    return max(ehdokkaat, key=lambda mv: (ehdokkaat.count(mv), -ehdokkaat.index(mv)))
+
+def viimeiset_aloittajat(aiemmat, joukkue, paiva, kierratys, n=10):
+    # Lista joukkueen viimeisen n pelin aloittajista. Kierrätys: jos joukkue
+    # pelasi eilen, eilinen aloittaja poistetaan listasta (jos muita on).
+    viimeiset = []
+    for q in reversed(aiemmat):
+        if q["koti"] == joukkue:
+            viimeiset.append((q["koti_mv"], q["paiva"].date()))
+        elif q["vieras"] == joukkue:
+            viimeiset.append((q["vieras_mv"], q["paiva"].date()))
+        if len(viimeiset) == n:
+            break
+
+    lista = [mv for mv, _ in viimeiset]
+    if kierratys and viimeiset and viimeiset[0][1] == paiva - timedelta(days=1):
+        muut = [mv for mv in lista if mv != viimeiset[0][0]]
+        if muut:
+            lista = muut
+    return lista
+
+
+def mv_taso_lahteesta(e, puoli, lahde, kutistus):
+    # Yksi maalivahti -> sen taso. Lista maalivahteja -> tasojen keskiarvo.
+    arvo = e[puoli + "_mv" + lahde]
+    if isinstance(arvo, list):
+        if len(arvo) == 0:
+            return 0
+        return sum(mv_taso(s, kutistus) for s in arvo) / len(arvo)
+    return mv_taso(arvo, kutistus)
 
 def todennakoisyydet(lk, lv, tasapelikerroin):
     # Tulosjakauma: jokaisen lopputuloksen (k, v) todennäköisyys
@@ -382,6 +482,15 @@ def keraa_ennusteet(pelit, puoliintuminen=PUOLIINTUMINEN, kutistus=KUTISTUS,
             }
 
         lk, lv = maaliodotukset(malli, p["koti"], p["vieras"])
+        paiva_nyt = p["paiva"].date()
+        e1_koti = todennakoinen_aloittaja(aiemmat, p["koti"], paiva_nyt, False)
+        e1_vieras = todennakoinen_aloittaja(aiemmat, p["vieras"], paiva_nyt, False)
+        e2_koti = todennakoinen_aloittaja(aiemmat, p["koti"], paiva_nyt, True)
+        e2_vieras = todennakoinen_aloittaja(aiemmat, p["vieras"], paiva_nyt, True)
+        e3_koti = viimeiset_aloittajat(aiemmat, p["koti"], paiva_nyt, False)
+        e3_vieras = viimeiset_aloittajat(aiemmat, p["vieras"], paiva_nyt, False)
+        e4_koti = viimeiset_aloittajat(aiemmat, p["koti"], paiva_nyt, True)
+        e4_vieras = viimeiset_aloittajat(aiemmat, p["vieras"], paiva_nyt, True)
 
         if p["k60"] > p["v60"]:
             tulos = "koti"
@@ -398,12 +507,24 @@ def keraa_ennusteet(pelit, puoliintuminen=PUOLIINTUMINEN, kutistus=KUTISTUS,
             "perus": perus,
             "koti_eilen": p["koti_eilen"],
             "vieras_eilen": p["vieras_eilen"],
+            "koti_mv": summat.get(p["koti_mv"]),
+            "vieras_mv": summat.get(p["vieras_mv"]),
+            "koti_mv_e1": summat.get(e1_koti),
+            "vieras_mv_e1": summat.get(e1_vieras),
+            "koti_mv_e2": summat.get(e2_koti),
+            "vieras_mv_e2": summat.get(e2_vieras),
+            "osumat_e1": (e1_koti == p["koti_mv"]) + (e1_vieras == p["vieras_mv"]),
+            "osumat_e2": (e2_koti == p["koti_mv"]) + (e2_vieras == p["vieras_mv"]),
+            "koti_mv_e3": [summat.get(mv) for mv in e3_koti],
+            "vieras_mv_e3": [summat.get(mv) for mv in e3_vieras],
+            "koti_mv_e4": [summat.get(mv) for mv in e4_koti],
+            "vieras_mv_e4": [summat.get(mv) for mv in e4_vieras],
         })
 
     return ennusteet
 
 
-def pisteyta(ennusteet, tasapelikerroin, vasymys=0):
+def pisteyta(ennusteet, tasapelikerroin, vasymys=0, mv_paino=0, mv_kutistus=30, mv_lahde=""):
     # NOPEA: laskee tarkkuuden tallennetuista maaliodotuksista
     brier_1x2 = 0
     brier_perus = 0
@@ -413,6 +534,10 @@ def pisteyta(ennusteet, tasapelikerroin, vasymys=0):
 
     for e in ennusteet:
         lk, lv = vasymyskorjaus(e["lk"], e["lv"], e["koti_eilen"], e["vieras_eilen"], vasymys)
+        # Vastustajan maalivahti vähentää (tai lisää) joukkueen maaliodotusta
+        # mv_lahde: "" = oikea aloittaja, "_e1" = arvaus, "_e2" = arvaus + kierrätys
+        lk *= 1 - mv_paino * mv_taso_lahteesta(e, "vieras", mv_lahde, mv_kutistus)
+        lv *= 1 - mv_paino * mv_taso_lahteesta(e, "koti", mv_lahde, mv_kutistus)
         t = todennakoisyydet(lk, lv, tasapelikerroin)
         ennuste = {"koti": t["koti60"], "tasan": t["tasan"], "vieras": t["vieras60"]}
 
@@ -505,18 +630,45 @@ if __name__ == "__main__":
 
         print()
         asetukset = SARJA_ASETUKSET[TESTATTAVA_SARJA]
-        xg_pelit = sum(1 for p in testipelit if p["kxg"] is not None)
-        print("xG löytyy", xg_pelit, "/", len(testipelit), "pelistä")
-        print("xG-testi, 5 ajoa, tämä kestää useita minuutteja...")
-        print()
-        print("xG-paino | 1X2 Brier | Voittaja Brier | Tasapelit enn. / tot.")
+        aseta_xg(testipelit, asetukset["xg_paino"])
 
-        for xg_paino in [0.0, 0.3, 0.5, 0.7, 1.0]:
-            aseta_xg(testipelit, xg_paino)
-            enn = keraa_ennusteet(testipelit, PUOLIINTUMINEN, KUTISTUS, asetukset["kausikerroin"])
-            t = pisteyta(enn, asetukset["tasapelikerroin"], asetukset["vasymys"])
-            print(f"   {xg_paino:.1f}   |  {t['1x2']:.5f}  |    {t['voittaja']:.5f}    |"
-                  f"  {t['ennustettu_tasan']:.1%} / {t['toteutunut_tasan']:.1%}")
-
+        # Tarkistus: parhaat ja heikoimmat maalivahdit
+        with open("liiga_maalivahdit.json", "r", encoding="utf-8") as tiedosto:
+            nimet = {}
+            for tieto in json.load(tiedosto).values():
+                for puoli in ["koti", "vieras"]:
+                    if tieto[puoli]:
+                        nimet[tieto[puoli]["id"]] = tieto[puoli]["nimi"]
+        summat = maalivahtien_summat(testipelit)
+        jarjestys = sorted(summat, key=lambda mv: mv_taso(summat[mv], 30), reverse=True)
         print()
+        print("Parhaat ja heikoimmat maalivahdit (kutistus 30):")
+        for mv in jarjestys[:5] + jarjestys[-5:]:
+            print(f"  {nimet.get(mv, mv):25} taso {mv_taso(summat[mv], 30):+.3f}"
+                  f"   (odotettuja maaleja {summat[mv][1]:.0f})")
+
+        print()        
+        print("Maalivahtitesti, tämä kestää pari minuuttia...")
+        enn = keraa_ennusteet(testipelit, PUOLIINTUMINEN, KUTISTUS, asetukset["kausikerroin"])
+
+        n = len(enn)
+        print()
+        print(f"Arvaus osui: ykkösvahti {sum(e['osumat_e1'] for e in enn) / (2 * n):.1%}"
+              f" | ykkösvahti + kierrätys {sum(e['osumat_e2'] for e in enn) / (2 * n):.1%}")
+        print()
+        print("Aloittaja              | MV-paino | Kutistus | 1X2 Brier | Voittaja Brier")
+
+        tavat = [("", "oikea (tiedossa)"), ("_e1", "arvaus: ykkösvahti"), ("_e2", "arvaus + kierrätys"),
+                 ("_e3", "pehmeä arvaus"), ("_e4", "pehmeä + kierrätys")]
+        for lahde, nimi in tavat:
+            for mv_paino in [0.5, 1.0]:
+                for mv_kutistus in [5, 10, 20]:
+                    t = pisteyta(enn, asetukset["tasapelikerroin"], asetukset["vasymys"],
+                                 mv_paino, mv_kutistus, lahde)
+                    print(f"{nimi:22} |   {mv_paino:.1f}    |   {mv_kutistus:3}    |  {t['1x2']:.5f}  |"
+                          f"    {t['voittaja']:.5f}")
+            print()
+
+        t = pisteyta(enn, asetukset["tasapelikerroin"], asetukset["vasymys"])
+        print(f"Ilman maalivahtia: 1X2 {t['1x2']:.5f} | Voittaja {t['voittaja']:.5f}")
         print(f"Perustaso 1X2: {t['perus']:.5f}")
