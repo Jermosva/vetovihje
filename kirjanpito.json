@@ -705,11 +705,12 @@
     "lahde": "Pinnacle",
     "pvm": "2026-10-21",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 6,
     "reilu_nyt": 0.4482,
     "clv": 3.1,
-    "clv_aika": "2026-10-21T14:14:03.963512+00:00"
+    "clv_aika": "2026-10-21T14:14:03.963512+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
