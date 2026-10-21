@@ -1,5 +1,6 @@
 // Kirjanpito haetaan suoraan GitHubista: sivu näyttää aina uusimman version
 const OSOITE = "https://raw.githubusercontent.com/Jermosva/vetovihje/main/kirjanpito.json";
+const VARJO_OSOITE = "https://raw.githubusercontent.com/Jermosva/vetovihje/main/varjo.json";
 
 // Vedon tila -> merkki
 const MERKIT = {
@@ -23,6 +24,12 @@ function euro(luku) {
   const etumerkki = luku > 0 ? "+" : "";
   // toFixed(2) = kaksi desimaalia, replace vaihtaa pisteen pilkuksi
   return etumerkki + luku.toFixed(2).replace(".", ",") + " €";
+}
+
+// Muuttaa luvun prosenteiksi: 3.14 -> "+3,1 %"
+function prosentti(luku) {
+  const etumerkki = luku > 0 ? "+" : "";
+  return etumerkki + luku.toFixed(1).replace(".", ",") + " %";
 }
 
 function naytaYhteenveto(vedot) {
@@ -99,13 +106,14 @@ function naytaPaivat(vedot) {
 
       const sarja = veto.sarja ? "[" + veto.sarja + "] " : "";
       const voitto = "voitto" in veto ? euro(veto.voitto) : "";
+      const clv = "clv" in veto ? " · CLV " + prosentti(veto.clv) : "";
 
       rivit += `
         <li>
           <span class="merkki">${MERKIT[veto.tila] || ""}</span>
           <div>
             <div class="ottelu">${sarja}${veto.ottelu}</div>
-            <div class="tiedot">${veto.tyyppi} ${veto.valinta} @ ${veto.kerroin} (${veto.yhtio}) · value ${veto.value} %</div>
+            <div class="tiedot">${veto.tyyppi} ${veto.valinta} @ ${veto.kerroin} (${veto.yhtio}) · value ${veto.value} %${clv}</div>
           </div>
           <span class="voitto">${voitto}</span>
         </li>`;
@@ -213,6 +221,60 @@ function naytaErittely(vedot) {
     erittelyTaulukko("Versioittain", versiot);
 }
 
+function naytaClv(vedot) {
+  // Ryhmitellään mitatut vedot menetelmän ja sarjan mukaan
+  const ryhmat = {};
+  for (const veto of vedot) {
+    if (!("clv" in veto)) {
+      continue;                      // tälle vedolle ei ole vielä mittausta
+    }
+    const menetelma = veto.lahde === "Poisson-malli" ? "Poisson-malli" : "Kerroinvertailu";
+    const nimi = menetelma + " · " + (veto.sarja || "Muu");
+
+    if (!(nimi in ryhmat)) {
+      ryhmat[nimi] = { maara: 0, value: 0, clv: 0, positiivisia: 0 };
+    }
+    const r = ryhmat[nimi];
+    r.maara += 1;
+    r.value += veto.value;
+    r.clv += veto.clv;
+    if (veto.clv > 0) {
+      r.positiivisia += 1;
+    }
+  }
+
+  let rivit = "";
+  for (const nimi of Object.keys(ryhmat).sort()) {
+    const r = ryhmat[nimi];
+    const keskiarvo = r.clv / r.maara;
+    const luokka = keskiarvo >= 0 ? "plus" : "miinus";
+    rivit += `
+      <tr>
+        <td>${nimi}</td>
+        <td>${r.maara}</td>
+        <td>${prosentti(r.value / r.maara)}</td>
+        <td class="${luokka}">${prosentti(keskiarvo)}</td>
+        <td>${Math.round(r.positiivisia / r.maara * 100)} %</td>
+      </tr>`;
+  }
+
+  if (rivit === "") {
+    rivit = `<tr><td colspan="5">Ei vielä mittauksia</td></tr>`;
+  }
+
+  document.getElementById("clv").innerHTML = `
+    <div class="erittely-kortti">
+      <h2>Kertoimen liike (CLV)</h2>
+      <p class="selite">Kaikki ehdokkaat. Plus = saimme paremman kertoimen kuin markkinan viimeisin arvio ennen peliä.</p>
+      <table>
+        <thead>
+          <tr><th></th><th>Mitattu</th><th>Value</th><th>CLV</th><th>CLV&nbsp;&gt;&nbsp;0</th></tr>
+        </thead>
+        <tbody>${rivit}</tbody>
+      </table>
+    </div>`;
+}
+
 // async = funktio, joka voi odottaa (await) esim. verkkohakua
 async function lataa() {
   try {
@@ -222,6 +284,10 @@ async function lataa() {
     naytaYhteenveto(vedot);
     naytaErittely(vedot);
     naytaPaivat(vedot);
+
+    const varjoVastaus = await fetch(VARJO_OSOITE + "?t=" + Date.now());
+    const varjo = await varjoVastaus.json();
+    naytaClv(varjo);
   } catch (virhe) {
     // try/catch = jos jokin epäonnistuu, näytetään virhe sivun kaatumisen sijaan
     document.getElementById("paivat").textContent = "Kirjanpidon lataus epäonnistui: " + virhe;

@@ -178,3 +178,13 @@ li {
   text-align: left;
   font-weight: 600;
 }
+
+#clv {
+  margin-bottom: 16px;
+}
+
+.selite {
+  font-size: 0.8em;
+  opacity: 0.7;
+  margin: 0 0 8px 0;
+}

@@ -16,7 +16,7 @@ MAX_TUNNIT = 24              # vain seuraavan 24 tunnin ottelut
 PANOS = 10                   # leikkieuroa per veto
 KIRJANPITO = "kirjanpito.json"   # oikeat leikkirahavedot
 VARJO = "varjo.json"             # kaikki ehdokkaat tilastoa varten
-VERSIO = 6                     # 3 = Poisson-malli Liigaan
+VERSIO = 6                       # 6 = Poisson-malli NHL:ään
 
 # Yhtiöt, joilta paras kerroin saa tulla (nimet täsmälleen kuten tulosteessa)
 KAYTETTAVAT_YHTIOT = [
@@ -48,7 +48,7 @@ YHTIOT_60MIN = [
     "1xBet",
 ]
 
-# Oma Poisson-malli (Liiga): kaikki vetotyypit
+# Oma Poisson-malli (Liiga, SHL, NHL): kaikki vetotyypit
 MALLIN_PAINO = 0.2       # yhdistetty arvio = 80 % markkina + 20 % malli
 MALLI_MIN_VALUE = 4      # yhdistetyn arvion alaraja
 MALLI_MAX_VALUE = 10     # tätä suurempi = epäilyttävä, ei kirjata
@@ -64,12 +64,12 @@ MALLIN_NIMET = {
         "Örebro HK": "Örebro Hockey",
         "IF Björklöven": "Björklöven",
     },
-        "NHL": {
+    "NHL": {
         "St Louis Blues": "St. Louis Blues",
     },
 }
 
-# Luetaan mallit: {"Liiga": {...}, "SHL": {...}}
+# Luetaan mallit: {"Liiga": {...}, "SHL": {...}, "NHL": {...}}
 if os.path.exists("poisson.json"):
     with open("poisson.json", "r", encoding="utf-8") as tiedosto:
         PMALLIT = json.load(tiedosto)
@@ -296,6 +296,7 @@ for ottelu in ottelut:
                 oikea = sum(reilut[nimi]) / yhtioita
                 lahde = "keskiarvo"
 
+            markkinan_tn[nimi] = oikea
             nykyiset[(ottelu["id"], tyyppi, nimi)] = oikea
 
             paras = parhaat[nimi]
@@ -325,7 +326,7 @@ for ottelu in ottelut:
                   "| yhtiöitä", yhtioita,
                   merkki)
 
-        # --- Oma Poisson-malli: Liigan kaikki vetotyypit ---
+        # --- Oma Poisson-malli: Liiga, SHL ja NHL ---
         arviot = mallin_arviot(ottelu, tyyppi)
 
         if arviot is not None:
