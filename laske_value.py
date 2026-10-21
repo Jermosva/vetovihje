@@ -1,5 +1,6 @@
 import json
 import os
+import requests
 from datetime import date, datetime, timezone, timedelta
 
 # Oman Poisson-mallin funktiot (poisson_malli.py samassa kansiossa)
@@ -16,7 +17,8 @@ MAX_TUNNIT = 24              # vain seuraavan 24 tunnin ottelut
 PANOS = 10                   # leikkieuroa per veto
 KIRJANPITO = "kirjanpito.json"   # oikeat leikkirahavedot
 VARJO = "varjo.json"             # kaikki ehdokkaat tilastoa varten
-VERSIO = 7                       # 6 = Poisson-malli NHL:ään
+LIIGA_KAUSI = 2027              # liiga.fi:n kausitunnus (päättymisvuosi)
+VERSIO = 8                       # 6 = Poisson-malli NHL:ään
 
 # Yhtiöt, joilta paras kerroin saa tulla (nimet täsmälleen kuten tulosteessa)
 KAYTETTAVAT_YHTIOT = [
@@ -79,6 +81,7 @@ else:
 loydetyt = []     # vedot, jotka ylittävät rajat -> oikeaan kirjanpitoon
 ehdokkaat = []    # kaikki positiiviset valuet -> varjokirjanpitoon
 nykyiset = {}     # (ottelun id, vetotyyppi, valinta) -> markkinan todennäköisyys nyt
+valimuisti = {}   # liiga.fi:n otteluohjelma ja kokoonpanot haetaan vain kerran per ajo
 
 # ===== FUNKTIOT =====
 def markkinan_tyyppi(markkina, ottelu):
@@ -113,6 +116,46 @@ def reilut_todennakoisyydet(vaihtoehdot):
 
     marginaali = (summa - 1) * 100
     return reilut, marginaali
+
+def aloittaja_id(pelaajat):
+    # Aloittava maalivahti = maalivahti, jonka "line" on 1
+    for pelaaja in pelaajat:
+        if pelaaja.get("role") == "GOALIE" and pelaaja.get("line") == 1:
+            return pelaaja["id"]
+    return None
+
+
+def liigan_aloittajat(ottelu, m_koti, m_vieras):
+    # Palauttaa (kotivahdin id, vierasvahdin id) liiga.fi:n kokoonpanosta,
+    # tai None, jos kokoonpanoa ei ole vielä julkaistu.
+    if ottelu["id"] in valimuisti:
+        return valimuisti[ottelu["id"]]
+
+    if "ohjelma" not in valimuisti:
+        osoite = ("https://liiga.fi/api/v2/schedule?tournament=runkosarja&season="
+                  + str(LIIGA_KAUSI))
+        vastaus = requests.get(osoite)
+        valimuisti["ohjelma"] = vastaus.json() if vastaus.status_code == 200 else []
+
+    tulos = None
+    for peli in valimuisti["ohjelma"]:
+        if peli["homeTeamName"] != m_koti or peli["awayTeamName"] != m_vieras:
+            continue
+        if peli["start"][:10] != ottelu["commence_time"][:10]:
+            continue
+
+        osoite = "https://liiga.fi/api/v2/games/" + str(peli["season"]) + "/" + str(peli["id"])
+        vastaus = requests.get(osoite)
+        if vastaus.status_code == 200:
+            data = vastaus.json()
+            koti = aloittaja_id(data.get("homeTeamPlayers", []))
+            vieras = aloittaja_id(data.get("awayTeamPlayers", []))
+            if koti is not None and vieras is not None:
+                tulos = (koti, vieras)
+        break
+
+    valimuisti[ottelu["id"]] = tulos
+    return tulos
 
 
 def mallin_arviot(ottelu, tyyppi):
@@ -152,6 +195,20 @@ def mallin_arviot(ottelu, tyyppi):
     if koti_eilen or vieras_eilen:
         print("    (väsymyskorjaus:", m_koti if koti_eilen else "", m_vieras if vieras_eilen else "",
               "pelasi eilen)")
+
+    # Maalivahdit: jos sarjalla on maalivahtien tasot, aloittajat on oltava tiedossa
+    mv_paino = pmalli.get("mv_paino", 0)
+    if mv_paino > 0:
+        aloittajat = liigan_aloittajat(ottelu, m_koti, m_vieras)
+        if aloittajat is None:
+            print("    (aloittajat eivät vielä tiedossa: ei mallin vetoa)")
+            return None
+        tasot = pmalli.get("mv_tasot", {})
+        koti_taso = tasot.get(str(aloittajat[0]), 0)    # tuntematon vahti = keskitaso
+        vieras_taso = tasot.get(str(aloittajat[1]), 0)
+        lk *= 1 - mv_paino * vieras_taso
+        lv *= 1 - mv_paino * koti_taso
+        print(f"    (maalivahdit: koti {koti_taso:+.3f}, vieras {vieras_taso:+.3f})")
     t = todennakoisyydet(lk, lv, pmalli["tasapelikerroin"])
     jakauma = t["jakauma"]
 

@@ -39,6 +39,9 @@ jobs:
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
 
+      - name: Päivitä maalivahdit
+        run: python hae_maalivahdit.py
+
       - name: Päivitä Poisson-malli
         run: python poisson_malli.py
 
@@ -49,6 +52,6 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-          git add kirjanpito.json varjo.json
+          git add kirjanpito.json varjo.json liiga_maalivahdit.json
           git commit -m "Automaattinen päivitys" || echo "Ei muutoksia"
           git push

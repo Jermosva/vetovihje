@@ -33,9 +33,12 @@ KAUSIKERROIN = 0.5       # edellisen kauden pelien lisäpaino (1.0 = ei vaikutus
 ALKUKAUSI_KUUKAUDET = [9, 10]   # syys- ja lokakuu = "kauden alku" testissä
 # Testeissä löydetyt sarjakohtaiset asetukset
 SARJA_ASETUKSET = {
-    "Liiga": {"kausikerroin": 0.5, "tasapelikerroin": 1.3,  "vasymys": 0.02, "xg_paino": 0.8},
-    "SHL":   {"kausikerroin": 1.0, "tasapelikerroin": 1.15, "vasymys": 0.0,  "xg_paino": 0.0},
-    "NHL":   {"kausikerroin": 0.5, "tasapelikerroin": 1.7,  "vasymys": 0.04, "xg_paino": 0.0},
+    "Liiga": {"kausikerroin": 0.5, "tasapelikerroin": 1.3,  "vasymys": 0.02, "xg_paino": 0.8,
+              "mv_paino": 0.5, "mv_kutistus": 5},
+    "SHL":   {"kausikerroin": 1.0, "tasapelikerroin": 1.15, "vasymys": 0.0,  "xg_paino": 0.0,
+              "mv_paino": 0.0, "mv_kutistus": 5},
+    "NHL":   {"kausikerroin": 0.5, "tasapelikerroin": 1.7,  "vasymys": 0.04, "xg_paino": 0.0,
+              "mv_paino": 0.0, "mv_kutistus": 5},
 }
 
 TESTAA = False            # True = aja walk-forward-testi (hidas), False = vain sovitus
@@ -583,6 +586,9 @@ if __name__ == "__main__":
         aseta_xg(pelit, asetukset["xg_paino"])
 
         malli = sovita(pelit, nyt, kausikerroin=asetukset["kausikerroin"])
+        # Maalivahtien tasot (vain Liiga: muilla ei ole xG:tä eikä aloittajia)
+        summat = maalivahtien_summat(pelit)
+        mv_tasot = {str(mv): mv_taso(summat[mv], asetukset["mv_kutistus"]) for mv in summat}
         # Jokaisen joukkueen viimeisin pelattu päivä (väsymyskorjausta varten)
         viimeisimmat = {}
         for p in pelit:
@@ -598,6 +604,8 @@ if __name__ == "__main__":
             "tasapelikerroin": asetukset["tasapelikerroin"],
             "vasymys": asetukset["vasymys"],
             "viimeisin_peli": viimeisimmat,
+            "mv_paino": asetukset["mv_paino"],
+            "mv_tasot": mv_tasot,
         }
 
         print()
