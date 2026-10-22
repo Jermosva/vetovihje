@@ -3110,11 +3110,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-22",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.2069,
     "clv": -1.7,
-    "clv_aika": "2026-10-22T14:13:17.793525+00:00"
+    "clv_aika": "2026-10-22T14:13:17.793525+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -3197,11 +3198,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-22",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 8,
     "reilu_nyt": 0.5072,
     "clv": 1.4,
-    "clv_aika": "2026-10-22T14:13:17.793525+00:00"
+    "clv_aika": "2026-10-22T14:13:17.793525+00:00",
+    "voitto": 10.0
   },
   {
     "sarja": "SHL",
@@ -3216,11 +3218,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-22",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 8,
     "reilu_nyt": 0.5072,
     "clv": 1.4,
-    "clv_aika": "2026-10-22T14:13:17.793525+00:00"
+    "clv_aika": "2026-10-22T14:13:17.793525+00:00",
+    "voitto": 10.0
   },
   {
     "sarja": "SHL",
@@ -3235,11 +3238,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-22",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 8,
     "reilu_nyt": 0.3048,
     "clv": 0.6,
-    "clv_aika": "2026-10-22T14:13:17.793525+00:00"
+    "clv_aika": "2026-10-22T14:13:17.793525+00:00",
+    "voitto": 23.0
   },
   {
     "sarja": "SHL",
@@ -3254,11 +3258,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-22",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.4405,
     "clv": 10.1,
-    "clv_aika": "2026-10-22T14:13:17.793525+00:00"
+    "clv_aika": "2026-10-22T14:13:17.793525+00:00",
+    "voitto": -10
   },
   {
     "sarja": "SHL",
@@ -3273,11 +3278,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-22",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.4405,
     "clv": 10.1,
-    "clv_aika": "2026-10-22T14:13:17.793525+00:00"
+    "clv_aika": "2026-10-22T14:13:17.793525+00:00",
+    "voitto": -10
   },
   {
     "sarja": "SHL",
@@ -3292,11 +3298,12 @@
     "lahde": "Pinnacle",
     "pvm": "2026-10-22",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 8,
     "reilu_nyt": 0.5633,
     "clv": -3.1,
-    "clv_aika": "2026-10-22T14:13:17.793525+00:00"
+    "clv_aika": "2026-10-22T14:13:17.793525+00:00",
+    "voitto": 7.2
   },
   {
     "sarja": "SHL",
@@ -3311,11 +3318,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-22",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.3076,
     "clv": -4.0,
-    "clv_aika": "2026-10-22T14:13:17.793525+00:00"
+    "clv_aika": "2026-10-22T14:13:17.793525+00:00",
+    "voitto": -10
   },
   {
     "sarja": "SHL",
@@ -3330,11 +3338,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-22",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.3076,
     "clv": -4.0,
-    "clv_aika": "2026-10-22T14:13:17.793525+00:00"
+    "clv_aika": "2026-10-22T14:13:17.793525+00:00",
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -3349,8 +3358,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-22",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -3366,7 +3376,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.2485,
+    "clv": -6.8,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3382,7 +3395,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5188,
+    "clv": -0.9,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3398,7 +3414,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5188,
+    "clv": -0.9,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3414,7 +3433,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5556,
+    "clv": -5.0,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3430,7 +3452,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.393,
+    "clv": -3.7,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3446,7 +3471,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.4936,
+    "clv": -7.7,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3462,7 +3490,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5216,
+    "clv": 9.5,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3478,7 +3509,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5216,
+    "clv": 9.5,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3494,7 +3528,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.491,
+    "clv": -6.2,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3510,7 +3547,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.2265,
+    "clv": -2.2,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3526,7 +3566,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.4379,
+    "clv": -1.5,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3542,7 +3585,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5621,
+    "clv": 7.4,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3558,7 +3604,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5621,
+    "clv": 7.4,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3574,7 +3623,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.4321,
+    "clv": -3.6,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3590,7 +3642,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.2212,
+    "clv": -0.5,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3606,7 +3661,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5536,
+    "clv": -3.7,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3622,7 +3680,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.4475,
+    "clv": 1.6,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3638,7 +3699,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5525,
+    "clv": 5.5,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3654,7 +3718,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5525,
+    "clv": 5.5,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3670,7 +3737,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.2312,
+    "clv": -2.9,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3686,7 +3756,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.4911,
+    "clv": -6.2,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3702,7 +3775,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.2203,
+    "clv": -3.1,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3718,7 +3794,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.4973,
+    "clv": -0.5,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3734,7 +3813,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5837,
+    "clv": -1.4,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3750,7 +3832,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.2496,
+    "clv": -1.4,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3766,7 +3851,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5382,
+    "clv": 1.7,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3782,7 +3870,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5382,
+    "clv": 1.7,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3798,7 +3889,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.2228,
+    "clv": -2.6,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3814,7 +3908,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5322,
+    "clv": 1.7,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3830,7 +3927,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.4678,
+    "clv": 2.0,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3846,7 +3946,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5322,
+    "clv": 1.7,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3862,7 +3965,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5604,
+    "clv": 0.9,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3878,7 +3984,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5604,
+    "clv": 0.9,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3894,7 +4003,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5967,
+    "clv": -1.6,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3910,7 +4022,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.2887,
+    "clv": -1.9,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3926,7 +4041,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5417,
+    "clv": 3.5,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3942,7 +4060,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5417,
+    "clv": 3.5,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -3958,7 +4079,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5925,
+    "clv": -4.0,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "SHL",
@@ -3973,8 +4097,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-22",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "osui",
+    "versio": 8,
+    "voitto": 7.9
   },
   {
     "sarja": "SHL",
@@ -3989,8 +4114,9 @@
     "lahde": "Pinnacle",
     "pvm": "2026-10-22",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "SHL",
@@ -4005,8 +4131,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-22",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "SHL",
@@ -4021,8 +4148,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-22",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "osui",
+    "versio": 8,
+    "voitto": 9.1
   },
   {
     "sarja": "SHL",
@@ -4037,8 +4165,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-22",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "osui",
+    "versio": 8,
+    "voitto": 9.1
   },
   {
     "sarja": "SHL",
@@ -4052,6 +4181,295 @@
     "value": 0.9,
     "lahde": "Poisson-malli",
     "pvm": "2026-10-22",
+    "panos": 10,
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
+  },
+  {
+    "sarja": "Liiga",
+    "id": "5ddd8399b67e89af05168b3a6d1340a9",
+    "alkaa": "2026-10-23T15:30:00Z",
+    "ottelu": "Jukurit - Ilves",
+    "tyyppi": "Yli/alle 4.5",
+    "valinta": "Over",
+    "kerroin": 1.89,
+    "yhtio": "Coolbet",
+    "value": 0.5,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-23",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "Liiga",
+    "id": "5ddd8399b67e89af05168b3a6d1340a9",
+    "alkaa": "2026-10-23T15:30:00Z",
+    "ottelu": "Jukurit - Ilves",
+    "tyyppi": "Yli/alle 4.5",
+    "valinta": "Under",
+    "kerroin": 2.38,
+    "yhtio": "888sport",
+    "value": 11.4,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-23",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "Liiga",
+    "id": "019cafc32524e883c48cb1de0a90d1ac",
+    "alkaa": "2026-10-23T15:30:00Z",
+    "ottelu": "Lukko - TPS",
+    "tyyppi": "Voittaja",
+    "valinta": "TPS",
+    "kerroin": 2.15,
+    "yhtio": "888sport",
+    "value": 1.5,
+    "lahde": "Pinnacle",
+    "pvm": "2026-10-23",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "Liiga",
+    "id": "019cafc32524e883c48cb1de0a90d1ac",
+    "alkaa": "2026-10-23T15:30:00Z",
+    "ottelu": "Lukko - TPS",
+    "tyyppi": "1X2",
+    "valinta": "TPS",
+    "kerroin": 2.8,
+    "yhtio": "Coolbet",
+    "value": 0.0,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-23",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "Liiga",
+    "id": "71163a0432ddcf080978f7c9378645ea",
+    "alkaa": "2026-10-23T15:30:00Z",
+    "ottelu": "Sport - SaiPa",
+    "tyyppi": "Voittaja",
+    "valinta": "Sport",
+    "kerroin": 2.4,
+    "yhtio": "Veikkaus (FI)",
+    "value": 0.8,
+    "lahde": "Pinnacle",
+    "pvm": "2026-10-23",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "Liiga",
+    "id": "71163a0432ddcf080978f7c9378645ea",
+    "alkaa": "2026-10-23T15:30:00Z",
+    "ottelu": "Sport - SaiPa",
+    "tyyppi": "1X2",
+    "valinta": "Sport",
+    "kerroin": 3.5,
+    "yhtio": "Coolbet",
+    "value": 2.9,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-23",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "921ae4814ca448a3040aa6de5b0fb9e9",
+    "alkaa": "2026-10-22T23:10:00Z",
+    "ottelu": "New Jersey Devils - Anaheim Ducks",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.67,
+    "yhtio": "1xBet",
+    "value": 0.3,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-23",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "921ae4814ca448a3040aa6de5b0fb9e9",
+    "alkaa": "2026-10-22T23:10:00Z",
+    "ottelu": "New Jersey Devils - Anaheim Ducks",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.67,
+    "yhtio": "1xBet",
+    "value": 3.4,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-23",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "62fca8dce49c8fa3988f75322311b896",
+    "alkaa": "2026-10-22T23:10:00Z",
+    "ottelu": "Boston Bruins - Nashville Predators",
+    "tyyppi": "Voittaja",
+    "valinta": "Boston Bruins",
+    "kerroin": 1.72,
+    "yhtio": "Veikkaus (FI)",
+    "value": 1.1,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-23",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "d57c3873ab3f113b8b77614edff4cf8f",
+    "alkaa": "2026-10-22T23:10:00Z",
+    "ottelu": "Pittsburgh Penguins - Florida Panthers",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Over",
+    "kerroin": 2.14,
+    "yhtio": "LeoVegas (FI)",
+    "value": 2.4,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-23",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "d57c3873ab3f113b8b77614edff4cf8f",
+    "alkaa": "2026-10-22T23:10:00Z",
+    "ottelu": "Pittsburgh Penguins - Florida Panthers",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Over",
+    "kerroin": 2.14,
+    "yhtio": "LeoVegas (FI)",
+    "value": 2.5,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-23",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "d57c3873ab3f113b8b77614edff4cf8f",
+    "alkaa": "2026-10-22T23:10:00Z",
+    "ottelu": "Pittsburgh Penguins - Florida Panthers",
+    "tyyppi": "Tasoitus koti 1.5",
+    "valinta": "Florida Panthers",
+    "kerroin": 3.4,
+    "yhtio": "Nordic Bet",
+    "value": 0.3,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-23",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "d57c3873ab3f113b8b77614edff4cf8f",
+    "alkaa": "2026-10-22T23:10:00Z",
+    "ottelu": "Pittsburgh Penguins - Florida Panthers",
+    "tyyppi": "Tasoitus koti 1.5",
+    "valinta": "Pittsburgh Penguins",
+    "kerroin": 1.4,
+    "yhtio": "888sport",
+    "value": 1.8,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-23",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "bfe0cd1ca4d32c4946e6ee28e21f0619",
+    "alkaa": "2026-10-22T23:40:00Z",
+    "ottelu": "New York Islanders - Los Angeles Kings",
+    "tyyppi": "Tasoitus koti 0.0",
+    "valinta": "New York Islanders",
+    "kerroin": 1.94,
+    "yhtio": "1xBet",
+    "value": 0.3,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-23",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "bfe0cd1ca4d32c4946e6ee28e21f0619",
+    "alkaa": "2026-10-22T23:40:00Z",
+    "ottelu": "New York Islanders - Los Angeles Kings",
+    "tyyppi": "Tasoitus koti 1.5",
+    "valinta": "Los Angeles Kings",
+    "kerroin": 3.7,
+    "yhtio": "Nordic Bet",
+    "value": 0.6,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-23",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "bfe0cd1ca4d32c4946e6ee28e21f0619",
+    "alkaa": "2026-10-22T23:40:00Z",
+    "ottelu": "New York Islanders - Los Angeles Kings",
+    "tyyppi": "Tasoitus koti 1.5",
+    "valinta": "New York Islanders",
+    "kerroin": 1.34,
+    "yhtio": "Coolbet",
+    "value": 0.3,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-23",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "8a951cc95f91e5df49f7aad4219c40e0",
+    "alkaa": "2026-10-23T01:10:00Z",
+    "ottelu": "Edmonton Oilers - Carolina Hurricanes",
+    "tyyppi": "1X2",
+    "valinta": "Edmonton Oilers",
+    "kerroin": 2.75,
+    "yhtio": "1xBet",
+    "value": 0.1,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-23",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "8a951cc95f91e5df49f7aad4219c40e0",
+    "alkaa": "2026-10-23T01:10:00Z",
+    "ottelu": "Edmonton Oilers - Carolina Hurricanes",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Over",
+    "kerroin": 2.17,
+    "yhtio": "LeoVegas (FI)",
+    "value": 1.5,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-23",
     "panos": 10,
     "tila": "avoin",
     "versio": 8

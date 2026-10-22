@@ -759,8 +759,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-22",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -776,7 +777,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5188,
+    "clv": -0.9,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -792,7 +796,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5216,
+    "clv": 9.5,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -808,7 +815,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5621,
+    "clv": 7.4,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -824,7 +834,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5525,
+    "clv": 5.5,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -840,7 +853,10 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5322,
+    "clv": 1.7,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   },
   {
     "sarja": "NHL",
@@ -856,6 +872,9 @@
     "pvm": "2026-10-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5417,
+    "clv": 3.5,
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
   }
 ]
