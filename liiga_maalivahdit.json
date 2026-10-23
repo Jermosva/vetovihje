@@ -16894,5 +16894,60 @@
    "nimi": "Jakob Crespin"
   },
   "vaihtoja": 0
+ },
+ "2027_2701405": {
+  "koti": {
+   "id": 60660609,
+   "nimi": "Niklas Rubin"
+  },
+  "vieras": {
+   "id": 60760868,
+   "nimi": "Stefanos Lekkas"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701406": {
+  "koti": {
+   "id": 25113956,
+   "nimi": "Antti Raanta"
+  },
+  "vieras": {
+   "id": 29857823,
+   "nimi": "Markus Ruusu"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701407": {
+  "koti": {
+   "id": 23786437,
+   "nimi": "Joni Ortio"
+  },
+  "vieras": {
+   "id": 33502782,
+   "nimi": "Kari Piiroinen"
+  },
+  "vaihtoja": 1
+ },
+ "2027_2701409": {
+  "koti": {
+   "id": 61073543,
+   "nimi": "Jesper Myrenberg"
+  },
+  "vieras": {
+   "id": 61011727,
+   "nimi": "Mantas Armalis"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701404": {
+  "koti": {
+   "id": 40176719,
+   "nimi": "Petteri Rimpinen"
+  },
+  "vieras": {
+   "id": 61009805,
+   "nimi": "Hugo Alnefelt"
+  },
+  "vaihtoja": 0
  }
 }
