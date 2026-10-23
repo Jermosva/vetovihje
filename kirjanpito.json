@@ -776,11 +776,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-22",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 8,
     "reilu_nyt": 0.5188,
     "clv": -0.9,
-    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00",
+    "voitto": 9.1
   },
   {
     "sarja": "NHL",
@@ -795,11 +796,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-22",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 8,
     "reilu_nyt": 0.5216,
     "clv": 9.5,
-    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00",
+    "voitto": 11.0
   },
   {
     "sarja": "NHL",
@@ -814,11 +816,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-22",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.5621,
     "clv": 7.4,
-    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -833,11 +836,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-22",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.5525,
     "clv": 5.5,
-    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -852,11 +856,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-22",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.5322,
     "clv": 1.7,
-    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -871,10 +876,11 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-22",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.5417,
     "clv": 3.5,
-    "clv_aika": "2026-10-22T21:04:59.492742+00:00"
+    "clv_aika": "2026-10-22T21:04:59.492742+00:00",
+    "voitto": -10
   }
 ]
