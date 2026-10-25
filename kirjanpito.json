@@ -1014,7 +1014,10 @@
     "pvm": "2026-10-25",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.537,
+    "clv": 7.4,
+    "clv_aika": "2026-10-25T20:58:46.000197+00:00"
   },
   {
     "sarja": "NHL",
@@ -1026,6 +1029,25 @@
     "kerroin": 1.91,
     "yhtio": "888sport",
     "value": 5.8,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-25",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8,
+    "reilu_nyt": 0.5381,
+    "clv": 2.8,
+    "clv_aika": "2026-10-25T20:58:46.000197+00:00"
+  },
+  {
+    "sarja": "NHL",
+    "id": "9c1309e10d95a3f6eb6b6b9105c565eb",
+    "alkaa": "2026-10-25T22:10:00Z",
+    "ottelu": "Dallas Stars - New York Islanders",
+    "tyyppi": "Voittaja",
+    "valinta": "New York Islanders",
+    "kerroin": 2.8,
+    "yhtio": "Veikkaus (FI)",
+    "value": 6.7,
     "lahde": "Poisson-malli",
     "pvm": "2026-10-25",
     "panos": 10,

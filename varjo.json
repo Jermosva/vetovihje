@@ -6008,8 +6008,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-24",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -6162,7 +6163,10 @@
     "pvm": "2026-10-25",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.2668,
+    "clv": 1.4,
+    "clv_aika": "2026-10-25T20:58:46.000197+00:00"
   },
   {
     "sarja": "NHL",
@@ -6178,7 +6182,10 @@
     "pvm": "2026-10-25",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.2668,
+    "clv": 1.4,
+    "clv_aika": "2026-10-25T20:58:46.000197+00:00"
   },
   {
     "sarja": "NHL",
@@ -6194,7 +6201,10 @@
     "pvm": "2026-10-25",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.226,
+    "clv": -1.7,
+    "clv_aika": "2026-10-25T20:58:46.000197+00:00"
   },
   {
     "sarja": "NHL",
@@ -6210,7 +6220,10 @@
     "pvm": "2026-10-25",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5318,
+    "clv": 1.6,
+    "clv_aika": "2026-10-25T20:58:46.000197+00:00"
   },
   {
     "sarja": "NHL",
@@ -6226,7 +6239,10 @@
     "pvm": "2026-10-25",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.6036,
+    "clv": -1.0,
+    "clv_aika": "2026-10-25T20:58:46.000197+00:00"
   },
   {
     "sarja": "NHL",
@@ -6242,7 +6258,10 @@
     "pvm": "2026-10-25",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.2331,
+    "clv": -1.9,
+    "clv_aika": "2026-10-25T20:58:46.000197+00:00"
   },
   {
     "sarja": "NHL",
@@ -6258,7 +6277,10 @@
     "pvm": "2026-10-25",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.2354,
+    "clv": -1.1,
+    "clv_aika": "2026-10-25T20:58:46.000197+00:00"
   },
   {
     "sarja": "NHL",
@@ -6274,7 +6296,10 @@
     "pvm": "2026-10-25",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.2021,
+    "clv": -0.9,
+    "clv_aika": "2026-10-25T20:58:46.000197+00:00"
   },
   {
     "sarja": "NHL",
@@ -6290,7 +6315,10 @@
     "pvm": "2026-10-25",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.537,
+    "clv": 7.4,
+    "clv_aika": "2026-10-25T20:58:46.000197+00:00"
   },
   {
     "sarja": "NHL",
@@ -6306,7 +6334,10 @@
     "pvm": "2026-10-25",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.537,
+    "clv": 7.4,
+    "clv_aika": "2026-10-25T20:58:46.000197+00:00"
   },
   {
     "sarja": "NHL",
@@ -6322,7 +6353,10 @@
     "pvm": "2026-10-25",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5302,
+    "clv": -2.4,
+    "clv_aika": "2026-10-25T20:58:46.000197+00:00"
   },
   {
     "sarja": "NHL",
@@ -6338,7 +6372,10 @@
     "pvm": "2026-10-25",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5213,
+    "clv": 0.1,
+    "clv_aika": "2026-10-25T20:58:46.000197+00:00"
   },
   {
     "sarja": "NHL",
@@ -6354,7 +6391,10 @@
     "pvm": "2026-10-25",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5381,
+    "clv": 2.8,
+    "clv_aika": "2026-10-25T20:58:46.000197+00:00"
   },
   {
     "sarja": "NHL",
@@ -6367,6 +6407,105 @@
     "yhtio": "888sport",
     "value": 5.8,
     "lahde": "Poisson-malli",
+    "pvm": "2026-10-25",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8,
+    "reilu_nyt": 0.5381,
+    "clv": 2.8,
+    "clv_aika": "2026-10-25T20:58:46.000197+00:00"
+  },
+  {
+    "sarja": "NHL",
+    "id": "9c1309e10d95a3f6eb6b6b9105c565eb",
+    "alkaa": "2026-10-25T22:10:00Z",
+    "ottelu": "Dallas Stars - New York Islanders",
+    "tyyppi": "1X2",
+    "valinta": "Dallas Stars",
+    "kerroin": 1.98,
+    "yhtio": "1xBet",
+    "value": 0.4,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-25",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "9c1309e10d95a3f6eb6b6b9105c565eb",
+    "alkaa": "2026-10-25T22:10:00Z",
+    "ottelu": "Dallas Stars - New York Islanders",
+    "tyyppi": "Voittaja",
+    "valinta": "New York Islanders",
+    "kerroin": 2.8,
+    "yhtio": "Veikkaus (FI)",
+    "value": 5.9,
+    "lahde": "Pinnacle",
+    "pvm": "2026-10-25",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "9c1309e10d95a3f6eb6b6b9105c565eb",
+    "alkaa": "2026-10-25T22:10:00Z",
+    "ottelu": "Dallas Stars - New York Islanders",
+    "tyyppi": "Voittaja",
+    "valinta": "New York Islanders",
+    "kerroin": 2.8,
+    "yhtio": "Veikkaus (FI)",
+    "value": 6.7,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-25",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "cd9f65faa44f221a72638e49afb134fb",
+    "alkaa": "2026-10-25T23:10:00Z",
+    "ottelu": "Winnipeg Jets - Montréal Canadiens",
+    "tyyppi": "Voittaja",
+    "valinta": "Winnipeg Jets",
+    "kerroin": 2.07,
+    "yhtio": "Veikkaus (FI)",
+    "value": 0.5,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-25",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "ccf447f1bbe822d28f87352436f70c7c",
+    "alkaa": "2026-10-26T02:10:00Z",
+    "ottelu": "Vancouver Canucks - Minnesota Wild",
+    "tyyppi": "1X2",
+    "valinta": "Vancouver Canucks",
+    "kerroin": 3.75,
+    "yhtio": "LeoVegas (FI)",
+    "value": 0.0,
+    "lahde": "keskiarvo",
+    "pvm": "2026-10-25",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "ccf447f1bbe822d28f87352436f70c7c",
+    "alkaa": "2026-10-26T02:10:00Z",
+    "ottelu": "Vancouver Canucks - Minnesota Wild",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Over",
+    "kerroin": 2.17,
+    "yhtio": "1xBet",
+    "value": 0.2,
+    "lahde": "keskiarvo",
     "pvm": "2026-10-25",
     "panos": 10,
     "tila": "avoin",
