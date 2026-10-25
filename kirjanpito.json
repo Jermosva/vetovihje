@@ -896,8 +896,9 @@
     "lahde": "Pinnacle",
     "pvm": "2026-10-24",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "osui",
+    "versio": 8,
+    "voitto": 6.2
   },
   {
     "sarja": "NHL",
@@ -912,11 +913,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-24",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.5488,
     "clv": 4.8,
-    "clv_aika": "2026-10-24T20:57:40.778866+00:00"
+    "clv_aika": "2026-10-24T20:57:40.778866+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -931,11 +933,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-24",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 8,
     "reilu_nyt": 0.5128,
     "clv": 2.6,
-    "clv_aika": "2026-10-24T20:57:40.778866+00:00"
+    "clv_aika": "2026-10-24T20:57:40.778866+00:00",
+    "voitto": 10.0
   },
   {
     "sarja": "NHL",
@@ -950,11 +953,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-24",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.4639,
     "clv": 2.1,
-    "clv_aika": "2026-10-24T20:57:40.778866+00:00"
+    "clv_aika": "2026-10-24T20:57:40.778866+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -969,11 +973,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-24",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 8,
     "reilu_nyt": 0.5502,
     "clv": 5.1,
-    "clv_aika": "2026-10-24T20:57:40.778866+00:00"
+    "clv_aika": "2026-10-24T20:57:40.778866+00:00",
+    "voitto": 9.1
   },
   {
     "sarja": "NHL",
@@ -988,10 +993,43 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-24",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.5375,
     "clv": 7.5,
-    "clv_aika": "2026-10-24T20:57:40.778866+00:00"
+    "clv_aika": "2026-10-24T20:57:40.778866+00:00",
+    "voitto": -10
+  },
+  {
+    "sarja": "NHL",
+    "id": "61198113cc96cb987aad067a15911db8",
+    "alkaa": "2026-10-26T00:10:00Z",
+    "ottelu": "Nashville Predators - Colorado Avalanche",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 2.0,
+    "yhtio": "888sport",
+    "value": 6.9,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-25",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "ccf447f1bbe822d28f87352436f70c7c",
+    "alkaa": "2026-10-26T02:10:00Z",
+    "ottelu": "Vancouver Canucks - Minnesota Wild",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 1.91,
+    "yhtio": "888sport",
+    "value": 5.8,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-25",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
   }
 ]
