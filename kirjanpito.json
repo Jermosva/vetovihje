@@ -1013,11 +1013,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-25",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.537,
     "clv": 7.4,
-    "clv_aika": "2026-10-25T20:58:46.000197+00:00"
+    "clv_aika": "2026-10-25T20:58:46.000197+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -1032,11 +1033,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-25",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 8,
     "reilu_nyt": 0.5381,
     "clv": 2.8,
-    "clv_aika": "2026-10-25T20:58:46.000197+00:00"
+    "clv_aika": "2026-10-25T20:58:46.000197+00:00",
+    "voitto": 9.1
   },
   {
     "sarja": "NHL",
@@ -1050,6 +1052,39 @@
     "value": 6.7,
     "lahde": "Poisson-malli",
     "pvm": "2026-10-25",
+    "panos": 10,
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
+  },
+  {
+    "sarja": "NHL",
+    "id": "20277c97a62bde35c5494acdb5912a68",
+    "alkaa": "2026-10-27T00:40:00Z",
+    "ottelu": "Calgary Flames - Toronto Maple Leafs",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 2.0,
+    "yhtio": "888sport",
+    "value": 7.7,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-26",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "5b70654c977b6cc9a110ad8c04c57cac",
+    "alkaa": "2026-10-27T01:40:00Z",
+    "ottelu": "Edmonton Oilers - Detroit Red Wings",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 2.0,
+    "yhtio": "888sport",
+    "value": 6.7,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-26",
     "panos": 10,
     "tila": "avoin",
     "versio": 8
