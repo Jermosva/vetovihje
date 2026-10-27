@@ -1070,11 +1070,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-26",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.5269,
     "clv": 5.4,
-    "clv_aika": "2026-10-26T21:06:16.261333+00:00"
+    "clv_aika": "2026-10-26T21:06:16.261333+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -1089,10 +1090,59 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-26",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 8,
     "reilu_nyt": 0.5039,
     "clv": 0.8,
-    "clv_aika": "2026-10-26T21:06:16.261333+00:00"
+    "clv_aika": "2026-10-26T21:06:16.261333+00:00",
+    "voitto": 10.0
+  },
+  {
+    "sarja": "NHL",
+    "id": "fc98fb73985d5caecdfffd4cb0f4d3ed",
+    "alkaa": "2026-10-28T01:10:00Z",
+    "ottelu": "Utah Mammoth - Minnesota Wild",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 1.91,
+    "yhtio": "888sport",
+    "value": 8.7,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-27",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "66690f3994b21af39301701a52df1d66",
+    "alkaa": "2026-10-28T02:10:00Z",
+    "ottelu": "Vegas Golden Knights - Ottawa Senators",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 1.91,
+    "yhtio": "888sport",
+    "value": 6.3,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-27",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "288b3a1e5241bd3885295af9aab801ca",
+    "alkaa": "2026-10-28T02:40:00Z",
+    "ottelu": "San Jose Sharks - Buffalo Sabres",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 2.0,
+    "yhtio": "888sport",
+    "value": 5.9,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-27",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
   }
 ]
