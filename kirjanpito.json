@@ -1170,11 +1170,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-27",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.2501,
     "clv": 1.3,
-    "clv_aika": "2026-10-28T14:27:47.626973+00:00"
+    "clv_aika": "2026-10-28T14:27:47.626973+00:00",
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -1189,11 +1190,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-27",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 8,
     "reilu_nyt": 0.4364,
     "clv": 9.1,
-    "clv_aika": "2026-10-28T14:27:47.626973+00:00"
+    "clv_aika": "2026-10-28T14:27:47.626973+00:00",
+    "voitto": 15.0
   },
   {
     "sarja": "Liiga",
@@ -1208,11 +1210,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-10-27",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.482,
     "clv": 3.6,
-    "clv_aika": "2026-10-28T14:27:47.626973+00:00"
+    "clv_aika": "2026-10-28T14:27:47.626973+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -1224,6 +1227,41 @@
     "kerroin": 2.0,
     "yhtio": "888sport",
     "value": 4.9,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-28",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8,
+    "reilu_nyt": 0.522,
+    "clv": 4.4,
+    "clv_aika": "2026-10-28T21:14:25.196405+00:00"
+  },
+  {
+    "sarja": "SHL",
+    "id": "57f0e7afa842b22c178603df7ccd31c4",
+    "alkaa": "2026-10-29T18:00:00Z",
+    "ottelu": "Luleå HF - IF Björklöven",
+    "tyyppi": "1X2",
+    "valinta": "IF Björklöven",
+    "kerroin": 5.6,
+    "yhtio": "LeoVegas (FI)",
+    "value": 4.8,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-10-28",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "SHL",
+    "id": "69ec7cd36eaca975b2fda5036cc51e85",
+    "alkaa": "2026-10-29T18:00:00Z",
+    "ottelu": "Skellefteå AIK - Linköping HC",
+    "tyyppi": "Voittaja",
+    "valinta": "Linköping HC",
+    "kerroin": 4.85,
+    "yhtio": "Coolbet",
+    "value": 6.7,
     "lahde": "Poisson-malli",
     "pvm": "2026-10-28",
     "panos": 10,
