@@ -1230,11 +1230,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-10-28",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.522,
     "clv": 4.4,
-    "clv_aika": "2026-10-28T21:14:25.196405+00:00"
+    "clv_aika": "2026-10-28T21:14:25.196405+00:00",
+    "voitto": -10
   },
   {
     "sarja": "SHL",
