@@ -17125,5 +17125,82 @@
    "nimi": "Mantas Armalis"
   },
   "vaihtoja": 0
+ },
+ "2027_2701424": {
+  "koti": {
+   "id": 61073586,
+   "nimi": "Jakob Crespin"
+  },
+  "vieras": {
+   "id": 22993098,
+   "nimi": "Sami Rajaniemi"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701426": {
+  "koti": {
+   "id": 40050277,
+   "nimi": "Daniel Salonen"
+  },
+  "vieras": {
+   "id": 29933802,
+   "nimi": "Jasper Patrikainen"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701427": {
+  "koti": {
+   "id": 33502782,
+   "nimi": "Kari Piiroinen"
+  },
+  "vieras": {
+   "id": 31635062,
+   "nimi": "Oskari Salminen"
+  },
+  "vaihtoja": 1
+ },
+ "2027_2701428": {
+  "koti": {
+   "id": 40103808,
+   "nimi": "Noa Vali"
+  },
+  "vieras": {
+   "id": 60462059,
+   "nimi": "Patrik Bartosak"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701430": {
+  "koti": {
+   "id": 60960744,
+   "nimi": "Jan Bednar"
+  },
+  "vieras": {
+   "id": 61009805,
+   "nimi": "Hugo Alnefelt"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701429": {
+  "koti": {
+   "id": 22558763,
+   "nimi": "Juha Metsola"
+  },
+  "vieras": {
+   "id": 61011727,
+   "nimi": "Mantas Armalis"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701425": {
+  "koti": {
+   "id": 60760868,
+   "nimi": "Stefanos Lekkas"
+  },
+  "vieras": {
+   "id": 21919594,
+   "nimi": "Tomi Karhunen"
+  },
+  "vaihtoja": 0
  }
 }
