@@ -17202,5 +17202,71 @@
    "nimi": "Tomi Karhunen"
   },
   "vaihtoja": 0
+ },
+ "2027_2701431": {
+  "koti": {
+   "id": 61011727,
+   "nimi": "Mantas Armalis"
+  },
+  "vieras": {
+   "id": 32581335,
+   "nimi": "Rasmus Korhonen"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701432": {
+  "koti": {
+   "id": 31635062,
+   "nimi": "Oskari Salminen"
+  },
+  "vieras": {
+   "id": 21919594,
+   "nimi": "Tomi Karhunen"
+  },
+  "vaihtoja": 1
+ },
+ "2027_2701433": {
+  "koti": {
+   "id": 31267715,
+   "nimi": "Eetu Randelin"
+  },
+  "vieras": {
+   "id": 61009805,
+   "nimi": "Hugo Alnefelt"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701434": {
+  "koti": {
+   "id": 60660609,
+   "nimi": "Niklas Rubin"
+  },
+  "vieras": {
+   "id": 61073543,
+   "nimi": "Jesper Myrenberg"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701435": {
+  "koti": {
+   "id": 60462059,
+   "nimi": "Patrik Bartosak"
+  },
+  "vieras": {
+   "id": 40176719,
+   "nimi": "Petteri Rimpinen"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701436": {
+  "koti": {
+   "id": 40056206,
+   "nimi": "Masi Härkönen"
+  },
+  "vieras": {
+   "id": 31915960,
+   "nimi": "Roope Taponen"
+  },
+  "vaihtoja": 0
  }
 }
