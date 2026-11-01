@@ -8910,8 +8910,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-01",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -8926,8 +8927,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-01",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "osui",
+    "versio": 8,
+    "voitto": 6.0
   },
   {
     "sarja": "NHL",
@@ -8942,8 +8944,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-01",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "osui",
+    "versio": 8,
+    "voitto": 25.0
   },
   {
     "sarja": "NHL",
@@ -8958,8 +8961,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-01",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -9007,7 +9011,10 @@
     "pvm": "2026-11-01",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.2188,
+    "clv": -3.3,
+    "clv_aika": "2026-11-01T23:50:12.449447+00:00"
   },
   {
     "sarja": "NHL",
@@ -9023,7 +9030,10 @@
     "pvm": "2026-11-01",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.2188,
+    "clv": -3.3,
+    "clv_aika": "2026-11-01T23:50:12.449447+00:00"
   },
   {
     "sarja": "NHL",
@@ -9039,7 +9049,10 @@
     "pvm": "2026-11-01",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5057,
+    "clv": 6.2,
+    "clv_aika": "2026-11-01T23:50:12.449447+00:00"
   },
   {
     "sarja": "NHL",
@@ -9053,6 +9066,41 @@
     "value": 5.8,
     "lahde": "Poisson-malli",
     "pvm": "2026-11-01",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8,
+    "reilu_nyt": 0.5057,
+    "clv": 6.2,
+    "clv_aika": "2026-11-01T23:50:12.449447+00:00"
+  },
+  {
+    "sarja": "NHL",
+    "id": "a5203c5f9248aa3653feba547eabd4b8",
+    "alkaa": "2026-11-02T01:10:00Z",
+    "ottelu": "Anaheim Ducks - Ottawa Senators",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Over",
+    "kerroin": 2.03,
+    "yhtio": "1xBet",
+    "value": 0.3,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-02",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "a5203c5f9248aa3653feba547eabd4b8",
+    "alkaa": "2026-11-02T01:10:00Z",
+    "ottelu": "Anaheim Ducks - Ottawa Senators",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Over",
+    "kerroin": 2.03,
+    "yhtio": "1xBet",
+    "value": 0.1,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-02",
     "panos": 10,
     "tila": "avoin",
     "versio": 8
