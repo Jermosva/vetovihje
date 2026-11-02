@@ -1284,8 +1284,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-01",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "osui",
+    "versio": 8,
+    "voitto": 9.1
   },
   {
     "sarja": "NHL",
@@ -1300,10 +1301,11 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-01",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.5057,
     "clv": 6.2,
-    "clv_aika": "2026-11-01T23:50:12.449447+00:00"
+    "clv_aika": "2026-11-01T23:50:12.449447+00:00",
+    "voitto": -10
   }
 ]
