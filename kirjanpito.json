@@ -1322,7 +1322,10 @@
     "pvm": "2026-11-03",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5212,
+    "clv": 9.5,
+    "clv_aika": "2026-11-03T20:16:51.386005+00:00"
   },
   {
     "sarja": "NHL",
@@ -1338,7 +1341,10 @@
     "pvm": "2026-11-03",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.4979,
+    "clv": -0.4,
+    "clv_aika": "2026-11-03T20:16:51.386005+00:00"
   },
   {
     "sarja": "NHL",
@@ -1354,7 +1360,10 @@
     "pvm": "2026-11-03",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.3545,
+    "clv": 0.3,
+    "clv_aika": "2026-11-03T20:16:51.386005+00:00"
   },
   {
     "sarja": "NHL",
@@ -1367,6 +1376,25 @@
     "yhtio": "888sport",
     "value": 7.1,
     "lahde": "keskiarvo",
+    "pvm": "2026-11-03",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8,
+    "reilu_nyt": 0.4844,
+    "clv": 1.7,
+    "clv_aika": "2026-11-03T20:16:51.386005+00:00"
+  },
+  {
+    "sarja": "NHL",
+    "id": "f84f85e8c5fdd0a70594563b0041d706",
+    "alkaa": "2026-11-04T00:10:00Z",
+    "ottelu": "Tampa Bay Lightning - Detroit Red Wings",
+    "tyyppi": "1X2",
+    "valinta": "Detroit Red Wings",
+    "kerroin": 4.8,
+    "yhtio": "LeoVegas (FI)",
+    "value": 4.5,
+    "lahde": "Poisson-malli",
     "pvm": "2026-11-03",
     "panos": 10,
     "tila": "avoin",
