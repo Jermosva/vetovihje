@@ -1361,9 +1361,9 @@
     "panos": 10,
     "tila": "avoin",
     "versio": 8,
-    "reilu_nyt": 0.3545,
-    "clv": 0.3,
-    "clv_aika": "2026-11-03T20:16:51.386005+00:00"
+    "reilu_nyt": 0.3593,
+    "clv": 1.7,
+    "clv_aika": "2026-11-04T00:50:43.031941+00:00"
   },
   {
     "sarja": "NHL",
@@ -1380,9 +1380,9 @@
     "panos": 10,
     "tila": "avoin",
     "versio": 8,
-    "reilu_nyt": 0.4844,
-    "clv": 1.7,
-    "clv_aika": "2026-11-03T20:16:51.386005+00:00"
+    "reilu_nyt": 0.4829,
+    "clv": 1.4,
+    "clv_aika": "2026-11-04T00:50:43.031941+00:00"
   },
   {
     "sarja": "NHL",
@@ -1396,6 +1396,22 @@
     "value": 4.5,
     "lahde": "Poisson-malli",
     "pvm": "2026-11-03",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "1a1782b9fde64acd952ea9fd3aff7d83",
+    "alkaa": "2026-11-05T00:40:00Z",
+    "ottelu": "Buffalo Sabres - Ottawa Senators",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 2.0,
+    "yhtio": "888sport",
+    "value": 5.8,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-04",
     "panos": 10,
     "tila": "avoin",
     "versio": 8
