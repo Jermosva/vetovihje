@@ -1321,11 +1321,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-03",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 8,
     "reilu_nyt": 0.5212,
     "clv": 9.5,
-    "clv_aika": "2026-11-03T20:16:51.386005+00:00"
+    "clv_aika": "2026-11-03T20:16:51.386005+00:00",
+    "voitto": 11.0
   },
   {
     "sarja": "NHL",
@@ -1340,11 +1341,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-03",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 8,
     "reilu_nyt": 0.4979,
     "clv": -0.4,
-    "clv_aika": "2026-11-03T20:16:51.386005+00:00"
+    "clv_aika": "2026-11-03T20:16:51.386005+00:00",
+    "voitto": 10.0
   },
   {
     "sarja": "NHL",
@@ -1359,11 +1361,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-03",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 8,
     "reilu_nyt": 0.3593,
     "clv": 1.7,
-    "clv_aika": "2026-11-04T00:50:43.031941+00:00"
+    "clv_aika": "2026-11-04T00:50:43.031941+00:00",
+    "voitto": 18.3
   },
   {
     "sarja": "NHL",
@@ -1378,11 +1381,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-03",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.4829,
     "clv": 1.4,
-    "clv_aika": "2026-11-04T00:50:43.031941+00:00"
+    "clv_aika": "2026-11-04T00:50:43.031941+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -1397,8 +1401,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-03",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -1412,6 +1417,54 @@
     "value": 5.8,
     "lahde": "keskiarvo",
     "pvm": "2026-11-04",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "9e57c39752bfbc587ce341650fcd5a19",
+    "alkaa": "2026-11-06T00:10:00Z",
+    "ottelu": "Pittsburgh Penguins - Boston Bruins",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 1.91,
+    "yhtio": "888sport",
+    "value": 4.8,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-05",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "fc2cccfb47dffb4677b85d247c768ae9",
+    "alkaa": "2026-11-06T00:10:00Z",
+    "ottelu": "Tampa Bay Lightning - Chicago Blackhawks",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 1.91,
+    "yhtio": "888sport",
+    "value": 6.9,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-05",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "cb757b1c9cf684423578700bb6aef492",
+    "alkaa": "2026-11-06T00:10:00Z",
+    "ottelu": "Montréal Canadiens - Utah Mammoth",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 1.91,
+    "yhtio": "888sport",
+    "value": 5.4,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-05",
     "panos": 10,
     "tila": "avoin",
     "versio": 8
