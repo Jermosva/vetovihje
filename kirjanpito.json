@@ -1435,11 +1435,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-05",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.545,
     "clv": 4.1,
-    "clv_aika": "2026-11-05T20:48:02.282854+00:00"
+    "clv_aika": "2026-11-05T20:48:02.282854+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -1454,11 +1455,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-05",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 8,
     "reilu_nyt": 0.5397,
     "clv": 3.1,
-    "clv_aika": "2026-11-05T20:48:02.282854+00:00"
+    "clv_aika": "2026-11-05T20:48:02.282854+00:00",
+    "voitto": 9.1
   },
   {
     "sarja": "NHL",
@@ -1473,11 +1475,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-05",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.5267,
     "clv": 0.6,
-    "clv_aika": "2026-11-05T20:48:02.282854+00:00"
+    "clv_aika": "2026-11-05T20:48:02.282854+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -1492,11 +1495,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-05",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.4756,
     "clv": 4.6,
-    "clv_aika": "2026-11-06T01:04:55.508094+00:00"
+    "clv_aika": "2026-11-06T01:04:55.508094+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -1511,11 +1515,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-05",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 8,
     "reilu_nyt": 0.5499,
     "clv": 5.0,
-    "clv_aika": "2026-11-06T01:04:55.508094+00:00"
+    "clv_aika": "2026-11-06T01:04:55.508094+00:00",
+    "voitto": 9.1
   },
   {
     "sarja": "NHL",
@@ -1528,6 +1533,25 @@
     "yhtio": "888sport",
     "value": 5.3,
     "lahde": "Poisson-malli",
+    "pvm": "2026-11-06",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8,
+    "reilu_nyt": 0.5578,
+    "clv": 6.5,
+    "clv_aika": "2026-11-06T20:04:14.891220+00:00"
+  },
+  {
+    "sarja": "NHL",
+    "id": "94142b31815d8bfcef178b16cadfe92f",
+    "alkaa": "2026-11-07T01:10:00Z",
+    "ottelu": "Minnesota Wild - San Jose Sharks",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 1.91,
+    "yhtio": "888sport",
+    "value": 5.1,
+    "lahde": "keskiarvo",
     "pvm": "2026-11-06",
     "panos": 10,
     "tila": "avoin",
