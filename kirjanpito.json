@@ -1555,6 +1555,41 @@
     "pvm": "2026-11-06",
     "panos": 10,
     "tila": "avoin",
+    "versio": 8,
+    "reilu_nyt": 0.5465,
+    "clv": 4.4,
+    "clv_aika": "2026-11-07T00:15:51.862140+00:00"
+  },
+  {
+    "sarja": "NHL",
+    "id": "bc490c79c4f47b8a1eaa70a3e1907349",
+    "alkaa": "2026-11-07T01:10:00Z",
+    "ottelu": "Calgary Flames - Anaheim Ducks",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 2.0,
+    "yhtio": "888sport",
+    "value": 5.4,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "8cc95915d5faf0205f042002d771ad88",
+    "alkaa": "2026-11-08T00:10:00Z",
+    "ottelu": "Ottawa Senators - Utah Mammoth",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 1.91,
+    "yhtio": "888sport",
+    "value": 6.6,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
     "versio": 8
   }
 ]
