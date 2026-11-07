@@ -11362,8 +11362,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-05",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -11378,8 +11379,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-05",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "osui",
+    "versio": 8,
+    "voitto": 11.5
   },
   {
     "sarja": "NHL",
@@ -11394,8 +11396,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-05",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -11410,8 +11413,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-05",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "osui",
+    "versio": 8,
+    "voitto": 33.9
   },
   {
     "sarja": "NHL",
@@ -11426,11 +11430,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-05",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.2045,
     "clv": -3.5,
-    "clv_aika": "2026-11-06T01:04:55.508094+00:00"
+    "clv_aika": "2026-11-06T01:04:55.508094+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -11445,11 +11450,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-05",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.4756,
     "clv": 4.6,
-    "clv_aika": "2026-11-06T01:04:55.508094+00:00"
+    "clv_aika": "2026-11-06T01:04:55.508094+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -11464,11 +11470,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-05",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.4756,
     "clv": 4.6,
-    "clv_aika": "2026-11-06T01:04:55.508094+00:00"
+    "clv_aika": "2026-11-06T01:04:55.508094+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -11503,11 +11510,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-05",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 8,
     "reilu_nyt": 0.5499,
     "clv": 5.0,
-    "clv_aika": "2026-11-06T01:04:55.508094+00:00"
+    "clv_aika": "2026-11-06T01:04:55.508094+00:00",
+    "voitto": 9.1
   },
   {
     "sarja": "NHL",
@@ -11522,11 +11530,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-05",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 8,
     "reilu_nyt": 0.5499,
     "clv": 5.0,
-    "clv_aika": "2026-11-06T01:04:55.508094+00:00"
+    "clv_aika": "2026-11-06T01:04:55.508094+00:00",
+    "voitto": 9.1
   },
   {
     "sarja": "NHL",
@@ -11541,11 +11550,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-05",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 8,
     "reilu_nyt": 0.2093,
     "clv": -1.6,
-    "clv_aika": "2026-11-06T01:04:55.508094+00:00"
+    "clv_aika": "2026-11-06T01:04:55.508094+00:00",
+    "voitto": 37.0
   },
   {
     "sarja": "NHL",
@@ -11560,8 +11570,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-06",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "osui",
+    "versio": 8,
+    "voitto": 29.5
   },
   {
     "sarja": "NHL",
@@ -11576,8 +11587,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-06",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -11592,8 +11604,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-06",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "osui",
+    "versio": 8,
+    "voitto": 29.5
   },
   {
     "sarja": "NHL",
@@ -11608,8 +11621,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-06",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -11624,8 +11638,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-06",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "osui",
+    "versio": 8,
+    "voitto": 9.2
   },
   {
     "sarja": "NHL",
@@ -11640,8 +11655,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-06",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "osui",
+    "versio": 8,
+    "voitto": 9.2
   },
   {
     "sarja": "NHL",
@@ -11690,8 +11706,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-06",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -11706,11 +11723,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-06",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 8,
     "reilu_nyt": 0.4951,
     "clv": 0.0,
-    "clv_aika": "2026-11-06T20:04:14.891220+00:00"
+    "clv_aika": "2026-11-06T20:04:14.891220+00:00",
+    "voitto": 10.2
   },
   {
     "sarja": "NHL",
@@ -11725,11 +11743,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-06",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 8,
     "reilu_nyt": 0.4422,
     "clv": -0.5,
-    "clv_aika": "2026-11-06T20:04:14.891220+00:00"
+    "clv_aika": "2026-11-06T20:04:14.891220+00:00",
+    "voitto": 12.5
   },
   {
     "sarja": "NHL",
@@ -11744,11 +11763,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-06",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.5578,
     "clv": 6.5,
-    "clv_aika": "2026-11-06T20:04:14.891220+00:00"
+    "clv_aika": "2026-11-06T20:04:14.891220+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -11763,8 +11783,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-06",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -12040,7 +12061,10 @@
     "pvm": "2026-11-07",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.2221,
+    "clv": -4.3,
+    "clv_aika": "2026-11-07T18:16:17.140897+00:00"
   },
   {
     "sarja": "NHL",
@@ -12056,7 +12080,10 @@
     "pvm": "2026-11-07",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.557,
+    "clv": 0.3,
+    "clv_aika": "2026-11-07T18:16:17.140897+00:00"
   },
   {
     "sarja": "NHL",
@@ -12072,7 +12099,10 @@
     "pvm": "2026-11-07",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.22,
+    "clv": -1.0,
+    "clv_aika": "2026-11-07T18:16:17.140897+00:00"
   },
   {
     "sarja": "NHL",
@@ -12088,7 +12118,10 @@
     "pvm": "2026-11-07",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5297,
+    "clv": 1.2,
+    "clv_aika": "2026-11-07T18:16:17.140897+00:00"
   },
   {
     "sarja": "NHL",
@@ -12104,7 +12137,10 @@
     "pvm": "2026-11-07",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5297,
+    "clv": 1.2,
+    "clv_aika": "2026-11-07T18:16:17.140897+00:00"
   },
   {
     "sarja": "NHL",
@@ -12120,7 +12156,10 @@
     "pvm": "2026-11-07",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.4261,
+    "clv": -3.3,
+    "clv_aika": "2026-11-07T18:16:17.140897+00:00"
   },
   {
     "sarja": "NHL",
@@ -12136,7 +12175,10 @@
     "pvm": "2026-11-07",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.6428,
+    "clv": -3.6,
+    "clv_aika": "2026-11-07T18:16:17.140897+00:00"
   },
   {
     "sarja": "NHL",
@@ -12152,7 +12194,10 @@
     "pvm": "2026-11-07",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.3169,
+    "clv": -3.3,
+    "clv_aika": "2026-11-07T18:16:17.140897+00:00"
   },
   {
     "sarja": "NHL",
@@ -12168,7 +12213,10 @@
     "pvm": "2026-11-07",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.2236,
+    "clv": -2.7,
+    "clv_aika": "2026-11-07T18:16:17.140897+00:00"
   },
   {
     "sarja": "NHL",
@@ -12184,7 +12232,10 @@
     "pvm": "2026-11-07",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.4232,
+    "clv": -2.2,
+    "clv_aika": "2026-11-07T18:16:17.140897+00:00"
   },
   {
     "sarja": "NHL",
@@ -12200,7 +12251,10 @@
     "pvm": "2026-11-07",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5192,
+    "clv": -0.8,
+    "clv_aika": "2026-11-07T18:16:17.140897+00:00"
   },
   {
     "sarja": "NHL",
@@ -12216,7 +12270,10 @@
     "pvm": "2026-11-07",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.3149,
+    "clv": -2.4,
+    "clv_aika": "2026-11-07T18:16:17.140897+00:00"
   },
   {
     "sarja": "NHL",
@@ -12232,7 +12289,10 @@
     "pvm": "2026-11-07",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.2225,
+    "clv": -3.9,
+    "clv_aika": "2026-11-07T18:16:17.140897+00:00"
   },
   {
     "sarja": "NHL",
@@ -12248,7 +12308,10 @@
     "pvm": "2026-11-07",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.2225,
+    "clv": -3.9,
+    "clv_aika": "2026-11-07T18:16:17.140897+00:00"
   },
   {
     "sarja": "NHL",
@@ -12264,7 +12327,10 @@
     "pvm": "2026-11-07",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.4572,
+    "clv": 3.8,
+    "clv_aika": "2026-11-07T18:16:17.140897+00:00"
   },
   {
     "sarja": "NHL",
@@ -12280,7 +12346,10 @@
     "pvm": "2026-11-07",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5428,
+    "clv": 3.7,
+    "clv_aika": "2026-11-07T18:16:17.140897+00:00"
   },
   {
     "sarja": "NHL",
@@ -12296,7 +12365,10 @@
     "pvm": "2026-11-07",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.4572,
+    "clv": 3.8,
+    "clv_aika": "2026-11-07T18:16:17.140897+00:00"
   },
   {
     "sarja": "NHL",
@@ -12308,6 +12380,697 @@
     "kerroin": 1.91,
     "yhtio": "888sport",
     "value": 6.6,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8,
+    "reilu_nyt": 0.5428,
+    "clv": 3.7,
+    "clv_aika": "2026-11-07T18:16:17.140897+00:00"
+  },
+  {
+    "sarja": "NHL",
+    "id": "79334eedea6908f995f13dd5a8f11d20",
+    "alkaa": "2026-11-07T22:10:00Z",
+    "ottelu": "Seattle Kraken - New York Rangers",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Over",
+    "kerroin": 2.28,
+    "yhtio": "1xBet",
+    "value": 1.0,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "79334eedea6908f995f13dd5a8f11d20",
+    "alkaa": "2026-11-07T22:10:00Z",
+    "ottelu": "Seattle Kraken - New York Rangers",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 1.8,
+    "yhtio": "888sport",
+    "value": 0.3,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "08d54b8e2b0d49e172fd8d2087576066",
+    "alkaa": "2026-11-08T01:10:00Z",
+    "ottelu": "Carolina Hurricanes - Chicago Blackhawks",
+    "tyyppi": "Tasoitus koti -2.5",
+    "valinta": "Chicago Blackhawks",
+    "kerroin": 1.91,
+    "yhtio": "888sport",
+    "value": 0.9,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "08d54b8e2b0d49e172fd8d2087576066",
+    "alkaa": "2026-11-08T01:10:00Z",
+    "ottelu": "Carolina Hurricanes - Chicago Blackhawks",
+    "tyyppi": "Tasoitus koti -2.5",
+    "valinta": "Chicago Blackhawks",
+    "kerroin": 1.91,
+    "yhtio": "888sport",
+    "value": 6.8,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "08d54b8e2b0d49e172fd8d2087576066",
+    "alkaa": "2026-11-08T01:10:00Z",
+    "ottelu": "Carolina Hurricanes - Chicago Blackhawks",
+    "tyyppi": "1X2",
+    "valinta": "Carolina Hurricanes",
+    "kerroin": 1.43,
+    "yhtio": "1xBet",
+    "value": 0.0,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "08d54b8e2b0d49e172fd8d2087576066",
+    "alkaa": "2026-11-08T01:10:00Z",
+    "ottelu": "Carolina Hurricanes - Chicago Blackhawks",
+    "tyyppi": "1X2",
+    "valinta": "Chicago Blackhawks",
+    "kerroin": 7.5,
+    "yhtio": "Unibet (FI)",
+    "value": 2.7,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "08d54b8e2b0d49e172fd8d2087576066",
+    "alkaa": "2026-11-08T01:10:00Z",
+    "ottelu": "Carolina Hurricanes - Chicago Blackhawks",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 6.25,
+    "yhtio": "LeoVegas (FI)",
+    "value": 2.2,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "08d54b8e2b0d49e172fd8d2087576066",
+    "alkaa": "2026-11-08T01:10:00Z",
+    "ottelu": "Carolina Hurricanes - Chicago Blackhawks",
+    "tyyppi": "1X2",
+    "valinta": "Chicago Blackhawks",
+    "kerroin": 7.5,
+    "yhtio": "Unibet (FI)",
+    "value": 9.1,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "08d54b8e2b0d49e172fd8d2087576066",
+    "alkaa": "2026-11-08T01:10:00Z",
+    "ottelu": "Carolina Hurricanes - Chicago Blackhawks",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 6.25,
+    "yhtio": "LeoVegas (FI)",
+    "value": 8.0,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "08d54b8e2b0d49e172fd8d2087576066",
+    "alkaa": "2026-11-08T01:10:00Z",
+    "ottelu": "Carolina Hurricanes - Chicago Blackhawks",
+    "tyyppi": "Tasoitus koti -1.5",
+    "valinta": "Chicago Blackhawks",
+    "kerroin": 2.3,
+    "yhtio": "Nordic Bet",
+    "value": 0.7,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "1f21bf798afede04880e7a391f3990ed",
+    "alkaa": "2026-11-08T01:10:00Z",
+    "ottelu": "Dallas Stars - San Jose Sharks",
+    "tyyppi": "Tasoitus koti -1.5",
+    "valinta": "San Jose Sharks",
+    "kerroin": 2.02,
+    "yhtio": "1xBet",
+    "value": 2.3,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "1f21bf798afede04880e7a391f3990ed",
+    "alkaa": "2026-11-08T01:10:00Z",
+    "ottelu": "Dallas Stars - San Jose Sharks",
+    "tyyppi": "1X2",
+    "valinta": "San Jose Sharks",
+    "kerroin": 5.4,
+    "yhtio": "LeoVegas (FI)",
+    "value": 1.0,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "1f21bf798afede04880e7a391f3990ed",
+    "alkaa": "2026-11-08T01:10:00Z",
+    "ottelu": "Dallas Stars - San Jose Sharks",
+    "tyyppi": "1X2",
+    "valinta": "San Jose Sharks",
+    "kerroin": 5.4,
+    "yhtio": "LeoVegas (FI)",
+    "value": 2.3,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "1f21bf798afede04880e7a391f3990ed",
+    "alkaa": "2026-11-08T01:10:00Z",
+    "ottelu": "Dallas Stars - San Jose Sharks",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 5.0,
+    "yhtio": "LeoVegas (FI)",
+    "value": 1.7,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "1f21bf798afede04880e7a391f3990ed",
+    "alkaa": "2026-11-08T01:10:00Z",
+    "ottelu": "Dallas Stars - San Jose Sharks",
+    "tyyppi": "Yli/alle 5.5",
+    "valinta": "Under",
+    "kerroin": 2.23,
+    "yhtio": "1xBet",
+    "value": 1.0,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "1f21bf798afede04880e7a391f3990ed",
+    "alkaa": "2026-11-08T01:10:00Z",
+    "ottelu": "Dallas Stars - San Jose Sharks",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 1.73,
+    "yhtio": "888sport",
+    "value": 2.8,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "b5934d2ce05af5dac632f1e8b7ce5fb6",
+    "alkaa": "2026-11-08T01:10:00Z",
+    "ottelu": "Minnesota Wild - Tampa Bay Lightning",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.4,
+    "yhtio": "Unibet (FI)",
+    "value": 0.5,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "b5934d2ce05af5dac632f1e8b7ce5fb6",
+    "alkaa": "2026-11-08T01:10:00Z",
+    "ottelu": "Minnesota Wild - Tampa Bay Lightning",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Over",
+    "kerroin": 2.2,
+    "yhtio": "Coolbet",
+    "value": 0.5,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "b5934d2ce05af5dac632f1e8b7ce5fb6",
+    "alkaa": "2026-11-08T01:10:00Z",
+    "ottelu": "Minnesota Wild - Tampa Bay Lightning",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 1.91,
+    "yhtio": "888sport",
+    "value": 3.8,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "b5934d2ce05af5dac632f1e8b7ce5fb6",
+    "alkaa": "2026-11-08T01:10:00Z",
+    "ottelu": "Minnesota Wild - Tampa Bay Lightning",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 1.91,
+    "yhtio": "888sport",
+    "value": 7.7,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "b5934d2ce05af5dac632f1e8b7ce5fb6",
+    "alkaa": "2026-11-08T01:10:00Z",
+    "ottelu": "Minnesota Wild - Tampa Bay Lightning",
+    "tyyppi": "Voittaja",
+    "valinta": "Tampa Bay Lightning",
+    "kerroin": 1.81,
+    "yhtio": "Veikkaus (FI)",
+    "value": 1.0,
+    "lahde": "Pinnacle",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "b5934d2ce05af5dac632f1e8b7ce5fb6",
+    "alkaa": "2026-11-08T01:10:00Z",
+    "ottelu": "Minnesota Wild - Tampa Bay Lightning",
+    "tyyppi": "Tasoitus koti 1.5",
+    "valinta": "Minnesota Wild",
+    "kerroin": 1.5,
+    "yhtio": "888sport",
+    "value": 0.9,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "2ccc92070bd6f92703efc538ba500d21",
+    "alkaa": "2026-11-08T02:10:00Z",
+    "ottelu": "Colorado Avalanche - Detroit Red Wings",
+    "tyyppi": "1X2",
+    "valinta": "Colorado Avalanche",
+    "kerroin": 1.82,
+    "yhtio": "1xBet",
+    "value": 0.7,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "2ccc92070bd6f92703efc538ba500d21",
+    "alkaa": "2026-11-08T02:10:00Z",
+    "ottelu": "Colorado Avalanche - Detroit Red Wings",
+    "tyyppi": "1X2",
+    "valinta": "Detroit Red Wings",
+    "kerroin": 4.25,
+    "yhtio": "LeoVegas (FI)",
+    "value": 1.5,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "2ccc92070bd6f92703efc538ba500d21",
+    "alkaa": "2026-11-08T02:10:00Z",
+    "ottelu": "Colorado Avalanche - Detroit Red Wings",
+    "tyyppi": "1X2",
+    "valinta": "Colorado Avalanche",
+    "kerroin": 1.82,
+    "yhtio": "1xBet",
+    "value": 0.6,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "2ccc92070bd6f92703efc538ba500d21",
+    "alkaa": "2026-11-08T02:10:00Z",
+    "ottelu": "Colorado Avalanche - Detroit Red Wings",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 1.8,
+    "yhtio": "888sport",
+    "value": 1.4,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "2ccc92070bd6f92703efc538ba500d21",
+    "alkaa": "2026-11-08T02:10:00Z",
+    "ottelu": "Colorado Avalanche - Detroit Red Wings",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 1.8,
+    "yhtio": "888sport",
+    "value": 2.8,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "41bd62e63799d7bb81e18169092a82bd",
+    "alkaa": "2026-11-08T02:10:00Z",
+    "ottelu": "Los Angeles Kings - Pittsburgh Penguins",
+    "tyyppi": "1X2",
+    "valinta": "Los Angeles Kings",
+    "kerroin": 2.37,
+    "yhtio": "1xBet",
+    "value": 0.8,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "41bd62e63799d7bb81e18169092a82bd",
+    "alkaa": "2026-11-08T02:10:00Z",
+    "ottelu": "Los Angeles Kings - Pittsburgh Penguins",
+    "tyyppi": "1X2",
+    "valinta": "Pittsburgh Penguins",
+    "kerroin": 2.8,
+    "yhtio": "LeoVegas (FI)",
+    "value": 1.3,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "41bd62e63799d7bb81e18169092a82bd",
+    "alkaa": "2026-11-08T02:10:00Z",
+    "ottelu": "Los Angeles Kings - Pittsburgh Penguins",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.4,
+    "yhtio": "LeoVegas (FI)",
+    "value": 0.2,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "41bd62e63799d7bb81e18169092a82bd",
+    "alkaa": "2026-11-08T02:10:00Z",
+    "ottelu": "Los Angeles Kings - Pittsburgh Penguins",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 1.8,
+    "yhtio": "888sport",
+    "value": 0.7,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "41bd62e63799d7bb81e18169092a82bd",
+    "alkaa": "2026-11-08T02:10:00Z",
+    "ottelu": "Los Angeles Kings - Pittsburgh Penguins",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 1.8,
+    "yhtio": "888sport",
+    "value": 1.8,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "8fe46a5692910faf8de7ac94676f4029",
+    "alkaa": "2026-11-08T03:10:00Z",
+    "ottelu": "Edmonton Oilers - Vancouver Canucks",
+    "tyyppi": "1X2",
+    "valinta": "Vancouver Canucks",
+    "kerroin": 6.0,
+    "yhtio": "Unibet (FI)",
+    "value": 0.8,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "8fe46a5692910faf8de7ac94676f4029",
+    "alkaa": "2026-11-08T03:10:00Z",
+    "ottelu": "Edmonton Oilers - Vancouver Canucks",
+    "tyyppi": "1X2",
+    "valinta": "Vancouver Canucks",
+    "kerroin": 6.0,
+    "yhtio": "Unibet (FI)",
+    "value": 2.5,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "8fe46a5692910faf8de7ac94676f4029",
+    "alkaa": "2026-11-08T03:10:00Z",
+    "ottelu": "Edmonton Oilers - Vancouver Canucks",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 5.5,
+    "yhtio": "Unibet (FI)",
+    "value": 0.2,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "8fe46a5692910faf8de7ac94676f4029",
+    "alkaa": "2026-11-08T03:10:00Z",
+    "ottelu": "Edmonton Oilers - Vancouver Canucks",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 2.2,
+    "yhtio": "888sport",
+    "value": 2.9,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "8fe46a5692910faf8de7ac94676f4029",
+    "alkaa": "2026-11-08T03:10:00Z",
+    "ottelu": "Edmonton Oilers - Vancouver Canucks",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Over",
+    "kerroin": 1.86,
+    "yhtio": "1xBet",
+    "value": 0.2,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "8fe46a5692910faf8de7ac94676f4029",
+    "alkaa": "2026-11-08T03:10:00Z",
+    "ottelu": "Edmonton Oilers - Vancouver Canucks",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 2.2,
+    "yhtio": "888sport",
+    "value": 1.5,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "8fe46a5692910faf8de7ac94676f4029",
+    "alkaa": "2026-11-08T03:10:00Z",
+    "ottelu": "Edmonton Oilers - Vancouver Canucks",
+    "tyyppi": "Tasoitus koti -2.5",
+    "valinta": "Vancouver Canucks",
+    "kerroin": 1.77,
+    "yhtio": "1xBet",
+    "value": 0.7,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "7fda7dbcff11e44f6cfc1c1da498fafb",
+    "alkaa": "2026-11-08T18:10:00Z",
+    "ottelu": "Boston Bruins - Florida Panthers",
+    "tyyppi": "1X2",
+    "valinta": "Boston Bruins",
+    "kerroin": 2.34,
+    "yhtio": "1xBet",
+    "value": 1.0,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "7fda7dbcff11e44f6cfc1c1da498fafb",
+    "alkaa": "2026-11-08T18:10:00Z",
+    "ottelu": "Boston Bruins - Florida Panthers",
+    "tyyppi": "1X2",
+    "valinta": "Boston Bruins",
+    "kerroin": 2.34,
+    "yhtio": "1xBet",
+    "value": 3.1,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "7fda7dbcff11e44f6cfc1c1da498fafb",
+    "alkaa": "2026-11-08T18:10:00Z",
+    "ottelu": "Boston Bruins - Florida Panthers",
+    "tyyppi": "Tasoitus koti 0.0",
+    "valinta": "Boston Bruins",
+    "kerroin": 1.81,
+    "yhtio": "1xBet",
+    "value": 0.5,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-07",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "7fda7dbcff11e44f6cfc1c1da498fafb",
+    "alkaa": "2026-11-08T18:10:00Z",
+    "ottelu": "Boston Bruins - Florida Panthers",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 1.8,
+    "yhtio": "888sport",
+    "value": 2.6,
     "lahde": "Poisson-malli",
     "pvm": "2026-11-07",
     "panos": 10,
