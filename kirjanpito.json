@@ -1592,11 +1592,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-07",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 8,
     "reilu_nyt": 0.5415,
     "clv": 3.4,
-    "clv_aika": "2026-11-07T23:53:37.913058+00:00"
+    "clv_aika": "2026-11-07T23:53:37.913058+00:00",
+    "voitto": 9.1
   },
   {
     "sarja": "NHL",
@@ -1611,11 +1612,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-07",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 8,
     "reilu_nyt": 0.5326,
     "clv": 6.5,
-    "clv_aika": "2026-11-07T23:53:37.913058+00:00"
+    "clv_aika": "2026-11-07T23:53:37.913058+00:00",
+    "voitto": 10.0
   },
   {
     "sarja": "NHL",
@@ -1630,11 +1632,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-07",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.1367,
     "clv": 2.5,
-    "clv_aika": "2026-11-07T23:53:37.913058+00:00"
+    "clv_aika": "2026-11-07T23:53:37.913058+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -1649,11 +1652,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-07",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 8,
     "reilu_nyt": 0.541,
     "clv": 3.3,
-    "clv_aika": "2026-11-07T23:53:37.913058+00:00"
+    "clv_aika": "2026-11-07T23:53:37.913058+00:00",
+    "voitto": 9.1
   },
   {
     "sarja": "NHL",
@@ -1668,8 +1672,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-08",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "osui",
+    "versio": 8,
+    "voitto": 12.0
   },
   {
     "sarja": "NHL",
@@ -1681,6 +1686,41 @@
     "kerroin": 1.91,
     "yhtio": "888sport",
     "value": 5.4,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-08",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8,
+    "reilu_nyt": 0.5645,
+    "clv": 7.8,
+    "clv_aika": "2026-11-08T18:28:57.065721+00:00"
+  },
+  {
+    "sarja": "NHL",
+    "id": "26c46faca681cd1f742dee05c5d7730b",
+    "alkaa": "2026-11-09T00:10:00Z",
+    "ottelu": "Calgary Flames - Philadelphia Flyers",
+    "tyyppi": "Tasoitus koti 1.5",
+    "valinta": "Philadelphia Flyers",
+    "kerroin": 3.2,
+    "yhtio": "LeoVegas (FI)",
+    "value": 4.5,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-08",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "41a3f4e9221afae1081031d9f6af0db4",
+    "alkaa": "2026-11-09T01:10:00Z",
+    "ottelu": "Anaheim Ducks - Pittsburgh Penguins",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 2.2,
+    "yhtio": "888sport",
+    "value": 5.0,
     "lahde": "Poisson-malli",
     "pvm": "2026-11-08",
     "panos": 10,
