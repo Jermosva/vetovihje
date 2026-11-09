@@ -1709,11 +1709,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-08",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.3054,
     "clv": -2.3,
-    "clv_aika": "2026-11-08T23:57:51.052600+00:00"
+    "clv_aika": "2026-11-08T23:57:51.052600+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -1728,10 +1729,27 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-08",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 8,
     "reilu_nyt": 0.4686,
     "clv": 3.1,
-    "clv_aika": "2026-11-08T23:57:51.052600+00:00"
+    "clv_aika": "2026-11-08T23:57:51.052600+00:00",
+    "voitto": -10
+  },
+  {
+    "sarja": "NHL",
+    "id": "c0de79c9c801e5fc0d1bb3873b10a164",
+    "alkaa": "2026-11-10T01:10:00Z",
+    "ottelu": "Edmonton Oilers - New York Rangers",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 1.91,
+    "yhtio": "888sport",
+    "value": 4.7,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-10",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
   }
 ]
