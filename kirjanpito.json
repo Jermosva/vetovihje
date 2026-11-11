@@ -1784,5 +1784,21 @@
     "panos": 10,
     "tila": "avoin",
     "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "79041ec71c97248859299c4b6211cc17",
+    "alkaa": "2026-11-12T00:10:00Z",
+    "ottelu": "Buffalo Sabres - Tampa Bay Lightning",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 2.0,
+    "yhtio": "888sport",
+    "value": 7.4,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-11",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
   }
 ]

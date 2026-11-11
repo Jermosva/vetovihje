@@ -14158,7 +14158,10 @@
     "pvm": "2026-11-10",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.4983,
+    "clv": -2.8,
+    "clv_aika": "2026-11-11T00:50:52.703955+00:00"
   },
   {
     "sarja": "Liiga",
@@ -14174,7 +14177,10 @@
     "pvm": "2026-11-10",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5017,
+    "clv": 15.4,
+    "clv_aika": "2026-11-11T00:50:52.703955+00:00"
   },
   {
     "sarja": "Liiga",
@@ -14190,7 +14196,10 @@
     "pvm": "2026-11-10",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.3827,
+    "clv": 0.3,
+    "clv_aika": "2026-11-11T00:50:52.703955+00:00"
   },
   {
     "sarja": "Liiga",
@@ -14206,7 +14215,10 @@
     "pvm": "2026-11-10",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.2618,
+    "clv": 2.1,
+    "clv_aika": "2026-11-11T00:50:52.703955+00:00"
   },
   {
     "sarja": "Liiga",
@@ -14222,7 +14234,10 @@
     "pvm": "2026-11-10",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5159,
+    "clv": 0.6,
+    "clv_aika": "2026-11-11T00:50:52.703955+00:00"
   },
   {
     "sarja": "Liiga",
@@ -14238,7 +14253,10 @@
     "pvm": "2026-11-10",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.4841,
+    "clv": 11.4,
+    "clv_aika": "2026-11-11T00:50:52.703955+00:00"
   },
   {
     "sarja": "Liiga",
@@ -14254,7 +14272,10 @@
     "pvm": "2026-11-10",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.5065,
+    "clv": 0.3,
+    "clv_aika": "2026-11-11T00:50:52.703955+00:00"
   },
   {
     "sarja": "NHL",
@@ -14430,7 +14451,10 @@
     "pvm": "2026-11-10",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.4555,
+    "clv": -2.1,
+    "clv_aika": "2026-11-11T00:50:52.703955+00:00"
   },
   {
     "sarja": "NHL",
@@ -14446,7 +14470,10 @@
     "pvm": "2026-11-10",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.6593,
+    "clv": -2.4,
+    "clv_aika": "2026-11-11T00:50:52.703955+00:00"
   },
   {
     "sarja": "NHL",
@@ -14460,6 +14487,153 @@
     "value": 2.6,
     "lahde": "Poisson-malli",
     "pvm": "2026-11-10",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8,
+    "reilu_nyt": 0.3525,
+    "clv": 4.0,
+    "clv_aika": "2026-11-11T00:50:52.703955+00:00"
+  },
+  {
+    "sarja": "Liiga",
+    "id": "117212d58bea7668975551a072575484",
+    "alkaa": "2026-11-11T16:30:00Z",
+    "ottelu": "Ilves - Pelicans",
+    "tyyppi": "Voittaja",
+    "valinta": "Pelicans",
+    "kerroin": 2.88,
+    "yhtio": "Veikkaus (FI)",
+    "value": 2.3,
+    "lahde": "Pinnacle",
+    "pvm": "2026-11-11",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "e71ce66a01d66fc935632b206d2dedbd",
+    "alkaa": "2026-11-11T03:10:00Z",
+    "ottelu": "Los Angeles Kings - Nashville Predators",
+    "tyyppi": "Tasoitus koti -1.5",
+    "valinta": "Los Angeles Kings",
+    "kerroin": 3.0,
+    "yhtio": "LeoVegas (FI)",
+    "value": 2.2,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-11",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "e71ce66a01d66fc935632b206d2dedbd",
+    "alkaa": "2026-11-11T03:10:00Z",
+    "ottelu": "Los Angeles Kings - Nashville Predators",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 1.73,
+    "yhtio": "888sport",
+    "value": 0.0,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-11",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "79041ec71c97248859299c4b6211cc17",
+    "alkaa": "2026-11-12T00:10:00Z",
+    "ottelu": "Buffalo Sabres - Tampa Bay Lightning",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Over",
+    "kerroin": 2.14,
+    "yhtio": "LeoVegas (FI)",
+    "value": 0.7,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-11",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "79041ec71c97248859299c4b6211cc17",
+    "alkaa": "2026-11-12T00:10:00Z",
+    "ottelu": "Buffalo Sabres - Tampa Bay Lightning",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 2.0,
+    "yhtio": "888sport",
+    "value": 5.9,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-11",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "79041ec71c97248859299c4b6211cc17",
+    "alkaa": "2026-11-12T00:10:00Z",
+    "ottelu": "Buffalo Sabres - Tampa Bay Lightning",
+    "tyyppi": "Yli/alle 6.5",
+    "valinta": "Under",
+    "kerroin": 2.0,
+    "yhtio": "888sport",
+    "value": 7.4,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-11",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "d6fb69c3f844f53b1bb2619066cd7947",
+    "alkaa": "2026-11-12T00:40:00Z",
+    "ottelu": "Calgary Flames - New York Rangers",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.4,
+    "yhtio": "LeoVegas (FI)",
+    "value": 0.2,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-11",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "d6fb69c3f844f53b1bb2619066cd7947",
+    "alkaa": "2026-11-12T00:40:00Z",
+    "ottelu": "Calgary Flames - New York Rangers",
+    "tyyppi": "Tasoitus koti 0.0",
+    "valinta": "New York Rangers",
+    "kerroin": 1.69,
+    "yhtio": "1xBet",
+    "value": 0.5,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-11",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "d6fb69c3f844f53b1bb2619066cd7947",
+    "alkaa": "2026-11-12T00:40:00Z",
+    "ottelu": "Calgary Flames - New York Rangers",
+    "tyyppi": "Yli/alle 5.5",
+    "valinta": "Under",
+    "kerroin": 2.1,
+    "yhtio": "LeoVegas (FI)",
+    "value": 0.3,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-11",
     "panos": 10,
     "tila": "avoin",
     "versio": 8
