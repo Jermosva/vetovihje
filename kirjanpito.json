@@ -1766,8 +1766,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-10",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -1782,8 +1783,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-10",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "osui",
+    "versio": 8,
+    "voitto": 9.1
   },
   {
     "sarja": "NHL",
