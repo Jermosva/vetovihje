@@ -14479,11 +14479,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-10",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 8,
     "reilu_nyt": 0.4555,
     "clv": -2.1,
-    "clv_aika": "2026-11-11T00:50:52.703955+00:00"
+    "clv_aika": "2026-11-11T00:50:52.703955+00:00",
+    "voitto": 11.5
   },
   {
     "sarja": "NHL",
@@ -14498,11 +14499,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-10",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 8,
     "reilu_nyt": 0.6593,
     "clv": -2.4,
-    "clv_aika": "2026-11-11T00:50:52.703955+00:00"
+    "clv_aika": "2026-11-11T00:50:52.703955+00:00",
+    "voitto": 4.8
   },
   {
     "sarja": "NHL",
@@ -14517,11 +14519,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-10",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 8,
     "reilu_nyt": 0.3525,
     "clv": 4.0,
-    "clv_aika": "2026-11-11T00:50:52.703955+00:00"
+    "clv_aika": "2026-11-11T00:50:52.703955+00:00",
+    "voitto": 19.5
   },
   {
     "sarja": "Liiga",
@@ -14553,8 +14556,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-11",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -14569,8 +14573,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-11",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "osui",
+    "versio": 8,
+    "voitto": 7.3
   },
   {
     "sarja": "NHL",
@@ -14585,8 +14590,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-11",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "osui",
+    "versio": 8,
+    "voitto": 11.4
   },
   {
     "sarja": "NHL",
@@ -14601,8 +14607,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-11",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -14617,8 +14624,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-11",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -14633,8 +14641,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-11",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -14649,8 +14658,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-11",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "osui",
+    "versio": 8,
+    "voitto": 6.9
   },
   {
     "sarja": "NHL",
@@ -14665,7 +14675,8 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-11",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "osui",
+    "versio": 8,
+    "voitto": 11.0
   }
 ]
