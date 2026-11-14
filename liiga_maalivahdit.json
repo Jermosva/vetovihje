@@ -17433,5 +17433,60 @@
    "nimi": "Roope Taponen"
   },
   "vaihtoja": 0
+ },
+ "2027_2701451": {
+  "koti": {
+   "id": 61073543,
+   "nimi": "Jesper Myrenberg"
+  },
+  "vieras": {
+   "id": 31267715,
+   "nimi": "Eetu Randelin"
+  },
+  "vaihtoja": 1
+ },
+ "2027_2701452": {
+  "koti": {
+   "id": 23249408,
+   "nimi": "Oskari Setänen"
+  },
+  "vieras": {
+   "id": 24158200,
+   "nimi": "Jussi Olkinuora"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701453": {
+  "koti": {
+   "id": 60660609,
+   "nimi": "Niklas Rubin"
+  },
+  "vieras": {
+   "id": 25655472,
+   "nimi": "Henri Kiviaho"
+  },
+  "vaihtoja": 1
+ },
+ "2027_2701454": {
+  "koti": {
+   "id": 40056206,
+   "nimi": "Masi Härkönen"
+  },
+  "vieras": {
+   "id": 40107053,
+   "nimi": "Kim Saarinen"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701455": {
+  "koti": {
+   "id": 31915960,
+   "nimi": "Roope Taponen"
+  },
+  "vieras": {
+   "id": 61074401,
+   "nimi": "Olle Eriksson Ek"
+  },
+  "vaihtoja": 0
  }
 }
