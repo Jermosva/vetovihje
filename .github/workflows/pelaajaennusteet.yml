@@ -1,0 +1,64 @@
+name: Pelaajaennusteet
+
+# Kevyt lisäajo pelaajaennusteille. GitHubin ajastetut ajot käynnistyvät usein tunteja
+# myöhässä, joten pääajo (klo 15.37) ehtii monena päivänä vasta pelien alettua.
+# Kokoonpanot julkaistaan pelipäivänä klo 12, joten ennusteet päivitetään useaan kertaan
+# sen jälkeen. Ei Odds API -hakuja.
+on:
+  schedule:
+    # Aika UTC-aikana. Talviaikana (Suomi = UTC+2): 12.17, 13.47, 15.17 ja 16.47
+    - cron: "17 10,13 * * *"
+    - cron: "47 11,14 * * *"
+  # Lisää "Run workflow" -napin, jolla ajon voi käynnistää käsin
+  workflow_dispatch:
+
+# Lupa tallentaa muutokset takaisin repoon
+permissions:
+  contents: write
+
+# Sama ryhmä kuin vetovihje.yml:ssä: ajot vuorotellen, etteivät commitit törmää
+concurrency:
+  group: vetovihje-repo
+  cancel-in-progress: false
+
+jobs:
+  aja:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Europe/Helsinki
+    steps:
+      - name: Hae koodi
+        uses: actions/checkout@v4
+
+      - name: Asenna Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Asenna kirjastot
+        run: pip install -r requirements.txt
+
+      # Hakee vain uudet pelit (yleensä ei yhtään, jos pääajo on jo hakenut ne)
+      - name: Päivitä maalivahdit ja pelaajadata
+        run: python hae_maalivahdit.py
+
+      # Joukkueiden voimat, maalivahtien tasot ja väsymys ottelukerrointa varten
+      - name: Päivitä Poisson-malli
+        run: python poisson_malli.py
+
+      - name: Pelaajaennusteet
+        run: python pelaajamalli.py
+        continue-on-error: true
+
+      - name: Tallenna GitHubiin
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          # Lisätään vain olemassa olevat tiedostot: puuttuva tiedosto kaataisi koko git addin
+          for f in liiga_maalivahdit.json liiga_pelaajat.json pelaajaennusteet.json pelaajavarjo.json; do
+            if [ -f "$f" ]; then git add "$f"; fi
+          done
+          git commit -m "Pelaajaennusteet" || echo "Ei muutoksia"
+          # --autostash: poisson.json muuttuu ajossa, mutta sitä ei tallenneta
+          git pull --rebase --autostash
+          git push

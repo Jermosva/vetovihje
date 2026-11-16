@@ -12,6 +12,11 @@ on:
 permissions:
   contents: write
 
+# Tämä ja pelaajaennusteet.yml ajetaan vuorotellen, etteivät niiden commitit törmää
+concurrency:
+  group: vetovihje-repo
+  cancel-in-progress: false
+
 jobs:
   aja:
     runs-on: ubuntu-latest
