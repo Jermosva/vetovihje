@@ -1,0 +1,80 @@
+{
+ "paivitetty": "2026-11-16T22:23+02:00",
+ "pvm": "2026-11-18",
+ "versio": 1,
+ "viime_pelit": 15,
+ "ottelut": [
+  {
+   "avain": "2027_2701456",
+   "alkaa": "2026-11-18T16:30:00Z",
+   "koti": "JYP",
+   "vieras": "Sport",
+   "odotetut_maalit": [
+    3.44,
+    2.22
+   ],
+   "kokoonpano": false,
+   "pelaajat": []
+  },
+  {
+   "avain": "2027_2701458",
+   "alkaa": "2026-11-18T16:30:00Z",
+   "koti": "Jukurit",
+   "vieras": "Jokerit",
+   "odotetut_maalit": [
+    2.46,
+    2.24
+   ],
+   "kokoonpano": false,
+   "pelaajat": []
+  },
+  {
+   "avain": "2027_2701459",
+   "alkaa": "2026-11-18T16:30:00Z",
+   "koti": "KalPa",
+   "vieras": "Lukko",
+   "odotetut_maalit": [
+    2.57,
+    2.52
+   ],
+   "kokoonpano": false,
+   "pelaajat": []
+  },
+  {
+   "avain": "2027_2701460",
+   "alkaa": "2026-11-18T16:30:00Z",
+   "koti": "K-Espoo",
+   "vieras": "Ilves",
+   "odotetut_maalit": [
+    2.61,
+    2.58
+   ],
+   "kokoonpano": false,
+   "pelaajat": []
+  },
+  {
+   "avain": "2027_2701461",
+   "alkaa": "2026-11-18T16:30:00Z",
+   "koti": "TPS",
+   "vieras": "Kärpät",
+   "odotetut_maalit": [
+    3.0,
+    2.21
+   ],
+   "kokoonpano": false,
+   "pelaajat": []
+  },
+  {
+   "avain": "2027_2701462",
+   "alkaa": "2026-11-18T16:30:00Z",
+   "koti": "Ässät",
+   "vieras": "Pelicans",
+   "odotetut_maalit": [
+    2.46,
+    2.12
+   ],
+   "kokoonpano": false,
+   "pelaajat": []
+  }
+ ]
+}

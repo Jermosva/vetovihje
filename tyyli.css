@@ -188,3 +188,315 @@ li {
   opacity: 0.7;
   margin: 0 0 8px 0;
 }
+
+/* ---------- Välilehdet ---------- */
+.valilehdet {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.valilehti {
+  flex: 1;                     /* molemmat yhtä leveitä */
+  text-align: center;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.valilehti.aktiivinen {
+  background: var(--kortti);
+  color: var(--teksti);
+}
+
+/* hidden-attribuutti piilottaa aina, vaikka muu sääntö antaisi displayn */
+[hidden] { display: none !important; }
+
+/* ---------- Pelaajavedot ---------- */
+#nakyma-pelaajat > section {
+  margin-bottom: 16px;
+}
+
+/* Otsikkorivi tummalla taustalla: päivä vasemmalla, Asetukset oikealla */
+.pelaaja-ylapalkki {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: white;
+  font-size: 15px;
+}
+
+#asetukset-nappi {
+  margin-left: auto;
+}
+
+#pelaaja-ottelut {
+  color: white;                /* "Ladataan..." näkyy tummalla taustalla */
+}
+
+#pelaaja-asetukset input[type="password"] {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+}
+
+.pieni-nappi {
+  font: inherit;
+  font-size: 13px;
+  padding: 6px 10px;
+  border: 1px solid var(--viiva);
+  border-radius: 8px;
+  background: white;
+  color: var(--teksti);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.pieni-nappi:disabled {
+  opacity: 0.5;
+}
+
+/* Suodattimet yhdessä kortissa, puhelimella rivit rivittyvät */
+#pelaaja-suodattimet {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  align-items: flex-end;
+  background: var(--kortti);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+#pelaaja-suodattimet label {
+  font-size: 13px;
+  color: var(--heikko);
+}
+
+#pelaaja-suodattimet select {
+  display: block;
+  max-width: 100%;
+}
+
+#pelaaja-suodattimet .selite {
+  flex-basis: 100%;
+  margin: 0;
+}
+
+/* Lomakekentät 16 px: iPhone ei zoomaa kenttää valittaessa */
+#nakyma-pelaajat select,
+#nakyma-pelaajat input[type="text"],
+#nakyma-pelaajat input[type="password"],
+#nakyma-pelaajat textarea {
+  font: inherit;
+  font-size: 16px;
+  padding: 4px 6px;
+  border: 1px solid var(--viiva);
+  border-radius: 6px;
+  background: white;
+  color: var(--teksti);
+}
+
+.valintaruutu input {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+}
+
+.viestikortti {
+  background: var(--kortti);
+  color: var(--teksti);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 8px;
+}
+
+/* Yksi kortti per ottelu */
+.peli-kortti {
+  background: var(--kortti);
+  color: var(--teksti);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 8px;
+}
+
+.peli-kortti h2 {
+  font-size: 16px;
+  margin: 0 0 4px;
+}
+
+/* Taulukko vierii sivusuunnassa omassa laatikossaan, sivu itse ei */
+.taulukko-vieritys {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pelaajataulukko {
+  border-collapse: separate;   /* sticky-sarake toimii vain separate-tilassa */
+  border-spacing: 0;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.pelaajataulukko th {
+  font-weight: normal;
+  font-size: 12px;
+  color: var(--heikko);
+  text-align: right;
+  padding: 4px 6px;
+}
+
+.pelaajataulukko td {
+  padding: 6px;
+  text-align: right;
+  border-top: 1px solid var(--viiva);
+  vertical-align: middle;
+}
+
+/* Nimisarake pysyy vasemmassa reunassa, kun taulukkoa vieritetään */
+.pelaajataulukko .nimi {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--kortti);
+  text-align: left;
+  white-space: normal;
+  min-width: 110px;
+  max-width: 140px;
+  box-shadow: 1px 0 0 var(--viiva);
+}
+
+.pelaajataulukko td.nimi {
+  font-weight: 600;
+}
+
+/* Prosentti ylhäällä, rajakerroin pienellä alla */
+.tn-solu small {
+  display: block;
+  font-size: 12px;
+  color: var(--heikko);
+}
+
+/* Valitun vetotyypin sarakkeet erottuvat vähän */
+.pelaajataulukko .valittu {
+  background: #e8edf1;
+}
+
+.pelaajataulukko td.value-solu {
+  font-weight: 600;
+  min-width: 56px;
+}
+
+.kerroin-syotto {
+  width: 64px;
+  text-align: right;
+}
+
+.kerroin-syotto.hyva {
+  border-color: var(--vihrea) !important;
+  box-shadow: 0 0 0 1px var(--vihrea);
+}
+
+.nousija {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--vihrea);
+  white-space: nowrap;
+}
+
+.pelattu {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: normal;
+  padding: 0 4px;
+  border-radius: 4px;
+  background: var(--viiva);
+  color: var(--heikko);
+}
+
+/* Tallennuslomake pelaajarivin alla: pysyy näkyvissä vasemmassa reunassa */
+.lomakerivi td {
+  text-align: left;
+  white-space: normal;
+}
+
+.tallennuslomake {
+  position: sticky;
+  left: 0;
+  max-width: 320px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  font-size: 13px;
+}
+
+.tallennuslomake input[name="panos"] {
+  width: 60px;
+}
+
+.tallennuslomake textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: monospace !important;
+  font-size: 12px !important;
+}
+
+.tallennuslomake .selite {
+  margin: 0;
+}
+
+.lomakeviesti {
+  flex-basis: 100%;
+}
+
+.lomakeviesti.varoitus {
+  color: #9a6700;
+}
+
+/* Pelaajavetojen lista: sama ilme kuin päivälistassa */
+.pelaajavetolista {
+  background: var(--kortti);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.pelaajavetolista ul {
+  padding-top: 2px;
+}
+
+.pelaajavetolista li:first-child {
+  border-top: none;
+}
+
+.pelaajavetolista .pieni-nappi {
+  margin-top: 6px;
+}
+
+/* Kalibraatio: kaksi korttia vierekkäin, puhelimella allekkain */
+.osio-otsikko {
+  color: white;
+  font-size: 18px;
+  margin: 0 0 4px;
+}
+
+.selite.valkoinen {
+  color: white;
+}
+
+.kalibraatio-ruudukko {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+@media (max-width: 600px) {
+  .kalibraatio-ruudukko {
+    grid-template-columns: 1fr;
+  }
+}

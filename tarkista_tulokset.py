@@ -358,3 +358,11 @@ print("Nyt ratkaistu:", ratkaistuja)
 print("Ratkaistuja vetoja yhteensä:", pelattuja, "| osuneita:", osuneita)
 print("Leikkirahasaldo:", round(saldo, 2), "€")
 print("Odottaa käsin tarkistusta:", tarkistettavia)
+
+# ===== Pelaajavedot ja pelaajavarjo (ks. pelaajatulokset.py) =====
+# Virhe pelaajapuolella ei saa kaataa ajoa (muuten kirjanpitoa ei tallenneta GitHubiin)
+try:
+    import pelaajatulokset
+    pelaajatulokset.paivita()
+except Exception as virhe:
+    print("VIRHE: pelaajavetojen tarkistus:", repr(virhe))

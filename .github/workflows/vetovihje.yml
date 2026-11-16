@@ -39,11 +39,17 @@ jobs:
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
 
-      - name: Päivitä maalivahdit
+      # Hakee uusista peleistä sekä aloittavat maalivahdit että pelaajien tehopisteet
+      - name: Päivitä maalivahdit ja pelaajadata
         run: python hae_maalivahdit.py
 
       - name: Päivitä Poisson-malli
         run: python poisson_malli.py
+
+      # Pelaajamallin virhe ei saa estää ottelukertoimien vetoja eikä kirjanpidon tallennusta
+      - name: Pelaajaennusteet
+        run: python pelaajamalli.py
+        continue-on-error: true
 
       - name: Laske value ja kirjaa vedot
         run: python laske_value.py
@@ -52,6 +58,13 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-          git add kirjanpito.json varjo.json liiga_maalivahdit.json
+          # Lisätään vain olemassa olevat tiedostot: puuttuva tiedosto kaataisi koko git addin
+          for f in kirjanpito.json varjo.json liiga_maalivahdit.json liiga_pelaajat.json pelaajaennusteet.json pelaajavarjo.json pelaajavedot_tulokset.json; do
+            if [ -f "$f" ]; then git add "$f"; fi
+          done
           git commit -m "Automaattinen päivitys" || echo "Ei muutoksia"
+          # Sivu tallentaa pelaajavedot.json-tiedostoa suoraan GitHubiin, joten ajon aikana
+          # repoon on voinut tulla uusi commit. Haetaan se ensin, ettei push hylätä.
+          # --autostash: poisson.json muuttuu ajossa, mutta sitä ei tallenneta
+          git pull --rebase --autostash
           git push
