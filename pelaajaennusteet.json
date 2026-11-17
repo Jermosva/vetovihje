@@ -1,5 +1,5 @@
 {
- "paivitetty": "2026-11-17T05:06+02:00",
+ "paivitetty": "2026-11-17T21:12+02:00",
  "pvm": "2026-11-18",
  "versio": 1,
  "viime_pelit": 15,
@@ -22,7 +22,7 @@
    "koti": "Jukurit",
    "vieras": "Jokerit",
    "odotetut_maalit": [
-    2.46,
+    2.47,
     2.24
    ],
    "kokoonpano": false,
