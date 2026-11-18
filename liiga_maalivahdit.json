@@ -17499,5 +17499,27 @@
    "nimi": "Kari Piiroinen"
   },
   "vaihtoja": 0
+ },
+ "2027_2701459": {
+  "koti": {
+   "id": 60760868,
+   "nimi": "Stefanos Lekkas"
+  },
+  "vieras": {
+   "id": 40050277,
+   "nimi": "Daniel Salonen"
+  },
+  "vaihtoja": 1
+ },
+ "2027_2701460": {
+  "koti": {
+   "id": 40176719,
+   "nimi": "Petteri Rimpinen"
+  },
+  "vieras": {
+   "id": 61011727,
+   "nimi": "Mantas Armalis"
+  },
+  "vaihtoja": 0
  }
 }

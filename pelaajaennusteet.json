@@ -1,5 +1,5 @@
 {
- "paivitetty": "2026-11-18T04:36+02:00",
+ "paivitetty": "2026-11-18T20:52+02:00",
  "pvm": "2026-11-18",
  "versio": 1,
  "viime_pelit": 15,
@@ -10,11 +10,1348 @@
    "koti": "JYP",
    "vieras": "Sport",
    "odotetut_maalit": [
-    3.44,
-    2.22
+    3.32,
+    2.32
    ],
-   "kokoonpano": false,
-   "pelaajat": []
+   "kokoonpano": true,
+   "pelaajat": [
+    {
+     "id": 30010552,
+     "nimi": "Leevi Tukiainen",
+     "joukkue": "JYP",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 19,
+      "maalit": 12,
+      "syotot": 2,
+      "pisteet": 14
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 11,
+      "syotot": 1,
+      "pisteet": 12
+     },
+     "lambda": {
+      "maalit": 0.614,
+      "syotot": 0.281
+     },
+     "tn": {
+      "maalit_1": 0.4588,
+      "maalit_2": 0.1266,
+      "syotot_1": 0.2448,
+      "syotot_2": 0.0328,
+      "pisteet_1": 0.5913,
+      "pisteet_2": 0.2256,
+      "pisteet_3": 0.062
+     },
+     "nousija": null
+    },
+    {
+     "id": 30728763,
+     "nimi": "Valtteri Ojantakanen",
+     "joukkue": "JYP",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 12,
+      "syotot": 8,
+      "pisteet": 20
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 11,
+      "syotot": 4,
+      "pisteet": 15
+     },
+     "lambda": {
+      "maalit": 0.576,
+      "syotot": 0.312
+     },
+     "tn": {
+      "maalit_1": 0.4377,
+      "maalit_2": 0.114,
+      "syotot_1": 0.2677,
+      "syotot_2": 0.0396,
+      "pisteet_1": 0.5883,
+      "pisteet_2": 0.2229,
+      "pisteet_3": 0.0608
+     },
+     "nousija": null
+    },
+    {
+     "id": 33209030,
+     "nimi": "Jere Lassila",
+     "joukkue": "JYP",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 5,
+      "syotot": 11,
+      "pisteet": 16
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 7,
+      "pisteet": 9
+     },
+     "lambda": {
+      "maalit": 0.257,
+      "syotot": 0.56
+     },
+     "tn": {
+      "maalit_1": 0.2266,
+      "maalit_2": 0.0279,
+      "syotot_1": 0.4289,
+      "syotot_2": 0.109,
+      "pisteet_1": 0.5583,
+      "pisteet_2": 0.1974,
+      "pisteet_3": 0.0499
+     },
+     "nousija": null
+    },
+    {
+     "id": 22805092,
+     "nimi": "Oula Palve",
+     "joukkue": "Sport",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 11,
+      "maalit": 2,
+      "syotot": 7,
+      "pisteet": 9
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 4,
+      "syotot": 10,
+      "pisteet": 14
+     },
+     "lambda": {
+      "maalit": 0.251,
+      "syotot": 0.56
+     },
+     "tn": {
+      "maalit_1": 0.2223,
+      "maalit_2": 0.0268,
+      "syotot_1": 0.429,
+      "syotot_2": 0.1091,
+      "pisteet_1": 0.556,
+      "pisteet_2": 0.1955,
+      "pisteet_3": 0.0491
+     },
+     "nousija": null
+    },
+    {
+     "id": 61074188,
+     "nimi": "Reece Newkirk",
+     "joukkue": "JYP",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 7,
+      "syotot": 10,
+      "pisteet": 17
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 5,
+      "syotot": 8,
+      "pisteet": 13
+     },
+     "lambda": {
+      "maalit": 0.317,
+      "syotot": 0.475
+     },
+     "tn": {
+      "maalit_1": 0.2719,
+      "maalit_2": 0.0409,
+      "syotot_1": 0.3779,
+      "syotot_2": 0.0826,
+      "pisteet_1": 0.547,
+      "pisteet_2": 0.1883,
+      "pisteet_3": 0.0463
+     },
+     "nousija": {
+      "nosto": 0.31,
+      "aiempi": 0.604,
+      "nyt": 0.792
+     }
+    },
+    {
+     "id": 60501427,
+     "nimi": "Brett Harrison",
+     "joukkue": "Sport",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 11,
+      "maalit": 3,
+      "syotot": 5,
+      "pisteet": 8
+     },
+     "viime": {
+      "ottelut": 11,
+      "maalit": 3,
+      "syotot": 5,
+      "pisteet": 8
+     },
+     "lambda": {
+      "maalit": 0.281,
+      "syotot": 0.46
+     },
+     "tn": {
+      "maalit_1": 0.2447,
+      "maalit_2": 0.0327,
+      "syotot_1": 0.3686,
+      "syotot_2": 0.0783,
+      "pisteet_1": 0.5231,
+      "pisteet_2": 0.17,
+      "pisteet_3": 0.0393
+     },
+     "nousija": null
+    },
+    {
+     "id": 22870292,
+     "nimi": "Harri Pesonen",
+     "joukkue": "JYP",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 4,
+      "syotot": 12,
+      "pisteet": 16
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 9,
+      "pisteet": 11
+     },
+     "lambda": {
+      "maalit": 0.209,
+      "syotot": 0.526
+     },
+     "tn": {
+      "maalit_1": 0.1885,
+      "maalit_2": 0.019,
+      "syotot_1": 0.4089,
+      "syotot_2": 0.0981,
+      "pisteet_1": 0.5203,
+      "pisteet_2": 0.1679,
+      "pisteet_3": 0.0385
+     },
+     "nousija": null
+    },
+    {
+     "id": 23595916,
+     "nimi": "Sami Vatanen",
+     "joukkue": "JYP",
+     "pp": "P",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 18,
+      "maalit": 2,
+      "syotot": 11,
+      "pisteet": 13
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 10,
+      "pisteet": 11
+     },
+     "lambda": {
+      "maalit": 0.108,
+      "syotot": 0.575
+     },
+     "tn": {
+      "maalit_1": 0.1028,
+      "maalit_2": 0.0055,
+      "syotot_1": 0.4374,
+      "syotot_2": 0.1138,
+      "pisteet_1": 0.4952,
+      "pisteet_2": 0.1501,
+      "pisteet_3": 0.0322
+     },
+     "nousija": null
+    },
+    {
+     "id": 60962804,
+     "nimi": "Alexander True",
+     "joukkue": "JYP",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 5,
+      "syotot": 13,
+      "pisteet": 18
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 4,
+      "syotot": 8,
+      "pisteet": 12
+     },
+     "lambda": {
+      "maalit": 0.223,
+      "syotot": 0.427
+     },
+     "tn": {
+      "maalit_1": 0.1999,
+      "maalit_2": 0.0215,
+      "syotot_1": 0.3476,
+      "syotot_2": 0.069,
+      "pisteet_1": 0.478,
+      "pisteet_2": 0.1387,
+      "pisteet_3": 0.0284
+     },
+     "nousija": {
+      "nosto": 0.37,
+      "aiempi": 0.476,
+      "nyt": 0.65
+     }
+    },
+    {
+     "id": 24064653,
+     "nimi": "Otto Mäkinen",
+     "joukkue": "JYP",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 0,
+      "syotot": 4,
+      "pisteet": 4
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 4,
+      "pisteet": 4
+     },
+     "lambda": {
+      "maalit": 0.142,
+      "syotot": 0.428
+     },
+     "tn": {
+      "maalit_1": 0.1327,
+      "maalit_2": 0.0092,
+      "syotot_1": 0.3482,
+      "syotot_2": 0.0692,
+      "pisteet_1": 0.4347,
+      "pisteet_2": 0.1122,
+      "pisteet_3": 0.0203
+     },
+     "nousija": null
+    },
+    {
+     "id": 34254136,
+     "nimi": "Charles Bertrand",
+     "joukkue": "Sport",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 1,
+      "syotot": 3,
+      "pisteet": 4
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 3,
+      "pisteet": 4
+     },
+     "lambda": {
+      "maalit": 0.224,
+      "syotot": 0.307
+     },
+     "tn": {
+      "maalit_1": 0.2005,
+      "maalit_2": 0.0216,
+      "syotot_1": 0.2642,
+      "syotot_2": 0.0384,
+      "pisteet_1": 0.4117,
+      "pisteet_2": 0.0996,
+      "pisteet_3": 0.0168
+     },
+     "nousija": null
+    },
+    {
+     "id": 31896306,
+     "nimi": "Viljami Nieminen",
+     "joukkue": "Sport",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 4,
+      "syotot": 4,
+      "pisteet": 8
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 3,
+      "syotot": 3,
+      "pisteet": 6
+     },
+     "lambda": {
+      "maalit": 0.245,
+      "syotot": 0.28
+     },
+     "tn": {
+      "maalit_1": 0.2175,
+      "maalit_2": 0.0256,
+      "syotot_1": 0.2445,
+      "syotot_2": 0.0327,
+      "pisteet_1": 0.4088,
+      "pisteet_2": 0.0981,
+      "pisteet_3": 0.0164
+     },
+     "nousija": null
+    },
+    {
+     "id": 60662386,
+     "nimi": "Philip Granath",
+     "joukkue": "Sport",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 18,
+      "maalit": 3,
+      "syotot": 5,
+      "pisteet": 8
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 3,
+      "syotot": 4,
+      "pisteet": 7
+     },
+     "lambda": {
+      "maalit": 0.195,
+      "syotot": 0.305
+     },
+     "tn": {
+      "maalit_1": 0.1774,
+      "maalit_2": 0.0168,
+      "syotot_1": 0.263,
+      "syotot_2": 0.0381,
+      "pisteet_1": 0.3938,
+      "pisteet_2": 0.0904,
+      "pisteet_3": 0.0144
+     },
+     "nousija": null
+    },
+    {
+     "id": 28897266,
+     "nimi": "Juuso Arola",
+     "joukkue": "JYP",
+     "pp": "P",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 1,
+      "syotot": 10,
+      "pisteet": 11
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 7,
+      "pisteet": 7
+     },
+     "lambda": {
+      "maalit": 0.074,
+      "syotot": 0.403
+     },
+     "tn": {
+      "maalit_1": 0.071,
+      "maalit_2": 0.0026,
+      "syotot_1": 0.3316,
+      "syotot_2": 0.0623,
+      "pisteet_1": 0.3791,
+      "pisteet_2": 0.0832,
+      "pisteet_3": 0.0127
+     },
+     "nousija": null
+    },
+    {
+     "id": 60907490,
+     "nimi": "Daniel Torgersson",
+     "joukkue": "JYP",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 4,
+      "syotot": 6,
+      "pisteet": 10
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 4,
+      "pisteet": 6
+     },
+     "lambda": {
+      "maalit": 0.166,
+      "syotot": 0.305
+     },
+     "tn": {
+      "maalit_1": 0.1531,
+      "maalit_2": 0.0124,
+      "syotot_1": 0.2632,
+      "syotot_2": 0.0381,
+      "pisteet_1": 0.376,
+      "pisteet_2": 0.0817,
+      "pisteet_3": 0.0123
+     },
+     "nousija": null
+    },
+    {
+     "id": 60823918,
+     "nimi": "Trent Bourque",
+     "joukkue": "JYP",
+     "pp": "P",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 3,
+      "syotot": 9,
+      "pisteet": 12
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 6,
+      "pisteet": 8
+     },
+     "lambda": {
+      "maalit": 0.11,
+      "syotot": 0.347
+     },
+     "tn": {
+      "maalit_1": 0.1042,
+      "maalit_2": 0.0056,
+      "syotot_1": 0.2935,
+      "syotot_2": 0.048,
+      "pisteet_1": 0.3672,
+      "pisteet_2": 0.0776,
+      "pisteet_3": 0.0114
+     },
+     "nousija": {
+      "nosto": 0.27,
+      "aiempi": 0.361,
+      "nyt": 0.458
+     }
+    },
+    {
+     "id": 29914070,
+     "nimi": "Eetu Peltola",
+     "joukkue": "JYP",
+     "pp": "P",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 3,
+      "syotot": 4,
+      "pisteet": 7
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 4,
+      "pisteet": 6
+     },
+     "lambda": {
+      "maalit": 0.12,
+      "syotot": 0.321
+     },
+     "tn": {
+      "maalit_1": 0.1129,
+      "maalit_2": 0.0066,
+      "syotot_1": 0.2749,
+      "syotot_2": 0.0418,
+      "pisteet_1": 0.3568,
+      "pisteet_2": 0.0729,
+      "pisteet_3": 0.0103
+     },
+     "nousija": null
+    },
+    {
+     "id": 60351425,
+     "nimi": "Simon Åkerström",
+     "joukkue": "Sport",
+     "pp": "P",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 4,
+      "syotot": 7,
+      "pisteet": 11
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 4,
+      "syotot": 5,
+      "pisteet": 9
+     },
+     "lambda": {
+      "maalit": 0.137,
+      "syotot": 0.294
+     },
+     "tn": {
+      "maalit_1": 0.1284,
+      "maalit_2": 0.0086,
+      "syotot_1": 0.2548,
+      "syotot_2": 0.0356,
+      "pisteet_1": 0.3504,
+      "pisteet_2": 0.0702,
+      "pisteet_3": 0.0097
+     },
+     "nousija": {
+      "nosto": 0.36,
+      "aiempi": 0.318,
+      "nyt": 0.431
+     }
+    },
+    {
+     "id": 60744055,
+     "nimi": "Johan Sundström",
+     "joukkue": "Sport",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 1,
+      "syotot": 4,
+      "pisteet": 5
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 3,
+      "pisteet": 4
+     },
+     "lambda": {
+      "maalit": 0.163,
+      "syotot": 0.245
+     },
+     "tn": {
+      "maalit_1": 0.1506,
+      "maalit_2": 0.012,
+      "syotot_1": 0.2174,
+      "syotot_2": 0.0255,
+      "pisteet_1": 0.3352,
+      "pisteet_2": 0.0638,
+      "pisteet_3": 0.0084
+     },
+     "nousija": null
+    },
+    {
+     "id": 27854909,
+     "nimi": "Aaro Vidgren",
+     "joukkue": "JYP",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 4,
+      "syotot": 6,
+      "pisteet": 10
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 4,
+      "pisteet": 5
+     },
+     "lambda": {
+      "maalit": 0.143,
+      "syotot": 0.262
+     },
+     "tn": {
+      "maalit_1": 0.1335,
+      "maalit_2": 0.0093,
+      "syotot_1": 0.2307,
+      "syotot_2": 0.0289,
+      "pisteet_1": 0.3334,
+      "pisteet_2": 0.0631,
+      "pisteet_3": 0.0082
+     },
+     "nousija": null
+    },
+    {
+     "id": 61073932,
+     "nimi": "George Diaco",
+     "joukkue": "Sport",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 19,
+      "maalit": 3,
+      "syotot": 5,
+      "pisteet": 8
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 5,
+      "pisteet": 6
+     },
+     "lambda": {
+      "maalit": 0.117,
+      "syotot": 0.222
+     },
+     "tn": {
+      "maalit_1": 0.1108,
+      "maalit_2": 0.0064,
+      "syotot_1": 0.1993,
+      "syotot_2": 0.0213,
+      "pisteet_1": 0.288,
+      "pisteet_2": 0.0462,
+      "pisteet_3": 0.0051
+     },
+     "nousija": null
+    },
+    {
+     "id": 40175796,
+     "nimi": "Max Laatikainen",
+     "joukkue": "Sport",
+     "pp": "P",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 2,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "viime": {
+      "ottelut": 8,
+      "maalit": 0,
+      "syotot": 2,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.069,
+      "syotot": 0.25
+     },
+     "tn": {
+      "maalit_1": 0.067,
+      "maalit_2": 0.0023,
+      "syotot_1": 0.2209,
+      "syotot_2": 0.0264,
+      "pisteet_1": 0.2731,
+      "pisteet_2": 0.0412,
+      "pisteet_3": 0.0043
+     },
+     "nousija": null
+    },
+    {
+     "id": 22051859,
+     "nimi": "Miika Koivisto",
+     "joukkue": "Sport",
+     "pp": "P",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 1,
+      "syotot": 2,
+      "pisteet": 3
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 2,
+      "pisteet": 3
+     },
+     "lambda": {
+      "maalit": 0.072,
+      "syotot": 0.234
+     },
+     "tn": {
+      "maalit_1": 0.0695,
+      "maalit_2": 0.0025,
+      "syotot_1": 0.2088,
+      "syotot_2": 0.0235,
+      "pisteet_1": 0.2638,
+      "pisteet_2": 0.0383,
+      "pisteet_3": 0.0038
+     },
+     "nousija": null
+    },
+    {
+     "id": 61073937,
+     "nimi": "Luke Grainger",
+     "joukkue": "Sport",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 1,
+      "syotot": 4,
+      "pisteet": 5
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 3,
+      "pisteet": 4
+     },
+     "lambda": {
+      "maalit": 0.099,
+      "syotot": 0.199
+     },
+     "tn": {
+      "maalit_1": 0.0938,
+      "maalit_2": 0.0045,
+      "syotot_1": 0.1802,
+      "syotot_2": 0.0173,
+      "pisteet_1": 0.2571,
+      "pisteet_2": 0.0363,
+      "pisteet_3": 0.0035
+     },
+     "nousija": null
+    },
+    {
+     "id": 22953708,
+     "nimi": "Juuso Puustinen",
+     "joukkue": "JYP",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 12,
+      "maalit": 1,
+      "syotot": 2,
+      "pisteet": 3
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 3,
+      "syotot": 4,
+      "pisteet": 7
+     },
+     "lambda": {
+      "maalit": 0.14,
+      "syotot": 0.156
+     },
+     "tn": {
+      "maalit_1": 0.1307,
+      "maalit_2": 0.0089,
+      "syotot_1": 0.1445,
+      "syotot_2": 0.011,
+      "pisteet_1": 0.2563,
+      "pisteet_2": 0.0361,
+      "pisteet_3": 0.0035
+     },
+     "nousija": null
+    },
+    {
+     "id": 61073936,
+     "nimi": "Isak Walther",
+     "joukkue": "Sport",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 19,
+      "maalit": 3,
+      "syotot": 2,
+      "pisteet": 5
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 3,
+      "syotot": 1,
+      "pisteet": 4
+     },
+     "lambda": {
+      "maalit": 0.139,
+      "syotot": 0.136
+     },
+     "tn": {
+      "maalit_1": 0.1301,
+      "maalit_2": 0.0089,
+      "syotot_1": 0.1274,
+      "syotot_2": 0.0085,
+      "pisteet_1": 0.2409,
+      "pisteet_2": 0.0317,
+      "pisteet_3": 0.0028
+     },
+     "nousija": null
+    },
+    {
+     "id": 31539993,
+     "nimi": "Kalle Ervasti",
+     "joukkue": "Sport",
+     "pp": "P",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 14,
+      "maalit": 0,
+      "syotot": 4,
+      "pisteet": 4
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 5,
+      "pisteet": 5
+     },
+     "lambda": {
+      "maalit": 0.05,
+      "syotot": 0.216
+     },
+     "tn": {
+      "maalit_1": 0.0486,
+      "maalit_2": 0.0012,
+      "syotot_1": 0.1944,
+      "syotot_2": 0.0203,
+      "pisteet_1": 0.2336,
+      "pisteet_2": 0.0297,
+      "pisteet_3": 0.0026
+     },
+     "nousija": null
+    },
+    {
+     "id": 60744048,
+     "nimi": "Theodor Johnsson",
+     "joukkue": "Sport",
+     "pp": "P",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 1,
+      "syotot": 1,
+      "pisteet": 2
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 0,
+      "pisteet": 1
+     },
+     "lambda": {
+      "maalit": 0.089,
+      "syotot": 0.166
+     },
+     "tn": {
+      "maalit_1": 0.0851,
+      "maalit_2": 0.0037,
+      "syotot_1": 0.153,
+      "syotot_2": 0.0124,
+      "pisteet_1": 0.225,
+      "pisteet_2": 0.0275,
+      "pisteet_3": 0.0023
+     },
+     "nousija": null
+    },
+    {
+     "id": 29658831,
+     "nimi": "Julius Korjus",
+     "joukkue": "JYP",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 3,
+      "syotot": 1,
+      "pisteet": 4
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 3,
+      "syotot": 1,
+      "pisteet": 4
+     },
+     "lambda": {
+      "maalit": 0.121,
+      "syotot": 0.097
+     },
+     "tn": {
+      "maalit_1": 0.1141,
+      "maalit_2": 0.0068,
+      "syotot_1": 0.0925,
+      "syotot_2": 0.0044,
+      "pisteet_1": 0.196,
+      "pisteet_2": 0.0206,
+      "pisteet_3": 0.0015
+     },
+     "nousija": null
+    },
+    {
+     "id": 61074186,
+     "nimi": "Malte Setkov",
+     "joukkue": "JYP",
+     "pp": "P",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 0,
+      "syotot": 3,
+      "pisteet": 3
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 2,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.045,
+      "syotot": 0.171
+     },
+     "tn": {
+      "maalit_1": 0.0444,
+      "maalit_2": 0.001,
+      "syotot_1": 0.1573,
+      "syotot_2": 0.0131,
+      "pisteet_1": 0.1947,
+      "pisteet_2": 0.0203,
+      "pisteet_3": 0.0014
+     },
+     "nousija": null
+    },
+    {
+     "id": 32419009,
+     "nimi": "Väinö Liikonen",
+     "joukkue": "JYP",
+     "pp": "P",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 10,
+      "maalit": 1,
+      "syotot": 1,
+      "pisteet": 2
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 2,
+      "pisteet": 3
+     },
+     "lambda": {
+      "maalit": 0.064,
+      "syotot": 0.146
+     },
+     "tn": {
+      "maalit_1": 0.0621,
+      "maalit_2": 0.002,
+      "syotot_1": 0.1363,
+      "syotot_2": 0.0097,
+      "pisteet_1": 0.1899,
+      "pisteet_2": 0.0193,
+      "pisteet_3": 0.0013
+     },
+     "nousija": null
+    },
+    {
+     "id": 31411901,
+     "nimi": "Lari Heikkinen",
+     "joukkue": "Sport",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 5,
+      "syotot": 2,
+      "pisteet": 7
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 2,
+      "pisteet": 3
+     },
+     "lambda": {
+      "maalit": 0.092,
+      "syotot": 0.109
+     },
+     "tn": {
+      "maalit_1": 0.0877,
+      "maalit_2": 0.004,
+      "syotot_1": 0.1036,
+      "syotot_2": 0.0056,
+      "pisteet_1": 0.1822,
+      "pisteet_2": 0.0177,
+      "pisteet_3": 0.0012
+     },
+     "nousija": null
+    },
+    {
+     "id": 61073929,
+     "nimi": "Eric Bürger",
+     "joukkue": "Sport",
+     "pp": "P",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 1,
+      "syotot": 3,
+      "pisteet": 4
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 1,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.057,
+      "syotot": 0.137
+     },
+     "tn": {
+      "maalit_1": 0.0557,
+      "maalit_2": 0.0016,
+      "syotot_1": 0.128,
+      "syotot_2": 0.0086,
+      "pisteet_1": 0.1767,
+      "pisteet_2": 0.0166,
+      "pisteet_3": 0.0011
+     },
+     "nousija": null
+    },
+    {
+     "id": 40055581,
+     "nimi": "Benjamin Pietilä",
+     "joukkue": "Sport",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 1,
+      "syotot": 3,
+      "pisteet": 4
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 1,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.076,
+      "syotot": 0.106
+     },
+     "tn": {
+      "maalit_1": 0.0729,
+      "maalit_2": 0.0027,
+      "syotot_1": 0.1005,
+      "syotot_2": 0.0052,
+      "pisteet_1": 0.166,
+      "pisteet_2": 0.0146,
+      "pisteet_3": 0.0009
+     },
+     "nousija": null
+    },
+    {
+     "id": 61081527,
+     "nimi": "Arvid Costmar",
+     "joukkue": "JYP",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 18,
+      "maalit": 1,
+      "syotot": 1,
+      "pisteet": 2
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 1,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.076,
+      "syotot": 0.096
+     },
+     "tn": {
+      "maalit_1": 0.0736,
+      "maalit_2": 0.0028,
+      "syotot_1": 0.0919,
+      "syotot_2": 0.0044,
+      "pisteet_1": 0.1587,
+      "pisteet_2": 0.0133,
+      "pisteet_3": 0.0008
+     },
+     "nousija": null
+    },
+    {
+     "id": 28948856,
+     "nimi": "Anton Stråka",
+     "joukkue": "Sport",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 19,
+      "maalit": 1,
+      "syotot": 1,
+      "pisteet": 2
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 1,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.066,
+      "syotot": 0.089
+     },
+     "tn": {
+      "maalit_1": 0.0641,
+      "maalit_2": 0.0021,
+      "syotot_1": 0.0849,
+      "syotot_2": 0.0037,
+      "pisteet_1": 0.1435,
+      "pisteet_2": 0.0108,
+      "pisteet_3": 0.0006
+     },
+     "nousija": null
+    },
+    {
+     "id": 40115108,
+     "nimi": "Kalle Kangas",
+     "joukkue": "Sport",
+     "pp": "P",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 1,
+      "syotot": 2,
+      "pisteet": 3
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 2,
+      "pisteet": 3
+     },
+     "lambda": {
+      "maalit": 0.026,
+      "syotot": 0.077
+     },
+     "tn": {
+      "maalit_1": 0.0257,
+      "maalit_2": 0.0003,
+      "syotot_1": 0.0745,
+      "syotot_2": 0.0029,
+      "pisteet_1": 0.0983,
+      "pisteet_2": 0.005,
+      "pisteet_3": 0.0002
+     },
+     "nousija": null
+    },
+    {
+     "id": 40272721,
+     "nimi": "Veeti Väisänen",
+     "joukkue": "JYP",
+     "pp": "P",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 13,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "lambda": {
+      "maalit": 0.026,
+      "syotot": 0.064
+     },
+     "tn": {
+      "maalit_1": 0.0252,
+      "maalit_2": 0.0003,
+      "syotot_1": 0.0622,
+      "syotot_2": 0.002,
+      "pisteet_1": 0.0858,
+      "pisteet_2": 0.0038,
+      "pisteet_3": 0.0001
+     },
+     "nousija": null
+    },
+    {
+     "id": 24959726,
+     "nimi": "Atte Ohtamaa",
+     "joukkue": "JYP",
+     "pp": "P",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 6,
+      "maalit": 1,
+      "syotot": 0,
+      "pisteet": 1
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 0,
+      "pisteet": 1
+     },
+     "lambda": {
+      "maalit": 0.035,
+      "syotot": 0.053
+     },
+     "tn": {
+      "maalit_1": 0.0344,
+      "maalit_2": 0.0006,
+      "syotot_1": 0.0513,
+      "syotot_2": 0.0013,
+      "pisteet_1": 0.0839,
+      "pisteet_2": 0.0036,
+      "pisteet_3": 0.0001
+     },
+     "nousija": null
+    },
+    {
+     "id": 25334515,
+     "nimi": "Valtteri Viljanen",
+     "joukkue": "Sport",
+     "pp": "P",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 0,
+      "syotot": 2,
+      "pisteet": 2
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 1,
+      "pisteet": 1
+     },
+     "lambda": {
+      "maalit": 0.018,
+      "syotot": 0.063
+     },
+     "tn": {
+      "maalit_1": 0.0182,
+      "maalit_2": 0.0002,
+      "syotot_1": 0.0612,
+      "syotot_2": 0.0019,
+      "pisteet_1": 0.0783,
+      "pisteet_2": 0.0031,
+      "pisteet_3": 0.0001
+     },
+     "nousija": null
+    }
+   ]
   },
   {
    "avain": "2027_2701458",
@@ -22,11 +1359,1356 @@
    "koti": "Jukurit",
    "vieras": "Jokerit",
    "odotetut_maalit": [
-    2.47,
-    2.24
+    2.52,
+    1.96
    ],
-   "kokoonpano": false,
-   "pelaajat": []
+   "kokoonpano": true,
+   "pelaajat": [
+    {
+     "id": 31275998,
+     "nimi": "Alexander Forslund",
+     "joukkue": "Jokerit",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 8,
+      "syotot": 8,
+      "pisteet": 16
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 6,
+      "syotot": 7,
+      "pisteet": 13
+     },
+     "lambda": {
+      "maalit": 0.356,
+      "syotot": 0.436
+     },
+     "tn": {
+      "maalit_1": 0.2997,
+      "maalit_2": 0.0502,
+      "syotot_1": 0.3537,
+      "syotot_2": 0.0716,
+      "pisteet_1": 0.5474,
+      "pisteet_2": 0.1886,
+      "pisteet_3": 0.0464
+     },
+     "nousija": {
+      "nosto": 0.4,
+      "aiempi": 0.568,
+      "nyt": 0.793
+     }
+    },
+    {
+     "id": 61073544,
+     "nimi": "Jacob Hayhurst",
+     "joukkue": "Jukurit",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 5,
+      "syotot": 14,
+      "pisteet": 19
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 8,
+      "pisteet": 10
+     },
+     "lambda": {
+      "maalit": 0.221,
+      "syotot": 0.542
+     },
+     "tn": {
+      "maalit_1": 0.198,
+      "maalit_2": 0.021,
+      "syotot_1": 0.4183,
+      "syotot_2": 0.1032,
+      "pisteet_1": 0.5335,
+      "pisteet_2": 0.1778,
+      "pisteet_3": 0.0422
+     },
+     "nousija": null
+    },
+    {
+     "id": 33502478,
+     "nimi": "Jeremi Tammela",
+     "joukkue": "Jukurit",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 14,
+      "maalit": 2,
+      "syotot": 5,
+      "pisteet": 7
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 5,
+      "pisteet": 7
+     },
+     "lambda": {
+      "maalit": 0.196,
+      "syotot": 0.522
+     },
+     "tn": {
+      "maalit_1": 0.1783,
+      "maalit_2": 0.0169,
+      "syotot_1": 0.4069,
+      "syotot_2": 0.0971,
+      "pisteet_1": 0.5126,
+      "pisteet_2": 0.1623,
+      "pisteet_3": 0.0365
+     },
+     "nousija": null
+    },
+    {
+     "id": 61073535,
+     "nimi": "Jesper Olofsson",
+     "joukkue": "Jukurit",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 9,
+      "syotot": 5,
+      "pisteet": 14
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 6,
+      "syotot": 5,
+      "pisteet": 11
+     },
+     "lambda": {
+      "maalit": 0.339,
+      "syotot": 0.3
+     },
+     "tn": {
+      "maalit_1": 0.2872,
+      "maalit_2": 0.0459,
+      "syotot_1": 0.2595,
+      "syotot_2": 0.037,
+      "pisteet_1": 0.4722,
+      "pisteet_2": 0.1349,
+      "pisteet_3": 0.0271
+     },
+     "nousija": null
+    },
+    {
+     "id": 34323261,
+     "nimi": "Emil Kuusla",
+     "joukkue": "Jokerit",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 16,
+      "maalit": 1,
+      "syotot": 13,
+      "pisteet": 14
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 11,
+      "pisteet": 11
+     },
+     "lambda": {
+      "maalit": 0.113,
+      "syotot": 0.518
+     },
+     "tn": {
+      "maalit_1": 0.1069,
+      "maalit_2": 0.0059,
+      "syotot_1": 0.4041,
+      "syotot_2": 0.0956,
+      "pisteet_1": 0.4677,
+      "pisteet_2": 0.1321,
+      "pisteet_3": 0.0262
+     },
+     "nousija": {
+      "nosto": 0.28,
+      "aiempi": 0.493,
+      "nyt": 0.631
+     }
+    },
+    {
+     "id": 61073533,
+     "nimi": "Linus Sjödin",
+     "joukkue": "Jukurit",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 6,
+      "pisteet": 8
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 6,
+      "pisteet": 8
+     },
+     "lambda": {
+      "maalit": 0.201,
+      "syotot": 0.427
+     },
+     "tn": {
+      "maalit_1": 0.182,
+      "maalit_2": 0.0177,
+      "syotot_1": 0.3473,
+      "syotot_2": 0.0688,
+      "pisteet_1": 0.4661,
+      "pisteet_2": 0.1311,
+      "pisteet_3": 0.0259
+     },
+     "nousija": null
+    },
+    {
+     "id": 60866735,
+     "nimi": "Patrick Curry",
+     "joukkue": "Jokerit",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 3,
+      "syotot": 7,
+      "pisteet": 10
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 3,
+      "syotot": 2,
+      "pisteet": 5
+     },
+     "lambda": {
+      "maalit": 0.261,
+      "syotot": 0.335
+     },
+     "tn": {
+      "maalit_1": 0.2297,
+      "maalit_2": 0.0287,
+      "syotot_1": 0.2849,
+      "syotot_2": 0.0451,
+      "pisteet_1": 0.4491,
+      "pisteet_2": 0.1207,
+      "pisteet_3": 0.0227
+     },
+     "nousija": null
+    },
+    {
+     "id": 40069442,
+     "nimi": "Jiro Frilander",
+     "joukkue": "Jukurit",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 22,
+      "maalit": 4,
+      "syotot": 6,
+      "pisteet": 10
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 4,
+      "syotot": 2,
+      "pisteet": 6
+     },
+     "lambda": {
+      "maalit": 0.278,
+      "syotot": 0.317
+     },
+     "tn": {
+      "maalit_1": 0.2426,
+      "maalit_2": 0.0321,
+      "syotot_1": 0.2717,
+      "syotot_2": 0.0408,
+      "pisteet_1": 0.4484,
+      "pisteet_2": 0.1202,
+      "pisteet_3": 0.0226
+     },
+     "nousija": null
+    },
+    {
+     "id": 60960731,
+     "nimi": "Connor Ford",
+     "joukkue": "Jukurit",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 6,
+      "syotot": 6,
+      "pisteet": 12
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 5,
+      "pisteet": 7
+     },
+     "lambda": {
+      "maalit": 0.229,
+      "syotot": 0.36
+     },
+     "tn": {
+      "maalit_1": 0.2049,
+      "maalit_2": 0.0226,
+      "syotot_1": 0.3024,
+      "syotot_2": 0.0512,
+      "pisteet_1": 0.4454,
+      "pisteet_2": 0.1184,
+      "pisteet_3": 0.0221
+     },
+     "nousija": null
+    },
+    {
+     "id": 60898910,
+     "nimi": "Andrej Sustr",
+     "joukkue": "Jukurit",
+     "pp": "P",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 1,
+      "syotot": 21,
+      "pisteet": 22
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 9,
+      "pisteet": 10
+     },
+     "lambda": {
+      "maalit": 0.071,
+      "syotot": 0.506
+     },
+     "tn": {
+      "maalit_1": 0.0684,
+      "maalit_2": 0.0024,
+      "syotot_1": 0.3969,
+      "syotot_2": 0.0919,
+      "pisteet_1": 0.4382,
+      "pisteet_2": 0.1142,
+      "pisteet_3": 0.0209
+     },
+     "nousija": {
+      "nosto": 0.69,
+      "aiempi": 0.342,
+      "nyt": 0.577
+     }
+    },
+    {
+     "id": 24783853,
+     "nimi": "Alex Lintuniemi",
+     "joukkue": "Jukurit",
+     "pp": "P",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 6,
+      "syotot": 5,
+      "pisteet": 11
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 5,
+      "syotot": 3,
+      "pisteet": 8
+     },
+     "lambda": {
+      "maalit": 0.215,
+      "syotot": 0.324
+     },
+     "tn": {
+      "maalit_1": 0.1937,
+      "maalit_2": 0.0201,
+      "syotot_1": 0.2765,
+      "syotot_2": 0.0424,
+      "pisteet_1": 0.4167,
+      "pisteet_2": 0.1023,
+      "pisteet_3": 0.0175
+     },
+     "nousija": {
+      "nosto": 0.36,
+      "aiempi": 0.397,
+      "nyt": 0.539
+     }
+    },
+    {
+     "id": 28262723,
+     "nimi": "Patrik Virta",
+     "joukkue": "Jokerit",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 18,
+      "maalit": 4,
+      "syotot": 6,
+      "pisteet": 10
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 3,
+      "syotot": 6,
+      "pisteet": 9
+     },
+     "lambda": {
+      "maalit": 0.194,
+      "syotot": 0.339
+     },
+     "tn": {
+      "maalit_1": 0.1763,
+      "maalit_2": 0.0166,
+      "syotot_1": 0.2875,
+      "syotot_2": 0.046,
+      "pisteet_1": 0.4132,
+      "pisteet_2": 0.1004,
+      "pisteet_3": 0.017
+     },
+     "nousija": null
+    },
+    {
+     "id": 21722684,
+     "nimi": "Markus Hännikäinen",
+     "joukkue": "Jokerit",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 6,
+      "syotot": 4,
+      "pisteet": 10
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 6,
+      "syotot": 4,
+      "pisteet": 10
+     },
+     "lambda": {
+      "maalit": 0.27,
+      "syotot": 0.254
+     },
+     "tn": {
+      "maalit_1": 0.2366,
+      "maalit_2": 0.0305,
+      "syotot_1": 0.2246,
+      "syotot_2": 0.0274,
+      "pisteet_1": 0.4081,
+      "pisteet_2": 0.0977,
+      "pisteet_3": 0.0163
+     },
+     "nousija": null
+    },
+    {
+     "id": 29670505,
+     "nimi": "Jere Henriksson",
+     "joukkue": "Jokerit",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 16,
+      "maalit": 0,
+      "syotot": 3,
+      "pisteet": 3
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 3,
+      "pisteet": 3
+     },
+     "lambda": {
+      "maalit": 0.138,
+      "syotot": 0.382
+     },
+     "tn": {
+      "maalit_1": 0.1286,
+      "maalit_2": 0.0086,
+      "syotot_1": 0.3173,
+      "syotot_2": 0.0567,
+      "pisteet_1": 0.4051,
+      "pisteet_2": 0.0961,
+      "pisteet_3": 0.0159
+     },
+     "nousija": null
+    },
+    {
+     "id": 61118817,
+     "nimi": "Andrew Lucas",
+     "joukkue": "Jokerit",
+     "pp": "P",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 3,
+      "maalit": 0,
+      "syotot": 2,
+      "pisteet": 2
+     },
+     "viime": {
+      "ottelut": 3,
+      "maalit": 0,
+      "syotot": 2,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.072,
+      "syotot": 0.323
+     },
+     "tn": {
+      "maalit_1": 0.0698,
+      "maalit_2": 0.0025,
+      "syotot_1": 0.2759,
+      "syotot_2": 0.0421,
+      "pisteet_1": 0.3264,
+      "pisteet_2": 0.0603,
+      "pisteet_3": 0.0077
+     },
+     "nousija": null
+    },
+    {
+     "id": 31508351,
+     "nimi": "Elias Ruusu",
+     "joukkue": "Jukurit",
+     "pp": "P",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 2,
+      "syotot": 7,
+      "pisteet": 9
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 6,
+      "pisteet": 8
+     },
+     "lambda": {
+      "maalit": 0.095,
+      "syotot": 0.297
+     },
+     "tn": {
+      "maalit_1": 0.0909,
+      "maalit_2": 0.0043,
+      "syotot_1": 0.2571,
+      "syotot_2": 0.0363,
+      "pisteet_1": 0.3246,
+      "pisteet_2": 0.0595,
+      "pisteet_3": 0.0075
+     },
+     "nousija": null
+    },
+    {
+     "id": 61026835,
+     "nimi": "Louis Boudon",
+     "joukkue": "Jukurit",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 5,
+      "syotot": 5,
+      "pisteet": 10
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 4,
+      "pisteet": 6
+     },
+     "lambda": {
+      "maalit": 0.161,
+      "syotot": 0.228
+     },
+     "tn": {
+      "maalit_1": 0.1488,
+      "maalit_2": 0.0117,
+      "syotot_1": 0.2037,
+      "syotot_2": 0.0223,
+      "pisteet_1": 0.3222,
+      "pisteet_2": 0.0586,
+      "pisteet_3": 0.0073
+     },
+     "nousija": null
+    },
+    {
+     "id": 61120972,
+     "nimi": "Ryan Mcgregor",
+     "joukkue": "Jokerit",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 2,
+      "maalit": 1,
+      "syotot": 0,
+      "pisteet": 1
+     },
+     "viime": {
+      "ottelut": 2,
+      "maalit": 1,
+      "syotot": 0,
+      "pisteet": 1
+     },
+     "lambda": {
+      "maalit": 0.192,
+      "syotot": 0.193
+     },
+     "tn": {
+      "maalit_1": 0.1748,
+      "maalit_2": 0.0163,
+      "syotot_1": 0.1758,
+      "syotot_2": 0.0164,
+      "pisteet_1": 0.3199,
+      "pisteet_2": 0.0577,
+      "pisteet_3": 0.0072
+     },
+     "nousija": null
+    },
+    {
+     "id": 30712591,
+     "nimi": "Henri Nikkanen",
+     "joukkue": "Jokerit",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 4,
+      "syotot": 4,
+      "pisteet": 8
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 4,
+      "pisteet": 5
+     },
+     "lambda": {
+      "maalit": 0.146,
+      "syotot": 0.204
+     },
+     "tn": {
+      "maalit_1": 0.1358,
+      "maalit_2": 0.0097,
+      "syotot_1": 0.1845,
+      "syotot_2": 0.0182,
+      "pisteet_1": 0.2952,
+      "pisteet_2": 0.0486,
+      "pisteet_3": 0.0055
+     },
+     "nousija": null
+    },
+    {
+     "id": 21808485,
+     "nimi": "Pekka Jormakka",
+     "joukkue": "Jukurit",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 11,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 1,
+      "pisteet": 3
+     },
+     "lambda": {
+      "maalit": 0.155,
+      "syotot": 0.187
+     },
+     "tn": {
+      "maalit_1": 0.1437,
+      "maalit_2": 0.0109,
+      "syotot_1": 0.171,
+      "syotot_2": 0.0155,
+      "pisteet_1": 0.2901,
+      "pisteet_2": 0.0469,
+      "pisteet_3": 0.0052
+     },
+     "nousija": null
+    },
+    {
+     "id": 60860218,
+     "nimi": "Thomas Olsen",
+     "joukkue": "Jukurit",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 3,
+      "syotot": 3,
+      "pisteet": 6
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 2,
+      "pisteet": 4
+     },
+     "lambda": {
+      "maalit": 0.166,
+      "syotot": 0.168
+     },
+     "tn": {
+      "maalit_1": 0.1532,
+      "maalit_2": 0.0124,
+      "syotot_1": 0.1546,
+      "syotot_2": 0.0126,
+      "pisteet_1": 0.2842,
+      "pisteet_2": 0.0449,
+      "pisteet_3": 0.0049
+     },
+     "nousija": null
+    },
+    {
+     "id": 25489224,
+     "nimi": "Eetu Tuulola",
+     "joukkue": "Jokerit",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 4,
+      "syotot": 4,
+      "pisteet": 8
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 4,
+      "pisteet": 6
+     },
+     "lambda": {
+      "maalit": 0.146,
+      "syotot": 0.176
+     },
+     "tn": {
+      "maalit_1": 0.1357,
+      "maalit_2": 0.0097,
+      "syotot_1": 0.1611,
+      "syotot_2": 0.0137,
+      "pisteet_1": 0.275,
+      "pisteet_2": 0.0419,
+      "pisteet_3": 0.0044
+     },
+     "nousija": null
+    },
+    {
+     "id": 33296797,
+     "nimi": "Riku Tuomola",
+     "joukkue": "Jokerit",
+     "pp": "P",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 18,
+      "maalit": 1,
+      "syotot": 4,
+      "pisteet": 5
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 4,
+      "pisteet": 5
+     },
+     "lambda": {
+      "maalit": 0.074,
+      "syotot": 0.247
+     },
+     "tn": {
+      "maalit_1": 0.0714,
+      "maalit_2": 0.0026,
+      "syotot_1": 0.2186,
+      "syotot_2": 0.0259,
+      "pisteet_1": 0.2744,
+      "pisteet_2": 0.0416,
+      "pisteet_3": 0.0043
+     },
+     "nousija": null
+    },
+    {
+     "id": 60342512,
+     "nimi": "Matthew Caito",
+     "joukkue": "Jokerit",
+     "pp": "P",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 18,
+      "maalit": 1,
+      "syotot": 6,
+      "pisteet": 7
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 4,
+      "pisteet": 5
+     },
+     "lambda": {
+      "maalit": 0.065,
+      "syotot": 0.234
+     },
+     "tn": {
+      "maalit_1": 0.0633,
+      "maalit_2": 0.002,
+      "syotot_1": 0.2083,
+      "syotot_2": 0.0234,
+      "pisteet_1": 0.2585,
+      "pisteet_2": 0.0367,
+      "pisteet_3": 0.0036
+     },
+     "nousija": null
+    },
+    {
+     "id": 33076328,
+     "nimi": "Christoffer Sedoff",
+     "joukkue": "Jukurit",
+     "pp": "P",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 9,
+      "maalit": 1,
+      "syotot": 0,
+      "pisteet": 1
+     },
+     "viime": {
+      "ottelut": 9,
+      "maalit": 1,
+      "syotot": 0,
+      "pisteet": 1
+     },
+     "lambda": {
+      "maalit": 0.106,
+      "syotot": 0.188
+     },
+     "tn": {
+      "maalit_1": 0.1005,
+      "maalit_2": 0.0052,
+      "syotot_1": 0.1716,
+      "syotot_2": 0.0156,
+      "pisteet_1": 0.2548,
+      "pisteet_2": 0.0356,
+      "pisteet_3": 0.0034
+     },
+     "nousija": null
+    },
+    {
+     "id": 40009767,
+     "nimi": "Valtteri Pulli",
+     "joukkue": "Jokerit",
+     "pp": "P",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 1,
+      "syotot": 6,
+      "pisteet": 7
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 6,
+      "pisteet": 7
+     },
+     "lambda": {
+      "maalit": 0.053,
+      "syotot": 0.226
+     },
+     "tn": {
+      "maalit_1": 0.0514,
+      "maalit_2": 0.0013,
+      "syotot_1": 0.2019,
+      "syotot_2": 0.0219,
+      "pisteet_1": 0.2429,
+      "pisteet_2": 0.0322,
+      "pisteet_3": 0.0029
+     },
+     "nousija": {
+      "nosto": 0.36,
+      "aiempi": 0.204,
+      "nyt": 0.278
+     }
+    },
+    {
+     "id": 40006279,
+     "nimi": "Eemeli Saari",
+     "joukkue": "Jukurit",
+     "pp": "P",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 1,
+      "syotot": 8,
+      "pisteet": 9
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 6,
+      "pisteet": 6
+     },
+     "lambda": {
+      "maalit": 0.046,
+      "syotot": 0.21
+     },
+     "tn": {
+      "maalit_1": 0.0454,
+      "maalit_2": 0.001,
+      "syotot_1": 0.1894,
+      "syotot_2": 0.0192,
+      "pisteet_1": 0.2263,
+      "pisteet_2": 0.0278,
+      "pisteet_3": 0.0023
+     },
+     "nousija": {
+      "nosto": 0.32,
+      "aiempi": 0.194,
+      "nyt": 0.257
+     }
+    },
+    {
+     "id": 33549965,
+     "nimi": "Niko Korkola",
+     "joukkue": "Jukurit",
+     "pp": "P",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 1,
+      "syotot": 5,
+      "pisteet": 6
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 3,
+      "pisteet": 3
+     },
+     "lambda": {
+      "maalit": 0.046,
+      "syotot": 0.168
+     },
+     "tn": {
+      "maalit_1": 0.0449,
+      "maalit_2": 0.001,
+      "syotot_1": 0.1543,
+      "syotot_2": 0.0126,
+      "pisteet_1": 0.1923,
+      "pisteet_2": 0.0198,
+      "pisteet_3": 0.0014
+     },
+     "nousija": null
+    },
+    {
+     "id": 21403877,
+     "nimi": "Aleksi Elorinne",
+     "joukkue": "Jokerit",
+     "pp": "P",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 0,
+      "syotot": 3,
+      "pisteet": 3
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 2,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.047,
+      "syotot": 0.152
+     },
+     "tn": {
+      "maalit_1": 0.046,
+      "maalit_2": 0.0011,
+      "syotot_1": 0.1408,
+      "syotot_2": 0.0104,
+      "pisteet_1": 0.1803,
+      "pisteet_2": 0.0173,
+      "pisteet_3": 0.0011
+     },
+     "nousija": null
+    },
+    {
+     "id": 40036871,
+     "nimi": "Aaro Chrons",
+     "joukkue": "Jukurit",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 3,
+      "syotot": 1,
+      "pisteet": 4
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 1,
+      "pisteet": 3
+     },
+     "lambda": {
+      "maalit": 0.105,
+      "syotot": 0.083
+     },
+     "tn": {
+      "maalit_1": 0.0998,
+      "maalit_2": 0.0052,
+      "syotot_1": 0.08,
+      "syotot_2": 0.0033,
+      "pisteet_1": 0.1718,
+      "pisteet_2": 0.0157,
+      "pisteet_3": 0.001
+     },
+     "nousija": null
+    },
+    {
+     "id": 60578087,
+     "nimi": "Oliver Larsen",
+     "joukkue": "Jokerit",
+     "pp": "P",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 0,
+      "syotot": 2,
+      "pisteet": 2
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 2,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.037,
+      "syotot": 0.14
+     },
+     "tn": {
+      "maalit_1": 0.0359,
+      "maalit_2": 0.0007,
+      "syotot_1": 0.1306,
+      "syotot_2": 0.0089,
+      "pisteet_1": 0.1618,
+      "pisteet_2": 0.0139,
+      "pisteet_3": 0.0008
+     },
+     "nousija": null
+    },
+    {
+     "id": 34373431,
+     "nimi": "Oskari Remes",
+     "joukkue": "Jukurit",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 9,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "lambda": {
+      "maalit": 0.07,
+      "syotot": 0.077
+     },
+     "tn": {
+      "maalit_1": 0.0673,
+      "maalit_2": 0.0023,
+      "syotot_1": 0.0737,
+      "syotot_2": 0.0028,
+      "pisteet_1": 0.1361,
+      "pisteet_2": 0.0097,
+      "pisteet_3": 0.0005
+     },
+     "nousija": null
+    },
+    {
+     "id": 31905381,
+     "nimi": "Miro Nalli",
+     "joukkue": "Jokerit",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 11,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 0,
+      "pisteet": 1
+     },
+     "lambda": {
+      "maalit": 0.066,
+      "syotot": 0.077
+     },
+     "tn": {
+      "maalit_1": 0.0635,
+      "maalit_2": 0.0021,
+      "syotot_1": 0.0743,
+      "syotot_2": 0.0028,
+      "pisteet_1": 0.1331,
+      "pisteet_2": 0.0093,
+      "pisteet_3": 0.0004
+     },
+     "nousija": null
+    },
+    {
+     "id": 22598901,
+     "nimi": "Aleksi Mustonen",
+     "joukkue": "Jokerit",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 2,
+      "syotot": 0,
+      "pisteet": 2
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 0,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.077,
+      "syotot": 0.063
+     },
+     "tn": {
+      "maalit_1": 0.074,
+      "maalit_2": 0.0028,
+      "syotot_1": 0.0613,
+      "syotot_2": 0.0019,
+      "pisteet_1": 0.1307,
+      "pisteet_2": 0.0089,
+      "pisteet_3": 0.0004
+     },
+     "nousija": null
+    },
+    {
+     "id": 40217713,
+     "nimi": "Bruno Kallio",
+     "joukkue": "Jokerit",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 19,
+      "maalit": 0,
+      "syotot": 1,
+      "pisteet": 1
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "lambda": {
+      "maalit": 0.052,
+      "syotot": 0.079
+     },
+     "tn": {
+      "maalit_1": 0.0505,
+      "maalit_2": 0.0013,
+      "syotot_1": 0.0763,
+      "syotot_2": 0.003,
+      "pisteet_1": 0.1229,
+      "pisteet_2": 0.0079,
+      "pisteet_3": 0.0003
+     },
+     "nousija": null
+    },
+    {
+     "id": 33401427,
+     "nimi": "Viljam Sandvik",
+     "joukkue": "Jukurit",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 10,
+      "maalit": 0,
+      "syotot": 1,
+      "pisteet": 1
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 1,
+      "pisteet": 1
+     },
+     "lambda": {
+      "maalit": 0.044,
+      "syotot": 0.081
+     },
+     "tn": {
+      "maalit_1": 0.0432,
+      "maalit_2": 0.0009,
+      "syotot_1": 0.078,
+      "syotot_2": 0.0031,
+      "pisteet_1": 0.1178,
+      "pisteet_2": 0.0072,
+      "pisteet_3": 0.0003
+     },
+     "nousija": null
+    },
+    {
+     "id": 33489821,
+     "nimi": "Luka Tiihonen",
+     "joukkue": "Jukurit",
+     "pp": "P",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 9,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 0,
+      "pisteet": 1
+     },
+     "lambda": {
+      "maalit": 0.03,
+      "syotot": 0.063
+     },
+     "tn": {
+      "maalit_1": 0.0298,
+      "maalit_2": 0.0004,
+      "syotot_1": 0.0613,
+      "syotot_2": 0.0019,
+      "pisteet_1": 0.0892,
+      "pisteet_2": 0.0041,
+      "pisteet_3": 0.0001
+     },
+     "nousija": null
+    },
+    {
+     "id": 22510552,
+     "nimi": "Oskari Manninen",
+     "joukkue": "Jokerit",
+     "pp": "P",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 14,
+      "maalit": 2,
+      "syotot": 0,
+      "pisteet": 2
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 0,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.038,
+      "syotot": 0.049
+     },
+     "tn": {
+      "maalit_1": 0.0376,
+      "maalit_2": 0.0007,
+      "syotot_1": 0.0482,
+      "syotot_2": 0.0012,
+      "pisteet_1": 0.084,
+      "pisteet_2": 0.0036,
+      "pisteet_3": 0.0001
+     },
+     "nousija": null
+    },
+    {
+     "id": 24641005,
+     "nimi": "Antti Kalapudas",
+     "joukkue": "Jokerit",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 3,
+      "syotot": 4,
+      "pisteet": 7
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 4,
+      "pisteet": 6
+     },
+     "lambda": {
+      "maalit": 0.015,
+      "syotot": 0.012
+     },
+     "tn": {
+      "maalit_1": 0.0151,
+      "maalit_2": 0.0001,
+      "syotot_1": 0.0119,
+      "syotot_2": 0.0001,
+      "pisteet_1": 0.0268,
+      "pisteet_2": 0.0004,
+      "pisteet_3": 0.0
+     },
+     "nousija": null
+    },
+    {
+     "id": 60352766,
+     "nimi": "Bence Horvath",
+     "joukkue": "Jukurit",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 1,
+      "syotot": 2,
+      "pisteet": 3
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "lambda": {
+      "maalit": 0.012,
+      "syotot": 0.011
+     },
+     "tn": {
+      "maalit_1": 0.0119,
+      "maalit_2": 0.0001,
+      "syotot_1": 0.011,
+      "syotot_2": 0.0001,
+      "pisteet_1": 0.0227,
+      "pisteet_2": 0.0003,
+      "pisteet_3": 0.0
+     },
+     "nousija": null
+    }
+   ]
   },
   {
    "avain": "2027_2701459",
@@ -34,11 +2716,1344 @@
    "koti": "KalPa",
    "vieras": "Lukko",
    "odotetut_maalit": [
-    2.57,
-    2.52
+    2.44,
+    2.63
    ],
-   "kokoonpano": false,
-   "pelaajat": []
+   "kokoonpano": true,
+   "pelaajat": [
+    {
+     "id": 23065792,
+     "nimi": "Jaakko Rissanen",
+     "joukkue": "KalPa",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 16,
+      "maalit": 2,
+      "syotot": 9,
+      "pisteet": 11
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 8,
+      "pisteet": 10
+     },
+     "lambda": {
+      "maalit": 0.22,
+      "syotot": 0.577
+     },
+     "tn": {
+      "maalit_1": 0.1975,
+      "maalit_2": 0.0209,
+      "syotot_1": 0.4387,
+      "syotot_2": 0.1145,
+      "pisteet_1": 0.5495,
+      "pisteet_2": 0.1903,
+      "pisteet_3": 0.0471
+     },
+     "nousija": null
+    },
+    {
+     "id": 30687613,
+     "nimi": "Antti Saarela",
+     "joukkue": "Lukko",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 17,
+      "maalit": 4,
+      "syotot": 10,
+      "pisteet": 14
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 3,
+      "syotot": 9,
+      "pisteet": 12
+     },
+     "lambda": {
+      "maalit": 0.255,
+      "syotot": 0.508
+     },
+     "tn": {
+      "maalit_1": 0.2248,
+      "maalit_2": 0.0274,
+      "syotot_1": 0.3982,
+      "syotot_2": 0.0926,
+      "pisteet_1": 0.5335,
+      "pisteet_2": 0.1778,
+      "pisteet_3": 0.0422
+     },
+     "nousija": null
+    },
+    {
+     "id": 60960461,
+     "nimi": "Alex Beaucage",
+     "joukkue": "Lukko",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 7,
+      "syotot": 9,
+      "pisteet": 16
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 4,
+      "syotot": 6,
+      "pisteet": 10
+     },
+     "lambda": {
+      "maalit": 0.327,
+      "syotot": 0.394
+     },
+     "tn": {
+      "maalit_1": 0.2791,
+      "maalit_2": 0.0432,
+      "syotot_1": 0.3259,
+      "syotot_2": 0.06,
+      "pisteet_1": 0.514,
+      "pisteet_2": 0.1633,
+      "pisteet_3": 0.0368
+     },
+     "nousija": null
+    },
+    {
+     "id": 61073531,
+     "nimi": "Felix Robert",
+     "joukkue": "Lukko",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 8,
+      "syotot": 7,
+      "pisteet": 15
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 7,
+      "syotot": 6,
+      "pisteet": 13
+     },
+     "lambda": {
+      "maalit": 0.337,
+      "syotot": 0.351
+     },
+     "tn": {
+      "maalit_1": 0.2858,
+      "maalit_2": 0.0454,
+      "syotot_1": 0.2957,
+      "syotot_2": 0.0488,
+      "pisteet_1": 0.4969,
+      "pisteet_2": 0.1513,
+      "pisteet_3": 0.0326
+     },
+     "nousija": null
+    },
+    {
+     "id": 25126574,
+     "nimi": "Mikael Ruohomaa",
+     "joukkue": "Lukko",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 4,
+      "syotot": 5,
+      "pisteet": 9
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 3,
+      "syotot": 3,
+      "pisteet": 6
+     },
+     "lambda": {
+      "maalit": 0.23,
+      "syotot": 0.422
+     },
+     "tn": {
+      "maalit_1": 0.2052,
+      "maalit_2": 0.0227,
+      "syotot_1": 0.3441,
+      "syotot_2": 0.0675,
+      "pisteet_1": 0.4787,
+      "pisteet_2": 0.1391,
+      "pisteet_3": 0.0285
+     },
+     "nousija": null
+    },
+    {
+     "id": 33866651,
+     "nimi": "Konsta Kapanen",
+     "joukkue": "KalPa",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 6,
+      "syotot": 7,
+      "pisteet": 13
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 3,
+      "syotot": 7,
+      "pisteet": 10
+     },
+     "lambda": {
+      "maalit": 0.246,
+      "syotot": 0.374
+     },
+     "tn": {
+      "maalit_1": 0.2177,
+      "maalit_2": 0.0256,
+      "syotot_1": 0.3122,
+      "syotot_2": 0.0548,
+      "pisteet_1": 0.4619,
+      "pisteet_2": 0.1284,
+      "pisteet_3": 0.0251
+     },
+     "nousija": null
+    },
+    {
+     "id": 24338350,
+     "nimi": "Teemu Hartikainen",
+     "joukkue": "KalPa",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 5,
+      "syotot": 4,
+      "pisteet": 9
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 4,
+      "syotot": 2,
+      "pisteet": 6
+     },
+     "lambda": {
+      "maalit": 0.303,
+      "syotot": 0.308
+     },
+     "tn": {
+      "maalit_1": 0.2618,
+      "maalit_2": 0.0377,
+      "syotot_1": 0.265,
+      "syotot_2": 0.0387,
+      "pisteet_1": 0.4574,
+      "pisteet_2": 0.1256,
+      "pisteet_3": 0.0242
+     },
+     "nousija": null
+    },
+    {
+     "id": 22895620,
+     "nimi": "Jesper Piitulainen",
+     "joukkue": "KalPa",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 3,
+      "syotot": 6,
+      "pisteet": 9
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 3,
+      "syotot": 3,
+      "pisteet": 6
+     },
+     "lambda": {
+      "maalit": 0.244,
+      "syotot": 0.347
+     },
+     "tn": {
+      "maalit_1": 0.2164,
+      "maalit_2": 0.0253,
+      "syotot_1": 0.2929,
+      "syotot_2": 0.0478,
+      "pisteet_1": 0.4459,
+      "pisteet_2": 0.1187,
+      "pisteet_3": 0.0222
+     },
+     "nousija": null
+    },
+    {
+     "id": 22396653,
+     "nimi": "Heikki Liedes",
+     "joukkue": "Lukko",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 19,
+      "maalit": 4,
+      "syotot": 5,
+      "pisteet": 9
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 3,
+      "syotot": 5,
+      "pisteet": 8
+     },
+     "lambda": {
+      "maalit": 0.243,
+      "syotot": 0.336
+     },
+     "tn": {
+      "maalit_1": 0.2156,
+      "maalit_2": 0.0251,
+      "syotot_1": 0.2854,
+      "syotot_2": 0.0453,
+      "pisteet_1": 0.4395,
+      "pisteet_2": 0.115,
+      "pisteet_3": 0.0211
+     },
+     "nousija": null
+    },
+    {
+     "id": 60351426,
+     "nimi": "Jakob Stenqvist",
+     "joukkue": "Lukko",
+     "pp": "P",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 1,
+      "syotot": 11,
+      "pisteet": 12
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 8,
+      "pisteet": 9
+     },
+     "lambda": {
+      "maalit": 0.107,
+      "syotot": 0.454
+     },
+     "tn": {
+      "maalit_1": 0.1018,
+      "maalit_2": 0.0054,
+      "syotot_1": 0.3649,
+      "syotot_2": 0.0766,
+      "pisteet_1": 0.4296,
+      "pisteet_2": 0.1093,
+      "pisteet_3": 0.0195
+     },
+     "nousija": null
+    },
+    {
+     "id": 40113846,
+     "nimi": "Joona Saarelainen",
+     "joukkue": "KalPa",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 8,
+      "syotot": 2,
+      "pisteet": 10
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 7,
+      "syotot": 2,
+      "pisteet": 9
+     },
+     "lambda": {
+      "maalit": 0.319,
+      "syotot": 0.241
+     },
+     "tn": {
+      "maalit_1": 0.2733,
+      "maalit_2": 0.0413,
+      "syotot_1": 0.2143,
+      "syotot_2": 0.0248,
+      "pisteet_1": 0.429,
+      "pisteet_2": 0.1091,
+      "pisteet_3": 0.0194
+     },
+     "nousija": null
+    },
+    {
+     "id": 27023853,
+     "nimi": "Aleksi Saarela",
+     "joukkue": "Lukko",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 19,
+      "maalit": 3,
+      "syotot": 4,
+      "pisteet": 7
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 3,
+      "syotot": 4,
+      "pisteet": 7
+     },
+     "lambda": {
+      "maalit": 0.244,
+      "syotot": 0.276
+     },
+     "tn": {
+      "maalit_1": 0.2165,
+      "maalit_2": 0.0253,
+      "syotot_1": 0.2415,
+      "syotot_2": 0.0319,
+      "pisteet_1": 0.4057,
+      "pisteet_2": 0.0965,
+      "pisteet_3": 0.016
+     },
+     "nousija": null
+    },
+    {
+     "id": 31578145,
+     "nimi": "Juuso Mäenpää",
+     "joukkue": "KalPa",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 14,
+      "maalit": 2,
+      "syotot": 9,
+      "pisteet": 11
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 9,
+      "pisteet": 11
+     },
+     "lambda": {
+      "maalit": 0.127,
+      "syotot": 0.347
+     },
+     "tn": {
+      "maalit_1": 0.1192,
+      "maalit_2": 0.0074,
+      "syotot_1": 0.2929,
+      "syotot_2": 0.0478,
+      "pisteet_1": 0.3772,
+      "pisteet_2": 0.0823,
+      "pisteet_3": 0.0125
+     },
+     "nousija": null
+    },
+    {
+     "id": 27471447,
+     "nimi": "Aleksi Klemetti",
+     "joukkue": "KalPa",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 5,
+      "syotot": 4,
+      "pisteet": 9
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 2,
+      "pisteet": 4
+     },
+     "lambda": {
+      "maalit": 0.212,
+      "syotot": 0.254
+     },
+     "tn": {
+      "maalit_1": 0.1908,
+      "maalit_2": 0.0195,
+      "syotot_1": 0.2244,
+      "syotot_2": 0.0273,
+      "pisteet_1": 0.3723,
+      "pisteet_2": 0.08,
+      "pisteet_3": 0.0119
+     },
+     "nousija": null
+    },
+    {
+     "id": 25461491,
+     "nimi": "Jonne Tammela",
+     "joukkue": "KalPa",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 8,
+      "maalit": 1,
+      "syotot": 2,
+      "pisteet": 3
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 3,
+      "syotot": 3,
+      "pisteet": 6
+     },
+     "lambda": {
+      "maalit": 0.205,
+      "syotot": 0.252
+     },
+     "tn": {
+      "maalit_1": 0.1853,
+      "maalit_2": 0.0183,
+      "syotot_1": 0.2228,
+      "syotot_2": 0.0269,
+      "pisteet_1": 0.3668,
+      "pisteet_2": 0.0774,
+      "pisteet_3": 0.0113
+     },
+     "nousija": null
+    },
+    {
+     "id": 40215681,
+     "nimi": "Ville Ruotsalainen",
+     "joukkue": "KalPa",
+     "pp": "P",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 3,
+      "syotot": 6,
+      "pisteet": 9
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 3,
+      "pisteet": 5
+     },
+     "lambda": {
+      "maalit": 0.133,
+      "syotot": 0.324
+     },
+     "tn": {
+      "maalit_1": 0.1244,
+      "maalit_2": 0.0081,
+      "syotot_1": 0.2765,
+      "syotot_2": 0.0423,
+      "pisteet_1": 0.3665,
+      "pisteet_2": 0.0773,
+      "pisteet_3": 0.0113
+     },
+     "nousija": null
+    },
+    {
+     "id": 29948651,
+     "nimi": "Nuutti Viitasalo",
+     "joukkue": "Lukko",
+     "pp": "P",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 19,
+      "maalit": 1,
+      "syotot": 7,
+      "pisteet": 8
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 7,
+      "pisteet": 8
+     },
+     "lambda": {
+      "maalit": 0.093,
+      "syotot": 0.316
+     },
+     "tn": {
+      "maalit_1": 0.0885,
+      "maalit_2": 0.004,
+      "syotot_1": 0.271,
+      "syotot_2": 0.0406,
+      "pisteet_1": 0.3355,
+      "pisteet_2": 0.0639,
+      "pisteet_3": 0.0084
+     },
+     "nousija": null
+    },
+    {
+     "id": 40431875,
+     "nimi": "Hugo Gallet",
+     "joukkue": "KalPa",
+     "pp": "P",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 0,
+      "syotot": 9,
+      "pisteet": 9
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 7,
+      "pisteet": 7
+     },
+     "lambda": {
+      "maalit": 0.047,
+      "syotot": 0.342
+     },
+     "tn": {
+      "maalit_1": 0.046,
+      "maalit_2": 0.0011,
+      "syotot_1": 0.29,
+      "syotot_2": 0.0468,
+      "pisteet_1": 0.3227,
+      "pisteet_2": 0.0588,
+      "pisteet_3": 0.0074
+     },
+     "nousija": null
+    },
+    {
+     "id": 40115682,
+     "nimi": "Arttu Välilä",
+     "joukkue": "Lukko",
+     "pp": "P",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 3,
+      "syotot": 6,
+      "pisteet": 9
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 3,
+      "syotot": 6,
+      "pisteet": 9
+     },
+     "lambda": {
+      "maalit": 0.102,
+      "syotot": 0.288
+     },
+     "tn": {
+      "maalit_1": 0.0967,
+      "maalit_2": 0.0048,
+      "syotot_1": 0.2499,
+      "syotot_2": 0.0342,
+      "pisteet_1": 0.3225,
+      "pisteet_2": 0.0587,
+      "pisteet_3": 0.0074
+     },
+     "nousija": {
+      "nosto": 0.27,
+      "aiempi": 0.306,
+      "nyt": 0.389
+     }
+    },
+    {
+     "id": 32194874,
+     "nimi": "Jami Krannila",
+     "joukkue": "Lukko",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 19,
+      "maalit": 3,
+      "syotot": 10,
+      "pisteet": 13
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 3,
+      "syotot": 8,
+      "pisteet": 11
+     },
+     "lambda": {
+      "maalit": 0.115,
+      "syotot": 0.228
+     },
+     "tn": {
+      "maalit_1": 0.1084,
+      "maalit_2": 0.0061,
+      "syotot_1": 0.2041,
+      "syotot_2": 0.0224,
+      "pisteet_1": 0.2903,
+      "pisteet_2": 0.0469,
+      "pisteet_3": 0.0052
+     },
+     "nousija": {
+      "nosto": 0.64,
+      "aiempi": 0.21,
+      "nyt": 0.343
+     }
+    },
+    {
+     "id": 40140739,
+     "nimi": "Rasmus Kumpulainen",
+     "joukkue": "Lukko",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 1,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 5,
+      "syotot": 0,
+      "pisteet": 5
+     },
+     "lambda": {
+      "maalit": 0.181,
+      "syotot": 0.157
+     },
+     "tn": {
+      "maalit_1": 0.1652,
+      "maalit_2": 0.0145,
+      "syotot_1": 0.1451,
+      "syotot_2": 0.0111,
+      "pisteet_1": 0.2863,
+      "pisteet_2": 0.0456,
+      "pisteet_3": 0.005
+     },
+     "nousija": null
+    },
+    {
+     "id": 29870486,
+     "nimi": "Topias Haapanen",
+     "joukkue": "Lukko",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 6,
+      "syotot": 5,
+      "pisteet": 11
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 4,
+      "syotot": 5,
+      "pisteet": 9
+     },
+     "lambda": {
+      "maalit": 0.144,
+      "syotot": 0.179
+     },
+     "tn": {
+      "maalit_1": 0.1342,
+      "maalit_2": 0.0094,
+      "syotot_1": 0.1638,
+      "syotot_2": 0.0142,
+      "pisteet_1": 0.276,
+      "pisteet_2": 0.0422,
+      "pisteet_3": 0.0044
+     },
+     "nousija": {
+      "nosto": 0.52,
+      "aiempi": 0.213,
+      "nyt": 0.323
+     }
+    },
+    {
+     "id": 61122780,
+     "nimi": "Ondřej Mikliš",
+     "joukkue": "KalPa",
+     "pp": "P",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 0,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "viime": {
+      "ottelut": 0,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "lambda": {
+      "maalit": 0.081,
+      "syotot": 0.236
+     },
+     "tn": {
+      "maalit_1": 0.0783,
+      "maalit_2": 0.0031,
+      "syotot_1": 0.2098,
+      "syotot_2": 0.0237,
+      "pisteet_1": 0.2717,
+      "pisteet_2": 0.0408,
+      "pisteet_3": 0.0042
+     },
+     "nousija": null
+    },
+    {
+     "id": 40064941,
+     "nimi": "Leo Tuuva",
+     "joukkue": "Lukko",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 9,
+      "maalit": 1,
+      "syotot": 1,
+      "pisteet": 2
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 3,
+      "pisteet": 4
+     },
+     "lambda": {
+      "maalit": 0.111,
+      "syotot": 0.201
+     },
+     "tn": {
+      "maalit_1": 0.1053,
+      "maalit_2": 0.0057,
+      "syotot_1": 0.1821,
+      "syotot_2": 0.0177,
+      "pisteet_1": 0.2682,
+      "pisteet_2": 0.0397,
+      "pisteet_3": 0.004
+     },
+     "nousija": null
+    },
+    {
+     "id": 32033595,
+     "nimi": "Peetro Seppälä",
+     "joukkue": "Lukko",
+     "pp": "P",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 2,
+      "syotot": 3,
+      "pisteet": 5
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 2,
+      "pisteet": 4
+     },
+     "lambda": {
+      "maalit": 0.101,
+      "syotot": 0.204
+     },
+     "tn": {
+      "maalit_1": 0.0956,
+      "maalit_2": 0.0047,
+      "syotot_1": 0.1845,
+      "syotot_2": 0.0182,
+      "pisteet_1": 0.2625,
+      "pisteet_2": 0.0379,
+      "pisteet_3": 0.0038
+     },
+     "nousija": null
+    },
+    {
+     "id": 22474067,
+     "nimi": "Joonas Lyytinen",
+     "joukkue": "KalPa",
+     "pp": "P",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 13,
+      "maalit": 3,
+      "syotot": 1,
+      "pisteet": 4
+     },
+     "viime": {
+      "ottelut": 13,
+      "maalit": 3,
+      "syotot": 1,
+      "pisteet": 4
+     },
+     "lambda": {
+      "maalit": 0.121,
+      "syotot": 0.158
+     },
+     "tn": {
+      "maalit_1": 0.1137,
+      "maalit_2": 0.0067,
+      "syotot_1": 0.1463,
+      "syotot_2": 0.0113,
+      "pisteet_1": 0.2434,
+      "pisteet_2": 0.0324,
+      "pisteet_3": 0.0029
+     },
+     "nousija": null
+    },
+    {
+     "id": 24466028,
+     "nimi": "Henri Ikonen",
+     "joukkue": "Lukko",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 4,
+      "syotot": 3,
+      "pisteet": 7
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 4,
+      "syotot": 1,
+      "pisteet": 5
+     },
+     "lambda": {
+      "maalit": 0.146,
+      "syotot": 0.125
+     },
+     "tn": {
+      "maalit_1": 0.1361,
+      "maalit_2": 0.0097,
+      "syotot_1": 0.1172,
+      "syotot_2": 0.0072,
+      "pisteet_1": 0.2374,
+      "pisteet_2": 0.0307,
+      "pisteet_3": 0.0027
+     },
+     "nousija": null
+    },
+    {
+     "id": 40226086,
+     "nimi": "Aapo Vanninen",
+     "joukkue": "Lukko",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 19,
+      "maalit": 0,
+      "syotot": 2,
+      "pisteet": 2
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 2,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.083,
+      "syotot": 0.187
+     },
+     "tn": {
+      "maalit_1": 0.0798,
+      "maalit_2": 0.0033,
+      "syotot_1": 0.1709,
+      "syotot_2": 0.0155,
+      "pisteet_1": 0.2371,
+      "pisteet_2": 0.0306,
+      "pisteet_3": 0.0027
+     },
+     "nousija": null
+    },
+    {
+     "id": 33388168,
+     "nimi": "Kristjan Kombe",
+     "joukkue": "KalPa",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 19,
+      "maalit": 1,
+      "syotot": 1,
+      "pisteet": 2
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 0,
+      "pisteet": 1
+     },
+     "lambda": {
+      "maalit": 0.101,
+      "syotot": 0.154
+     },
+     "tn": {
+      "maalit_1": 0.096,
+      "maalit_2": 0.0048,
+      "syotot_1": 0.1431,
+      "syotot_2": 0.0108,
+      "pisteet_1": 0.2253,
+      "pisteet_2": 0.0275,
+      "pisteet_3": 0.0023
+     },
+     "nousija": null
+    },
+    {
+     "id": 24725109,
+     "nimi": "Lasse Lappalainen",
+     "joukkue": "KalPa",
+     "pp": "P",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 1,
+      "syotot": 3,
+      "pisteet": 4
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 2,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.048,
+      "syotot": 0.176
+     },
+     "tn": {
+      "maalit_1": 0.047,
+      "maalit_2": 0.0011,
+      "syotot_1": 0.1617,
+      "syotot_2": 0.0138,
+      "pisteet_1": 0.2011,
+      "pisteet_2": 0.0217,
+      "pisteet_3": 0.0016
+     },
+     "nousija": null
+    },
+    {
+     "id": 34118968,
+     "nimi": "Arttu Kärki",
+     "joukkue": "Lukko",
+     "pp": "P",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 14,
+      "maalit": 0,
+      "syotot": 1,
+      "pisteet": 1
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 2,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.049,
+      "syotot": 0.175
+     },
+     "tn": {
+      "maalit_1": 0.0478,
+      "maalit_2": 0.0012,
+      "syotot_1": 0.1603,
+      "syotot_2": 0.0136,
+      "pisteet_1": 0.2004,
+      "pisteet_2": 0.0216,
+      "pisteet_3": 0.0016
+     },
+     "nousija": null
+    },
+    {
+     "id": 40316240,
+     "nimi": "Jirko Tukiainen",
+     "joukkue": "Lukko",
+     "pp": "P",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 0,
+      "syotot": 3,
+      "pisteet": 3
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 2,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.048,
+      "syotot": 0.171
+     },
+     "tn": {
+      "maalit_1": 0.0466,
+      "maalit_2": 0.0011,
+      "syotot_1": 0.1574,
+      "syotot_2": 0.0131,
+      "pisteet_1": 0.1967,
+      "pisteet_2": 0.0208,
+      "pisteet_3": 0.0015
+     },
+     "nousija": null
+    },
+    {
+     "id": 24226640,
+     "nimi": "Juuso Könönen",
+     "joukkue": "KalPa",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 4,
+      "syotot": 2,
+      "pisteet": 6
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 2,
+      "pisteet": 4
+     },
+     "lambda": {
+      "maalit": 0.106,
+      "syotot": 0.105
+     },
+     "tn": {
+      "maalit_1": 0.1006,
+      "maalit_2": 0.0052,
+      "syotot_1": 0.0998,
+      "syotot_2": 0.0052,
+      "pisteet_1": 0.1903,
+      "pisteet_2": 0.0194,
+      "pisteet_3": 0.0013
+     },
+     "nousija": null
+    },
+    {
+     "id": 40048503,
+     "nimi": "Mitja Jokinen",
+     "joukkue": "KalPa",
+     "pp": "P",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 19,
+      "maalit": 0,
+      "syotot": 4,
+      "pisteet": 4
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 3,
+      "pisteet": 3
+     },
+     "lambda": {
+      "maalit": 0.041,
+      "syotot": 0.161
+     },
+     "tn": {
+      "maalit_1": 0.0402,
+      "maalit_2": 0.0008,
+      "syotot_1": 0.1491,
+      "syotot_2": 0.0117,
+      "pisteet_1": 0.1833,
+      "pisteet_2": 0.0179,
+      "pisteet_3": 0.0012
+     },
+     "nousija": null
+    },
+    {
+     "id": 61117218,
+     "nimi": "Kyle Crnkovic",
+     "joukkue": "KalPa",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 4,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "viime": {
+      "ottelut": 4,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "lambda": {
+      "maalit": 0.079,
+      "syotot": 0.107
+     },
+     "tn": {
+      "maalit_1": 0.0761,
+      "maalit_2": 0.003,
+      "syotot_1": 0.1012,
+      "syotot_2": 0.0053,
+      "pisteet_1": 0.1696,
+      "pisteet_2": 0.0153,
+      "pisteet_3": 0.0009
+     },
+     "nousija": null
+    },
+    {
+     "id": 40373353,
+     "nimi": "Rasmus Miilunpohja",
+     "joukkue": "KalPa",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 13,
+      "maalit": 0,
+      "syotot": 1,
+      "pisteet": 1
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 1,
+      "pisteet": 1
+     },
+     "lambda": {
+      "maalit": 0.065,
+      "syotot": 0.114
+     },
+     "tn": {
+      "maalit_1": 0.0625,
+      "maalit_2": 0.002,
+      "syotot_1": 0.108,
+      "syotot_2": 0.0061,
+      "pisteet_1": 0.1638,
+      "pisteet_2": 0.0142,
+      "pisteet_3": 0.0008
+     },
+     "nousija": null
+    },
+    {
+     "id": 60848590,
+     "nimi": "Jakub Floris",
+     "joukkue": "Lukko",
+     "pp": "P",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 7,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "viime": {
+      "ottelut": 7,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "lambda": {
+      "maalit": 0.026,
+      "syotot": 0.066
+     },
+     "tn": {
+      "maalit_1": 0.0253,
+      "maalit_2": 0.0003,
+      "syotot_1": 0.0642,
+      "syotot_2": 0.0021,
+      "pisteet_1": 0.0879,
+      "pisteet_2": 0.004,
+      "pisteet_3": 0.0001
+     },
+     "nousija": null
+    },
+    {
+     "id": 60866738,
+     "nimi": "Lukas Kanak",
+     "joukkue": "KalPa",
+     "pp": "P",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 0,
+      "syotot": 3,
+      "pisteet": 3
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 2,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.018,
+      "syotot": 0.071
+     },
+     "tn": {
+      "maalit_1": 0.0176,
+      "maalit_2": 0.0002,
+      "syotot_1": 0.0685,
+      "syotot_2": 0.0024,
+      "pisteet_1": 0.085,
+      "pisteet_2": 0.0037,
+      "pisteet_3": 0.0001
+     },
+     "nousija": null
+    },
+    {
+     "id": 40109642,
+     "nimi": "Veikka Mononen",
+     "joukkue": "KalPa",
+     "pp": "P",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 8,
+      "maalit": 0,
+      "syotot": 1,
+      "pisteet": 1
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 1,
+      "pisteet": 1
+     },
+     "lambda": {
+      "maalit": 0.019,
+      "syotot": 0.061
+     },
+     "tn": {
+      "maalit_1": 0.0189,
+      "maalit_2": 0.0002,
+      "syotot_1": 0.059,
+      "syotot_2": 0.0018,
+      "pisteet_1": 0.0768,
+      "pisteet_2": 0.003,
+      "pisteet_3": 0.0001
+     },
+     "nousija": null
+    },
+    {
+     "id": 40317139,
+     "nimi": "Jasu Mensonen",
+     "joukkue": "Lukko",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 16,
+      "maalit": 0,
+      "syotot": 1,
+      "pisteet": 1
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 1,
+      "pisteet": 1
+     },
+     "lambda": {
+      "maalit": 0.011,
+      "syotot": 0.013
+     },
+     "tn": {
+      "maalit_1": 0.0113,
+      "maalit_2": 0.0001,
+      "syotot_1": 0.0125,
+      "syotot_2": 0.0001,
+      "pisteet_1": 0.0237,
+      "pisteet_2": 0.0003,
+      "pisteet_3": 0.0
+     },
+     "nousija": null
+    }
+   ]
   },
   {
    "avain": "2027_2701460",
@@ -46,11 +4061,1356 @@
    "koti": "K-Espoo",
    "vieras": "Ilves",
    "odotetut_maalit": [
-    2.61,
-    2.58
+    2.32,
+    2.48
    ],
-   "kokoonpano": false,
-   "pelaajat": []
+   "kokoonpano": true,
+   "pelaajat": [
+    {
+     "id": 31296980,
+     "nimi": "Jere Väisänen",
+     "joukkue": "K-Espoo",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 10,
+      "syotot": 11,
+      "pisteet": 21
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 8,
+      "syotot": 10,
+      "pisteet": 18
+     },
+     "lambda": {
+      "maalit": 0.378,
+      "syotot": 0.496
+     },
+     "tn": {
+      "maalit_1": 0.3145,
+      "maalit_2": 0.0556,
+      "syotot_1": 0.3913,
+      "syotot_2": 0.0891,
+      "pisteet_1": 0.5827,
+      "pisteet_2": 0.218,
+      "pisteet_3": 0.0587
+     },
+     "nousija": {
+      "nosto": 0.72,
+      "aiempi": 0.508,
+      "nyt": 0.874
+     }
+    },
+    {
+     "id": 60544772,
+     "nimi": "Lukas Jasek",
+     "joukkue": "Ilves",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 12,
+      "maalit": 6,
+      "syotot": 7,
+      "pisteet": 13
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 7,
+      "syotot": 7,
+      "pisteet": 14
+     },
+     "lambda": {
+      "maalit": 0.305,
+      "syotot": 0.526
+     },
+     "tn": {
+      "maalit_1": 0.2627,
+      "maalit_2": 0.038,
+      "syotot_1": 0.4091,
+      "syotot_2": 0.0982,
+      "pisteet_1": 0.5643,
+      "pisteet_2": 0.2023,
+      "pisteet_3": 0.052
+     },
+     "nousija": null
+    },
+    {
+     "id": 61067273,
+     "nimi": "Mathias From",
+     "joukkue": "K-Espoo",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 10,
+      "syotot": 5,
+      "pisteet": 15
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 8,
+      "syotot": 4,
+      "pisteet": 12
+     },
+     "lambda": {
+      "maalit": 0.435,
+      "syotot": 0.327
+     },
+     "tn": {
+      "maalit_1": 0.353,
+      "maalit_2": 0.0713,
+      "syotot_1": 0.2791,
+      "syotot_2": 0.0432,
+      "pisteet_1": 0.5336,
+      "pisteet_2": 0.1778,
+      "pisteet_3": 0.0422
+     },
+     "nousija": {
+      "nosto": 0.26,
+      "aiempi": 0.605,
+      "nyt": 0.763
+     }
+    },
+    {
+     "id": 60972169,
+     "nimi": "Luke Henman",
+     "joukkue": "Ilves",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 13,
+      "syotot": 13,
+      "pisteet": 26
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 9,
+      "syotot": 6,
+      "pisteet": 15
+     },
+     "lambda": {
+      "maalit": 0.368,
+      "syotot": 0.378
+     },
+     "tn": {
+      "maalit_1": 0.3078,
+      "maalit_2": 0.0531,
+      "syotot_1": 0.3145,
+      "syotot_2": 0.0556,
+      "pisteet_1": 0.5255,
+      "pisteet_2": 0.1717,
+      "pisteet_3": 0.0399
+     },
+     "nousija": null
+    },
+    {
+     "id": 60658794,
+     "nimi": "Jens Lööke",
+     "joukkue": "Ilves",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 5,
+      "syotot": 8,
+      "pisteet": 13
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 5,
+      "syotot": 6,
+      "pisteet": 11
+     },
+     "lambda": {
+      "maalit": 0.259,
+      "syotot": 0.409
+     },
+     "tn": {
+      "maalit_1": 0.2278,
+      "maalit_2": 0.0282,
+      "syotot_1": 0.3354,
+      "syotot_2": 0.0639,
+      "pisteet_1": 0.4868,
+      "pisteet_2": 0.1445,
+      "pisteet_3": 0.0303
+     },
+     "nousija": null
+    },
+    {
+     "id": 34132533,
+     "nimi": "Arttu Tuomaala",
+     "joukkue": "K-Espoo",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 22,
+      "maalit": 5,
+      "syotot": 8,
+      "pisteet": 13
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 3,
+      "syotot": 7,
+      "pisteet": 10
+     },
+     "lambda": {
+      "maalit": 0.223,
+      "syotot": 0.439
+     },
+     "tn": {
+      "maalit_1": 0.2003,
+      "maalit_2": 0.0215,
+      "syotot_1": 0.355,
+      "syotot_2": 0.0722,
+      "pisteet_1": 0.4842,
+      "pisteet_2": 0.1427,
+      "pisteet_3": 0.0297
+     },
+     "nousija": null
+    },
+    {
+     "id": 60545332,
+     "nimi": "Dominik Lakatos",
+     "joukkue": "Ilves",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 3,
+      "maalit": 1,
+      "syotot": 1,
+      "pisteet": 2
+     },
+     "viime": {
+      "ottelut": 3,
+      "maalit": 1,
+      "syotot": 1,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.256,
+      "syotot": 0.354
+     },
+     "tn": {
+      "maalit_1": 0.2261,
+      "maalit_2": 0.0277,
+      "syotot_1": 0.298,
+      "syotot_2": 0.0496,
+      "pisteet_1": 0.4567,
+      "pisteet_2": 0.1253,
+      "pisteet_3": 0.0241
+     },
+     "nousija": null
+    },
+    {
+     "id": 61080607,
+     "nimi": "Linus Öberg",
+     "joukkue": "K-Espoo",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 7,
+      "syotot": 5,
+      "pisteet": 12
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 6,
+      "syotot": 5,
+      "pisteet": 11
+     },
+     "lambda": {
+      "maalit": 0.294,
+      "syotot": 0.293
+     },
+     "tn": {
+      "maalit_1": 0.2548,
+      "maalit_2": 0.0356,
+      "syotot_1": 0.2538,
+      "syotot_2": 0.0353,
+      "pisteet_1": 0.4439,
+      "pisteet_2": 0.1176,
+      "pisteet_3": 0.0218
+     },
+     "nousija": null
+    },
+    {
+     "id": 60899622,
+     "nimi": "Lukas Svejkovsky",
+     "joukkue": "K-Espoo",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 18,
+      "maalit": 8,
+      "syotot": 5,
+      "pisteet": 13
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 4,
+      "syotot": 3,
+      "pisteet": 7
+     },
+     "lambda": {
+      "maalit": 0.29,
+      "syotot": 0.28
+     },
+     "tn": {
+      "maalit_1": 0.252,
+      "maalit_2": 0.0348,
+      "syotot_1": 0.2443,
+      "syotot_2": 0.0326,
+      "pisteet_1": 0.4347,
+      "pisteet_2": 0.1123,
+      "pisteet_3": 0.0203
+     },
+     "nousija": null
+    },
+    {
+     "id": 60361530,
+     "nimi": "Matic Török",
+     "joukkue": "Ilves",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 2,
+      "syotot": 9,
+      "pisteet": 11
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 6,
+      "pisteet": 8
+     },
+     "lambda": {
+      "maalit": 0.194,
+      "syotot": 0.363
+     },
+     "tn": {
+      "maalit_1": 0.1766,
+      "maalit_2": 0.0166,
+      "syotot_1": 0.3047,
+      "syotot_2": 0.052,
+      "pisteet_1": 0.4275,
+      "pisteet_2": 0.1082,
+      "pisteet_3": 0.0192
+     },
+     "nousija": null
+    },
+    {
+     "id": 61090984,
+     "nimi": "Carter King",
+     "joukkue": "K-Espoo",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 22,
+      "maalit": 6,
+      "syotot": 5,
+      "pisteet": 11
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 5,
+      "syotot": 5,
+      "pisteet": 10
+     },
+     "lambda": {
+      "maalit": 0.26,
+      "syotot": 0.286
+     },
+     "tn": {
+      "maalit_1": 0.2286,
+      "maalit_2": 0.0284,
+      "syotot_1": 0.2491,
+      "syotot_2": 0.034,
+      "pisteet_1": 0.4207,
+      "pisteet_2": 0.1045,
+      "pisteet_3": 0.0181
+     },
+     "nousija": null
+    },
+    {
+     "id": 24727725,
+     "nimi": "Ville Lajunen",
+     "joukkue": "K-Espoo",
+     "pp": "P",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 22,
+      "maalit": 2,
+      "syotot": 11,
+      "pisteet": 13
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 8,
+      "pisteet": 10
+     },
+     "lambda": {
+      "maalit": 0.111,
+      "syotot": 0.427
+     },
+     "tn": {
+      "maalit_1": 0.1053,
+      "maalit_2": 0.0058,
+      "syotot_1": 0.3478,
+      "syotot_2": 0.0691,
+      "pisteet_1": 0.4165,
+      "pisteet_2": 0.1022,
+      "pisteet_3": 0.0175
+     },
+     "nousija": {
+      "nosto": 0.36,
+      "aiempi": 0.395,
+      "nyt": 0.539
+     }
+    },
+    {
+     "id": 30636693,
+     "nimi": "Aleks Haatanen",
+     "joukkue": "Ilves",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 2,
+      "syotot": 11,
+      "pisteet": 13
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 7,
+      "pisteet": 7
+     },
+     "lambda": {
+      "maalit": 0.127,
+      "syotot": 0.353
+     },
+     "tn": {
+      "maalit_1": 0.1197,
+      "maalit_2": 0.0075,
+      "syotot_1": 0.2976,
+      "syotot_2": 0.0495,
+      "pisteet_1": 0.3817,
+      "pisteet_2": 0.0844,
+      "pisteet_3": 0.013
+     },
+     "nousija": null
+    },
+    {
+     "id": 23165391,
+     "nimi": "Jere Sallinen",
+     "joukkue": "K-Espoo",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 22,
+      "maalit": 5,
+      "syotot": 8,
+      "pisteet": 13
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 4,
+      "syotot": 7,
+      "pisteet": 11
+     },
+     "lambda": {
+      "maalit": 0.157,
+      "syotot": 0.249
+     },
+     "tn": {
+      "maalit_1": 0.1449,
+      "maalit_2": 0.011,
+      "syotot_1": 0.2208,
+      "syotot_2": 0.0264,
+      "pisteet_1": 0.3337,
+      "pisteet_2": 0.0632,
+      "pisteet_3": 0.0083
+     },
+     "nousija": null
+    },
+    {
+     "id": 33150613,
+     "nimi": "Joni Jurmo",
+     "joukkue": "K-Espoo",
+     "pp": "P",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 13,
+      "maalit": 0,
+      "syotot": 3,
+      "pisteet": 3
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 4,
+      "pisteet": 5
+     },
+     "lambda": {
+      "maalit": 0.084,
+      "syotot": 0.307
+     },
+     "tn": {
+      "maalit_1": 0.0809,
+      "maalit_2": 0.0034,
+      "syotot_1": 0.2642,
+      "syotot_2": 0.0384,
+      "pisteet_1": 0.3237,
+      "pisteet_2": 0.0592,
+      "pisteet_3": 0.0075
+     },
+     "nousija": {
+      "nosto": 0.29,
+      "aiempi": 0.303,
+      "nyt": 0.391
+     }
+    },
+    {
+     "id": 22290364,
+     "nimi": "Jani Lajunen",
+     "joukkue": "K-Espoo",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 2,
+      "syotot": 9,
+      "pisteet": 11
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 6,
+      "pisteet": 8
+     },
+     "lambda": {
+      "maalit": 0.111,
+      "syotot": 0.268
+     },
+     "tn": {
+      "maalit_1": 0.105,
+      "maalit_2": 0.0057,
+      "syotot_1": 0.2348,
+      "syotot_2": 0.03,
+      "pisteet_1": 0.3151,
+      "pisteet_2": 0.0559,
+      "pisteet_3": 0.0068
+     },
+     "nousija": null
+    },
+    {
+     "id": 24650025,
+     "nimi": "Iikka Kangasniemi",
+     "joukkue": "K-Espoo",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 18,
+      "maalit": 2,
+      "syotot": 4,
+      "pisteet": 6
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 4,
+      "pisteet": 6
+     },
+     "lambda": {
+      "maalit": 0.119,
+      "syotot": 0.257
+     },
+     "tn": {
+      "maalit_1": 0.1126,
+      "maalit_2": 0.0066,
+      "syotot_1": 0.2269,
+      "syotot_2": 0.028,
+      "pisteet_1": 0.314,
+      "pisteet_2": 0.0555,
+      "pisteet_3": 0.0067
+     },
+     "nousija": null
+    },
+    {
+     "id": 60661835,
+     "nimi": "Ondrej Kos",
+     "joukkue": "Ilves",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 1,
+      "syotot": 5,
+      "pisteet": 6
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 4,
+      "pisteet": 5
+     },
+     "lambda": {
+      "maalit": 0.117,
+      "syotot": 0.256
+     },
+     "tn": {
+      "maalit_1": 0.1102,
+      "maalit_2": 0.0063,
+      "syotot_1": 0.2262,
+      "syotot_2": 0.0278,
+      "pisteet_1": 0.3115,
+      "pisteet_2": 0.0545,
+      "pisteet_3": 0.0066
+     },
+     "nousija": null
+    },
+    {
+     "id": 24223973,
+     "nimi": "Tony Sund",
+     "joukkue": "Ilves",
+     "pp": "P",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 3,
+      "syotot": 9,
+      "pisteet": 12
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 6,
+      "pisteet": 8
+     },
+     "lambda": {
+      "maalit": 0.08,
+      "syotot": 0.274
+     },
+     "tn": {
+      "maalit_1": 0.0764,
+      "maalit_2": 0.003,
+      "syotot_1": 0.2395,
+      "syotot_2": 0.0313,
+      "pisteet_1": 0.2976,
+      "pisteet_2": 0.0495,
+      "pisteet_3": 0.0057
+     },
+     "nousija": {
+      "nosto": 0.34,
+      "aiempi": 0.264,
+      "nyt": 0.353
+     }
+    },
+    {
+     "id": 29936715,
+     "nimi": "Kasper Kotkansalo",
+     "joukkue": "K-Espoo",
+     "pp": "P",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 22,
+      "maalit": 1,
+      "syotot": 5,
+      "pisteet": 6
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 4,
+      "pisteet": 5
+     },
+     "lambda": {
+      "maalit": 0.073,
+      "syotot": 0.266
+     },
+     "tn": {
+      "maalit_1": 0.0701,
+      "maalit_2": 0.0025,
+      "syotot_1": 0.2336,
+      "syotot_2": 0.0297,
+      "pisteet_1": 0.2873,
+      "pisteet_2": 0.0459,
+      "pisteet_3": 0.005
+     },
+     "nousija": null
+    },
+    {
+     "id": 60860278,
+     "nimi": "Erik Borg",
+     "joukkue": "Ilves",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 3,
+      "syotot": 2,
+      "pisteet": 5
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 3,
+      "syotot": 1,
+      "pisteet": 4
+     },
+     "lambda": {
+      "maalit": 0.171,
+      "syotot": 0.158
+     },
+     "tn": {
+      "maalit_1": 0.157,
+      "maalit_2": 0.013,
+      "syotot_1": 0.1457,
+      "syotot_2": 0.0112,
+      "pisteet_1": 0.2799,
+      "pisteet_2": 0.0434,
+      "pisteet_3": 0.0046
+     },
+     "nousija": null
+    },
+    {
+     "id": 61067270,
+     "nimi": "Connor Corcoran",
+     "joukkue": "K-Espoo",
+     "pp": "P",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 3,
+      "syotot": 9,
+      "pisteet": 12
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 8,
+      "pisteet": 10
+     },
+     "lambda": {
+      "maalit": 0.068,
+      "syotot": 0.226
+     },
+     "tn": {
+      "maalit_1": 0.0653,
+      "maalit_2": 0.0022,
+      "syotot_1": 0.2024,
+      "syotot_2": 0.022,
+      "pisteet_1": 0.2545,
+      "pisteet_2": 0.0355,
+      "pisteet_3": 0.0034
+     },
+     "nousija": {
+      "nosto": 0.35,
+      "aiempi": 0.218,
+      "nyt": 0.294
+     }
+    },
+    {
+     "id": 29695519,
+     "nimi": "Teemu Engberg",
+     "joukkue": "Ilves",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 0,
+      "syotot": 4,
+      "pisteet": 4
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 2,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.097,
+      "syotot": 0.185
+     },
+     "tn": {
+      "maalit_1": 0.0924,
+      "maalit_2": 0.0044,
+      "syotot_1": 0.1688,
+      "syotot_2": 0.0151,
+      "pisteet_1": 0.2456,
+      "pisteet_2": 0.033,
+      "pisteet_3": 0.003
+     },
+     "nousija": null
+    },
+    {
+     "id": 27841653,
+     "nimi": "Miro Keskitalo",
+     "joukkue": "K-Espoo",
+     "pp": "P",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 0,
+      "syotot": 3,
+      "pisteet": 3
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 3,
+      "pisteet": 3
+     },
+     "lambda": {
+      "maalit": 0.048,
+      "syotot": 0.214
+     },
+     "tn": {
+      "maalit_1": 0.0471,
+      "maalit_2": 0.0011,
+      "syotot_1": 0.1928,
+      "syotot_2": 0.0199,
+      "pisteet_1": 0.2309,
+      "pisteet_2": 0.029,
+      "pisteet_3": 0.0025
+     },
+     "nousija": null
+    },
+    {
+     "id": 30738423,
+     "nimi": "Toni Utunen",
+     "joukkue": "Ilves",
+     "pp": "P",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 1,
+      "syotot": 2,
+      "pisteet": 3
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "lambda": {
+      "maalit": 0.07,
+      "syotot": 0.191
+     },
+     "tn": {
+      "maalit_1": 0.0675,
+      "maalit_2": 0.0023,
+      "syotot_1": 0.1737,
+      "syotot_2": 0.0161,
+      "pisteet_1": 0.2295,
+      "pisteet_2": 0.0286,
+      "pisteet_3": 0.0024
+     },
+     "nousija": null
+    },
+    {
+     "id": 60923647,
+     "nimi": "Arvid Aronsson",
+     "joukkue": "K-Espoo",
+     "pp": "P",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 17,
+      "maalit": 0,
+      "syotot": 6,
+      "pisteet": 6
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 5,
+      "pisteet": 5
+     },
+     "lambda": {
+      "maalit": 0.045,
+      "syotot": 0.186
+     },
+     "tn": {
+      "maalit_1": 0.0436,
+      "maalit_2": 0.001,
+      "syotot_1": 0.17,
+      "syotot_2": 0.0153,
+      "pisteet_1": 0.2061,
+      "pisteet_2": 0.0229,
+      "pisteet_3": 0.0017
+     },
+     "nousija": null
+    },
+    {
+     "id": 30639603,
+     "nimi": "Aarne Talvitie",
+     "joukkue": "K-Espoo",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 22,
+      "maalit": 4,
+      "syotot": 3,
+      "pisteet": 7
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 4,
+      "syotot": 2,
+      "pisteet": 6
+     },
+     "lambda": {
+      "maalit": 0.113,
+      "syotot": 0.101
+     },
+     "tn": {
+      "maalit_1": 0.1072,
+      "maalit_2": 0.006,
+      "syotot_1": 0.096,
+      "syotot_2": 0.0048,
+      "pisteet_1": 0.1929,
+      "pisteet_2": 0.0199,
+      "pisteet_3": 0.0014
+     },
+     "nousija": null
+    },
+    {
+     "id": 21851458,
+     "nimi": "Matti Järvinen",
+     "joukkue": "K-Espoo",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 5,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 3,
+      "pisteet": 5
+     },
+     "lambda": {
+      "maalit": 0.091,
+      "syotot": 0.117
+     },
+     "tn": {
+      "maalit_1": 0.0872,
+      "maalit_2": 0.0039,
+      "syotot_1": 0.1108,
+      "syotot_2": 0.0064,
+      "pisteet_1": 0.1884,
+      "pisteet_2": 0.019,
+      "pisteet_3": 0.0013
+     },
+     "nousija": null
+    },
+    {
+     "id": 30644067,
+     "nimi": "Otto Latvala",
+     "joukkue": "Ilves",
+     "pp": "P",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 2,
+      "syotot": 1,
+      "pisteet": 3
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 0,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.075,
+      "syotot": 0.132
+     },
+     "tn": {
+      "maalit_1": 0.0727,
+      "maalit_2": 0.0027,
+      "syotot_1": 0.1235,
+      "syotot_2": 0.008,
+      "pisteet_1": 0.1873,
+      "pisteet_2": 0.0187,
+      "pisteet_3": 0.0013
+     },
+     "nousija": null
+    },
+    {
+     "id": 40122756,
+     "nimi": "Eeli Salovaara",
+     "joukkue": "K-Espoo",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 14,
+      "maalit": 2,
+      "syotot": 1,
+      "pisteet": 3
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 1,
+      "pisteet": 3
+     },
+     "lambda": {
+      "maalit": 0.103,
+      "syotot": 0.102
+     },
+     "tn": {
+      "maalit_1": 0.0975,
+      "maalit_2": 0.0049,
+      "syotot_1": 0.0971,
+      "syotot_2": 0.0049,
+      "pisteet_1": 0.1851,
+      "pisteet_2": 0.0183,
+      "pisteet_3": 0.0012
+     },
+     "nousija": null
+    },
+    {
+     "id": 21848539,
+     "nimi": "Jan-Mikael Järvinen",
+     "joukkue": "Ilves",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 1,
+      "syotot": 8,
+      "pisteet": 9
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 5,
+      "pisteet": 5
+     },
+     "lambda": {
+      "maalit": 0.045,
+      "syotot": 0.146
+     },
+     "tn": {
+      "maalit_1": 0.0443,
+      "maalit_2": 0.001,
+      "syotot_1": 0.1357,
+      "syotot_2": 0.0097,
+      "pisteet_1": 0.174,
+      "pisteet_2": 0.0161,
+      "pisteet_3": 0.001
+     },
+     "nousija": null
+    },
+    {
+     "id": 60905049,
+     "nimi": "John Nyberg",
+     "joukkue": "Ilves",
+     "pp": "P",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 1,
+      "syotot": 3,
+      "pisteet": 4
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 1,
+      "pisteet": 1
+     },
+     "lambda": {
+      "maalit": 0.05,
+      "syotot": 0.136
+     },
+     "tn": {
+      "maalit_1": 0.0487,
+      "maalit_2": 0.0012,
+      "syotot_1": 0.1273,
+      "syotot_2": 0.0085,
+      "pisteet_1": 0.1698,
+      "pisteet_2": 0.0153,
+      "pisteet_3": 0.0009
+     },
+     "nousija": null
+    },
+    {
+     "id": 31110600,
+     "nimi": "Benjamin Korhonen",
+     "joukkue": "Ilves",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 22,
+      "maalit": 5,
+      "syotot": 2,
+      "pisteet": 7
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 1,
+      "pisteet": 3
+     },
+     "lambda": {
+      "maalit": 0.083,
+      "syotot": 0.094
+     },
+     "tn": {
+      "maalit_1": 0.0798,
+      "maalit_2": 0.0033,
+      "syotot_1": 0.0895,
+      "syotot_2": 0.0041,
+      "pisteet_1": 0.1621,
+      "pisteet_2": 0.0139,
+      "pisteet_3": 0.0008
+     },
+     "nousija": null
+    },
+    {
+     "id": 28905831,
+     "nimi": "Jarkko Parikka",
+     "joukkue": "Ilves",
+     "pp": "P",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 1,
+      "syotot": 0,
+      "pisteet": 1
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "lambda": {
+      "maalit": 0.056,
+      "syotot": 0.115
+     },
+     "tn": {
+      "maalit_1": 0.0547,
+      "maalit_2": 0.0015,
+      "syotot_1": 0.1084,
+      "syotot_2": 0.0061,
+      "pisteet_1": 0.1572,
+      "pisteet_2": 0.0131,
+      "pisteet_3": 0.0007
+     },
+     "nousija": null
+    },
+    {
+     "id": 60540148,
+     "nimi": "Leo Lööf",
+     "joukkue": "Ilves",
+     "pp": "P",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 1,
+      "syotot": 1,
+      "pisteet": 2
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 1,
+      "pisteet": 1
+     },
+     "lambda": {
+      "maalit": 0.047,
+      "syotot": 0.114
+     },
+     "tn": {
+      "maalit_1": 0.0456,
+      "maalit_2": 0.0011,
+      "syotot_1": 0.108,
+      "syotot_2": 0.006,
+      "pisteet_1": 0.1486,
+      "pisteet_2": 0.0116,
+      "pisteet_3": 0.0006
+     },
+     "nousija": null
+    },
+    {
+     "id": 34570580,
+     "nimi": "Topias Hynninen",
+     "joukkue": "Ilves",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 1,
+      "pisteet": 2
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 1,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.059,
+      "syotot": 0.093
+     },
+     "tn": {
+      "maalit_1": 0.0572,
+      "maalit_2": 0.0017,
+      "syotot_1": 0.0887,
+      "syotot_2": 0.0041,
+      "pisteet_1": 0.1408,
+      "pisteet_2": 0.0104,
+      "pisteet_3": 0.0005
+     },
+     "nousija": null
+    },
+    {
+     "id": 40079819,
+     "nimi": "Timi Teuho-Markkola",
+     "joukkue": "Ilves",
+     "pp": "P",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 22,
+      "maalit": 1,
+      "syotot": 4,
+      "pisteet": 5
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 3,
+      "pisteet": 3
+     },
+     "lambda": {
+      "maalit": 0.019,
+      "syotot": 0.098
+     },
+     "tn": {
+      "maalit_1": 0.0187,
+      "maalit_2": 0.0002,
+      "syotot_1": 0.0931,
+      "syotot_2": 0.0045,
+      "pisteet_1": 0.1101,
+      "pisteet_2": 0.0063,
+      "pisteet_3": 0.0002
+     },
+     "nousija": null
+    },
+    {
+     "id": 40399288,
+     "nimi": "Roni Kuukasjärvi",
+     "joukkue": "Ilves",
+     "pp": "P",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 3,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "viime": {
+      "ottelut": 4,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "lambda": {
+      "maalit": 0.026,
+      "syotot": 0.071
+     },
+     "tn": {
+      "maalit_1": 0.0258,
+      "maalit_2": 0.0003,
+      "syotot_1": 0.0685,
+      "syotot_2": 0.0024,
+      "pisteet_1": 0.0925,
+      "pisteet_2": 0.0044,
+      "pisteet_3": 0.0001
+     },
+     "nousija": null
+    },
+    {
+     "id": 29782985,
+     "nimi": "Niklas Peltomäki",
+     "joukkue": "K-Espoo",
+     "pp": "P",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 17,
+      "maalit": 0,
+      "syotot": 1,
+      "pisteet": 1
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "lambda": {
+      "maalit": 0.021,
+      "syotot": 0.05
+     },
+     "tn": {
+      "maalit_1": 0.0203,
+      "maalit_2": 0.0002,
+      "syotot_1": 0.0489,
+      "syotot_2": 0.0012,
+      "pisteet_1": 0.0683,
+      "pisteet_2": 0.0024,
+      "pisteet_3": 0.0001
+     },
+     "nousija": null
+    },
+    {
+     "id": 40102451,
+     "nimi": "Elias Puolanne",
+     "joukkue": "K-Espoo",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 19,
+      "maalit": 0,
+      "syotot": 2,
+      "pisteet": 2
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 2,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.01,
+      "syotot": 0.015
+     },
+     "tn": {
+      "maalit_1": 0.0095,
+      "maalit_2": 0.0,
+      "syotot_1": 0.0146,
+      "syotot_2": 0.0001,
+      "pisteet_1": 0.024,
+      "pisteet_2": 0.0003,
+      "pisteet_3": 0.0
+     },
+     "nousija": null
+    }
+   ]
   },
   {
    "avain": "2027_2701461",
@@ -58,11 +5418,1340 @@
    "koti": "TPS",
    "vieras": "Kärpät",
    "odotetut_maalit": [
-    3.0,
-    2.21
+    2.78,
+    2.24
    ],
-   "kokoonpano": false,
-   "pelaajat": []
+   "kokoonpano": true,
+   "pelaajat": [
+    {
+     "id": 60660278,
+     "nimi": "Lars Bryggman",
+     "joukkue": "TPS",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 8,
+      "syotot": 10,
+      "pisteet": 18
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 4,
+      "syotot": 7,
+      "pisteet": 11
+     },
+     "lambda": {
+      "maalit": 0.336,
+      "syotot": 0.474
+     },
+     "tn": {
+      "maalit_1": 0.2854,
+      "maalit_2": 0.0453,
+      "syotot_1": 0.3774,
+      "syotot_2": 0.0824,
+      "pisteet_1": 0.5551,
+      "pisteet_2": 0.1948,
+      "pisteet_3": 0.0489
+     },
+     "nousija": null
+    },
+    {
+     "id": 61081277,
+     "nimi": "Lukas Haudum",
+     "joukkue": "TPS",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 7,
+      "syotot": 12,
+      "pisteet": 19
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 6,
+      "syotot": 6,
+      "pisteet": 12
+     },
+     "lambda": {
+      "maalit": 0.329,
+      "syotot": 0.471
+     },
+     "tn": {
+      "maalit_1": 0.2802,
+      "maalit_2": 0.0435,
+      "syotot_1": 0.3759,
+      "syotot_2": 0.0817,
+      "pisteet_1": 0.5508,
+      "pisteet_2": 0.1913,
+      "pisteet_3": 0.0475
+     },
+     "nousija": null
+    },
+    {
+     "id": 32269686,
+     "nimi": "Roni Hirvonen",
+     "joukkue": "Kärpät",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 22,
+      "maalit": 5,
+      "syotot": 12,
+      "pisteet": 17
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 3,
+      "syotot": 9,
+      "pisteet": 12
+     },
+     "lambda": {
+      "maalit": 0.231,
+      "syotot": 0.523
+     },
+     "tn": {
+      "maalit_1": 0.2063,
+      "maalit_2": 0.0229,
+      "syotot_1": 0.4072,
+      "syotot_2": 0.0972,
+      "pisteet_1": 0.5295,
+      "pisteet_2": 0.1748,
+      "pisteet_3": 0.041
+     },
+     "nousija": null
+    },
+    {
+     "id": 60716456,
+     "nimi": "Matyas Kantner",
+     "joukkue": "Kärpät",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 22,
+      "maalit": 3,
+      "syotot": 9,
+      "pisteet": 12
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 3,
+      "syotot": 7,
+      "pisteet": 10
+     },
+     "lambda": {
+      "maalit": 0.285,
+      "syotot": 0.465
+     },
+     "tn": {
+      "maalit_1": 0.2482,
+      "maalit_2": 0.0337,
+      "syotot_1": 0.372,
+      "syotot_2": 0.0798,
+      "pisteet_1": 0.5278,
+      "pisteet_2": 0.1735,
+      "pisteet_3": 0.0406
+     },
+     "nousija": null
+    },
+    {
+     "id": 29864256,
+     "nimi": "Eemil Erholtz",
+     "joukkue": "Kärpät",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 22,
+      "maalit": 6,
+      "syotot": 6,
+      "pisteet": 12
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 6,
+      "syotot": 6,
+      "pisteet": 12
+     },
+     "lambda": {
+      "maalit": 0.31,
+      "syotot": 0.429
+     },
+     "tn": {
+      "maalit_1": 0.2662,
+      "maalit_2": 0.0391,
+      "syotot_1": 0.3485,
+      "syotot_2": 0.0694,
+      "pisteet_1": 0.522,
+      "pisteet_2": 0.1691,
+      "pisteet_3": 0.0389
+     },
+     "nousija": null
+    },
+    {
+     "id": 31569277,
+     "nimi": "Joel Määttä",
+     "joukkue": "TPS",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 5,
+      "syotot": 4,
+      "pisteet": 9
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 4,
+      "syotot": 3,
+      "pisteet": 7
+     },
+     "lambda": {
+      "maalit": 0.279,
+      "syotot": 0.332
+     },
+     "tn": {
+      "maalit_1": 0.2434,
+      "maalit_2": 0.0324,
+      "syotot_1": 0.2827,
+      "syotot_2": 0.0444,
+      "pisteet_1": 0.4573,
+      "pisteet_2": 0.1256,
+      "pisteet_3": 0.0242
+     },
+     "nousija": null
+    },
+    {
+     "id": 29028513,
+     "nimi": "Joona Ikonen",
+     "joukkue": "TPS",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 2,
+      "syotot": 6,
+      "pisteet": 8
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 6,
+      "pisteet": 8
+     },
+     "lambda": {
+      "maalit": 0.172,
+      "syotot": 0.349
+     },
+     "tn": {
+      "maalit_1": 0.1583,
+      "maalit_2": 0.0133,
+      "syotot_1": 0.2945,
+      "syotot_2": 0.0484,
+      "pisteet_1": 0.4062,
+      "pisteet_2": 0.0967,
+      "pisteet_3": 0.016
+     },
+     "nousija": null
+    },
+    {
+     "id": 23889127,
+     "nimi": "Eetu Koivistoinen",
+     "joukkue": "Kärpät",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 22,
+      "maalit": 5,
+      "syotot": 5,
+      "pisteet": 10
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 4,
+      "syotot": 4,
+      "pisteet": 8
+     },
+     "lambda": {
+      "maalit": 0.233,
+      "syotot": 0.268
+     },
+     "tn": {
+      "maalit_1": 0.2076,
+      "maalit_2": 0.0232,
+      "syotot_1": 0.2348,
+      "syotot_2": 0.03,
+      "pisteet_1": 0.3937,
+      "pisteet_2": 0.0903,
+      "pisteet_3": 0.0144
+     },
+     "nousija": null
+    },
+    {
+     "id": 40289276,
+     "nimi": "Jeremi Virtanen",
+     "joukkue": "TPS",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 5,
+      "syotot": 3,
+      "pisteet": 8
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 4,
+      "syotot": 3,
+      "pisteet": 7
+     },
+     "lambda": {
+      "maalit": 0.243,
+      "syotot": 0.25
+     },
+     "tn": {
+      "maalit_1": 0.216,
+      "maalit_2": 0.0252,
+      "syotot_1": 0.221,
+      "syotot_2": 0.0264,
+      "pisteet_1": 0.3893,
+      "pisteet_2": 0.0881,
+      "pisteet_3": 0.0139
+     },
+     "nousija": null
+    },
+    {
+     "id": 31803661,
+     "nimi": "Eetu Päkkilä",
+     "joukkue": "Kärpät",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 22,
+      "maalit": 6,
+      "syotot": 5,
+      "pisteet": 11
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 5,
+      "syotot": 3,
+      "pisteet": 8
+     },
+     "lambda": {
+      "maalit": 0.24,
+      "syotot": 0.253
+     },
+     "tn": {
+      "maalit_1": 0.2136,
+      "maalit_2": 0.0246,
+      "syotot_1": 0.2233,
+      "syotot_2": 0.027,
+      "pisteet_1": 0.3892,
+      "pisteet_2": 0.0881,
+      "pisteet_3": 0.0139
+     },
+     "nousija": null
+    },
+    {
+     "id": 30984675,
+     "nimi": "Aleksi Matinmikko",
+     "joukkue": "Kärpät",
+     "pp": "P",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 22,
+      "maalit": 5,
+      "syotot": 8,
+      "pisteet": 13
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 4,
+      "syotot": 6,
+      "pisteet": 10
+     },
+     "lambda": {
+      "maalit": 0.148,
+      "syotot": 0.338
+     },
+     "tn": {
+      "maalit_1": 0.1376,
+      "maalit_2": 0.0099,
+      "syotot_1": 0.2868,
+      "syotot_2": 0.0457,
+      "pisteet_1": 0.3849,
+      "pisteet_2": 0.086,
+      "pisteet_3": 0.0134
+     },
+     "nousija": null
+    },
+    {
+     "id": 32558931,
+     "nimi": "Tuukka Tieksola",
+     "joukkue": "Kärpät",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 18,
+      "maalit": 2,
+      "syotot": 1,
+      "pisteet": 3
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 1,
+      "pisteet": 3
+     },
+     "lambda": {
+      "maalit": 0.212,
+      "syotot": 0.272
+     },
+     "tn": {
+      "maalit_1": 0.1912,
+      "maalit_2": 0.0196,
+      "syotot_1": 0.238,
+      "syotot_2": 0.0309,
+      "pisteet_1": 0.3837,
+      "pisteet_2": 0.0854,
+      "pisteet_3": 0.0132
+     },
+     "nousija": null
+    },
+    {
+     "id": 31886905,
+     "nimi": "Sisu Yliniemi",
+     "joukkue": "TPS",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 5,
+      "syotot": 2,
+      "pisteet": 7
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 4,
+      "syotot": 2,
+      "pisteet": 6
+     },
+     "lambda": {
+      "maalit": 0.231,
+      "syotot": 0.247
+     },
+     "tn": {
+      "maalit_1": 0.2064,
+      "maalit_2": 0.0229,
+      "syotot_1": 0.2187,
+      "syotot_2": 0.0259,
+      "pisteet_1": 0.38,
+      "pisteet_2": 0.0836,
+      "pisteet_3": 0.0128
+     },
+     "nousija": null
+    },
+    {
+     "id": 60952399,
+     "nimi": "Jiri Tichacek",
+     "joukkue": "Kärpät",
+     "pp": "P",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 22,
+      "maalit": 5,
+      "syotot": 8,
+      "pisteet": 13
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 4,
+      "syotot": 5,
+      "pisteet": 9
+     },
+     "lambda": {
+      "maalit": 0.149,
+      "syotot": 0.302
+     },
+     "tn": {
+      "maalit_1": 0.1382,
+      "maalit_2": 0.01,
+      "syotot_1": 0.2603,
+      "syotot_2": 0.0373,
+      "pisteet_1": 0.3625,
+      "pisteet_2": 0.0755,
+      "pisteet_3": 0.0109
+     },
+     "nousija": null
+    },
+    {
+     "id": 27752328,
+     "nimi": "Otto Paajanen",
+     "joukkue": "TPS",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 4,
+      "syotot": 6,
+      "pisteet": 10
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 3,
+      "syotot": 4,
+      "pisteet": 7
+     },
+     "lambda": {
+      "maalit": 0.169,
+      "syotot": 0.267
+     },
+     "tn": {
+      "maalit_1": 0.1553,
+      "maalit_2": 0.0127,
+      "syotot_1": 0.234,
+      "syotot_2": 0.0298,
+      "pisteet_1": 0.353,
+      "pisteet_2": 0.0713,
+      "pisteet_3": 0.01
+     },
+     "nousija": null
+    },
+    {
+     "id": 25541395,
+     "nimi": "Veli-Matti Savinainen",
+     "joukkue": "TPS",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 12,
+      "maalit": 2,
+      "syotot": 3,
+      "pisteet": 5
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 5,
+      "pisteet": 7
+     },
+     "lambda": {
+      "maalit": 0.149,
+      "syotot": 0.261
+     },
+     "tn": {
+      "maalit_1": 0.1387,
+      "maalit_2": 0.0101,
+      "syotot_1": 0.23,
+      "syotot_2": 0.0287,
+      "pisteet_1": 0.3368,
+      "pisteet_2": 0.0644,
+      "pisteet_3": 0.0085
+     },
+     "nousija": null
+    },
+    {
+     "id": 32873373,
+     "nimi": "Andreas Okany",
+     "joukkue": "Kärpät",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 22,
+      "maalit": 4,
+      "syotot": 8,
+      "pisteet": 12
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 7,
+      "pisteet": 9
+     },
+     "lambda": {
+      "maalit": 0.16,
+      "syotot": 0.242
+     },
+     "tn": {
+      "maalit_1": 0.1482,
+      "maalit_2": 0.0116,
+      "syotot_1": 0.2149,
+      "syotot_2": 0.0249,
+      "pisteet_1": 0.3312,
+      "pisteet_2": 0.0622,
+      "pisteet_3": 0.0081
+     },
+     "nousija": null
+    },
+    {
+     "id": 28967947,
+     "nimi": "Samuli Ratinen",
+     "joukkue": "Kärpät",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 3,
+      "syotot": 7,
+      "pisteet": 10
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 6,
+      "pisteet": 7
+     },
+     "lambda": {
+      "maalit": 0.116,
+      "syotot": 0.284
+     },
+     "tn": {
+      "maalit_1": 0.1092,
+      "maalit_2": 0.0062,
+      "syotot_1": 0.2474,
+      "syotot_2": 0.0335,
+      "pisteet_1": 0.3296,
+      "pisteet_2": 0.0615,
+      "pisteet_3": 0.0079
+     },
+     "nousija": null
+    },
+    {
+     "id": 23837234,
+     "nimi": "Niklas Friman",
+     "joukkue": "TPS",
+     "pp": "P",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 5,
+      "maalit": 1,
+      "syotot": 2,
+      "pisteet": 3
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 4,
+      "pisteet": 5
+     },
+     "lambda": {
+      "maalit": 0.097,
+      "syotot": 0.281
+     },
+     "tn": {
+      "maalit_1": 0.0929,
+      "maalit_2": 0.0045,
+      "syotot_1": 0.2449,
+      "syotot_2": 0.0328,
+      "pisteet_1": 0.315,
+      "pisteet_2": 0.0558,
+      "pisteet_3": 0.0068
+     },
+     "nousija": null
+    },
+    {
+     "id": 60953549,
+     "nimi": "Axel Landen",
+     "joukkue": "TPS",
+     "pp": "P",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 1,
+      "syotot": 6,
+      "pisteet": 7
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 5,
+      "pisteet": 6
+     },
+     "lambda": {
+      "maalit": 0.073,
+      "syotot": 0.278
+     },
+     "tn": {
+      "maalit_1": 0.0706,
+      "maalit_2": 0.0026,
+      "syotot_1": 0.2428,
+      "syotot_2": 0.0322,
+      "pisteet_1": 0.2963,
+      "pisteet_2": 0.049,
+      "pisteet_3": 0.0056
+     },
+     "nousija": null
+    },
+    {
+     "id": 40149909,
+     "nimi": "Kasper Pikkarainen",
+     "joukkue": "TPS",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 18,
+      "maalit": 2,
+      "syotot": 1,
+      "pisteet": 3
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 1,
+      "pisteet": 3
+     },
+     "lambda": {
+      "maalit": 0.153,
+      "syotot": 0.171
+     },
+     "tn": {
+      "maalit_1": 0.1417,
+      "maalit_2": 0.0106,
+      "syotot_1": 0.1569,
+      "syotot_2": 0.013,
+      "pisteet_1": 0.2764,
+      "pisteet_2": 0.0423,
+      "pisteet_3": 0.0044
+     },
+     "nousija": null
+    },
+    {
+     "id": 32219869,
+     "nimi": "Ruben Rafkin",
+     "joukkue": "TPS",
+     "pp": "P",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 0,
+      "syotot": 5,
+      "pisteet": 5
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 5,
+      "pisteet": 5
+     },
+     "lambda": {
+      "maalit": 0.045,
+      "syotot": 0.278
+     },
+     "tn": {
+      "maalit_1": 0.044,
+      "maalit_2": 0.001,
+      "syotot_1": 0.2426,
+      "syotot_2": 0.0321,
+      "pisteet_1": 0.2759,
+      "pisteet_2": 0.0422,
+      "pisteet_3": 0.0044
+     },
+     "nousija": null
+    },
+    {
+     "id": 23837263,
+     "nimi": "Hannu Kuru",
+     "joukkue": "TPS",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 3,
+      "pisteet": 5
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 3,
+      "pisteet": 5
+     },
+     "lambda": {
+      "maalit": 0.118,
+      "syotot": 0.168
+     },
+     "tn": {
+      "maalit_1": 0.1115,
+      "maalit_2": 0.0065,
+      "syotot_1": 0.1547,
+      "syotot_2": 0.0126,
+      "pisteet_1": 0.2489,
+      "pisteet_2": 0.0339,
+      "pisteet_3": 0.0032
+     },
+     "nousija": {
+      "nosto": 0.26,
+      "aiempi": 0.227,
+      "nyt": 0.286
+     }
+    },
+    {
+     "id": 40015008,
+     "nimi": "Vili Munkki",
+     "joukkue": "TPS",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 4,
+      "syotot": 4,
+      "pisteet": 8
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 4,
+      "syotot": 4,
+      "pisteet": 8
+     },
+     "lambda": {
+      "maalit": 0.129,
+      "syotot": 0.151
+     },
+     "tn": {
+      "maalit_1": 0.1207,
+      "maalit_2": 0.0076,
+      "syotot_1": 0.1405,
+      "syotot_2": 0.0104,
+      "pisteet_1": 0.2442,
+      "pisteet_2": 0.0326,
+      "pisteet_3": 0.003
+     },
+     "nousija": {
+      "nosto": 0.54,
+      "aiempi": 0.182,
+      "nyt": 0.28
+     }
+    },
+    {
+     "id": 31632421,
+     "nimi": "Arttu Paaso",
+     "joukkue": "Kärpät",
+     "pp": "P",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 22,
+      "maalit": 1,
+      "syotot": 2,
+      "pisteet": 3
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 2,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.065,
+      "syotot": 0.203
+     },
+     "tn": {
+      "maalit_1": 0.0634,
+      "maalit_2": 0.0021,
+      "syotot_1": 0.1837,
+      "syotot_2": 0.018,
+      "pisteet_1": 0.2354,
+      "pisteet_2": 0.0302,
+      "pisteet_3": 0.0026
+     },
+     "nousija": null
+    },
+    {
+     "id": 28506900,
+     "nimi": "Tommi Tikka",
+     "joukkue": "Kärpät",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 2,
+      "syotot": 3,
+      "pisteet": 5
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 1,
+      "pisteet": 3
+     },
+     "lambda": {
+      "maalit": 0.109,
+      "syotot": 0.149
+     },
+     "tn": {
+      "maalit_1": 0.1029,
+      "maalit_2": 0.0055,
+      "syotot_1": 0.1381,
+      "syotot_2": 0.01,
+      "pisteet_1": 0.2269,
+      "pisteet_2": 0.0279,
+      "pisteet_3": 0.0023
+     },
+     "nousija": null
+    },
+    {
+     "id": 32619919,
+     "nimi": "Kasper Soini",
+     "joukkue": "Kärpät",
+     "pp": "P",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 22,
+      "maalit": 1,
+      "syotot": 4,
+      "pisteet": 5
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 3,
+      "pisteet": 4
+     },
+     "lambda": {
+      "maalit": 0.068,
+      "syotot": 0.18
+     },
+     "tn": {
+      "maalit_1": 0.0656,
+      "maalit_2": 0.0022,
+      "syotot_1": 0.1649,
+      "syotot_2": 0.0144,
+      "pisteet_1": 0.2197,
+      "pisteet_2": 0.0261,
+      "pisteet_3": 0.0021
+     },
+     "nousija": null
+    },
+    {
+     "id": 40101174,
+     "nimi": "Arttu Tuhkala",
+     "joukkue": "TPS",
+     "pp": "P",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 1,
+      "syotot": 5,
+      "pisteet": 6
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 3,
+      "pisteet": 4
+     },
+     "lambda": {
+      "maalit": 0.062,
+      "syotot": 0.178
+     },
+     "tn": {
+      "maalit_1": 0.0605,
+      "maalit_2": 0.0019,
+      "syotot_1": 0.1633,
+      "syotot_2": 0.0141,
+      "pisteet_1": 0.2139,
+      "pisteet_2": 0.0247,
+      "pisteet_3": 0.0019
+     },
+     "nousija": null
+    },
+    {
+     "id": 61069904,
+     "nimi": "Wiktor Nilsson",
+     "joukkue": "Kärpät",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 3,
+      "syotot": 4,
+      "pisteet": 7
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 3,
+      "pisteet": 4
+     },
+     "lambda": {
+      "maalit": 0.09,
+      "syotot": 0.141
+     },
+     "tn": {
+      "maalit_1": 0.0865,
+      "maalit_2": 0.0039,
+      "syotot_1": 0.1311,
+      "syotot_2": 0.009,
+      "pisteet_1": 0.2062,
+      "pisteet_2": 0.0229,
+      "pisteet_3": 0.0017
+     },
+     "nousija": null
+    },
+    {
+     "id": 25657580,
+     "nimi": "Rasmus Rissanen",
+     "joukkue": "Kärpät",
+     "pp": "P",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 3,
+      "syotot": 2,
+      "pisteet": 5
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 3,
+      "syotot": 2,
+      "pisteet": 5
+     },
+     "lambda": {
+      "maalit": 0.09,
+      "syotot": 0.14
+     },
+     "tn": {
+      "maalit_1": 0.0857,
+      "maalit_2": 0.0038,
+      "syotot_1": 0.1309,
+      "syotot_2": 0.009,
+      "pisteet_1": 0.2054,
+      "pisteet_2": 0.0227,
+      "pisteet_3": 0.0017
+     },
+     "nousija": null
+    },
+    {
+     "id": 40005133,
+     "nimi": "Sisu-Petteri Lehtonen",
+     "joukkue": "TPS",
+     "pp": "P",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 0,
+      "syotot": 2,
+      "pisteet": 2
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 2,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.056,
+      "syotot": 0.169
+     },
+     "tn": {
+      "maalit_1": 0.0541,
+      "maalit_2": 0.0015,
+      "syotot_1": 0.1556,
+      "syotot_2": 0.0128,
+      "pisteet_1": 0.2013,
+      "pisteet_2": 0.0218,
+      "pisteet_3": 0.0016
+     },
+     "nousija": null
+    },
+    {
+     "id": 40373820,
+     "nimi": "Aatos Koivu",
+     "joukkue": "TPS",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 2,
+      "syotot": 4,
+      "pisteet": 6
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 3,
+      "pisteet": 4
+     },
+     "lambda": {
+      "maalit": 0.07,
+      "syotot": 0.122
+     },
+     "tn": {
+      "maalit_1": 0.0675,
+      "maalit_2": 0.0023,
+      "syotot_1": 0.1152,
+      "syotot_2": 0.0069,
+      "pisteet_1": 0.175,
+      "pisteet_2": 0.0163,
+      "pisteet_3": 0.001
+     },
+     "nousija": null
+    },
+    {
+     "id": 40391496,
+     "nimi": "Veeti Ruotsalainen",
+     "joukkue": "Kärpät",
+     "pp": "P",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 8,
+      "maalit": 0,
+      "syotot": 1,
+      "pisteet": 1
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 2,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.042,
+      "syotot": 0.148
+     },
+     "tn": {
+      "maalit_1": 0.0411,
+      "maalit_2": 0.0009,
+      "syotot_1": 0.1376,
+      "syotot_2": 0.0099,
+      "pisteet_1": 0.173,
+      "pisteet_2": 0.0159,
+      "pisteet_3": 0.001
+     },
+     "nousija": null
+    },
+    {
+     "id": 60757491,
+     "nimi": "Oliver Lauridsen",
+     "joukkue": "TPS",
+     "pp": "P",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 13,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 0,
+      "pisteet": 1
+     },
+     "lambda": {
+      "maalit": 0.056,
+      "syotot": 0.114
+     },
+     "tn": {
+      "maalit_1": 0.0544,
+      "maalit_2": 0.0015,
+      "syotot_1": 0.1079,
+      "syotot_2": 0.006,
+      "pisteet_1": 0.1565,
+      "pisteet_2": 0.0129,
+      "pisteet_3": 0.0007
+     },
+     "nousija": null
+    },
+    {
+     "id": 24406130,
+     "nimi": "Julius Hermonen",
+     "joukkue": "Kärpät",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 1,
+      "syotot": 0,
+      "pisteet": 1
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 0,
+      "pisteet": 1
+     },
+     "lambda": {
+      "maalit": 0.087,
+      "syotot": 0.07
+     },
+     "tn": {
+      "maalit_1": 0.0835,
+      "maalit_2": 0.0036,
+      "syotot_1": 0.0676,
+      "syotot_2": 0.0023,
+      "pisteet_1": 0.1454,
+      "pisteet_2": 0.0111,
+      "pisteet_3": 0.0006
+     },
+     "nousija": null
+    },
+    {
+     "id": 61073532,
+     "nimi": "Henrik Törnqvist",
+     "joukkue": "Kärpät",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 19,
+      "maalit": 2,
+      "syotot": 3,
+      "pisteet": 5
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 1,
+      "pisteet": 1
+     },
+     "lambda": {
+      "maalit": 0.063,
+      "syotot": 0.093
+     },
+     "tn": {
+      "maalit_1": 0.0607,
+      "maalit_2": 0.0019,
+      "syotot_1": 0.0886,
+      "syotot_2": 0.004,
+      "pisteet_1": 0.1439,
+      "pisteet_2": 0.0109,
+      "pisteet_3": 0.0006
+     },
+     "nousija": null
+    },
+    {
+     "id": 33189367,
+     "nimi": "Otto Salin",
+     "joukkue": "TPS",
+     "pp": "P",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 1,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 6,
+      "pisteet": 7
+     },
+     "lambda": {
+      "maalit": 0.032,
+      "syotot": 0.115
+     },
+     "tn": {
+      "maalit_1": 0.0317,
+      "maalit_2": 0.0005,
+      "syotot_1": 0.1082,
+      "syotot_2": 0.0061,
+      "pisteet_1": 0.1365,
+      "pisteet_2": 0.0098,
+      "pisteet_3": 0.0005
+     },
+     "nousija": null
+    },
+    {
+     "id": 23168071,
+     "nimi": "Tuomas Salmela",
+     "joukkue": "Kärpät",
+     "pp": "P",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 0,
+      "syotot": 2,
+      "pisteet": 2
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 1,
+      "pisteet": 1
+     },
+     "lambda": {
+      "maalit": 0.024,
+      "syotot": 0.064
+     },
+     "tn": {
+      "maalit_1": 0.0236,
+      "maalit_2": 0.0003,
+      "syotot_1": 0.0617,
+      "syotot_2": 0.0019,
+      "pisteet_1": 0.0839,
+      "pisteet_2": 0.0036,
+      "pisteet_3": 0.0001
+     },
+     "nousija": null
+    },
+    {
+     "id": 34427772,
+     "nimi": "Maxim Korpimäki",
+     "joukkue": "Kärpät",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 19,
+      "maalit": 1,
+      "syotot": 1,
+      "pisteet": 2
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 1,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.013,
+      "syotot": 0.011
+     },
+     "tn": {
+      "maalit_1": 0.0132,
+      "maalit_2": 0.0001,
+      "syotot_1": 0.0109,
+      "syotot_2": 0.0001,
+      "pisteet_1": 0.0239,
+      "pisteet_2": 0.0003,
+      "pisteet_3": 0.0
+     },
+     "nousija": null
+    },
+    {
+     "id": 32294910,
+     "nimi": "Niklas Ylitalo",
+     "joukkue": "TPS",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 0,
+      "syotot": 2,
+      "pisteet": 2
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 2,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.01,
+      "syotot": 0.013
+     },
+     "tn": {
+      "maalit_1": 0.0102,
+      "maalit_2": 0.0001,
+      "syotot_1": 0.0125,
+      "syotot_2": 0.0001,
+      "pisteet_1": 0.0226,
+      "pisteet_2": 0.0003,
+      "pisteet_3": 0.0
+     },
+     "nousija": null
+    }
+   ]
   },
   {
    "avain": "2027_2701462",
@@ -70,11 +6759,1344 @@
    "koti": "Ässät",
    "vieras": "Pelicans",
    "odotetut_maalit": [
-    2.46,
-    2.12
+    2.65,
+    2.09
    ],
-   "kokoonpano": false,
-   "pelaajat": []
+   "kokoonpano": true,
+   "pelaajat": [
+    {
+     "id": 40050351,
+     "nimi": "Sakari Kostilainen",
+     "joukkue": "Ässät",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 5,
+      "syotot": 13,
+      "pisteet": 18
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 13,
+      "pisteet": 15
+     },
+     "lambda": {
+      "maalit": 0.288,
+      "syotot": 0.673
+     },
+     "tn": {
+      "maalit_1": 0.2499,
+      "maalit_2": 0.0342,
+      "syotot_1": 0.49,
+      "syotot_2": 0.1466,
+      "pisteet_1": 0.6175,
+      "pisteet_2": 0.2499,
+      "pisteet_3": 0.0733
+     },
+     "nousija": {
+      "nosto": 0.47,
+      "aiempi": 0.654,
+      "nyt": 0.961
+     }
+    },
+    {
+     "id": 61074020,
+     "nimi": "Simon Pinard",
+     "joukkue": "Ässät",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 8,
+      "syotot": 10,
+      "pisteet": 18
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 6,
+      "syotot": 7,
+      "pisteet": 13
+     },
+     "lambda": {
+      "maalit": 0.339,
+      "syotot": 0.446
+     },
+     "tn": {
+      "maalit_1": 0.2874,
+      "maalit_2": 0.0459,
+      "syotot_1": 0.3596,
+      "syotot_2": 0.0742,
+      "pisteet_1": 0.5436,
+      "pisteet_2": 0.1856,
+      "pisteet_3": 0.0452
+     },
+     "nousija": null
+    },
+    {
+     "id": 60861292,
+     "nimi": "Cameron Hillis",
+     "joukkue": "Ässät",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 6,
+      "syotot": 11,
+      "pisteet": 17
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 4,
+      "syotot": 8,
+      "pisteet": 12
+     },
+     "lambda": {
+      "maalit": 0.248,
+      "syotot": 0.464
+     },
+     "tn": {
+      "maalit_1": 0.22,
+      "maalit_2": 0.0262,
+      "syotot_1": 0.3711,
+      "syotot_2": 0.0794,
+      "pisteet_1": 0.5094,
+      "pisteet_2": 0.1601,
+      "pisteet_3": 0.0356
+     },
+     "nousija": null
+    },
+    {
+     "id": 33848019,
+     "nimi": "Onni Lind",
+     "joukkue": "Pelicans",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 14,
+      "maalit": 4,
+      "syotot": 6,
+      "pisteet": 10
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 4,
+      "syotot": 6,
+      "pisteet": 10
+     },
+     "lambda": {
+      "maalit": 0.253,
+      "syotot": 0.445
+     },
+     "tn": {
+      "maalit_1": 0.2232,
+      "maalit_2": 0.027,
+      "syotot_1": 0.3594,
+      "syotot_2": 0.0741,
+      "pisteet_1": 0.5024,
+      "pisteet_2": 0.1551,
+      "pisteet_3": 0.0339
+     },
+     "nousija": {
+      "nosto": 0.43,
+      "aiempi": 0.488,
+      "nyt": 0.698
+     }
+    },
+    {
+     "id": 60760867,
+     "nimi": "Aidan Dudas",
+     "joukkue": "Pelicans",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 5,
+      "syotot": 7,
+      "pisteet": 12
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 3,
+      "syotot": 7,
+      "pisteet": 10
+     },
+     "lambda": {
+      "maalit": 0.242,
+      "syotot": 0.383
+     },
+     "tn": {
+      "maalit_1": 0.2149,
+      "maalit_2": 0.025,
+      "syotot_1": 0.3183,
+      "syotot_2": 0.0571,
+      "pisteet_1": 0.4648,
+      "pisteet_2": 0.1303,
+      "pisteet_3": 0.0257
+     },
+     "nousija": null
+    },
+    {
+     "id": 27845730,
+     "nimi": "Valtteri Lipiäinen",
+     "joukkue": "Ässät",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 5,
+      "maalit": 0,
+      "syotot": 3,
+      "pisteet": 3
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 3,
+      "syotot": 8,
+      "pisteet": 11
+     },
+     "lambda": {
+      "maalit": 0.185,
+      "syotot": 0.416
+     },
+     "tn": {
+      "maalit_1": 0.1688,
+      "maalit_2": 0.0151,
+      "syotot_1": 0.3404,
+      "syotot_2": 0.0659,
+      "pisteet_1": 0.4517,
+      "pisteet_2": 0.1222,
+      "pisteet_3": 0.0232
+     },
+     "nousija": null
+    },
+    {
+     "id": 61082783,
+     "nimi": "Alexandre Doucet",
+     "joukkue": "Ässät",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 6,
+      "syotot": 10,
+      "pisteet": 16
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 3,
+      "syotot": 5,
+      "pisteet": 8
+     },
+     "lambda": {
+      "maalit": 0.222,
+      "syotot": 0.348
+     },
+     "tn": {
+      "maalit_1": 0.1994,
+      "maalit_2": 0.0213,
+      "syotot_1": 0.2942,
+      "syotot_2": 0.0483,
+      "pisteet_1": 0.4349,
+      "pisteet_2": 0.1124,
+      "pisteet_3": 0.0203
+     },
+     "nousija": null
+    },
+    {
+     "id": 61083288,
+     "nimi": "Liam Hawel",
+     "joukkue": "Pelicans",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 10,
+      "maalit": 0,
+      "syotot": 6,
+      "pisteet": 6
+     },
+     "viime": {
+      "ottelut": 10,
+      "maalit": 0,
+      "syotot": 6,
+      "pisteet": 6
+     },
+     "lambda": {
+      "maalit": 0.12,
+      "syotot": 0.431
+     },
+     "tn": {
+      "maalit_1": 0.1128,
+      "maalit_2": 0.0066,
+      "syotot_1": 0.35,
+      "syotot_2": 0.07,
+      "pisteet_1": 0.4233,
+      "pisteet_2": 0.1059,
+      "pisteet_3": 0.0185
+     },
+     "nousija": null
+    },
+    {
+     "id": 61083365,
+     "nimi": "Oleksii Myklukha",
+     "joukkue": "Pelicans",
+     "pp": "H",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 4,
+      "syotot": 5,
+      "pisteet": 9
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 2,
+      "pisteet": 4
+     },
+     "lambda": {
+      "maalit": 0.229,
+      "syotot": 0.31
+     },
+     "tn": {
+      "maalit_1": 0.2045,
+      "maalit_2": 0.0225,
+      "syotot_1": 0.2664,
+      "syotot_2": 0.0391,
+      "pisteet_1": 0.4164,
+      "pisteet_2": 0.1021,
+      "pisteet_3": 0.0175
+     },
+     "nousija": null
+    },
+    {
+     "id": 23441604,
+     "nimi": "Peter Tiivola",
+     "joukkue": "Ässät",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 16,
+      "maalit": 2,
+      "syotot": 3,
+      "pisteet": 5
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 3,
+      "pisteet": 5
+     },
+     "lambda": {
+      "maalit": 0.2,
+      "syotot": 0.312
+     },
+     "tn": {
+      "maalit_1": 0.1816,
+      "maalit_2": 0.0176,
+      "syotot_1": 0.2681,
+      "syotot_2": 0.0397,
+      "pisteet_1": 0.401,
+      "pisteet_2": 0.094,
+      "pisteet_3": 0.0154
+     },
+     "nousija": null
+    },
+    {
+     "id": 23521841,
+     "nimi": "Antti Tyrväinen",
+     "joukkue": "Pelicans",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 6,
+      "maalit": 0,
+      "syotot": 1,
+      "pisteet": 1
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 2,
+      "pisteet": 3
+     },
+     "lambda": {
+      "maalit": 0.141,
+      "syotot": 0.322
+     },
+     "tn": {
+      "maalit_1": 0.1314,
+      "maalit_2": 0.009,
+      "syotot_1": 0.2751,
+      "syotot_2": 0.0419,
+      "pisteet_1": 0.3703,
+      "pisteet_2": 0.0791,
+      "pisteet_3": 0.0117
+     },
+     "nousija": null
+    },
+    {
+     "id": 100046744,
+     "nimi": "Santeri Sulku",
+     "joukkue": "Pelicans",
+     "pp": "H",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 11,
+      "maalit": 1,
+      "syotot": 0,
+      "pisteet": 1
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 1,
+      "pisteet": 3
+     },
+     "lambda": {
+      "maalit": 0.216,
+      "syotot": 0.243
+     },
+     "tn": {
+      "maalit_1": 0.1946,
+      "maalit_2": 0.0203,
+      "syotot_1": 0.2158,
+      "syotot_2": 0.0252,
+      "pisteet_1": 0.3684,
+      "pisteet_2": 0.0782,
+      "pisteet_3": 0.0115
+     },
+     "nousija": null
+    },
+    {
+     "id": 24913937,
+     "nimi": "Markus Nutivaara",
+     "joukkue": "Pelicans",
+     "pp": "P",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 5,
+      "syotot": 4,
+      "pisteet": 9
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 3,
+      "syotot": 3,
+      "pisteet": 6
+     },
+     "lambda": {
+      "maalit": 0.151,
+      "syotot": 0.238
+     },
+     "tn": {
+      "maalit_1": 0.14,
+      "maalit_2": 0.0103,
+      "syotot_1": 0.2122,
+      "syotot_2": 0.0243,
+      "pisteet_1": 0.3224,
+      "pisteet_2": 0.0587,
+      "pisteet_3": 0.0074
+     },
+     "nousija": null
+    },
+    {
+     "id": 60580517,
+     "nimi": "Oskars Batna",
+     "joukkue": "Pelicans",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 19,
+      "maalit": 2,
+      "syotot": 6,
+      "pisteet": 8
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 6,
+      "pisteet": 8
+     },
+     "lambda": {
+      "maalit": 0.134,
+      "syotot": 0.249
+     },
+     "tn": {
+      "maalit_1": 0.1256,
+      "maalit_2": 0.0082,
+      "syotot_1": 0.2201,
+      "syotot_2": 0.0262,
+      "pisteet_1": 0.3181,
+      "pisteet_2": 0.057,
+      "pisteet_3": 0.007
+     },
+     "nousija": null
+    },
+    {
+     "id": 40040845,
+     "nimi": "Anton Kettunen",
+     "joukkue": "Pelicans",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 17,
+      "maalit": 5,
+      "syotot": 3,
+      "pisteet": 8
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 4,
+      "syotot": 3,
+      "pisteet": 7
+     },
+     "lambda": {
+      "maalit": 0.171,
+      "syotot": 0.194
+     },
+     "tn": {
+      "maalit_1": 0.1573,
+      "maalit_2": 0.0131,
+      "syotot_1": 0.1765,
+      "syotot_2": 0.0166,
+      "pisteet_1": 0.306,
+      "pisteet_2": 0.0525,
+      "pisteet_3": 0.0062
+     },
+     "nousija": {
+      "nosto": 0.32,
+      "aiempi": 0.276,
+      "nyt": 0.365
+     }
+    },
+    {
+     "id": 34250949,
+     "nimi": "Balázs Sebok",
+     "joukkue": "Ässät",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 18,
+      "maalit": 1,
+      "syotot": 5,
+      "pisteet": 6
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 3,
+      "pisteet": 3
+     },
+     "lambda": {
+      "maalit": 0.077,
+      "syotot": 0.249
+     },
+     "tn": {
+      "maalit_1": 0.0738,
+      "maalit_2": 0.0028,
+      "syotot_1": 0.2204,
+      "syotot_2": 0.0263,
+      "pisteet_1": 0.2779,
+      "pisteet_2": 0.0428,
+      "pisteet_3": 0.0045
+     },
+     "nousija": null
+    },
+    {
+     "id": 60760697,
+     "nimi": "Michal Jordan",
+     "joukkue": "Pelicans",
+     "pp": "P",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 18,
+      "maalit": 2,
+      "syotot": 4,
+      "pisteet": 6
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 4,
+      "pisteet": 4
+     },
+     "lambda": {
+      "maalit": 0.069,
+      "syotot": 0.256
+     },
+     "tn": {
+      "maalit_1": 0.0669,
+      "maalit_2": 0.0023,
+      "syotot_1": 0.2261,
+      "syotot_2": 0.0278,
+      "pisteet_1": 0.2779,
+      "pisteet_2": 0.0428,
+      "pisteet_3": 0.0045
+     },
+     "nousija": null
+    },
+    {
+     "id": 61083362,
+     "nimi": "Gabriel Fortier",
+     "joukkue": "Pelicans",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 4,
+      "syotot": 4,
+      "pisteet": 8
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 4,
+      "syotot": 3,
+      "pisteet": 7
+     },
+     "lambda": {
+      "maalit": 0.148,
+      "syotot": 0.166
+     },
+     "tn": {
+      "maalit_1": 0.1379,
+      "maalit_2": 0.01,
+      "syotot_1": 0.153,
+      "syotot_2": 0.0124,
+      "pisteet_1": 0.2698,
+      "pisteet_2": 0.0402,
+      "pisteet_3": 0.0041
+     },
+     "nousija": null
+    },
+    {
+     "id": 61115085,
+     "nimi": "Ethan Prow",
+     "joukkue": "Ässät",
+     "pp": "P",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 8,
+      "maalit": 0,
+      "syotot": 1,
+      "pisteet": 1
+     },
+     "viime": {
+      "ottelut": 8,
+      "maalit": 0,
+      "syotot": 1,
+      "pisteet": 1
+     },
+     "lambda": {
+      "maalit": 0.073,
+      "syotot": 0.237
+     },
+     "tn": {
+      "maalit_1": 0.0706,
+      "maalit_2": 0.0026,
+      "syotot_1": 0.2109,
+      "syotot_2": 0.024,
+      "pisteet_1": 0.2667,
+      "pisteet_2": 0.0392,
+      "pisteet_3": 0.0039
+     },
+     "nousija": null
+    },
+    {
+     "id": 60744044,
+     "nimi": "Carl-Johan Lerby",
+     "joukkue": "Pelicans",
+     "pp": "P",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 1,
+      "syotot": 4,
+      "pisteet": 5
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 4,
+      "pisteet": 5
+     },
+     "lambda": {
+      "maalit": 0.071,
+      "syotot": 0.228
+     },
+     "tn": {
+      "maalit_1": 0.0683,
+      "maalit_2": 0.0024,
+      "syotot_1": 0.2039,
+      "syotot_2": 0.0224,
+      "pisteet_1": 0.2583,
+      "pisteet_2": 0.0367,
+      "pisteet_3": 0.0036
+     },
+     "nousija": null
+    },
+    {
+     "id": 60960748,
+     "nimi": "Johan Olofsson",
+     "joukkue": "Ässät",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 22,
+      "maalit": 4,
+      "syotot": 3,
+      "pisteet": 7
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 0,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.149,
+      "syotot": 0.146
+     },
+     "tn": {
+      "maalit_1": 0.1385,
+      "maalit_2": 0.0101,
+      "syotot_1": 0.1356,
+      "syotot_2": 0.0096,
+      "pisteet_1": 0.2553,
+      "pisteet_2": 0.0358,
+      "pisteet_3": 0.0034
+     },
+     "nousija": null
+    },
+    {
+     "id": 24509817,
+     "nimi": "Casimir Jürgens",
+     "joukkue": "Ässät",
+     "pp": "P",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 1,
+      "syotot": 6,
+      "pisteet": 7
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 3,
+      "pisteet": 3
+     },
+     "lambda": {
+      "maalit": 0.055,
+      "syotot": 0.228
+     },
+     "tn": {
+      "maalit_1": 0.0534,
+      "maalit_2": 0.0015,
+      "syotot_1": 0.2042,
+      "syotot_2": 0.0224,
+      "pisteet_1": 0.2467,
+      "pisteet_2": 0.0333,
+      "pisteet_3": 0.0031
+     },
+     "nousija": null
+    },
+    {
+     "id": 32681170,
+     "nimi": "Hannes Häkkilä",
+     "joukkue": "Pelicans",
+     "pp": "P",
+     "ketju": 1,
+     "kausi": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 1,
+      "pisteet": 1
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 1,
+      "pisteet": 1
+     },
+     "lambda": {
+      "maalit": 0.051,
+      "syotot": 0.221
+     },
+     "tn": {
+      "maalit_1": 0.0499,
+      "maalit_2": 0.0013,
+      "syotot_1": 0.1979,
+      "syotot_2": 0.021,
+      "pisteet_1": 0.238,
+      "pisteet_2": 0.0309,
+      "pisteet_3": 0.0027
+     },
+     "nousija": null
+    },
+    {
+     "id": 29934157,
+     "nimi": "Aleksi Anttalainen",
+     "joukkue": "Ässät",
+     "pp": "P",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 14,
+      "maalit": 1,
+      "syotot": 1,
+      "pisteet": 2
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 1,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.088,
+      "syotot": 0.172
+     },
+     "tn": {
+      "maalit_1": 0.0838,
+      "maalit_2": 0.0036,
+      "syotot_1": 0.158,
+      "syotot_2": 0.0132,
+      "pisteet_1": 0.2286,
+      "pisteet_2": 0.0284,
+      "pisteet_3": 0.0024
+     },
+     "nousija": null
+    },
+    {
+     "id": 29783858,
+     "nimi": "Kasper Björkqvist",
+     "joukkue": "Ässät",
+     "pp": "H",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 22,
+      "maalit": 2,
+      "syotot": 1,
+      "pisteet": 3
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 0,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.116,
+      "syotot": 0.14
+     },
+     "tn": {
+      "maalit_1": 0.1094,
+      "maalit_2": 0.0062,
+      "syotot_1": 0.1308,
+      "syotot_2": 0.0089,
+      "pisteet_1": 0.2258,
+      "pisteet_2": 0.0277,
+      "pisteet_3": 0.0023
+     },
+     "nousija": null
+    },
+    {
+     "id": 33424682,
+     "nimi": "Rami Määttä",
+     "joukkue": "Ässät",
+     "pp": "P",
+     "ketju": 2,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 2,
+      "syotot": 4,
+      "pisteet": 6
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 0,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.089,
+      "syotot": 0.165
+     },
+     "tn": {
+      "maalit_1": 0.0848,
+      "maalit_2": 0.0037,
+      "syotot_1": 0.1524,
+      "syotot_2": 0.0123,
+      "pisteet_1": 0.2243,
+      "pisteet_2": 0.0273,
+      "pisteet_3": 0.0023
+     },
+     "nousija": null
+    },
+    {
+     "id": 32167539,
+     "nimi": "Petteri Riihinen",
+     "joukkue": "Ässät",
+     "pp": "P",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 4,
+      "syotot": 3,
+      "pisteet": 7
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 2,
+      "pisteet": 4
+     },
+     "lambda": {
+      "maalit": 0.082,
+      "syotot": 0.161
+     },
+     "tn": {
+      "maalit_1": 0.0789,
+      "maalit_2": 0.0032,
+      "syotot_1": 0.1489,
+      "syotot_2": 0.0117,
+      "pisteet_1": 0.2161,
+      "pisteet_2": 0.0252,
+      "pisteet_3": 0.002
+     },
+     "nousija": null
+    },
+    {
+     "id": 22148966,
+     "nimi": "Mikko Kousa",
+     "joukkue": "Pelicans",
+     "pp": "P",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 11,
+      "maalit": 1,
+      "syotot": 1,
+      "pisteet": 2
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 2,
+      "syotot": 1,
+      "pisteet": 3
+     },
+     "lambda": {
+      "maalit": 0.066,
+      "syotot": 0.162
+     },
+     "tn": {
+      "maalit_1": 0.0639,
+      "maalit_2": 0.0021,
+      "syotot_1": 0.1495,
+      "syotot_2": 0.0118,
+      "pisteet_1": 0.2038,
+      "pisteet_2": 0.0223,
+      "pisteet_3": 0.0017
+     },
+     "nousija": null
+    },
+    {
+     "id": 33562188,
+     "nimi": "Patrik Juhola",
+     "joukkue": "Ässät",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 19,
+      "maalit": 1,
+      "syotot": 5,
+      "pisteet": 6
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 4,
+      "pisteet": 5
+     },
+     "lambda": {
+      "maalit": 0.081,
+      "syotot": 0.144
+     },
+     "tn": {
+      "maalit_1": 0.0783,
+      "maalit_2": 0.0031,
+      "syotot_1": 0.1345,
+      "syotot_2": 0.0095,
+      "pisteet_1": 0.2022,
+      "pisteet_2": 0.022,
+      "pisteet_3": 0.0016
+     },
+     "nousija": null
+    },
+    {
+     "id": 33410418,
+     "nimi": "Arttu Alasiurua",
+     "joukkue": "Ässät",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 14,
+      "maalit": 5,
+      "syotot": 1,
+      "pisteet": 6
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 5,
+      "syotot": 1,
+      "pisteet": 6
+     },
+     "lambda": {
+      "maalit": 0.136,
+      "syotot": 0.088
+     },
+     "tn": {
+      "maalit_1": 0.1274,
+      "maalit_2": 0.0085,
+      "syotot_1": 0.0844,
+      "syotot_2": 0.0037,
+      "pisteet_1": 0.2011,
+      "pisteet_2": 0.0217,
+      "pisteet_3": 0.0016
+     },
+     "nousija": null
+    },
+    {
+     "id": 32924510,
+     "nimi": "Petteri Nurmi",
+     "joukkue": "Ässät",
+     "pp": "P",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 1,
+      "syotot": 2,
+      "pisteet": 3
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 1,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.054,
+      "syotot": 0.158
+     },
+     "tn": {
+      "maalit_1": 0.0527,
+      "maalit_2": 0.0014,
+      "syotot_1": 0.1464,
+      "syotot_2": 0.0113,
+      "pisteet_1": 0.1914,
+      "pisteet_2": 0.0196,
+      "pisteet_3": 0.0014
+     },
+     "nousija": null
+    },
+    {
+     "id": 60904682,
+     "nimi": "Hampus Falk",
+     "joukkue": "Pelicans",
+     "pp": "P",
+     "ketju": 3,
+     "kausi": {
+      "ottelut": 19,
+      "maalit": 1,
+      "syotot": 3,
+      "pisteet": 4
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 3,
+      "pisteet": 4
+     },
+     "lambda": {
+      "maalit": 0.058,
+      "syotot": 0.151
+     },
+     "tn": {
+      "maalit_1": 0.0566,
+      "maalit_2": 0.0016,
+      "syotot_1": 0.1398,
+      "syotot_2": 0.0103,
+      "pisteet_1": 0.1885,
+      "pisteet_2": 0.019,
+      "pisteet_3": 0.0013
+     },
+     "nousija": null
+    },
+    {
+     "id": 40036186,
+     "nimi": "Otso Ylitalo",
+     "joukkue": "Ässät",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 23,
+      "maalit": 1,
+      "syotot": 3,
+      "pisteet": 4
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 2,
+      "pisteet": 3
+     },
+     "lambda": {
+      "maalit": 0.069,
+      "syotot": 0.112
+     },
+     "tn": {
+      "maalit_1": 0.0669,
+      "maalit_2": 0.0023,
+      "syotot_1": 0.1056,
+      "syotot_2": 0.0058,
+      "pisteet_1": 0.1654,
+      "pisteet_2": 0.0145,
+      "pisteet_3": 0.0009
+     },
+     "nousija": null
+    },
+    {
+     "id": 33684419,
+     "nimi": "Valtteri Nurmi",
+     "joukkue": "Pelicans",
+     "pp": "P",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 2,
+      "maalit": 0,
+      "syotot": 1,
+      "pisteet": 1
+     },
+     "viime": {
+      "ottelut": 12,
+      "maalit": 0,
+      "syotot": 7,
+      "pisteet": 7
+     },
+     "lambda": {
+      "maalit": 0.023,
+      "syotot": 0.144
+     },
+     "tn": {
+      "maalit_1": 0.0227,
+      "maalit_2": 0.0003,
+      "syotot_1": 0.1337,
+      "syotot_2": 0.0094,
+      "pisteet_1": 0.1534,
+      "pisteet_2": 0.0124,
+      "pisteet_3": 0.0007
+     },
+     "nousija": null
+    },
+    {
+     "id": 60962764,
+     "nimi": "Christoffer Forsberg",
+     "joukkue": "Pelicans",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 1,
+      "syotot": 2,
+      "pisteet": 3
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 1,
+      "syotot": 1,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.066,
+      "syotot": 0.088
+     },
+     "tn": {
+      "maalit_1": 0.0636,
+      "maalit_2": 0.0021,
+      "syotot_1": 0.0847,
+      "syotot_2": 0.0037,
+      "pisteet_1": 0.1429,
+      "pisteet_2": 0.0107,
+      "pisteet_3": 0.0005
+     },
+     "nousija": null
+    },
+    {
+     "id": 40080302,
+     "nimi": "Aatu Pohjalainen",
+     "joukkue": "Pelicans",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 10,
+      "maalit": 1,
+      "syotot": 0,
+      "pisteet": 1
+     },
+     "viime": {
+      "ottelut": 13,
+      "maalit": 1,
+      "syotot": 0,
+      "pisteet": 1
+     },
+     "lambda": {
+      "maalit": 0.068,
+      "syotot": 0.068
+     },
+     "tn": {
+      "maalit_1": 0.0658,
+      "maalit_2": 0.0022,
+      "syotot_1": 0.0653,
+      "syotot_2": 0.0022,
+      "pisteet_1": 0.1268,
+      "pisteet_2": 0.0084,
+      "pisteet_3": 0.0004
+     },
+     "nousija": null
+    },
+    {
+     "id": 40054832,
+     "nimi": "Eelis Teutari",
+     "joukkue": "Pelicans",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 17,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "lambda": {
+      "maalit": 0.045,
+      "syotot": 0.081
+     },
+     "tn": {
+      "maalit_1": 0.0442,
+      "maalit_2": 0.001,
+      "syotot_1": 0.0774,
+      "syotot_2": 0.0031,
+      "pisteet_1": 0.1181,
+      "pisteet_2": 0.0073,
+      "pisteet_3": 0.0003
+     },
+     "nousija": null
+    },
+    {
+     "id": 22937737,
+     "nimi": "Juuso Pulli",
+     "joukkue": "Ässät",
+     "pp": "P",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 21,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "lambda": {
+      "maalit": 0.019,
+      "syotot": 0.044
+     },
+     "tn": {
+      "maalit_1": 0.0188,
+      "maalit_2": 0.0002,
+      "syotot_1": 0.0433,
+      "syotot_2": 0.001,
+      "pisteet_1": 0.0613,
+      "pisteet_2": 0.0019,
+      "pisteet_3": 0.0
+     },
+     "nousija": null
+    },
+    {
+     "id": 60311767,
+     "nimi": "Nestor Noiva",
+     "joukkue": "Ässät",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 4,
+      "maalit": 0,
+      "syotot": 0,
+      "pisteet": 0
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 4,
+      "syotot": 2,
+      "pisteet": 6
+     },
+     "lambda": {
+      "maalit": 0.018,
+      "syotot": 0.015
+     },
+     "tn": {
+      "maalit_1": 0.0182,
+      "maalit_2": 0.0002,
+      "syotot_1": 0.0144,
+      "syotot_2": 0.0001,
+      "pisteet_1": 0.0323,
+      "pisteet_2": 0.0005,
+      "pisteet_3": 0.0
+     },
+     "nousija": null
+    },
+    {
+     "id": 29658365,
+     "nimi": "Sakke Hämäläinen",
+     "joukkue": "Pelicans",
+     "pp": "H",
+     "ketju": 4,
+     "kausi": {
+      "ottelut": 20,
+      "maalit": 0,
+      "syotot": 6,
+      "pisteet": 6
+     },
+     "viime": {
+      "ottelut": 15,
+      "maalit": 0,
+      "syotot": 2,
+      "pisteet": 2
+     },
+     "lambda": {
+      "maalit": 0.008,
+      "syotot": 0.01
+     },
+     "tn": {
+      "maalit_1": 0.008,
+      "maalit_2": 0.0,
+      "syotot_1": 0.0095,
+      "syotot_2": 0.0,
+      "pisteet_1": 0.0174,
+      "pisteet_2": 0.0002,
+      "pisteet_3": 0.0
+     },
+     "nousija": null
+    }
+   ]
   }
  ]
 }
