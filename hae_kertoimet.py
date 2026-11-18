@@ -8,23 +8,27 @@ API_AVAIN = os.getenv("ODDS_API_KEY")
 
 # Haettavat sarjat: uuden sarjan saa mukaan lisäämällä tunnuksen tähän listaan.
 # Tunnukset löytyvät hae_sarjat.py:n tulosteesta.
-SARJAT = [
-    "icehockey_liiga",
-    "icehockey_nhl",
-    "icehockey_sweden_hockey_league",
-]
+# Arvo = haettavat markkinat. Jokainen markkina × alue kuluttaa yhden haun kiintiöstä.
+SARJAT = {
+    "icehockey_liiga": "h2h,totals,spreads",
+    # NHL:ssä yli/alle ja tasoitus sisältävät yhtiöillä yleensä jatkoajan, mutta malli ja
+    # tulosten tarkistus laskevat ne 60 minuutin mukaan -> näennäisiä ylikertoimia.
+    # Siksi NHL:stä haetaan vain voittajavedot (h2h).
+    "icehockey_nhl": "h2h",
+    # SHL pois toistaiseksi kiintiön säästämiseksi. Palautetaan myöhemmin:
+    # "icehockey_sweden_hockey_league": "h2h,totals,spreads",
+}
 
 ALUEET = "fi,eu,se"
-MARKKINAT = "h2h,totals,spreads"
 
 kaikki_ottelut = []
 
-for sarja in SARJAT:
+for sarja, markkinat in SARJAT.items():
     osoite = (
         "https://api.the-odds-api.com/v4/sports/" + sarja + "/odds/"
         + "?apiKey=" + API_AVAIN
         + "&regions=" + ALUEET
-        + "&markets=" + MARKKINAT
+        + "&markets=" + markkinat
         + "&oddsFormat=decimal"
     )
 

@@ -1,15 +1,10 @@
 name: Pelaajaennusteet
 
-# Kevyt lisäajo pelaajaennusteille. GitHubin ajastetut ajot käynnistyvät usein tunteja
-# myöhässä, joten pääajo (klo 15.37) ehtii monena päivänä vasta pelien alettua.
-# Kokoonpanot julkaistaan pelipäivänä klo 12, joten ennusteet päivitetään useaan kertaan
-# sen jälkeen. Ei Odds API -hakuja.
+# Kevyt lisäajo pelaajaennusteille ja pelaajien varjokirjanpidolle. Ei Odds API -hakuja.
+# Ajastus tehdään cron-job.orgissa (klo 12.30 ja 17.30 Suomen aikaa), joka käynnistää
+# ajon GitHubin rajapinnalla. GitHubin oma schedule-ajastus myöhästyi tunteja.
 on:
-  schedule:
-    # Aika UTC-aikana. Talviaikana (Suomi = UTC+2): 12.17, 13.47, 15.17 ja 16.47
-    - cron: "17 10,13 * * *"
-    - cron: "47 11,14 * * *"
-  # Lisää "Run workflow" -napin, jolla ajon voi käynnistää käsin
+  # Lisää "Run workflow" -napin ja sallii käynnistyksen rajapinnalla (cron-job.org)
   workflow_dispatch:
 
 # Lupa tallentaa muutokset takaisin repoon

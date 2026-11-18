@@ -1,11 +1,9 @@
 name: Vetovihje
 
+# Ajastus tehdään cron-job.orgissa (klo 13.45 ja 22.45 Suomen aikaa), joka käynnistää
+# ajon GitHubin rajapinnalla. GitHubin oma schedule-ajastus myöhästyi tunteja.
 on:
-  schedule:
-    # Aika UTC-aikana. Talviaikana (Suomi = UTC+2): 13:37 = 15.37 ja 20:37 = 22.37
-    - cron: "37 13 * * *"
-    - cron: "37 20 * * *"
-  # Lisää "Run workflow" -napin, jolla ajon voi käynnistää käsin
+  # Lisää "Run workflow" -napin ja sallii käynnistyksen rajapinnalla (cron-job.org)
   workflow_dispatch:
 
 # Lupa tallentaa muutokset takaisin repoon

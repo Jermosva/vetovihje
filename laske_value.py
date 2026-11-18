@@ -18,7 +18,7 @@ PANOS = 10                   # leikkieuroa per veto
 KIRJANPITO = "kirjanpito.json"   # oikeat leikkirahavedot
 VARJO = "varjo.json"             # kaikki ehdokkaat tilastoa varten
 LIIGA_KAUSI = 2027              # liiga.fi:n kausitunnus (päättymisvuosi)
-VERSIO = 8                       # 6 = Poisson-malli NHL:ään
+VERSIO = 9                       # 6 = Poisson-malli NHL:ään, 9 = NHL:n yli/alle ja tasoitus pois
 
 # Yhtiöt, joilta paras kerroin saa tulla (nimet täsmälleen kuten tulosteessa)
 KAYTETTAVAT_YHTIOT = [
@@ -49,6 +49,10 @@ YHTIOT_60MIN = [
     "Tipico",
     "1xBet",
 ]
+
+# Sarjat, joissa yli/alle ja tasoitus sisältävät yhtiöillä jatkoajan: niitä ei
+# voi verrata 60 minuutin malliin, joten ne ohitetaan (888sport, 1xBet ym. NHL:ssä)
+SARJAT_JATKOAIKA_MUKAAN = ["NHL"]
 
 # Oma Poisson-malli (Liiga, SHL, NHL): kaikki vetotyypit
 MALLIN_PAINO = 0.2       # yhdistetty arvio = 80 % markkina + 20 % malli
@@ -306,6 +310,8 @@ for ottelu in ottelut:
         parhaan_yhtio = {}
         vertailu = None
         vaatii_60min = tyyppi.startswith("Yli/alle") or tyyppi.startswith("Tasoitus")
+        if vaatii_60min and ottelu["sport_title"] in SARJAT_JATKOAIKA_MUKAAN:
+            continue
 
         for yhtio_nimi, vaihtoehdot in ryhmat[tyyppi]:
             # Ohitetaan yhtiöt, joiden säännöt voivat sisältää jatkoajan
