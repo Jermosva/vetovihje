@@ -2,7 +2,7 @@ import json
 import math
 import os
 import time
-from datetime import datetime, date, timedelta, timezone
+from datetime import datetime, date, timedelta
 import requests
 
 from hae_maalivahdit import TAUKO, pelipaikka
@@ -25,7 +25,7 @@ POISSON = "poisson.json"
 ENNUSTEET = "pelaajaennusteet.json"
 VARJO = "pelaajavarjo.json"
 LIIGA_KAUSI = 2027
-VERSIO = 1
+VERSIO = 2                # 2 = sivu laskee ennusteet itse liiga.fi:n kokoonpanosta
 
 # Walk-forward-testissä valitut arvot (ks. testin tuloste)
 PUOLIINTUMINEN = 480      # päivää: näin vanha peli painaa puolet tuoreesta
@@ -239,7 +239,7 @@ def tee_ennusteet(pelit, nimet, pmalli, tanaan):
                 "pvm": None, "versio": VERSIO, "viime_pelit": MUOTO_PELIT, "ottelut": []}
 
     hetki = date.fromisoformat(paiva)
-    tahdit = roolien_tahdit(pelit, hetki)
+    tahdit = roolien_tahdit([p for p in pelit if p["paiva"] < hetki], hetki)
     pelaajien_historia = historiat(pelit, hetki)
     kausi_nyt = kausi_vuosi(hetki)
     eilen = (hetki - timedelta(days=1)).isoformat()
@@ -267,56 +267,98 @@ def tee_ennusteet(pelit, nimet, pmalli, tanaan):
         odotetut = [ka * pmalli["hyok"].get(koti, 1) * kertoimet[True],
                     ka * pmalli["hyok"].get(vieras, 1) * kertoimet[False]]
 
+        # Koko pelaajiston tasot (myös ne, jotka eivät ole vielä kokoonpanossa). Sivu hakee
+        # illan kokoonpanon itse liiga.fi:stä ja laskee niistä ennusteet, joten ennusteet
+        # eivät riipu siitä, milloin GitHubin ajastettu ajo sattuu käynnistymään.
+        pelaajatasot = {}
+        for puoli, avain_pelaajat in [("K", "homeTeamPlayers"), ("V", "awayTeamPlayers")]:
+            for p in data.get(avain_pelaajat, []):
+                if p.get("role") == "GOALIE":
+                    continue
+                t = pelaajan_tasot(pelaajien_historia.get(p["id"], []), hetki, tahdit, kausi_nyt)
+                t["nimi"] = p["firstName"] + " " + p["lastName"]
+                t["puoli"] = puoli
+                pelaajatasot[str(p["id"])] = t
+        mv_tasot = pmalli.get("mv_tasot", {})
+        vahdit = {str(p["id"]): round(mv_tasot.get(str(p["id"]), 0), 4)
+                  for p in data.get("homeTeamPlayers", []) + data.get("awayTeamPlayers", [])
+                  if p.get("role") == "GOALIE"}
+        # Ottelukerroin ilman vastustajan maalivahtia: sivu lisää sen aloittajan mukaan
+        pohja = [ottelukerroin(pmalli, koti, vieras, True, None, koti_eilen, vieras_eilen),
+                 ottelukerroin(pmalli, vieras, koti, False, None, vieras_eilen, koti_eilen)]
+
         rivit = []
         if valmis:
             for on_koti, kp, joukkue in [(True, koti_kp, koti), (False, vieras_kp, vieras)]:
                 kerroin = kertoimet[on_koti] ** OTTELUKERROIN_PAINO
                 for p in kp:
-                    rivit.append(pelaajan_ennuste(p, joukkue, kerroin, tahdit,
-                                                  pelaajien_historia.get(p["id"], []), hetki, kausi_nyt))
+                    t = pelaajatasot.get(str(p["id"])) or pelaajan_tasot(
+                        pelaajien_historia.get(p["id"], []), hetki, tahdit, kausi_nyt)
+                    rivit.append(pelaajan_ennuste(p, joukkue, kerroin, tahdit, t))
 
         rivit.sort(key=lambda r: r["tn"]["pisteet_1"], reverse=True)
         ottelut.append({"avain": avain, "alkaa": peli["start"], "koti": koti, "vieras": vieras,
+                        "paattynyt": peli["ended"],
                         "odotetut_maalit": [round(x, 2) for x in odotetut],
-                        "kokoonpano": valmis, "pelaajat": rivit})
+                        "kokoonpano": valmis, "pelaajat": rivit,
+                        "kerroin_pohja": [round(x, 4) for x in pohja],
+                        "vahdit": vahdit, "pelaajatasot": pelaajatasot})
         print(f"{koti} - {vieras}: " + (f"{len(rivit)} pelaajaa" if valmis else "kokoonpano puuttuu"))
 
+    # Mallin osat, joilla sivu laskee ennusteet itse (sama laskenta kuin pelaajan_ennuste)
+    malli = {"tahdit": {r: [round(em, 5), round(es, 5)] for r, (em, es) in tahdit.items()},
+             "ottelukerroin_paino": OTTELUKERROIN_PAINO, "mv_paino": pmalli.get("mv_paino", 0),
+             "nousija_raja": NOUSIJA_RAJA, "nousija_min_pelit": NOUSIJA_MIN_PELIT}
     return {"paivitetty": datetime.now().astimezone().isoformat(timespec="minutes"),
-            "pvm": paiva, "versio": VERSIO, "viime_pelit": MUOTO_PELIT, "ottelut": ottelut}
+            "pvm": paiva, "versio": VERSIO, "viime_pelit": MUOTO_PELIT, "malli": malli,
+            "ottelut": ottelut}
 
 
-def pelaajan_ennuste(p, joukkue, kerroin, tahdit, historia, hetki, kausi_nyt):
-    paikka = pelipaikka(p)
-    r = rooli(paikka, p.get("roleCode"), p["line"])
-    em, es = tahdit.get(r, tahdit.get(paikka + "4", (0.05, 0.1)))
+def pelaajan_tasot(historia, hetki, tahdit, kausi_nyt):
+    # Pelaajan tasot, jotka eivät riipu illan roolista: taso = suhdeluku roolin
+    # keskitasoon (maalit, syötöt), aiempi = sama ennen tätä kautta (nousijat).
+    # Pyöristys 4 desimaaliin, jotta sivu ja tämä tiedosto laskevat saman tuloksen.
     koko, muoto = pelaajan_summat(historia, hetki, tahdit)
     taso_m, taso_s = tasot(koko, muoto)
-    lam_m = taso_m * em * kerroin
-    lam_s = taso_s * es * kerroin
-
-    # Nousija: mallin odotus verrattuna pelaajan tasoon ennen tätä kautta. Vetoyhtiöt
-    # nojaavat usein tähän vanhaan tasoon. Uusi pelaaja = roolinsa keskitaso.
-    kauden = [h for h in historia if h[1] == kausi_nyt]
-    aiemmat_kaudet = [h for h in historia if h[1] < kausi_nyt]
-    aiempi, _ = pelaajan_summat(aiemmat_kaudet, hetki, tahdit, 0)
+    # Uusi pelaaja = roolinsa keskitaso (taso 1)
+    aiempi, _ = pelaajan_summat([h for h in historia if h[1] < kausi_nyt], hetki, tahdit, 0)
     aiempi_m, aiempi_s = tasot(aiempi, [0, 0, 0, 0], muoto_paino=0)
-    aiempi_lam = (aiempi_m * em + aiempi_s * es) * kerroin
-    nosto = (lam_m + lam_s) / aiempi_lam - 1
+    kauden = [h for h in historia if h[1] == kausi_nyt]
     viime = historia[-MUOTO_PELIT:]
-    nousija = None
-    if nosto >= NOUSIJA_RAJA and len(kauden) >= NOUSIJA_MIN_PELIT:
-        nousija = {"nosto": round(nosto, 2), "aiempi": round(aiempi_lam, 3),
-                   "nyt": round(lam_m + lam_s, 3)}
-
     km = sum(h[3] for h in kauden)
     ks = sum(h[4] for h in kauden)
     vm = sum(h[3] for h in viime)
     vs = sum(h[4] for h in viime)
     return {
-        "id": p["id"], "nimi": p["firstName"] + " " + p["lastName"], "joukkue": joukkue,
-        "pp": paikka, "ketju": p["line"],
+        "taso": [round(taso_m, 4), round(taso_s, 4)],
+        "aiempi": [round(aiempi_m, 4), round(aiempi_s, 4)],
         "kausi": {"ottelut": len(kauden), "maalit": km, "syotot": ks, "pisteet": km + ks},
         "viime": {"ottelut": len(viime), "maalit": vm, "syotot": vs, "pisteet": vm + vs},
+    }
+
+
+def pelaajan_ennuste(p, joukkue, kerroin, tahdit, t):
+    # Illan ennuste: pelaajan taso × illan roolin keskitaso × ottelukerroin
+    paikka = pelipaikka(p)
+    r = rooli(paikka, p.get("roleCode"), p["line"])
+    em, es = tahdit.get(r, tahdit.get(paikka + "4", (0.05, 0.1)))
+    lam_m = t["taso"][0] * em * kerroin
+    lam_s = t["taso"][1] * es * kerroin
+
+    # Nousija: mallin odotus verrattuna pelaajan tasoon ennen tätä kautta. Vetoyhtiöt
+    # nojaavat usein tähän vanhaan tasoon. Ottelukerroin supistuu suhteesta pois.
+    aiempi_lam = (t["aiempi"][0] * em + t["aiempi"][1] * es) * kerroin
+    nosto = (lam_m + lam_s) / aiempi_lam - 1
+    nousija = None
+    if nosto >= NOUSIJA_RAJA and t["kausi"]["ottelut"] >= NOUSIJA_MIN_PELIT:
+        nousija = {"nosto": round(nosto, 2), "aiempi": round(aiempi_lam, 3),
+                   "nyt": round(lam_m + lam_s, 3)}
+
+    return {
+        "id": p["id"], "nimi": p["firstName"] + " " + p["lastName"], "joukkue": joukkue,
+        "pp": paikka, "ketju": p["line"],
+        "kausi": t["kausi"],
+        "viime": t["viime"],
         "lambda": {"maalit": round(lam_m, 3), "syotot": round(lam_s, 3)},
         "tn": {k: round(v, 4) for k, v in todennakoisyydet(lam_m, lam_s).items()},
         "nousija": nousija,
@@ -341,11 +383,12 @@ def tallenna_varjo(varjo):
 def paivita_varjo(ennusteet):
     # Varjokirjanpito: kaikkien kokoonpanon pelaajien ennusteet ennen peliä.
     # tarkista_tulokset.py täyttää tulokset pelin jälkeen.
+    # Alkanutkin peli kelpaa: kokoonpano, pelaajien tasot ja joukkuemalli ovat kaikki
+    # ennen peliä tiedossa olevaa tietoa (päättymätön peli ei ole vielä missään datassa).
     varjo = lue_varjo()
-    nyt = datetime.now(timezone.utc).isoformat()
     lisatty = 0
     for ottelu in ennusteet["ottelut"]:
-        if not ottelu["kokoonpano"] or ottelu["alkaa"] <= nyt:
+        if not ottelu["kokoonpano"] or ottelu.get("paattynyt"):
             continue
         vanha = varjo.get(ottelu["avain"])
         if vanha and vanha.get("tulokset") is not None:
@@ -611,7 +654,8 @@ if __name__ == "__main__":
         print("Haku epäonnistui: edelliset ennusteet jäävät voimaan")
         raise SystemExit(1)
     with open(ENNUSTEET, "w", encoding="utf-8") as tiedosto:
-        json.dump(ennusteet, tiedosto, ensure_ascii=False, indent=1)
+        # Tiivis muoto: tiedosto ladataan puhelimeen joka kerta
+        json.dump(ennusteet, tiedosto, ensure_ascii=False, separators=(",", ":"))
     paivita_varjo(ennusteet)
 
     # Tuloste: illan todennäköisimmät pistemiehet ja nousijat

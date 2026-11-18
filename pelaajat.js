@@ -10,6 +10,9 @@ const PELAAJA_RAAKA_OSOITE = "https://raw.githubusercontent.com/Jermosva/vetovih
 // Vetojen tallennus GitHub Contents API:lla. Token lähetetään VAIN tähän osoitteeseen.
 const PELAAJA_API_OSOITE = "https://api.github.com/repos/Jermosva/vetovihje/contents/pelaajavedot.json";
 
+// Illan kokoonpanot haetaan suoraan liiga.fi:stä (rajapinta sallii haut selaimesta)
+const LIIGA_PELI_OSOITE = "https://liiga.fi/api/v2/games/";
+
 // Vetotyypit valintalistaan: avain -> näytettävä nimi
 const VETOTYYPIT = {
   "maalit_1": "Maali 1+",
@@ -50,6 +53,7 @@ const pelaajaData = {
   tulokset: {},         // pelaajavedot_tulokset.json
   varjo: null,          // pelaajavarjo.json
   vedotLadattu: false,  // false = vetolistan lataus epäonnistui
+  kokoonpanotHaettu: null,  // milloin illan kokoonpanot haettiin liiga.fi:stä
 };
 
 const pelaajaValinnat = {
@@ -378,6 +382,8 @@ async function lataaPelaajadata() {
       naytaPelaajaOtsikko();
       naytaSuodattimet();
       naytaOttelut();
+      // Ei odoteta: sivu näkyy heti, ja ennusteet päivittyvät, kun kokoonpanot saapuvat
+      paivitaKokoonpanot();
     } else {
       document.getElementById("pelaaja-ottelut").innerHTML = `<div class="viestikortti">${suojaa(
         latausviesti(ennusteet, "Pelaajaennusteita ei ole vielä julkaistu. Ne päivittyvät pelipäivinä."))}</div>`;
@@ -414,6 +420,131 @@ async function haeVedotLuettavaksi() {
     }
   }
   return haeTiedosto("pelaajavedot.json");
+}
+
+// ---------- Illan kokoonpanot suoraan liiga.fi:stä ----------
+// GitHubin ajastetut ajot käynnistyvät usein tunteja myöhässä, joten ajo ei ehdi
+// laskea ennusteita kokoonpanojen julkaisun (klo 12) ja pelien alun välissä.
+// Siksi ajo tallentaa pelaajien tasot valmiiksi, ja sivu hakee kokoonpanon itse
+// ja laskee ennusteet samalla tavalla kuin pelaajamalli.py (pelaajan_ennuste).
+
+// Sama kuin pelaajamalli.py:n rooli(): esim. "H1" = ykkösketjun hyökkääjä
+function pelaajanRooli(paikka, roolikoodi, ketju) {
+  const lisapelaaja = Boolean(roolikoodi) && /^\d/.test(roolikoodi);   // "13. H", "7. P"...
+  if (paikka === "H" && (lisapelaaja || ketju >= 5)) return "H13";
+  if (paikka === "P" && (lisapelaaja || ketju >= 4)) return "P7";
+  return paikka + ketju;
+}
+
+// Poisson: P(X ≥ k) = 1 − P(0) − ... − P(k−1)
+function vahintaan(lam, k) {
+  let summa = 0;
+  let termi = Math.exp(-lam);
+  for (let i = 0; i < k; i++) {
+    summa += termi;
+    termi *= lam / (i + 1);
+  }
+  return 1 - summa;
+}
+
+function pyorista(luku, desimaalit) {
+  const kerroin = 10 ** desimaalit;
+  return Math.round(luku * kerroin) / kerroin;
+}
+
+// Yksi pelaajarivi samassa muodossa kuin pelaajaennusteet.json:n "pelaajat"
+function laskePelaajanEnnuste(malli, pelaaja, joukkue, kerroin, tasot) {
+  const paikka = (pelaaja.role || "").includes("DEFENSEMAN") ? "P" : "H";
+  const rooli = pelaajanRooli(paikka, pelaaja.roleCode, pelaaja.line);
+  const [em, es] = malli.tahdit[rooli] || malli.tahdit[paikka + "4"] || [0.05, 0.1];
+
+  // Uusi pelaaja, jota ei ollut pelaajistossa ajon aikaan = roolinsa keskitaso
+  const t = tasot || {
+    taso: [1, 1], aiempi: [1, 1],
+    kausi: { ottelut: 0, maalit: 0, syotot: 0, pisteet: 0 },
+    viime: { ottelut: 0, maalit: 0, syotot: 0, pisteet: 0 },
+  };
+  const lamM = t.taso[0] * em * kerroin;
+  const lamS = t.taso[1] * es * kerroin;
+  const lamP = lamM + lamS;
+
+  // Nousija: odotus verrattuna pelaajan tasoon ennen tätä kautta
+  const aiempi = (t.aiempi[0] * em + t.aiempi[1] * es) * kerroin;
+  const nosto = lamP / aiempi - 1;
+  const nousija = nosto >= malli.nousija_raja && t.kausi.ottelut >= malli.nousija_min_pelit
+    ? { nosto: pyorista(nosto, 2), aiempi: pyorista(aiempi, 3), nyt: pyorista(lamP, 3) }
+    : null;
+
+  const tn = {
+    maalit_1: vahintaan(lamM, 1), maalit_2: vahintaan(lamM, 2),
+    syotot_1: vahintaan(lamS, 1), syotot_2: vahintaan(lamS, 2),
+    pisteet_1: vahintaan(lamP, 1), pisteet_2: vahintaan(lamP, 2), pisteet_3: vahintaan(lamP, 3),
+  };
+  for (const avain in tn) tn[avain] = pyorista(tn[avain], 4);
+
+  return {
+    id: pelaaja.id, nimi: pelaaja.firstName + " " + pelaaja.lastName, joukkue: joukkue,
+    pp: paikka, ketju: pelaaja.line,
+    kausi: t.kausi, viime: t.viime,
+    lambda: { maalit: pyorista(lamM, 3), syotot: pyorista(lamS, 3) },
+    tn: tn, nousija: nousija,
+  };
+}
+
+// Laskee ottelun pelaajat liiga.fi:n ottelutiedoista. Palauttaa false, jos
+// kokoonpanoa ei ole vielä julkaistu.
+function laskeOttelunPelaajat(malli, ottelu, data) {
+  const kentalla = lista => (lista || []).filter(p => p.line != null && p.role !== "GOALIE");
+  const aloittaja = lista => {
+    const vahti = (lista || []).find(p => p.role === "GOALIE" && p.line === 1);
+    return vahti ? String(vahti.id) : null;
+  };
+  const koti = kentalla(data.homeTeamPlayers);
+  const vieras = kentalla(data.awayTeamPlayers);
+  if (koti.length === 0 || vieras.length === 0) return false;
+
+  // Ottelukerroin: pohja × vastustajan aloittavan maalivahdin vaikutus, painotettuna
+  const kerroin = (pohja, vastustajanVahti) => {
+    const taso = (ottelu.vahdit || {})[vastustajanVahti] || 0;
+    return (pohja * (1 - malli.mv_paino * taso)) ** malli.ottelukerroin_paino;
+  };
+  const kotiKerroin = kerroin(ottelu.kerroin_pohja[0], aloittaja(data.awayTeamPlayers));
+  const vierasKerroin = kerroin(ottelu.kerroin_pohja[1], aloittaja(data.homeTeamPlayers));
+
+  const tasot = ottelu.pelaajatasot || {};
+  const rivit = [
+    ...koti.map(p => laskePelaajanEnnuste(malli, p, ottelu.koti, kotiKerroin, tasot[String(p.id)])),
+    ...vieras.map(p => laskePelaajanEnnuste(malli, p, ottelu.vieras, vierasKerroin, tasot[String(p.id)])),
+  ];
+  rivit.sort((a, b) => b.tn.pisteet_1 - a.tn.pisteet_1);
+  ottelu.pelaajat = rivit;
+  ottelu.kokoonpano = true;
+  return true;
+}
+
+// Hakee illan kokoonpanot ja laskee ennusteet uudelleen. Jos haku epäonnistuu,
+// sivulla pysyvät tiedoston ennusteet (jos ajo ehti laskea ne).
+async function paivitaKokoonpanot() {
+  const e = pelaajaData.ennusteet;
+  if (!e || !e.malli) return;              // vanha tiedostomuoto: ei tasoja
+  const ottelut = (e.ottelut || []).filter(o => o.pelaajatasot && o.kerroin_pohja);
+
+  const tulokset = await Promise.all(ottelut.map(async ottelu => {
+    const [kausi, id] = ottelu.avain.split("_");
+    try {
+      const vastaus = await fetch(LIIGA_PELI_OSOITE + kausi + "/" + id, { cache: "no-store" });
+      if (!vastaus.ok) return false;
+      return laskeOttelunPelaajat(e.malli, ottelu, await vastaus.json());
+    } catch (virhe) {
+      return false;
+    }
+  }));
+
+  if (tulokset.some(Boolean)) {
+    pelaajaData.kokoonpanotHaettu = new Date().toISOString();
+    naytaPelaajaOtsikko();
+    naytaOttelut();
+  }
 }
 
 // ---------- GitHub API ----------
@@ -495,8 +626,12 @@ function naytaPelaajaOtsikko() {
     paivitetty = " · päivitetty " + (paiva === pvmSuomeksi(e.pvm) ? "" : paiva + " ") +
       "klo " + kelloSuomeksi(e.paivitetty);
   }
+  // Kokoonpanot haetaan selaimessa suoraan liiga.fi:stä (ks. paivitaKokoonpanot)
+  const kokoonpanot = pelaajaData.kokoonpanotHaettu
+    ? " · kokoonpanot liiga.fi:stä klo " + kelloSuomeksi(pelaajaData.kokoonpanotHaettu)
+    : "";
   document.getElementById("pelaaja-otsikko").textContent =
-    "Pelipäivä " + pvmSuomeksi(e.pvm) + paivitetty;
+    "Pelipäivä " + pvmSuomeksi(e.pvm) + paivitetty + kokoonpanot;
 }
 
 function ottelunNimi(ottelu) {
