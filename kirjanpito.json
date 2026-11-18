@@ -1803,5 +1803,37 @@
     "tila": "ei osunut",
     "versio": 8,
     "voitto": -10
+  },
+  {
+    "sarja": "NHL",
+    "id": "a3e6d9189d7bb72b7c8ada9993fe63f2",
+    "alkaa": "2026-11-19T00:40:00Z",
+    "ottelu": "New Jersey Devils - Montréal Canadiens",
+    "tyyppi": "1X2",
+    "valinta": "Montréal Canadiens",
+    "kerroin": 3.45,
+    "yhtio": "LeoVegas (FI)",
+    "value": 4.8,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
+  },
+  {
+    "sarja": "SHL",
+    "id": "31ac4418f8b4fbb9d51e73b0b1dfef8c",
+    "alkaa": "2026-11-19T18:00:00Z",
+    "ottelu": "Växjö Lakers - IF Björklöven",
+    "tyyppi": "Voittaja",
+    "valinta": "IF Björklöven",
+    "kerroin": 4.0,
+    "yhtio": "Coolbet",
+    "value": 7.0,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 8
   }
 ]
