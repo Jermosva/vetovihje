@@ -17521,5 +17521,49 @@
    "nimi": "Mantas Armalis"
   },
   "vaihtoja": 0
+ },
+ "2027_2701456": {
+  "koti": {
+   "id": 31635062,
+   "nimi": "Oskari Salminen"
+  },
+  "vieras": {
+   "id": 40056206,
+   "nimi": "Masi Härkönen"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701458": {
+  "koti": {
+   "id": 61073543,
+   "nimi": "Jesper Myrenberg"
+  },
+  "vieras": {
+   "id": 21919594,
+   "nimi": "Tomi Karhunen"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701461": {
+  "koti": {
+   "id": 40103808,
+   "nimi": "Noa Vali"
+  },
+  "vieras": {
+   "id": 60660609,
+   "nimi": "Niklas Rubin"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701462": {
+  "koti": {
+   "id": 31915960,
+   "nimi": "Roope Taponen"
+  },
+  "vieras": {
+   "id": 60862726,
+   "nimi": "Frantisek Poletin"
+  },
+  "vaihtoja": 1
  }
 }
