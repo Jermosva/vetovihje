@@ -107,6 +107,10 @@ function naytaPaivat(vedot) {
       const sarja = veto.sarja ? "[" + veto.sarja + "] " : "";
       const voitto = "voitto" in veto ? euro(veto.voitto) : "";
       const clv = "clv" in veto ? " · CLV " + prosentti(veto.clv) : "";
+      // Mallin odotetut maalit (vain vedoissa, joissa malli osasi arvioida ottelun)
+      const odotetut = veto.odotetut
+        ? `<div class="tiedot">Odotetut maalit (60 min) ${veto.odotetut[0].toFixed(2).replace(".", ",")} – ${veto.odotetut[1].toFixed(2).replace(".", ",")}</div>`
+        : "";
 
       rivit += `
         <li>
@@ -114,6 +118,7 @@ function naytaPaivat(vedot) {
           <div>
             <div class="ottelu">${sarja}${veto.ottelu}</div>
             <div class="tiedot">${veto.tyyppi} ${veto.valinta} @ ${veto.kerroin} (${veto.yhtio}) · value ${veto.value} %${clv}</div>
+            ${odotetut}
           </div>
           <span class="voitto">${voitto}</span>
         </li>`;

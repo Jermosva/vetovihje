@@ -1,7 +1,9 @@
 import json
 import math
 import os
+import re
 import time
+import unicodedata
 from datetime import datetime, date, timedelta
 import requests
 
@@ -40,6 +42,13 @@ OTTELUKERROIN_PAINO = 0.5  # 1 = ottelukerroin täysimääräisenä, 0 = ei vaik
 NOUSIJA_RAJA = 0.25       # nousija: odotus vähintään 25 % yli pelaajan tason ennen tätä kautta
 NOUSIJA_MIN_PELIT = 8     # ja tällä kaudella vähintään näin monta peliä
 AIKAKATKAISU = 30         # sekuntia: jumiin jäänyt haku ei saa pysäyttää GitHub Actionsia
+
+# Unibetin, Pafin ja LeoVegasin pelaajavetojen kertoimet (Kambi, samat kaikilla kolmella).
+# Tallennetaan varjokirjanpitoon, jotta vihjeiden tuotto voidaan mitata ilman omaa vaivaa.
+# Sama logiikka kuin sivulla (pelaajat.js), jotta mitataan samoja vihjeitä.
+KAMBI_OSOITE = "https://eu-offering-api.kambicdn.com/offering/v2018/ub/"
+KAMBI_JOUKKUEET = {"K-Espoo": "Espoo"}     # liiga.fi:n nimi -> Kambin nimen osa
+KAMBI_TYYPIT = ["maalit_1", "syotot_1", "pisteet_1", "pisteet_2"]   # testatut vetotyypit
 
 TESTAA = False            # True = aja walk-forward-testi (hidas), False = vain illan ennusteet
 ARVIOINTI_ALKAA = "2025-09-01"   # arvioidaan kaudet 2025–26 ja 2026–27
@@ -365,6 +374,118 @@ def pelaajan_ennuste(p, joukkue, kerroin, tahdit, t):
     }
 
 
+# ===== KAMBI-KERTOIMET =====
+def vertailunimi(nimi):
+    # "Jiří Ticháček" -> "jiri tichacek", "K-Espoo" -> "k espoo"
+    nimi = unicodedata.normalize("NFD", (nimi or "").lower())
+    nimi = "".join(merkki for merkki in nimi if not unicodedata.combining(merkki))
+    return re.sub(r"[^a-z0-9]+", " ", nimi).strip()
+
+
+def sama_joukkue(liiga_nimi, kambi_nimi):
+    a = vertailunimi(KAMBI_JOUKKUEET.get(liiga_nimi, liiga_nimi))
+    b = vertailunimi(kambi_nimi)
+    return a != "" and b != "" and (a in b or b in a)
+
+
+def kambi_vetotyyppi(markkina, raja):
+    # "Player to score at least 2 points - Including Overtime" + 2 -> "pisteet_2"
+    nimi = markkina.lower()
+    if "including overtime" not in nimi or "1st" in nimi or "last" in nimi:
+        return None
+    if "assist" in nimi:
+        tyyppi = "syotot"
+    elif "point" in nimi:
+        tyyppi = "pisteet"
+    elif nimi.startswith("to score"):
+        tyyppi = "maalit"
+    else:
+        return None
+    avain = tyyppi + "_" + str(raja)
+    return avain if avain in KAMBI_TYYPIT else None
+
+
+def lue_pelaajakertoimet(tarjoukset):
+    # -> {pelaajan vertailunimi: {vetotyyppi: [kerroin, markkina]}}
+    # markkina = yhtiön oma todennäköisyys ilman marginaalia (None, jos "Ei" puuttuu)
+    kylla = {}
+    ei = {}
+    for tarjous in tarjoukset or []:
+        for vaihtoehto in tarjous.get("outcomes", []):
+            if not vaihtoehto.get("participant") or vaihtoehto.get("status") != "OPEN" \
+                    or not vaihtoehto.get("odds"):
+                continue
+            raja = round((vaihtoehto.get("line") or 1000) / 1000)
+            avain = kambi_vetotyyppi(tarjous["criterion"].get("englishLabel", ""), raja)
+            if avain is None:
+                continue
+            kohde = ei if vaihtoehto.get("type") == "OT_NO" else kylla
+            kohde[(vertailunimi(vaihtoehto["participant"]), avain)] = vaihtoehto["odds"] / 1000
+    tulos = {}
+    for (nimi, avain), kerroin in kylla.items():
+        markkina = None
+        if (nimi, avain) in ei:
+            markkina = round((1 / kerroin) / (1 / kerroin + 1 / ei[(nimi, avain)]), 4)
+        tulos.setdefault(nimi, {})[avain] = [kerroin, markkina]
+    return tulos
+
+
+def pelaajan_kertoimet(kertoimet, nimi, omat_nimet):
+    # Sama nimi, samat nimen osat eri järjestyksessä tai sukunimi + alkukirjain.
+    # Varanimeksi ei kelpaa toisen saman ottelun pelaajan oma nimi.
+    nimi = vertailunimi(nimi)
+    if nimi in kertoimet:
+        return kertoimet[nimi]
+    osat = nimi.split(" ")
+    ehdokkaat_kaikki = [n for n in kertoimet if n not in omat_nimet]
+    kokeilut = [
+        lambda n: sorted(n.split(" ")) == sorted(osat),
+        lambda n: n.split(" ")[1:] == osat[1:] and n[:1] == osat[0][:1],
+    ]
+    for kokeilu in kokeilut:
+        ehdokkaat = [n for n in ehdokkaat_kaikki if kokeilu(n)]
+        if len(ehdokkaat) == 1:
+            return kertoimet[ehdokkaat[0]]
+    return {}
+
+
+def hae_kambi_kertoimet(ottelut):
+    # -> {ottelun avain: {"pelaaja_id": {vetotyyppi: [kerroin, markkina]}}}
+    lista = hae_json(KAMBI_OSOITE + "listView/ice_hockey/finland/liiga/all/matches.json"
+                     "?lang=en_GB&market=FI")
+    if lista is None:
+        return {}
+    tulos = {}
+    for ottelu in ottelut:
+        if not ottelu["kokoonpano"]:
+            continue
+        alkaa = datetime.fromisoformat(ottelu["alkaa"].replace("Z", "+00:00"))
+        pari = None
+        for k in lista.get("events", []):
+            tapahtuma = k["event"]
+            kambi_alkaa = datetime.fromisoformat(tapahtuma["start"].replace("Z", "+00:00"))
+            if sama_joukkue(ottelu["koti"], tapahtuma.get("homeName")) \
+                    and sama_joukkue(ottelu["vieras"], tapahtuma.get("awayName")) \
+                    and abs((kambi_alkaa - alkaa).total_seconds()) < 3 * 3600:
+                pari = tapahtuma["id"]
+        if pari is None:
+            continue
+        data = hae_json(KAMBI_OSOITE + "betoffer/event/" + str(pari) + ".json?lang=en_GB&market=FI")
+        time.sleep(TAUKO)
+        if data is None:
+            continue
+        kertoimet = lue_pelaajakertoimet(data.get("betOffers"))
+        omat_nimet = {vertailunimi(p["nimi"]) for p in ottelu["pelaajat"]}
+        pelaajat = {}
+        for p in ottelu["pelaajat"]:
+            k = pelaajan_kertoimet(kertoimet, p["nimi"], omat_nimet)
+            if k:
+                pelaajat[str(p["id"])] = k
+        if pelaajat:
+            tulos[ottelu["avain"]] = pelaajat
+    return tulos
+
+
 def lue_varjo():
     if os.path.exists(VARJO):
         with open(VARJO, "r", encoding="utf-8") as tiedosto:
@@ -380,9 +501,9 @@ def tallenna_varjo(varjo):
         tiedosto.write("{\n" + ",\n".join(rivit) + "\n}\n")
 
 
-def paivita_varjo(ennusteet):
-    # Varjokirjanpito: kaikkien kokoonpanon pelaajien ennusteet ennen peliä.
-    # tarkista_tulokset.py täyttää tulokset pelin jälkeen.
+def paivita_varjo(ennusteet, kambi):
+    # Varjokirjanpito: kaikkien kokoonpanon pelaajien ennusteet ennen peliä ja
+    # Unibetin kertoimet. tarkista_tulokset.py täyttää tulokset pelin jälkeen.
     # Alkanutkin peli kelpaa: kokoonpano, pelaajien tasot ja joukkuemalli ovat kaikki
     # ennen peliä tiedossa olevaa tietoa (päättymätön peli ei ole vielä missään datassa).
     varjo = lue_varjo()
@@ -399,6 +520,8 @@ def paivita_varjo(ennusteet):
             "ennusteet": [[p["id"], round(p["tn"]["maalit_1"], 3), round(p["tn"]["syotot_1"], 3),
                            round(p["tn"]["pisteet_1"], 3), round(p["tn"]["pisteet_2"], 3)]
                           for p in ottelu["pelaajat"]],
+            # Kambi poistaa pelaajavedot pelin alettua: silloin vanhat kertoimet jäävät voimaan
+            "kertoimet": kambi.get(ottelu["avain"]) or (vanha or {}).get("kertoimet") or {},
             "tulokset": None,
         }
         lisatty += 1
@@ -656,7 +779,14 @@ if __name__ == "__main__":
     with open(ENNUSTEET, "w", encoding="utf-8") as tiedosto:
         # Tiivis muoto: tiedosto ladataan puhelimeen joka kerta
         json.dump(ennusteet, tiedosto, ensure_ascii=False, separators=(",", ":"))
-    paivita_varjo(ennusteet)
+    # Kertoimien haku ei saa kaataa ennusteita: virheessä varjoon jää ilman kertoimia
+    try:
+        kambi = hae_kambi_kertoimet(ennusteet["ottelut"])
+    except (requests.RequestException, KeyError, TypeError, ValueError) as virhe:
+        print("VIRHE: Kambin kertoimet:", virhe)
+        kambi = {}
+    print("Unibetin kertoimet", sum(len(k) for k in kambi.values()), "pelaajalle")
+    paivita_varjo(ennusteet, kambi)
 
     # Tuloste: illan todennäköisimmät pistemiehet ja nousijat
     kaikki = [p for o in ennusteet["ottelut"] for p in o["pelaajat"]]

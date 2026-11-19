@@ -500,3 +500,20 @@ li {
     grid-template-columns: 1fr;
   }
 }
+
+/* Kertoimen lähde (Kambi = Unibet/Paf/LeoVegas) kerroinkentän alla */
+.kambi-tieto {
+  font-size: 11px;
+  color: var(--heikko);
+  margin-top: 2px;
+}
+
+/* Vihjelistan rivi on painettava */
+.vihjerivi {
+  cursor: pointer;
+}
+
+/* Vihjeestä valittu pelaaja taulukossa */
+.pelaajataulukko tr.korostus td {
+  background: #eef6e8;
+}

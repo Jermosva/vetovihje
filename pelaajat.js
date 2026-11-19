@@ -13,6 +13,23 @@ const PELAAJA_API_OSOITE = "https://api.github.com/repos/Jermosva/vetovihje/cont
 // Illan kokoonpanot haetaan suoraan liiga.fi:stä (rajapinta sallii haut selaimesta)
 const LIIGA_PELI_OSOITE = "https://liiga.fi/api/v2/games/";
 
+// Pelaajavetojen kertoimet: Unibet, Paf ja LeoVegas käyttävät samaa Kambi-järjestelmää,
+// jonka julkinen kerroinsyöte sallii haut selaimesta. Kertoimet ovat kaikilla samat.
+const KAMBI_OSOITE = "https://eu-offering-api.kambicdn.com/offering/v2018/ub/";
+const KAMBI_YHTIOT = "Unibet / Paf / LeoVegas";
+const KAMBI_YHTIO = "Unibet";      // tallennuslomakkeen oletus, kun kerroin tulee Kambista
+// Vihjelistaan vain, kun kerroin on vähintään 10 % yli rajakertoimen. Pienemmät erot ovat
+// todennäköisemmin mallin virhettä kuin oikea ylikerroin.
+const VIHJE_MARGINAALI = 0.10;
+// Vain walk-forward-testissä mitatut vetotyypit (2+ maalia ja 3+ pistettä ei testattu)
+const VIHJE_TYYPIT = ["maalit_1", "syotot_1", "pisteet_1", "pisteet_2"];
+// Malli yli 10 %-yksikköä yhtiön arviota korkeammalla = todennäköinen mallin virhe
+// (esim. ketju vaihtunut, loukkaantuminen), merkitään varoituksella
+const VIHJE_RISTIRIITA = 0.10;
+const VIHJEITA_NAKYVISSA = 10;    // loput "Näytä kaikki" -napin takana
+// liiga.fi:n nimi -> Kambin nimen osa (muut nimet täsmäävät sellaisenaan, esim. "Sport" ~ "Vaasan Sport")
+const KAMBI_JOUKKUEET = { "K-Espoo": "Espoo" };
+
 // Vetotyypit valintalistaan: avain -> näytettävä nimi
 const VETOTYYPIT = {
   "maalit_1": "Maali 1+",
@@ -54,12 +71,15 @@ const pelaajaData = {
   varjo: null,          // pelaajavarjo.json
   vedotLadattu: false,  // false = vetolistan lataus epäonnistui
   kokoonpanotHaettu: null,  // milloin illan kokoonpanot haettiin liiga.fi:stä
+  kambi: {},            // ottelun avain -> pelaajan nimi -> vetotyyppi -> {kerroin, markkina}
+  kambiTila: "haetaan", // "haetaan" | "ok" | "virhe"
 };
 
 const pelaajaValinnat = {
   ottelu: "kaikki",
   vetotyyppi: OLETUS_VETOTYYPPI,
   vainNousijat: false,
+  kaikkiVihjeet: false,   // false = vihjelistassa vain parhaat
 };
 
 // Syötetyt kertoimet muistissa: "pvm|pelaaja_id|vetotyyppi" -> "2,15"
@@ -382,8 +402,9 @@ async function lataaPelaajadata() {
       naytaPelaajaOtsikko();
       naytaSuodattimet();
       naytaOttelut();
-      // Ei odoteta: sivu näkyy heti, ja ennusteet päivittyvät, kun kokoonpanot saapuvat
+      // Ei odoteta: sivu näkyy heti, ja ennusteet ja kertoimet päivittyvät, kun ne saapuvat
       paivitaKokoonpanot();
+      paivitaKambi();
     } else {
       document.getElementById("pelaaja-ottelut").innerHTML = `<div class="viestikortti">${suojaa(
         latausviesti(ennusteet, "Pelaajaennusteita ei ole vielä julkaistu. Ne päivittyvät pelipäivinä."))}</div>`;
@@ -545,6 +566,254 @@ async function paivitaKokoonpanot() {
     naytaPelaajaOtsikko();
     naytaOttelut();
   }
+}
+
+// ---------- Kertoimet Kambista (Unibet, Paf, LeoVegas) ----------
+
+// Nimi vertailukelpoiseksi: "Jiří Ticháček" -> "jiri tichacek", "K-Espoo" -> "k espoo"
+function vertailunimi(nimi) {
+  return (nimi || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "")
+    .replace(/[^a-z0-9]+/g, " ").trim();
+}
+
+function samaJoukkue(liigaNimi, kambiNimi) {
+  const a = vertailunimi(KAMBI_JOUKKUEET[liigaNimi] || liigaNimi);
+  const b = vertailunimi(kambiNimi);
+  return a !== "" && b !== "" && (b.includes(a) || a.includes(b));
+}
+
+// Kambin markkina -> vetotyypin avain, esim. "Player to score at least 2 points -
+// Including Overtime" + raja 2 -> "pisteet_2". Muut markkinat (1. maalintekijä,
+// ilman jatkoaikaa olevat ym.) ohitetaan.
+function kambiVetotyyppi(markkina, raja) {
+  const nimi = markkina.toLowerCase();
+  if (!nimi.includes("including overtime") || nimi.includes("1st") || nimi.includes("last")) return null;
+  let tyyppi = null;
+  if (nimi.includes("assist")) tyyppi = "syotot";
+  else if (nimi.includes("point")) tyyppi = "pisteet";
+  else if (nimi.startsWith("to score")) tyyppi = "maalit";
+  if (tyyppi === null) return null;
+  const avain = tyyppi + "_" + raja;
+  return avain in VETOTYYPIT ? avain : null;
+}
+
+// Yhden ottelun vetotarjoukset -> {pelaajan vertailunimi: {vetotyyppi: {kerroin, markkina}}}
+// markkina = yhtiön oma todennäköisyys ilman marginaalia (vain jos "Ei"-vaihtoehto on tarjolla)
+function luePelaajakertoimet(vetotarjoukset) {
+  const tulos = {};
+  for (const tarjous of vetotarjoukset || []) {
+    const kylla = {};
+    const ei = {};
+    for (const vaihtoehto of tarjous.outcomes || []) {
+      if (!vaihtoehto.participant || vaihtoehto.status !== "OPEN" || !vaihtoehto.odds) continue;
+      const raja = Math.round((vaihtoehto.line || 1000) / 1000);
+      const avain = kambiVetotyyppi(tarjous.criterion.englishLabel || "", raja);
+      if (avain === null) continue;
+      const kohde = vaihtoehto.type === "OT_NO" ? ei : kylla;
+      kohde[vertailunimi(vaihtoehto.participant) + "|" + avain] = vaihtoehto.odds / 1000;
+    }
+    for (const tunniste in kylla) {
+      const [nimi, avain] = tunniste.split("|");
+      const kerroin = kylla[tunniste];
+      let markkina = null;
+      if (ei[tunniste]) {
+        markkina = (1 / kerroin) / (1 / kerroin + 1 / ei[tunniste]);
+      }
+      if (!tulos[nimi]) tulos[nimi] = {};
+      tulos[nimi][avain] = { kerroin: kerroin, markkina: markkina };
+    }
+  }
+  return tulos;
+}
+
+// Pelaajan kertoimet. Kambin nimet poikkeavat joskus liiga.fi:stä, joten kokeillaan
+// järjestyksessä: sama nimi, samat nimen osat eri järjestyksessä ("Makinen Ilari"),
+// sama sukunimi ja etunimen alkukirjain ("Matt Caito" ~ "Matthew Caito").
+function pelaajanKertoimet(ottelu, pelaaja) {
+  const kertoimetOttelu = pelaajaData.kambi[ottelu.avain];
+  if (!kertoimetOttelu) return {};
+  const nimi = vertailunimi(pelaaja.nimi);
+  if (kertoimetOttelu[nimi]) return kertoimetOttelu[nimi];
+
+  const osat = nimi.split(" ");
+  const jarjestetty = osat.slice().sort().join(" ");
+  const sukunimi = osat.slice(1).join(" ");
+  // Varanimiksi ei kelpaa nimi, joka on jonkun toisen ottelun pelaajan oma nimi
+  // (esim. veljekset samalla sukunimellä ja alkukirjaimella)
+  const omatNimet = new Set([
+    ...Object.values(ottelu.pelaajatasot || {}).map(t => vertailunimi(t.nimi)),
+    ...(ottelu.pelaajat || []).map(p => vertailunimi(p.nimi)),
+  ]);
+  const kambiNimet = Object.keys(kertoimetOttelu).filter(n => !omatNimet.has(n));
+  const kokeilut = [
+    n => n.split(" ").sort().join(" ") === jarjestetty,
+    n => {
+      const o = n.split(" ");
+      return o.slice(1).join(" ") === sukunimi && o[0][0] === osat[0][0];
+    },
+  ];
+  for (const kokeilu of kokeilut) {
+    const ehdokkaat = kambiNimet.filter(kokeilu);
+    if (ehdokkaat.length === 1) return kertoimetOttelu[ehdokkaat[0]];
+  }
+  return {};
+}
+
+// Paras tiedossa oleva kerroin: itse syötetty (esim. EpicBet) tai Kambin, kumpi suurempi.
+// Palauttaa {kerroin, lahde, markkina} tai null. markkina tulee aina Kambista.
+function pelaajanKerroin(ottelu, pelaaja, avain) {
+  const kambi = pelaajanKertoimet(ottelu, pelaaja)[avain] || null;
+  const oma = lueKerroin(kertoimet[kerroinAvain(pelaaja.id, avain)] || "");
+  const markkina = kambi ? kambi.markkina : null;
+  if (oma !== null && (!kambi || oma > kambi.kerroin)) {
+    return { kerroin: oma, lahde: "oma", markkina: markkina };
+  }
+  return kambi ? { kerroin: kambi.kerroin, lahde: KAMBI_YHTIO, markkina: markkina } : null;
+}
+
+async function haeKambi(polku) {
+  const vastaus = await fetch(KAMBI_OSOITE + polku + (polku.includes("?") ? "&" : "?") +
+    "lang=en_GB&market=FI", { cache: "no-store" });
+  if (!vastaus.ok) throw new Error("Kambi " + vastaus.status);
+  return vastaus.json();
+}
+
+async function paivitaKambi() {
+  const e = pelaajaData.ennusteet;
+  try {
+    const lista = await haeKambi("listView/ice_hockey/finland/liiga/all/matches.json");
+    // Liigan ottelu -> Kambin ottelu: samat joukkueet ja alkuaika enintään 3 h eri
+    const parit = [];
+    for (const ottelu of e.ottelut || []) {
+      const alkaa = new Date(ottelu.alkaa).getTime();
+      const loydetty = (lista.events || []).find(k =>
+        samaJoukkue(ottelu.koti, k.event.homeName) && samaJoukkue(ottelu.vieras, k.event.awayName) &&
+        Math.abs(new Date(k.event.start).getTime() - alkaa) < 3 * 3600 * 1000);
+      if (loydetty) parit.push([ottelu.avain, loydetty.event.id]);
+    }
+    await Promise.all(parit.map(async ([avain, id]) => {
+      try {
+        const tarjoukset = await haeKambi("betoffer/event/" + id + ".json");
+        pelaajaData.kambi[avain] = luePelaajakertoimet(tarjoukset.betOffers);
+      } catch (virhe) {
+        // Yhden ottelun virhe ei estä muita
+      }
+    }));
+    pelaajaData.kambiTila = "ok";
+  } catch (virhe) {
+    pelaajaData.kambiTila = "virhe";
+  }
+  naytaOttelut();
+}
+
+// ---------- Näkymä: vihjelista ----------
+
+// Kaikki illan vedot, joissa paras kerroin (Kambi tai oma) on selvästi yli mallin rajakertoimen
+function laskeVihjeet() {
+  const vihjeet = [];
+  for (const ottelu of pelaajaData.ennusteet.ottelut || []) {
+    for (const pelaaja of ottelu.pelaajat || []) {
+      for (const avain of VIHJE_TYYPIT) {
+        const paras = pelaajanKerroin(ottelu, pelaaja, avain);
+        const tn = pelaaja.tn[avain];
+        if (!paras || typeof tn !== "number" || tn * paras.kerroin < 1 + VIHJE_MARGINAALI) continue;
+        vihjeet.push({ ottelu, pelaaja, avain, tn, kerroin: paras.kerroin, lahde: paras.lahde,
+                       markkina: paras.markkina, value: laskeValue(tn, paras.kerroin) });
+      }
+    }
+  }
+  vihjeet.sort((a, b) => b.value - a.value);
+  return vihjeet;
+}
+
+function naytaVihjeet() {
+  const kohde = document.getElementById("pelaaja-vihjeet");
+  if (!kohde || !pelaajaData.ennusteet) return;
+
+  const otsikko = `<h2>Vihjeet · ${KAMBI_YHTIOT}</h2>`;
+  if (pelaajaData.kambiTila === "haetaan") {
+    kohde.innerHTML = `<div class="peli-kortti">${otsikko}<p class="selite">Haetaan kertoimia...</p></div>`;
+    return;
+  }
+  if (pelaajaData.kambiTila === "virhe") {
+    kohde.innerHTML = `<div class="peli-kortti">${otsikko}<p class="selite">Kertoimien haku epäonnistui. Syötä kertoimet itse taulukkoon.</p></div>`;
+    return;
+  }
+
+  const vihjeet = laskeVihjeet();
+  const selite = `<p class="selite">Kerroin vähintään ${Math.round(VIHJE_MARGINAALI * 100)} % yli mallin rajakertoimen.
+    Jos olet syöttänyt taulukkoon paremman kertoimen (esim. EpicBet), käytetään sitä (merkintä "oma").
+    Markkina = yhtiön oma arvio ilman marginaalia. ⚠ = malli yli ${Math.round(VIHJE_RISTIRIITA * 100)} %-yks.
+    markkinaa korkeammalla: tarkista kokoonpano ja uutiset ennen pelaamista.
+    Paina riviä nähdäksesi pelaajan taulukossa.</p>`;
+  if (vihjeet.length === 0) {
+    const kokoonpanoja = (pelaajaData.ennusteet.ottelut || []).some(o => o.kokoonpano);
+    kohde.innerHTML = `<div class="peli-kortti">${otsikko}<p class="selite">${kokoonpanoja
+      ? "Ei ylikertoimia tällä hetkellä."
+      : "Kokoonpanoja ei ole vielä julkaistu (pelipäivänä klo 12)."}</p></div>`;
+    return;
+  }
+
+  const nakyvat = pelaajaValinnat.kaikkiVihjeet ? vihjeet : vihjeet.slice(0, VIHJEITA_NAKYVISSA);
+  const rivit = nakyvat.map(v => {
+    const nousija = v.pelaaja.nousija
+      ? ` <span class="nousija">▲ +${Math.round(v.pelaaja.nousija.nosto * 100)} %</span>` : "";
+    const ristiriita = v.markkina !== null && v.tn - v.markkina > VIHJE_RISTIRIITA
+      ? ` <span title="Malli on selvästi yhtiön arviota korkeammalla: tarkista kokoonpano ja uutiset">⚠</span>` : "";
+    return `
+      <tr class="vihjerivi" data-avain="${suojaa(v.ottelu.avain)}" data-id="${suojaa(v.pelaaja.id)}" data-tyyppi="${v.avain}">
+        <td class="nimi">${suojaa(v.pelaaja.nimi)}${nousija}${ristiriita}</td>
+        <td>${suojaa(v.pelaaja.joukkue)}</td>
+        <td>${VETOTYYPIT[v.avain]}</td>
+        <td><strong>${desimaali(v.kerroin, 2)}</strong>${v.lahde === "oma" ? ` <span class="kambi-tieto">oma</span>` : ""}</td>
+        <td>${rajakerroinTekstina(v.tn)}</td>
+        <td>${tnTekstina(v.tn)}</td>
+        <td>${v.markkina === null ? "–" : tnTekstina(v.markkina)}</td>
+        <td class="plus">${prosenttina(v.value)}</td>
+      </tr>`;
+  }).join("");
+
+  kohde.innerHTML = `
+    <div class="peli-kortti">
+      ${otsikko}
+      ${selite}
+      <div class="taulukko-vieritys">
+        <table class="pelaajataulukko">
+          <thead><tr><th class="nimi">Pelaaja</th><th>Joukkue</th><th>Veto</th><th>Kerroin</th>
+            <th>Raja</th><th>Malli</th><th>Markkina</th><th>Value</th></tr></thead>
+          <tbody>${rivit}</tbody>
+        </table>
+      </div>
+      ${vihjeet.length > VIHJEITA_NAKYVISSA
+        ? `<button type="button" class="pieni-nappi" id="vihjeet-kaikki">${pelaajaValinnat.kaikkiVihjeet
+          ? "Näytä vain " + VIHJEITA_NAKYVISSA + " parasta" : "Näytä kaikki (" + vihjeet.length + ")"}</button>`
+        : ""}
+    </div>`;
+}
+
+// Vihjeen painallus: valitaan sen ottelu ja vetotyyppi ja vieritetään pelaajan riville
+function kytkeVihjeet() {
+  document.getElementById("pelaaja-vihjeet").addEventListener("click", tapahtuma => {
+    if (tapahtuma.target.id === "vihjeet-kaikki") {
+      pelaajaValinnat.kaikkiVihjeet = !pelaajaValinnat.kaikkiVihjeet;
+      naytaVihjeet();
+      return;
+    }
+    const rivi = tapahtuma.target.closest(".vihjerivi");
+    if (!rivi) return;
+    pelaajaValinnat.ottelu = rivi.dataset.avain;
+    pelaajaValinnat.vetotyyppi = rivi.dataset.tyyppi;
+    pelaajaValinnat.vainNousijat = false;
+    document.getElementById("valitse-ottelu").value = pelaajaValinnat.ottelu;
+    document.getElementById("valitse-vetotyyppi").value = pelaajaValinnat.vetotyyppi;
+    document.getElementById("vain-nousijat").checked = false;
+    naytaOttelut();
+    const kohde = document.querySelector(`#pelaaja-ottelut tr[data-id="${CSS.escape(rivi.dataset.id)}"]`);
+    if (kohde) {
+      kohde.scrollIntoView({ behavior: "smooth", block: "center" });
+      kohde.classList.add("korostus");
+    }
+  });
 }
 
 // ---------- GitHub API ----------
@@ -709,10 +978,18 @@ function pelaajaRivi(ottelu, pelaaja) {
   const pelattu = onPelattu(pelaaja.id, vetotyyppi)
     ? ` <span class="pelattu" title="Tästä on jo tallennettu veto">pelattu</span>` : "";
 
-  const kerroinTeksti = kertoimet[kerroinAvain(pelaaja.id, vetotyyppi)] || "";
+  // Oma syötetty kerroin ensin, muuten Kambin (Unibet/Paf/LeoVegas) kerroin
+  const omaKerroin = kertoimet[kerroinAvain(pelaaja.id, vetotyyppi)];
+  const kambi = pelaajanKertoimet(ottelu, pelaaja)[vetotyyppi];
+  const kambista = !omaKerroin && Boolean(kambi);
+  const kerroinTeksti = omaKerroin || (kambi ? desimaali(kambi.kerroin, 2) : "");
+  // Unibetin kerroin näkyy aina vertailuna, vaikka olisi syöttänyt oman (esim. EpicBet)
+  const kambiTieto = kambi
+    ? `<div class="kambi-tieto">${KAMBI_YHTIO} ${desimaali(kambi.kerroin, 2)}${kambi.markkina !== null ? " · markkina " + tnTekstina(kambi.markkina) : ""}</div>`
+    : "";
 
   return `
-    <tr data-avain="${suojaa(ottelu.avain)}" data-id="${suojaa(pelaaja.id)}">
+    <tr data-avain="${suojaa(ottelu.avain)}" data-id="${suojaa(pelaaja.id)}"${kambista ? ' data-lahde="kambi"' : ""}>
       <td class="nimi">${suojaa(pelaaja.nimi)}${nousija}${pelattu}</td>
       <td>${suojaa(pelaaja.joukkue)}</td>
       <td>${suojaa(pelaaja.pp)}</td>
@@ -725,7 +1002,7 @@ function pelaajaRivi(ottelu, pelaaja) {
       <td class="valittu">${tnTekstina(tn)}</td>
       <td class="valittu">${rajakerroinTekstina(tn)}</td>
       <td class="valittu"><input class="kerroin-syotto" type="text" inputmode="decimal"
-        autocomplete="off" placeholder="kerroin" value="${suojaa(kerroinTeksti)}"></td>
+        autocomplete="off" placeholder="kerroin" value="${suojaa(kerroinTeksti)}">${kambiTieto}</td>
       <td class="valittu value-solu"></td>
       <td class="tallenna-solu"></td>
     </tr>`;
@@ -799,6 +1076,8 @@ function naytaOttelut() {
   for (const rivi of kohde.querySelectorAll("tr[data-id]")) {
     paivitaValue(rivi);
   }
+
+  naytaVihjeet();
 }
 
 function etsiOttelu(avain) {
@@ -850,7 +1129,8 @@ function avaaTallennuslomake(rivi) {
     return;
   }
 
-  const viimeYhtio = lueMuisti(YHTIO_AVAIN) || YHTIOT[0];
+  // Kambin kerroin -> Unibet oletuksena, muuten viimeksi käytetty yhtiö
+  const viimeYhtio = rivi.dataset.lahde === "kambi" ? KAMBI_YHTIO : (lueMuisti(YHTIO_AVAIN) || YHTIOT[0]);
   let vaihtoehdot = "";
   for (const yhtio of YHTIOT) {
     vaihtoehdot += `<option${yhtio === viimeYhtio ? " selected" : ""}>${yhtio}</option>`;
@@ -977,7 +1257,10 @@ function kytkeOttelutapahtumat() {
     if (syotto.value.trim() === "") delete kertoimet[avain];
     else kertoimet[avain] = syotto.value.trim();
     kirjoitaMuisti(KERROIN_AVAIN, JSON.stringify(kertoimet));
+    // Itse syötetty kerroin ei ole enää Kambin kerroin (Unibetin kerroin jää näkyviin vertailuksi)
+    delete rivi.dataset.lahde;
     paivitaValue(rivi);
+    naytaVihjeet();                   // oma parempi kerroin voi nostaa pelaajan vihjeeksi
   });
 
   kohde.addEventListener("change", tapahtuma => {
@@ -1101,6 +1384,79 @@ async function poistaVeto(nappi) {
 
 // ---------- Näkymä: kalibraatio ----------
 
+// Vihjeiden seuranta: mitä vihjelista olisi tuottanut Unibetin kertoimilla, jos
+// jokaiseen vihjeeseen olisi laitettu sama panos. Ennusteet ja kertoimet tallentaa
+// pelaajamalli.py ennen peliä, tulokset tarkista_tulokset.py pelin jälkeen.
+function laskeSeuranta(varjo) {
+  const sarakkeet = { "maalit_1": 1, "syotot_1": 2, "pisteet_1": 3, "pisteet_2": 4 };  // paikka ennusteissa
+  const ryhmat = {};
+  const lisaa = (nimi, osui, kerroin) => {
+    const r = ryhmat[nimi] || (ryhmat[nimi] = { n: 0, osui: 0, voitto: 0 });
+    r.n += 1;
+    if (osui) r.osui += 1;
+    r.voitto += osui ? kerroin - 1 : -1;
+  };
+
+  for (const peli of Object.values(varjo || {})) {
+    if (!peli || !Array.isArray(peli.tulokset) || !peli.kertoimet) continue;
+    const tulokset = {};
+    for (const [id, maalit, syotot] of peli.tulokset) tulokset[id] = [maalit, syotot];
+
+    for (const rivi of peli.ennusteet || []) {
+      const id = rivi[0];
+      const kertoimetPelaaja = peli.kertoimet[String(id)];
+      if (!kertoimetPelaaja || !(id in tulokset)) continue;     // ei kokoonpanossa = mitätöity
+      const [maalit, syotot] = tulokset[id];
+      const toteuma = { maalit_1: maalit >= 1, syotot_1: syotot >= 1,
+                        pisteet_1: maalit + syotot >= 1, pisteet_2: maalit + syotot >= 2 };
+      for (const avain in sarakkeet) {
+        const tn = rivi[sarakkeet[avain]];
+        const kerroinTieto = kertoimetPelaaja[avain];
+        if (typeof tn !== "number" || !kerroinTieto) continue;
+        const [kerroin, markkina] = kerroinTieto;
+        if (tn * kerroin < 1 + VIHJE_MARGINAALI) continue;      // ei vihje
+        lisaa(VETOTYYPIT[avain], toteuma[avain], kerroin);
+        lisaa("Kaikki vihjeet", toteuma[avain], kerroin);
+        const ristiriita = markkina !== null && tn - markkina > VIHJE_RISTIRIITA;
+        lisaa(ristiriita ? "Vain ⚠-vihjeet" : "Ilman ⚠-vihjeitä", toteuma[avain], kerroin);
+      }
+    }
+  }
+  return ryhmat;
+}
+
+function seurantaKortti(varjo) {
+  const ryhmat = laskeSeuranta(varjo);
+  const jarjestys = ["Kaikki vihjeet", "Ilman ⚠-vihjeitä", "Vain ⚠-vihjeet",
+                     "Maali 1+", "Syöttö 1+", "Piste 1+", "Piste 2+"];
+  let rivit = "";
+  for (const nimi of jarjestys) {
+    const r = ryhmat[nimi];
+    if (!r) continue;
+    const roi = r.voitto / r.n * 100;
+    const luokka = roi >= 0 ? "plus" : "miinus";
+    rivit += `
+      <tr>
+        <td>${nimi}</td>
+        <td>${r.osui}/${r.n}</td>
+        <td class="${luokka}">${prosenttina(roi)}</td>
+      </tr>`;
+  }
+  if (rivit === "") {
+    rivit = `<tr><td colspan="3">Ei vielä ratkaistuja vihjeitä</td></tr>`;
+  }
+  return `
+    <div class="erittely-kortti">
+      <h2>Vihjeiden seuranta (${KAMBI_YHTIOT})</h2>
+      <p class="selite">Mitä vihjelista olisi tuottanut, jos jokaiseen vihjeeseen olisi laittanut saman panoksen.
+        Luotettava arvio vaatii satoja vihjeitä.</p>
+      <table>
+        <thead><tr><th></th><th>Osumat</th><th>ROI</th></tr></thead>
+        <tbody>${rivit}</tbody>
+      </table>
+    </div>`;
+}
+
 function naytaKalibraatio(varjoTulos) {
   const kohde = document.getElementById("pelaaja-kalibraatio");
   if (varjoTulos.tila !== "ok") {
@@ -1140,6 +1496,7 @@ function naytaKalibraatio(varjoTulos) {
   }
 
   kohde.innerHTML = `
+    ${seurantaKortti(varjoTulos.data)}
     <h2 class="osio-otsikko">Mallin kalibraatio</h2>
     <p class="selite valkoinen">Kun malli sanoo 40 %, pitäisi toteutua noin 40 %. Ratkaistuja pelejä ${pelit}.</p>
     <div class="kalibraatio-ruudukko">${kortit}</div>`;
@@ -1222,6 +1579,7 @@ function naytaValilehti() {
 // Node-testeissä document puuttuu: silloin vain apufunktiot ladataan
 if (typeof document !== "undefined") {
   kytkeOttelutapahtumat();
+  kytkeVihjeet();
   kytkeAsetukset();
   window.addEventListener("hashchange", naytaValilehti);
   naytaValilehti();

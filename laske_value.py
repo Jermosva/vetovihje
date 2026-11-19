@@ -86,6 +86,7 @@ loydetyt = []     # vedot, jotka ylittävät rajat -> oikeaan kirjanpitoon
 ehdokkaat = []    # kaikki positiiviset valuet -> varjokirjanpitoon
 nykyiset = {}     # (ottelun id, vetotyyppi, valinta) -> markkinan todennäköisyys nyt
 valimuisti = {}   # liiga.fi:n otteluohjelma ja kokoonpanot haetaan vain kerran per ajo
+odotukset = {}    # ottelun id -> mallin odotetut maalit (koti, vieras) tai None
 
 # ===== FUNKTIOT =====
 def markkinan_tyyppi(markkina, ottelu):
@@ -162,9 +163,15 @@ def liigan_aloittajat(ottelu, m_koti, m_vieras):
     return tulos
 
 
-def mallin_arviot(ottelu, tyyppi):
-    # Palauttaa mallin todennäköisyydet tämän vetotyypin vaihtoehdoille,
-    # esim. {"Ilves": 0.55, "Sport": 0.45}. None = malli ei osaa arvioida.
+def mallin_odotukset(ottelu):
+    # Joukkueiden odotetut maalit (60 min) ottelussa: (koti, vieras).
+    # None = malli ei osaa arvioida. Lasketaan kerran per ottelu (tulosteet vain kerran).
+    if ottelu["id"] not in odotukset:
+        odotukset[ottelu["id"]] = laske_odotukset(ottelu)
+    return odotukset[ottelu["id"]]
+
+
+def laske_odotukset(ottelu):
     sarja = ottelu["sport_title"]
     if sarja not in PMALLIT:
         return None
@@ -213,7 +220,19 @@ def mallin_arviot(ottelu, tyyppi):
         lk *= 1 - mv_paino * vieras_taso
         lv *= 1 - mv_paino * koti_taso
         print(f"    (maalivahdit: koti {koti_taso:+.3f}, vieras {vieras_taso:+.3f})")
-    t = todennakoisyydet(lk, lv, pmalli["tasapelikerroin"])
+    return lk, lv
+
+
+def mallin_arviot(ottelu, tyyppi):
+    # Palauttaa mallin todennäköisyydet tämän vetotyypin vaihtoehdoille,
+    # esim. {"Ilves": 0.55, "Sport": 0.45}. None = malli ei osaa arvioida.
+    maalit = mallin_odotukset(ottelu)
+    if maalit is None:
+        return None
+    lk, lv = maalit
+    koti = ottelu["home_team"]
+    vieras = ottelu["away_team"]
+    t = todennakoisyydet(lk, lv, PMALLIT[ottelu["sport_title"]]["tasapelikerroin"])
     jakauma = t["jakauma"]
 
     if tyyppi == "Voittaja":
@@ -240,7 +259,7 @@ def mallin_arviot(ottelu, tyyppi):
 
 
 def tee_veto(ottelu, tyyppi, valinta, kerroin, yhtio, value, lahde):
-    return {
+    veto = {
         "sarja": ottelu["sport_title"],
         "id": ottelu["id"],
         "alkaa": ottelu["commence_time"],
@@ -252,6 +271,11 @@ def tee_veto(ottelu, tyyppi, valinta, kerroin, yhtio, value, lahde):
         "value": round(value, 1),
         "lahde": lahde,
     }
+    # Mallin odotetut maalit (60 min) sivulle, jos malli osaa arvioida ottelun
+    maalit = mallin_odotukset(ottelu)
+    if maalit is not None:
+        veto["odotetut"] = [round(maalit[0], 2), round(maalit[1], 2)]
+    return veto
 
 def paivita_clv(vedot):
     # CLV = kuinka hyvä saamamme kerroin on markkinan UUSIMMAN arvion mukaan.
