@@ -1817,8 +1817,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-19",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "osui",
+    "versio": 8,
+    "voitto": 24.5
   },
   {
     "sarja": "SHL",
@@ -1835,5 +1836,53 @@
     "panos": 10,
     "tila": "avoin",
     "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "3449054d3b59c2c7fc8cf914dbd45ea6",
+    "alkaa": "2026-11-20T00:10:00Z",
+    "ottelu": "Carolina Hurricanes - Montréal Canadiens",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 5.22,
+    "yhtio": "1xBet",
+    "value": 7.3,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "84d6f3a55d9aac25cd001f3d94aab44b",
+    "alkaa": "2026-11-20T00:10:00Z",
+    "ottelu": "Ottawa Senators - Philadelphia Flyers",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.61,
+    "yhtio": "1xBet",
+    "value": 5.5,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "8689e63a36a8d62c4eba2fc402bb4f0c",
+    "alkaa": "2026-11-20T02:10:00Z",
+    "ottelu": "Colorado Avalanche - Anaheim Ducks",
+    "tyyppi": "Voittaja",
+    "valinta": "Anaheim Ducks",
+    "kerroin": 2.27,
+    "yhtio": "Veikkaus (FI)",
+    "value": 3.9,
+    "lahde": "Pinnacle",
+    "pvm": "2026-11-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
   }
 ]

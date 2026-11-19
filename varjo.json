@@ -14693,7 +14693,10 @@
     "pvm": "2026-11-19",
     "panos": 10,
     "tila": "avoin",
-    "versio": 8
+    "versio": 8,
+    "reilu_nyt": 0.1969,
+    "clv": -2.5,
+    "clv_aika": "2026-11-19T11:45:54.706206+00:00"
   },
   {
     "sarja": "NHL",
@@ -14708,8 +14711,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-19",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -14724,8 +14728,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-19",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "osui",
+    "versio": 8,
+    "voitto": 6.2
   },
   {
     "sarja": "NHL",
@@ -14740,8 +14745,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-19",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "osui",
+    "versio": 8,
+    "voitto": 24.5
   },
   {
     "sarja": "NHL",
@@ -14756,8 +14762,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-19",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -14772,8 +14779,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-19",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "osui",
+    "versio": 8,
+    "voitto": 24.5
   },
   {
     "sarja": "NHL",
@@ -14788,8 +14796,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-19",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -14804,8 +14813,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-19",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "osui",
+    "versio": 8,
+    "voitto": 14.6
   },
   {
     "sarja": "NHL",
@@ -14820,8 +14830,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-19",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -14836,8 +14847,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-19",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -14852,8 +14864,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-19",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "osui",
+    "versio": 8,
+    "voitto": 8.0
   },
   {
     "sarja": "NHL",
@@ -14868,8 +14881,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-19",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -14884,8 +14898,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-19",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -14900,8 +14915,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-19",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -14916,8 +14932,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-19",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 8
+    "tila": "ei osunut",
+    "versio": 8,
+    "voitto": -10
   },
   {
     "sarja": "SHL",
@@ -15062,5 +15079,341 @@
     "panos": 10,
     "tila": "avoin",
     "versio": 8
+  },
+  {
+    "sarja": "NHL",
+    "id": "3449054d3b59c2c7fc8cf914dbd45ea6",
+    "alkaa": "2026-11-20T00:10:00Z",
+    "ottelu": "Carolina Hurricanes - Montréal Canadiens",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 5.22,
+    "yhtio": "1xBet",
+    "value": 4.0,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "3449054d3b59c2c7fc8cf914dbd45ea6",
+    "alkaa": "2026-11-20T00:10:00Z",
+    "ottelu": "Carolina Hurricanes - Montréal Canadiens",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 5.22,
+    "yhtio": "1xBet",
+    "value": 7.3,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "7bca03cc186cb70bd12d060ededa8842",
+    "alkaa": "2026-11-20T00:10:00Z",
+    "ottelu": "Toronto Maple Leafs - Los Angeles Kings",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.47,
+    "yhtio": "1xBet",
+    "value": 1.5,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "7bca03cc186cb70bd12d060ededa8842",
+    "alkaa": "2026-11-20T00:10:00Z",
+    "ottelu": "Toronto Maple Leafs - Los Angeles Kings",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.47,
+    "yhtio": "1xBet",
+    "value": 3.8,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "6675090a33dca8b7f340ea6375fb84e9",
+    "alkaa": "2026-11-20T00:10:00Z",
+    "ottelu": "Winnipeg Jets - New York Islanders",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.46,
+    "yhtio": "1xBet",
+    "value": 0.7,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "6675090a33dca8b7f340ea6375fb84e9",
+    "alkaa": "2026-11-20T00:10:00Z",
+    "ottelu": "Winnipeg Jets - New York Islanders",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.46,
+    "yhtio": "1xBet",
+    "value": 3.7,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "84d6f3a55d9aac25cd001f3d94aab44b",
+    "alkaa": "2026-11-20T00:10:00Z",
+    "ottelu": "Ottawa Senators - Philadelphia Flyers",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.61,
+    "yhtio": "1xBet",
+    "value": 2.3,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "84d6f3a55d9aac25cd001f3d94aab44b",
+    "alkaa": "2026-11-20T00:10:00Z",
+    "ottelu": "Ottawa Senators - Philadelphia Flyers",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.61,
+    "yhtio": "1xBet",
+    "value": 5.5,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "8cd65f19317595a31a8e98aee88027a5",
+    "alkaa": "2026-11-20T00:10:00Z",
+    "ottelu": "Pittsburgh Penguins - St Louis Blues",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.46,
+    "yhtio": "1xBet",
+    "value": 1.6,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "147b0b6f883cce916d06b7aaa9b9594c",
+    "alkaa": "2026-11-20T00:40:00Z",
+    "ottelu": "Tampa Bay Lightning - Edmonton Oilers",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.52,
+    "yhtio": "1xBet",
+    "value": 0.5,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "147b0b6f883cce916d06b7aaa9b9594c",
+    "alkaa": "2026-11-20T00:40:00Z",
+    "ottelu": "Tampa Bay Lightning - Edmonton Oilers",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.52,
+    "yhtio": "1xBet",
+    "value": 2.5,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "3e6894e350f62db024db622aedba4507",
+    "alkaa": "2026-11-20T01:10:00Z",
+    "ottelu": "Calgary Flames - Minnesota Wild",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.82,
+    "yhtio": "1xBet",
+    "value": 1.5,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "7f30902099116c9c5824e85201be7d60",
+    "alkaa": "2026-11-20T01:10:00Z",
+    "ottelu": "Chicago Blackhawks - Columbus Blue Jackets",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.52,
+    "yhtio": "1xBet",
+    "value": 0.1,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "7f30902099116c9c5824e85201be7d60",
+    "alkaa": "2026-11-20T01:10:00Z",
+    "ottelu": "Chicago Blackhawks - Columbus Blue Jackets",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.52,
+    "yhtio": "1xBet",
+    "value": 3.3,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "8689e63a36a8d62c4eba2fc402bb4f0c",
+    "alkaa": "2026-11-20T02:10:00Z",
+    "ottelu": "Colorado Avalanche - Anaheim Ducks",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.62,
+    "yhtio": "1xBet",
+    "value": 1.1,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "8689e63a36a8d62c4eba2fc402bb4f0c",
+    "alkaa": "2026-11-20T02:10:00Z",
+    "ottelu": "Colorado Avalanche - Anaheim Ducks",
+    "tyyppi": "1X2",
+    "valinta": "Colorado Avalanche",
+    "kerroin": 2.23,
+    "yhtio": "1xBet",
+    "value": 2.5,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "8689e63a36a8d62c4eba2fc402bb4f0c",
+    "alkaa": "2026-11-20T02:10:00Z",
+    "ottelu": "Colorado Avalanche - Anaheim Ducks",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.62,
+    "yhtio": "1xBet",
+    "value": 1.0,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "8689e63a36a8d62c4eba2fc402bb4f0c",
+    "alkaa": "2026-11-20T02:10:00Z",
+    "ottelu": "Colorado Avalanche - Anaheim Ducks",
+    "tyyppi": "Voittaja",
+    "valinta": "Anaheim Ducks",
+    "kerroin": 2.27,
+    "yhtio": "Veikkaus (FI)",
+    "value": 3.9,
+    "lahde": "Pinnacle",
+    "pvm": "2026-11-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "64955eccc864e1b34e23754d71319db4",
+    "alkaa": "2026-11-20T02:50:00Z",
+    "ottelu": "Seattle Kraken - Vancouver Canucks",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.66,
+    "yhtio": "1xBet",
+    "value": 1.6,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "64955eccc864e1b34e23754d71319db4",
+    "alkaa": "2026-11-20T02:50:00Z",
+    "ottelu": "Seattle Kraken - Vancouver Canucks",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.66,
+    "yhtio": "1xBet",
+    "value": 2.8,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "6c4d4bc698a434e4b1d5492b9bff28cb",
+    "alkaa": "2026-11-20T03:10:00Z",
+    "ottelu": "Vegas Golden Knights - Dallas Stars",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.25,
+    "yhtio": "LeoVegas (FI)",
+    "value": 0.8,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-19",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
   }
 ]
