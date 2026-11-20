@@ -168,5 +168,22 @@
     "panos": 10,
     "tn": 0.4593,
     "value": 1
+  },
+  {
+    "id": "pv-20261120-22790602-pisteet_1-iieg",
+    "pvm": "2026-11-20",
+    "avain": "2027_2701466",
+    "alkaa": "2026-11-20T16:30:00Z",
+    "ottelu": "JYP - HIFK",
+    "pelaaja_id": 22790602,
+    "pelaaja": "Iiro Pakarinen",
+    "joukkue": "HIFK",
+    "tyyppi": "pisteet",
+    "raja": 1,
+    "kerroin": 1.9,
+    "yhtio": "EpicBet",
+    "panos": 10,
+    "tn": 0.586,
+    "value": 11.3
   }
 ]
