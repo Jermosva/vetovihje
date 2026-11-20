@@ -1851,11 +1851,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-19",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 9,
     "reilu_nyt": 0.1914,
     "clv": -0.1,
-    "clv_aika": "2026-11-19T20:45:50.958967+00:00"
+    "clv_aika": "2026-11-19T20:45:50.958967+00:00",
+    "voitto": 42.2
   },
   {
     "sarja": "NHL",
@@ -1870,11 +1871,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-19",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 9,
     "reilu_nyt": 0.2227,
     "clv": 2.6,
-    "clv_aika": "2026-11-19T20:45:50.958967+00:00"
+    "clv_aika": "2026-11-19T20:45:50.958967+00:00",
+    "voitto": 36.1
   },
   {
     "sarja": "NHL",
@@ -1889,11 +1891,12 @@
     "lahde": "Pinnacle",
     "pvm": "2026-11-19",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 9,
     "reilu_nyt": 0.4631,
     "clv": 5.1,
-    "clv_aika": "2026-11-19T20:45:50.958967+00:00"
+    "clv_aika": "2026-11-19T20:45:50.958967+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -1908,8 +1911,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-19",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 9
+    "tila": "osui",
+    "versio": 9,
+    "voitto": 34.6
   },
   {
     "sarja": "NHL",
@@ -1924,8 +1928,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-19",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 9
+    "tila": "osui",
+    "versio": 9,
+    "voitto": 35.1
   },
   {
     "sarja": "NHL",
@@ -1940,8 +1945,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-19",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 9
+    "tila": "ei osunut",
+    "versio": 9,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -1956,8 +1962,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-19",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 9
+    "tila": "ei osunut",
+    "versio": 9,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -1971,6 +1978,23 @@
     "value": 5.5,
     "lahde": "Poisson-malli",
     "pvm": "2026-11-19",
+    "panos": 10,
+    "tila": "ei osunut",
+    "versio": 9,
+    "voitto": -10
+  },
+  {
+    "sarja": "Liiga",
+    "id": "0ebaa3d45d20245af5abec0f319e005a",
+    "alkaa": "2026-11-20T16:30:00Z",
+    "ottelu": "HPK - Jokerit",
+    "tyyppi": "1X2",
+    "valinta": "HPK",
+    "kerroin": 2.55,
+    "yhtio": "Coolbet",
+    "value": 4.7,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-20",
     "panos": 10,
     "tila": "avoin",
     "versio": 9
