@@ -134,5 +134,22 @@
     "panos": 10,
     "tn": 0.5172,
     "value": 11.7
+  },
+  {
+    "id": "pv-20261120-28967947-pisteet_1-9sif",
+    "pvm": "2026-11-20",
+    "avain": "2027_2701467",
+    "alkaa": "2026-11-20T16:00:00Z",
+    "ottelu": "KooKoo - Kärpät",
+    "pelaaja_id": 28967947,
+    "pelaaja": "Samuli Ratinen",
+    "joukkue": "Kärpät",
+    "tyyppi": "pisteet",
+    "raja": 1,
+    "kerroin": 2,
+    "yhtio": "EpicBet",
+    "panos": 10,
+    "tn": 0.5156,
+    "value": 3.1
   }
 ]
