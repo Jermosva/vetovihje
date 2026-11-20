@@ -153,23 +153,6 @@
     "value": 3.1
   },
   {
-    "id": "pv-20261120-28262723-pisteet_1-w77r",
-    "pvm": "2026-11-20",
-    "avain": "2027_2701464",
-    "alkaa": "2026-11-20T16:30:00Z",
-    "ottelu": "HPK - Jokerit",
-    "pelaaja_id": 28262723,
-    "pelaaja": "Patrik Virta",
-    "joukkue": "Jokerit",
-    "tyyppi": "pisteet",
-    "raja": 1,
-    "kerroin": 2.2,
-    "yhtio": "EpicBet",
-    "panos": 10,
-    "tn": 0.4593,
-    "value": 1
-  },
-  {
     "id": "pv-20261120-22790602-pisteet_1-iieg",
     "pvm": "2026-11-20",
     "avain": "2027_2701466",
