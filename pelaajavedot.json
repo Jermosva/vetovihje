@@ -219,5 +219,22 @@
     "panos": 10,
     "tn": 0.5425,
     "value": 5.2
+  },
+  {
+    "id": "pv-20261120-60963285-pisteet_1-hknl",
+    "pvm": "2026-11-20",
+    "avain": "2027_2701465",
+    "alkaa": "2026-11-20T17:30:00Z",
+    "ottelu": "Ilves - Tappara",
+    "pelaaja_id": 60963285,
+    "pelaaja": "Joachim Blichfeld",
+    "joukkue": "Tappara",
+    "tyyppi": "pisteet",
+    "raja": 1,
+    "kerroin": 2.02,
+    "yhtio": "EpicBet",
+    "panos": 10,
+    "tn": 0.5394,
+    "value": 9
   }
 ]
