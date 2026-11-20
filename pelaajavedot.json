@@ -15,5 +15,22 @@
     "panos": 10,
     "tn": 0.6459,
     "value": 4
+  },
+  {
+    "id": "pv-20261120-31275998-pisteet_1-xl0j",
+    "pvm": "2026-11-20",
+    "avain": "2027_2701464",
+    "alkaa": "2026-11-20T16:30:00Z",
+    "ottelu": "HPK - Jokerit",
+    "pelaaja_id": 31275998,
+    "pelaaja": "Alexander Forslund",
+    "joukkue": "Jokerit",
+    "tyyppi": "pisteet",
+    "raja": 1,
+    "kerroin": 1.91,
+    "yhtio": "EpicBet",
+    "panos": 10,
+    "tn": 0.6037,
+    "value": 15.3
   }
 ]
