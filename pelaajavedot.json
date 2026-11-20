@@ -304,5 +304,22 @@
     "panos": 10,
     "tn": 0.3428,
     "value": 49.1
+  },
+  {
+    "id": "pv-20261120-32675788-maalit_1-pz1g",
+    "pvm": "2026-11-20",
+    "avain": "2027_2701466",
+    "alkaa": "2026-11-20T16:30:00Z",
+    "ottelu": "JYP - HIFK",
+    "pelaaja_id": 32675788,
+    "pelaaja": "Daniel Mäkiaho",
+    "joukkue": "HIFK",
+    "tyyppi": "maalit",
+    "raja": 1,
+    "kerroin": 3.19,
+    "yhtio": "EpicBet",
+    "panos": 10,
+    "tn": 0.3736,
+    "value": 19.2
   }
 ]
