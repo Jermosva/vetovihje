@@ -185,5 +185,22 @@
     "panos": 10,
     "tn": 0.586,
     "value": 11.3
+  },
+  {
+    "id": "pv-20261120-32701115-pisteet_1-ieu4",
+    "pvm": "2026-11-20",
+    "avain": "2027_2701466",
+    "alkaa": "2026-11-20T16:30:00Z",
+    "ottelu": "JYP - HIFK",
+    "pelaaja_id": 32701115,
+    "pelaaja": "Niko Huuhtanen",
+    "joukkue": "HIFK",
+    "tyyppi": "pisteet",
+    "raja": 1,
+    "kerroin": 1.97,
+    "yhtio": "EpicBet",
+    "panos": 10,
+    "tn": 0.5297,
+    "value": 4.4
   }
 ]
