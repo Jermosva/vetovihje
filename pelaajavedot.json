@@ -49,5 +49,22 @@
     "panos": 10,
     "tn": 0.5121,
     "value": 28
+  },
+  {
+    "id": "pv-20261120-61083288-pisteet_1-s4iu",
+    "pvm": "2026-11-20",
+    "avain": "2027_2701283",
+    "alkaa": "2026-11-20T16:30:00Z",
+    "ottelu": "Pelicans - Lukko",
+    "pelaaja_id": 61083288,
+    "pelaaja": "Liam Hawel",
+    "joukkue": "Pelicans",
+    "tyyppi": "pisteet",
+    "raja": 1,
+    "kerroin": 2.2,
+    "yhtio": "EpicBet",
+    "panos": 10,
+    "tn": 0.5,
+    "value": 10
   }
 ]
