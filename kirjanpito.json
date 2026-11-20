@@ -1996,7 +1996,8 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-20",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 9
+    "tila": "osui",
+    "versio": 9,
+    "voitto": 15.5
   }
 ]
