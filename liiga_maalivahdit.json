@@ -17576,5 +17576,71 @@
    "nimi": "Joni Ortio"
   },
   "vaihtoja": 0
+ },
+ "2027_2701467": {
+  "koti": {
+   "id": 31267715,
+   "nimi": "Eetu Randelin"
+  },
+  "vieras": {
+   "id": 40115271,
+   "nimi": "Visa Vedenpää"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701283": {
+  "koti": {
+   "id": 60862726,
+   "nimi": "Frantisek Poletin"
+  },
+  "vieras": {
+   "id": 25113956,
+   "nimi": "Antti Raanta"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701464": {
+  "koti": {
+   "id": 40107053,
+   "nimi": "Kim Saarinen"
+  },
+  "vieras": {
+   "id": 21919594,
+   "nimi": "Tomi Karhunen"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701466": {
+  "koti": {
+   "id": 23249408,
+   "nimi": "Oskari Setänen"
+  },
+  "vieras": {
+   "id": 61009805,
+   "nimi": "Hugo Alnefelt"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701468": {
+  "koti": {
+   "id": 33502782,
+   "nimi": "Kari Piiroinen"
+  },
+  "vieras": {
+   "id": 40103808,
+   "nimi": "Noa Vali"
+  },
+  "vaihtoja": 1
+ },
+ "2027_2701465": {
+  "koti": {
+   "id": 61011727,
+   "nimi": "Mantas Armalis"
+  },
+  "vieras": {
+   "id": 22558763,
+   "nimi": "Juha Metsola"
+  },
+  "vaihtoja": 0
  }
 }
