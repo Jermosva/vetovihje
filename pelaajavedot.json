@@ -236,5 +236,22 @@
     "panos": 10,
     "tn": 0.3736,
     "value": 19.2
+  },
+  {
+    "id": "pv-20261121-24783853-pisteet_1-fmds",
+    "pvm": "2026-11-21",
+    "avain": "2027_2701470",
+    "alkaa": "2026-11-21T15:00:00Z",
+    "ottelu": "Jukurit - TPS",
+    "pelaaja_id": 24783853,
+    "pelaaja": "Alex Lintuniemi",
+    "joukkue": "Jukurit",
+    "tyyppi": "pisteet",
+    "raja": 1,
+    "kerroin": 2.32,
+    "yhtio": "EpicBet",
+    "panos": 10,
+    "tn": 0.4471,
+    "value": 3.7
   }
 ]
