@@ -287,5 +287,22 @@
     "panos": 10,
     "tn": 0.5668,
     "value": 7.7
+  },
+  {
+    "id": "pv-20261121-40113846-maalit_1-ks31",
+    "pvm": "2026-11-21",
+    "avain": "2027_2701471",
+    "alkaa": "2026-11-21T15:00:00Z",
+    "ottelu": "KalPa - HIFK",
+    "pelaaja_id": 40113846,
+    "pelaaja": "Joona Saarelainen",
+    "joukkue": "KalPa",
+    "tyyppi": "maalit",
+    "raja": 1,
+    "kerroin": 4.14,
+    "yhtio": "EpicBet",
+    "panos": 10,
+    "tn": 0.2954,
+    "value": 22.3
   }
 ]
