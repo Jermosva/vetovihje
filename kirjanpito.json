@@ -1999,5 +1999,53 @@
     "tila": "osui",
     "versio": 9,
     "voitto": 15.5
+  },
+  {
+    "sarja": "Liiga",
+    "id": "e431bec344614ed79dc9b004820f8f79",
+    "alkaa": "2026-11-21T15:00:00Z",
+    "ottelu": "Lukko - HPK",
+    "tyyppi": "Voittaja",
+    "valinta": "HPK",
+    "kerroin": 3.5,
+    "yhtio": "Veikkaus (FI)",
+    "value": 4.8,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-21",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "Liiga",
+    "id": "a8b734e01272e015a486e5720babf3cc",
+    "alkaa": "2026-11-21T15:00:00Z",
+    "ottelu": "Jukurit - TPS",
+    "tyyppi": "1X2",
+    "valinta": "Jukurit",
+    "kerroin": 2.2,
+    "yhtio": "Coolbet",
+    "value": 5.4,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-21",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "Liiga",
+    "id": "2fbaf61953c0b6c92a3294675ee0b9d3",
+    "alkaa": "2026-11-21T15:00:00Z",
+    "ottelu": "Sport - Pelicans",
+    "tyyppi": "1X2",
+    "valinta": "Pelicans",
+    "kerroin": 3.45,
+    "yhtio": "Coolbet",
+    "value": 4.7,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-21",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
   }
 ]
