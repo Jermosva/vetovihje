@@ -304,5 +304,22 @@
     "panos": 10,
     "tn": 0.2954,
     "value": 22.3
+  },
+  {
+    "id": "pv-20261121-33866651-syotot_1-grbl",
+    "pvm": "2026-11-21",
+    "avain": "2027_2701471",
+    "alkaa": "2026-11-21T15:00:00Z",
+    "ottelu": "KalPa - HIFK",
+    "pelaaja_id": 33866651,
+    "pelaaja": "Konsta Kapanen",
+    "joukkue": "KalPa",
+    "tyyppi": "syotot",
+    "raja": 1,
+    "kerroin": 3.2,
+    "yhtio": "EpicBet",
+    "panos": 10,
+    "tn": 0.3134,
+    "value": 0.3
   }
 ]
