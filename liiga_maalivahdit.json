@@ -17653,5 +17653,60 @@
    "nimi": "Jan Bednar"
   },
   "vaihtoja": 0
+ },
+ "2027_2701469": {
+  "koti": {
+   "id": 40056206,
+   "nimi": "Masi Härkönen"
+  },
+  "vieras": {
+   "id": 60862726,
+   "nimi": "Frantisek Poletin"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701470": {
+  "koti": {
+   "id": 61073543,
+   "nimi": "Jesper Myrenberg"
+  },
+  "vieras": {
+   "id": 29857823,
+   "nimi": "Markus Ruusu"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701471": {
+  "koti": {
+   "id": 32581335,
+   "nimi": "Rasmus Korhonen"
+  },
+  "vieras": {
+   "id": 61009805,
+   "nimi": "Hugo Alnefelt"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701473": {
+  "koti": {
+   "id": 60660609,
+   "nimi": "Niklas Rubin"
+  },
+  "vieras": {
+   "id": 61074401,
+   "nimi": "Olle Eriksson Ek"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701474": {
+  "koti": {
+   "id": 40050277,
+   "nimi": "Daniel Salonen"
+  },
+  "vieras": {
+   "id": 40107053,
+   "nimi": "Kim Saarinen"
+  },
+  "vaihtoja": 0
  }
 }
