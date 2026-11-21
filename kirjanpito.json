@@ -2013,8 +2013,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-21",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 9
+    "tila": "ei osunut",
+    "versio": 9,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -2029,8 +2030,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-21",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 9
+    "tila": "ei osunut",
+    "versio": 9,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -2045,7 +2047,8 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-21",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 9
+    "tila": "ei osunut",
+    "versio": 9,
+    "voitto": -10
   }
 ]
