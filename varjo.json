@@ -16839,11 +16839,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-21",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 9,
     "reilu_nyt": 0.4707,
     "clv": 7.8,
-    "clv_aika": "2026-11-22T11:45:51.870750+00:00"
+    "clv_aika": "2026-11-22T11:45:51.870750+00:00",
+    "voitto": 12.9
   },
   {
     "sarja": "NHL",
@@ -16858,8 +16859,9 @@
     "lahde": "Pinnacle",
     "pvm": "2026-11-22",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 9
+    "tila": "ei osunut",
+    "versio": 9,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -16874,8 +16876,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-22",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 9
+    "tila": "ei osunut",
+    "versio": 9,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -16891,7 +16894,10 @@
     "pvm": "2026-11-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 9
+    "versio": 9,
+    "reilu_nyt": 0.2423,
+    "clv": -0.7,
+    "clv_aika": "2026-11-22T20:45:44.715431+00:00"
   },
   {
     "sarja": "NHL",
@@ -16907,7 +16913,10 @@
     "pvm": "2026-11-22",
     "panos": 10,
     "tila": "avoin",
-    "versio": 9
+    "versio": 9,
+    "reilu_nyt": 0.2079,
+    "clv": -0.2,
+    "clv_aika": "2026-11-22T20:45:44.715431+00:00"
   },
   {
     "sarja": "NHL",
@@ -16919,6 +16928,57 @@
     "kerroin": 4.3,
     "yhtio": "1xBet",
     "value": 1.0,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-22",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9,
+    "reilu_nyt": 0.231,
+    "clv": -0.7,
+    "clv_aika": "2026-11-22T20:45:44.715431+00:00"
+  },
+  {
+    "sarja": "NHL",
+    "id": "d58a81d96dc96c937a865548f3a1a7c5",
+    "alkaa": "2026-11-23T00:10:00Z",
+    "ottelu": "Dallas Stars - Pittsburgh Penguins",
+    "tyyppi": "Voittaja",
+    "valinta": "Pittsburgh Penguins",
+    "kerroin": 3.25,
+    "yhtio": "Veikkaus (FI)",
+    "value": 6.9,
+    "lahde": "Pinnacle",
+    "pvm": "2026-11-22",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "d58a81d96dc96c937a865548f3a1a7c5",
+    "alkaa": "2026-11-23T00:10:00Z",
+    "ottelu": "Dallas Stars - Pittsburgh Penguins",
+    "tyyppi": "Voittaja",
+    "valinta": "Pittsburgh Penguins",
+    "kerroin": 3.25,
+    "yhtio": "Veikkaus (FI)",
+    "value": 9.2,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-22",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "7472170e7ddebcf27cc4e03a8b32edcc",
+    "alkaa": "2026-11-23T00:10:00Z",
+    "ottelu": "St Louis Blues - Edmonton Oilers",
+    "tyyppi": "1X2",
+    "valinta": "Edmonton Oilers",
+    "kerroin": 2.71,
+    "yhtio": "1xBet",
+    "value": 1.2,
     "lahde": "Poisson-malli",
     "pvm": "2026-11-22",
     "panos": 10,

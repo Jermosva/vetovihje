@@ -2050,5 +2050,21 @@
     "tila": "ei osunut",
     "versio": 9,
     "voitto": -10
+  },
+  {
+    "sarja": "NHL",
+    "id": "d58a81d96dc96c937a865548f3a1a7c5",
+    "alkaa": "2026-11-23T00:10:00Z",
+    "ottelu": "Dallas Stars - Pittsburgh Penguins",
+    "tyyppi": "Voittaja",
+    "valinta": "Pittsburgh Penguins",
+    "kerroin": 3.25,
+    "yhtio": "Veikkaus (FI)",
+    "value": 9.2,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-22",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
   }
 ]
