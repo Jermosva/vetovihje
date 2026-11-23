@@ -2067,5 +2067,21 @@
     "tila": "ei osunut",
     "versio": 9,
     "voitto": -10
+  },
+  {
+    "sarja": "NHL",
+    "id": "43376208ec2111794696249fe50f5e84",
+    "alkaa": "2026-11-24T03:10:00Z",
+    "ottelu": "San Jose Sharks - Minnesota Wild",
+    "tyyppi": "Voittaja",
+    "valinta": "San Jose Sharks",
+    "kerroin": 2.68,
+    "yhtio": "Veikkaus (FI)",
+    "value": 4.6,
+    "lahde": "Pinnacle",
+    "pvm": "2026-11-23",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
   }
 ]

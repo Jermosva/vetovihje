@@ -17005,7 +17005,10 @@
     "pvm": "2026-11-23",
     "panos": 10,
     "tila": "avoin",
-    "versio": 9
+    "versio": 9,
+    "reilu_nyt": 0.262,
+    "clv": -1.8,
+    "clv_aika": "2026-11-23T20:45:46.768788+00:00"
   },
   {
     "sarja": "NHL",
@@ -17021,7 +17024,10 @@
     "pvm": "2026-11-23",
     "panos": 10,
     "tila": "avoin",
-    "versio": 9
+    "versio": 9,
+    "reilu_nyt": 0.2071,
+    "clv": -0.6,
+    "clv_aika": "2026-11-23T20:45:46.768788+00:00"
   },
   {
     "sarja": "NHL",
@@ -17037,7 +17043,10 @@
     "pvm": "2026-11-23",
     "panos": 10,
     "tila": "avoin",
-    "versio": 9
+    "versio": 9,
+    "reilu_nyt": 0.2032,
+    "clv": -4.5,
+    "clv_aika": "2026-11-23T20:45:46.768788+00:00"
   },
   {
     "sarja": "NHL",
@@ -17053,7 +17062,10 @@
     "pvm": "2026-11-23",
     "panos": 10,
     "tila": "avoin",
-    "versio": 9
+    "versio": 9,
+    "reilu_nyt": 0.3198,
+    "clv": -1.2,
+    "clv_aika": "2026-11-23T20:45:46.768788+00:00"
   },
   {
     "sarja": "NHL",
@@ -17069,7 +17081,10 @@
     "pvm": "2026-11-23",
     "panos": 10,
     "tila": "avoin",
-    "versio": 9
+    "versio": 9,
+    "reilu_nyt": 0.2177,
+    "clv": -2.1,
+    "clv_aika": "2026-11-23T20:45:46.768788+00:00"
   },
   {
     "sarja": "NHL",
@@ -17085,7 +17100,10 @@
     "pvm": "2026-11-23",
     "panos": 10,
     "tila": "avoin",
-    "versio": 9
+    "versio": 9,
+    "reilu_nyt": 0.2114,
+    "clv": -2.8,
+    "clv_aika": "2026-11-23T20:45:46.768788+00:00"
   },
   {
     "sarja": "NHL",
@@ -17101,7 +17119,10 @@
     "pvm": "2026-11-23",
     "panos": 10,
     "tila": "avoin",
-    "versio": 9
+    "versio": 9,
+    "reilu_nyt": 0.2239,
+    "clv": -1.5,
+    "clv_aika": "2026-11-23T20:45:46.768788+00:00"
   },
   {
     "sarja": "NHL",
@@ -17117,7 +17138,10 @@
     "pvm": "2026-11-23",
     "panos": 10,
     "tila": "avoin",
-    "versio": 9
+    "versio": 9,
+    "reilu_nyt": 0.5103,
+    "clv": -3.5,
+    "clv_aika": "2026-11-23T20:45:46.768788+00:00"
   },
   {
     "sarja": "NHL",
@@ -17133,7 +17157,10 @@
     "pvm": "2026-11-23",
     "panos": 10,
     "tila": "avoin",
-    "versio": 9
+    "versio": 9,
+    "reilu_nyt": 0.5103,
+    "clv": -3.5,
+    "clv_aika": "2026-11-23T20:45:46.768788+00:00"
   },
   {
     "sarja": "NHL",
@@ -17146,6 +17173,105 @@
     "yhtio": "LeoVegas (FI)",
     "value": 0.4,
     "lahde": "Poisson-malli",
+    "pvm": "2026-11-23",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9,
+    "reilu_nyt": 0.2105,
+    "clv": 1.1,
+    "clv_aika": "2026-11-23T20:45:46.768788+00:00"
+  },
+  {
+    "sarja": "Liiga",
+    "id": "4558c8e2f0be90bc67add7ecb2e22905",
+    "alkaa": "2026-11-24T16:30:00Z",
+    "ottelu": "Ilves - Ässät",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.55,
+    "yhtio": "1xBet",
+    "value": 0.3,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-23",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "Liiga",
+    "id": "bcfc1967e7d452453d28c2029f370c3c",
+    "alkaa": "2026-11-24T16:30:00Z",
+    "ottelu": "Sport - Kiekko-Espoo",
+    "tyyppi": "1X2",
+    "valinta": "Sport",
+    "kerroin": 3.0,
+    "yhtio": "Coolbet",
+    "value": 0.0,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-23",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "Liiga",
+    "id": "bcfc1967e7d452453d28c2029f370c3c",
+    "alkaa": "2026-11-24T16:30:00Z",
+    "ottelu": "Sport - Kiekko-Espoo",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.5,
+    "yhtio": "LeoVegas (FI)",
+    "value": 0.4,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-23",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "e9429c68a48753de9779d88e6cf393ad",
+    "alkaa": "2026-11-24T00:10:00Z",
+    "ottelu": "New Jersey Devils - Columbus Blue Jackets",
+    "tyyppi": "1X2",
+    "valinta": "New Jersey Devils",
+    "kerroin": 1.89,
+    "yhtio": "1xBet",
+    "value": 0.3,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-23",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "5074be0d13d60cc7fd82b06c4d8ddd31",
+    "alkaa": "2026-11-24T02:50:00Z",
+    "ottelu": "Seattle Kraken - Anaheim Ducks",
+    "tyyppi": "Voittaja",
+    "valinta": "Seattle Kraken",
+    "kerroin": 1.92,
+    "yhtio": "Veikkaus (FI)",
+    "value": 0.7,
+    "lahde": "Pinnacle",
+    "pvm": "2026-11-23",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "43376208ec2111794696249fe50f5e84",
+    "alkaa": "2026-11-24T03:10:00Z",
+    "ottelu": "San Jose Sharks - Minnesota Wild",
+    "tyyppi": "Voittaja",
+    "valinta": "San Jose Sharks",
+    "kerroin": 2.68,
+    "yhtio": "Veikkaus (FI)",
+    "value": 4.6,
+    "lahde": "Pinnacle",
     "pvm": "2026-11-23",
     "panos": 10,
     "tila": "avoin",
