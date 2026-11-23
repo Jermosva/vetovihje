@@ -2064,7 +2064,8 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-22",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 9
+    "tila": "ei osunut",
+    "versio": 9,
+    "voitto": -10
   }
 ]
