@@ -2098,6 +2098,23 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-24",
     "panos": 10,
+    "tila": "ei osunut",
+    "versio": 9,
+    "voitto": -10
+  },
+  {
+    "sarja": "Liiga",
+    "id": "393ccfc3f52cae0d03bc73ac065c6fae",
+    "alkaa": "2026-11-25T16:30:00Z",
+    "ottelu": "Tappara - Jukurit",
+    "tyyppi": "1X2",
+    "valinta": "Jukurit",
+    "kerroin": 4.35,
+    "yhtio": "Coolbet",
+    "value": 8.1,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-24",
+    "panos": 10,
     "tila": "avoin",
     "versio": 9
   }

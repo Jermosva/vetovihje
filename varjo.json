@@ -17204,11 +17204,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-23",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 9,
     "reilu_nyt": 0.2194,
     "clv": -0.2,
-    "clv_aika": "2026-11-24T11:45:52.271270+00:00"
+    "clv_aika": "2026-11-24T11:45:52.271270+00:00",
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -17223,11 +17224,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-23",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 9,
     "reilu_nyt": 0.3326,
     "clv": -0.2,
-    "clv_aika": "2026-11-24T11:45:52.271270+00:00"
+    "clv_aika": "2026-11-24T11:45:52.271270+00:00",
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -17242,11 +17244,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-23",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 9,
     "reilu_nyt": 0.2294,
     "clv": 3.2,
-    "clv_aika": "2026-11-24T11:45:52.271270+00:00"
+    "clv_aika": "2026-11-24T11:45:52.271270+00:00",
+    "voitto": 35.0
   },
   {
     "sarja": "NHL",
@@ -17312,8 +17315,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-24",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 9
+    "tila": "ei osunut",
+    "versio": 9,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -17328,8 +17332,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-24",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 9
+    "tila": "osui",
+    "versio": 9,
+    "voitto": 7.2
   },
   {
     "sarja": "Liiga",
@@ -17344,8 +17349,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-24",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 9
+    "tila": "ei osunut",
+    "versio": 9,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -17360,8 +17366,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-24",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 9
+    "tila": "ei osunut",
+    "versio": 9,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -17376,8 +17383,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-24",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 9
+    "tila": "osui",
+    "versio": 9,
+    "voitto": 8.1
   },
   {
     "sarja": "Liiga",
@@ -17392,8 +17400,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-24",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 9
+    "tila": "ei osunut",
+    "versio": 9,
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -17408,8 +17417,9 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-24",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 9
+    "tila": "ei osunut",
+    "versio": 9,
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -17425,7 +17435,10 @@
     "pvm": "2026-11-24",
     "panos": 10,
     "tila": "avoin",
-    "versio": 9
+    "versio": 9,
+    "reilu_nyt": 0.222,
+    "clv": -1.0,
+    "clv_aika": "2026-11-24T20:45:47.732256+00:00"
   },
   {
     "sarja": "NHL",
@@ -17437,6 +17450,73 @@
     "kerroin": 4.46,
     "yhtio": "1xBet",
     "value": 3.1,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-24",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9,
+    "reilu_nyt": 0.222,
+    "clv": -1.0,
+    "clv_aika": "2026-11-24T20:45:47.732256+00:00"
+  },
+  {
+    "sarja": "Liiga",
+    "id": "ed88c790ce4d9123c6d0b02e2bfd0f9d",
+    "alkaa": "2026-11-25T16:30:00Z",
+    "ottelu": "HIFK - TPS",
+    "tyyppi": "1X2",
+    "valinta": "TPS",
+    "kerroin": 3.15,
+    "yhtio": "Coolbet",
+    "value": 0.9,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-24",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "Liiga",
+    "id": "2946924b3ecf4b762332fb72674a5278",
+    "alkaa": "2026-11-25T16:30:00Z",
+    "ottelu": "Jokerit - KooKoo",
+    "tyyppi": "1X2",
+    "valinta": "KooKoo",
+    "kerroin": 3.9,
+    "yhtio": "Coolbet",
+    "value": 2.8,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-24",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "Liiga",
+    "id": "393ccfc3f52cae0d03bc73ac065c6fae",
+    "alkaa": "2026-11-25T16:30:00Z",
+    "ottelu": "Tappara - Jukurit",
+    "tyyppi": "1X2",
+    "valinta": "Jukurit",
+    "kerroin": 4.35,
+    "yhtio": "Coolbet",
+    "value": 8.1,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-24",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "155fbdda10b6474a41649023baadfdf3",
+    "alkaa": "2026-11-25T01:10:00Z",
+    "ottelu": "Edmonton Oilers - Vegas Golden Knights",
+    "tyyppi": "1X2",
+    "valinta": "Edmonton Oilers",
+    "kerroin": 2.62,
+    "yhtio": "1xBet",
+    "value": 0.9,
     "lahde": "Poisson-malli",
     "pvm": "2026-11-24",
     "panos": 10,
