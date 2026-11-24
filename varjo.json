@@ -17004,11 +17004,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-23",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 9,
     "reilu_nyt": 0.262,
     "clv": -1.8,
-    "clv_aika": "2026-11-23T20:45:46.768788+00:00"
+    "clv_aika": "2026-11-23T20:45:46.768788+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -17023,11 +17024,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-23",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 9,
     "reilu_nyt": 0.2071,
     "clv": -0.6,
-    "clv_aika": "2026-11-23T20:45:46.768788+00:00"
+    "clv_aika": "2026-11-23T20:45:46.768788+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -17042,11 +17044,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-23",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 9,
     "reilu_nyt": 0.2032,
     "clv": -4.5,
-    "clv_aika": "2026-11-23T20:45:46.768788+00:00"
+    "clv_aika": "2026-11-23T20:45:46.768788+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -17061,11 +17064,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-23",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 9,
     "reilu_nyt": 0.3198,
     "clv": -1.2,
-    "clv_aika": "2026-11-23T20:45:46.768788+00:00"
+    "clv_aika": "2026-11-23T20:45:46.768788+00:00",
+    "voitto": 20.9
   },
   {
     "sarja": "NHL",
@@ -17080,11 +17084,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-23",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 9,
     "reilu_nyt": 0.2177,
     "clv": -2.1,
-    "clv_aika": "2026-11-23T20:45:46.768788+00:00"
+    "clv_aika": "2026-11-23T20:45:46.768788+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -17099,11 +17104,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-23",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 9,
     "reilu_nyt": 0.2114,
     "clv": -2.8,
-    "clv_aika": "2026-11-23T20:45:46.768788+00:00"
+    "clv_aika": "2026-11-23T20:45:46.768788+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -17118,11 +17124,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-23",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 9,
     "reilu_nyt": 0.2239,
     "clv": -1.5,
-    "clv_aika": "2026-11-23T20:45:46.768788+00:00"
+    "clv_aika": "2026-11-23T20:45:46.768788+00:00",
+    "voitto": -10
   },
   {
     "sarja": "NHL",
@@ -17137,11 +17144,12 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-23",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 9,
     "reilu_nyt": 0.5103,
     "clv": -3.5,
-    "clv_aika": "2026-11-23T20:45:46.768788+00:00"
+    "clv_aika": "2026-11-23T20:45:46.768788+00:00",
+    "voitto": 8.9
   },
   {
     "sarja": "NHL",
@@ -17156,11 +17164,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-23",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 9,
     "reilu_nyt": 0.5103,
     "clv": -3.5,
-    "clv_aika": "2026-11-23T20:45:46.768788+00:00"
+    "clv_aika": "2026-11-23T20:45:46.768788+00:00",
+    "voitto": 8.9
   },
   {
     "sarja": "NHL",
@@ -17175,11 +17184,12 @@
     "lahde": "Poisson-malli",
     "pvm": "2026-11-23",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "ei osunut",
     "versio": 9,
     "reilu_nyt": 0.2105,
     "clv": 1.1,
-    "clv_aika": "2026-11-23T20:45:46.768788+00:00"
+    "clv_aika": "2026-11-23T20:45:46.768788+00:00",
+    "voitto": -10
   },
   {
     "sarja": "Liiga",
@@ -17195,7 +17205,10 @@
     "pvm": "2026-11-23",
     "panos": 10,
     "tila": "avoin",
-    "versio": 9
+    "versio": 9,
+    "reilu_nyt": 0.2194,
+    "clv": -0.2,
+    "clv_aika": "2026-11-24T11:45:52.271270+00:00"
   },
   {
     "sarja": "Liiga",
@@ -17211,7 +17224,10 @@
     "pvm": "2026-11-23",
     "panos": 10,
     "tila": "avoin",
-    "versio": 9
+    "versio": 9,
+    "reilu_nyt": 0.3326,
+    "clv": -0.2,
+    "clv_aika": "2026-11-24T11:45:52.271270+00:00"
   },
   {
     "sarja": "Liiga",
@@ -17227,7 +17243,10 @@
     "pvm": "2026-11-23",
     "panos": 10,
     "tila": "avoin",
-    "versio": 9
+    "versio": 9,
+    "reilu_nyt": 0.2294,
+    "clv": 3.2,
+    "clv_aika": "2026-11-24T11:45:52.271270+00:00"
   },
   {
     "sarja": "NHL",
@@ -17242,8 +17261,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-23",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 9
+    "tila": "osui",
+    "versio": 9,
+    "voitto": 8.9
   },
   {
     "sarja": "NHL",
@@ -17258,8 +17278,9 @@
     "lahde": "Pinnacle",
     "pvm": "2026-11-23",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 9
+    "tila": "osui",
+    "versio": 9,
+    "voitto": 9.2
   },
   {
     "sarja": "NHL",
@@ -17273,6 +17294,151 @@
     "value": 4.6,
     "lahde": "Pinnacle",
     "pvm": "2026-11-23",
+    "panos": 10,
+    "tila": "ei osunut",
+    "versio": 9,
+    "voitto": -10
+  },
+  {
+    "sarja": "Liiga",
+    "id": "4558c8e2f0be90bc67add7ecb2e22905",
+    "alkaa": "2026-11-24T16:30:00Z",
+    "ottelu": "Ilves - Ässät",
+    "tyyppi": "Tasoitus koti -1.5",
+    "valinta": "Ässät",
+    "kerroin": 1.77,
+    "yhtio": "LeoVegas (FI)",
+    "value": 0.6,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-24",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "Liiga",
+    "id": "4558c8e2f0be90bc67add7ecb2e22905",
+    "alkaa": "2026-11-24T16:30:00Z",
+    "ottelu": "Ilves - Ässät",
+    "tyyppi": "1X2",
+    "valinta": "Ilves",
+    "kerroin": 1.72,
+    "yhtio": "Coolbet",
+    "value": 0.5,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-24",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "Liiga",
+    "id": "4558c8e2f0be90bc67add7ecb2e22905",
+    "alkaa": "2026-11-24T16:30:00Z",
+    "ottelu": "Ilves - Ässät",
+    "tyyppi": "1X2",
+    "valinta": "Ässät",
+    "kerroin": 5.1,
+    "yhtio": "LeoVegas (FI)",
+    "value": 0.0,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-24",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "Liiga",
+    "id": "4558c8e2f0be90bc67add7ecb2e22905",
+    "alkaa": "2026-11-24T16:30:00Z",
+    "ottelu": "Ilves - Ässät",
+    "tyyppi": "1X2",
+    "valinta": "Ässät",
+    "kerroin": 5.1,
+    "yhtio": "LeoVegas (FI)",
+    "value": 4.1,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-24",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "Liiga",
+    "id": "4558c8e2f0be90bc67add7ecb2e22905",
+    "alkaa": "2026-11-24T16:30:00Z",
+    "ottelu": "Ilves - Ässät",
+    "tyyppi": "Yli/alle 4.5",
+    "valinta": "Over",
+    "kerroin": 1.81,
+    "yhtio": "Coolbet",
+    "value": 1.1,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-24",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "Liiga",
+    "id": "4558c8e2f0be90bc67add7ecb2e22905",
+    "alkaa": "2026-11-24T16:30:00Z",
+    "ottelu": "Ilves - Ässät",
+    "tyyppi": "Yli/alle 4.5",
+    "valinta": "Under",
+    "kerroin": 2.5,
+    "yhtio": "888sport",
+    "value": 10.3,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-24",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "Liiga",
+    "id": "4558c8e2f0be90bc67add7ecb2e22905",
+    "alkaa": "2026-11-24T16:30:00Z",
+    "ottelu": "Ilves - Ässät",
+    "tyyppi": "Yli/alle 4.5",
+    "valinta": "Under",
+    "kerroin": 2.5,
+    "yhtio": "888sport",
+    "value": 12.1,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-24",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "155fbdda10b6474a41649023baadfdf3",
+    "alkaa": "2026-11-25T01:00:00Z",
+    "ottelu": "Edmonton Oilers - Vegas Golden Knights",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.46,
+    "yhtio": "1xBet",
+    "value": 1.4,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-24",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "155fbdda10b6474a41649023baadfdf3",
+    "alkaa": "2026-11-25T01:00:00Z",
+    "ottelu": "Edmonton Oilers - Vegas Golden Knights",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.46,
+    "yhtio": "1xBet",
+    "value": 3.1,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-24",
     "panos": 10,
     "tila": "avoin",
     "versio": 9

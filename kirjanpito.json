@@ -2081,6 +2081,23 @@
     "lahde": "Pinnacle",
     "pvm": "2026-11-23",
     "panos": 10,
+    "tila": "ei osunut",
+    "versio": 9,
+    "voitto": -10
+  },
+  {
+    "sarja": "Liiga",
+    "id": "4558c8e2f0be90bc67add7ecb2e22905",
+    "alkaa": "2026-11-24T16:30:00Z",
+    "ottelu": "Ilves - Ässät",
+    "tyyppi": "1X2",
+    "valinta": "Ässät",
+    "kerroin": 5.1,
+    "yhtio": "LeoVegas (FI)",
+    "value": 4.1,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-24",
+    "panos": 10,
     "tila": "avoin",
     "versio": 9
   }
