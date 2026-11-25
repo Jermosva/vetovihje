@@ -17741,5 +17741,49 @@
    "nimi": "Petteri Rimpinen"
   },
   "vaihtoja": 0
+ },
+ "2027_2701480": {
+  "koti": {
+   "id": 61009805,
+   "nimi": "Hugo Alnefelt"
+  },
+  "vieras": {
+   "id": 29857823,
+   "nimi": "Markus Ruusu"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701481": {
+  "koti": {
+   "id": 21919594,
+   "nimi": "Tomi Karhunen"
+  },
+  "vieras": {
+   "id": 31267715,
+   "nimi": "Eetu Randelin"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701482": {
+  "koti": {
+   "id": 60660609,
+   "nimi": "Niklas Rubin"
+  },
+  "vieras": {
+   "id": 24158200,
+   "nimi": "Jussi Olkinuora"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701494": {
+  "koti": {
+   "id": 21589720,
+   "nimi": "Christian Heljanko"
+  },
+  "vieras": {
+   "id": 61073543,
+   "nimi": "Jesper Myrenberg"
+  },
+  "vaihtoja": 0
  }
 }
