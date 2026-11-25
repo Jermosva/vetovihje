@@ -2116,6 +2116,25 @@
     "pvm": "2026-11-24",
     "panos": 10,
     "tila": "avoin",
+    "versio": 9,
+    "reilu_nyt": 0.229,
+    "clv": -0.4,
+    "clv_aika": "2026-11-25T11:45:48.545510+00:00"
+  },
+  {
+    "sarja": "Liiga",
+    "id": "2946924b3ecf4b762332fb72674a5278",
+    "alkaa": "2026-11-25T16:30:00Z",
+    "ottelu": "Jokerit - KooKoo",
+    "tyyppi": "1X2",
+    "valinta": "KooKoo",
+    "kerroin": 3.9,
+    "yhtio": "Coolbet",
+    "value": 8.0,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-25",
+    "panos": 10,
+    "tila": "avoin",
     "versio": 9
   }
 ]
