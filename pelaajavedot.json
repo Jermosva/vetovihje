@@ -474,5 +474,22 @@
     "panos": 10,
     "tn": 0.5197,
     "value": 20.6
+  },
+  {
+    "id": "pv-20261127-40005621-pisteet_1-20rk",
+    "pvm": "2026-11-27",
+    "avain": "2027_2701487",
+    "alkaa": "2026-11-27T17:30:00Z",
+    "ottelu": "HIFK - SaiPa",
+    "pelaaja_id": 40005621,
+    "pelaaja": "Santeri Airola",
+    "joukkue": "SaiPa",
+    "tyyppi": "pisteet",
+    "raja": 1,
+    "kerroin": 1.97,
+    "yhtio": "EpicBet",
+    "panos": 10,
+    "tn": 0.5264,
+    "value": 3.7
   }
 ]
