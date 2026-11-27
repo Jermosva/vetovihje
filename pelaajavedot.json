@@ -440,5 +440,22 @@
     "panos": 10,
     "tn": 0.52,
     "value": 2.4
+  },
+  {
+    "id": "pv-20261127-30832947-pisteet_1-xzcr",
+    "pvm": "2026-11-27",
+    "avain": "2027_2701484",
+    "alkaa": "2026-11-27T16:30:00Z",
+    "ottelu": "KooKoo - HPK",
+    "pelaaja_id": 30832947,
+    "pelaaja": "Veeti Miettinen",
+    "joukkue": "KooKoo",
+    "tyyppi": "pisteet",
+    "raja": 1,
+    "kerroin": 1.8,
+    "yhtio": "EpicBet",
+    "panos": 10,
+    "tn": 0.616,
+    "value": 10.9
   }
 ]
