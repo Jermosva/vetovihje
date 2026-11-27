@@ -406,5 +406,22 @@
     "panos": 10,
     "tn": 0.4092,
     "value": 10.5
+  },
+  {
+    "id": "pv-20261127-40113846-pisteet_1-983w",
+    "pvm": "2026-11-27",
+    "avain": "2027_2701483",
+    "alkaa": "2026-11-27T16:30:00Z",
+    "ottelu": "KalPa - JYP",
+    "pelaaja_id": 40113846,
+    "pelaaja": "Joona Saarelainen",
+    "joukkue": "KalPa",
+    "tyyppi": "pisteet",
+    "raja": 1,
+    "kerroin": 2.32,
+    "yhtio": "EpicBet",
+    "panos": 10,
+    "tn": 0.4741,
+    "value": 10
   }
 ]
