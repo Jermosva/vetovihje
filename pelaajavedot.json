@@ -372,5 +372,22 @@
     "panos": 10,
     "tn": 0.3716,
     "value": -17.1
+  },
+  {
+    "id": "pv-20261127-31296980-pisteet_1-6hr3",
+    "pvm": "2026-11-27",
+    "avain": "2027_2701488",
+    "alkaa": "2026-11-27T16:30:00Z",
+    "ottelu": "Tappara - K-Espoo",
+    "pelaaja_id": 31296980,
+    "pelaaja": "Jere Väisänen",
+    "joukkue": "K-Espoo",
+    "tyyppi": "pisteet",
+    "raja": 1,
+    "kerroin": 2.12,
+    "yhtio": "EpicBet",
+    "panos": 10,
+    "tn": 0.5292,
+    "value": 12.2
   }
 ]
