@@ -17796,5 +17796,60 @@
    "nimi": "Christoffer Rifalk"
   },
   "vaihtoja": 0
+ },
+ "2027_2701485": {
+  "koti": {
+   "id": 25113956,
+   "nimi": "Antti Raanta"
+  },
+  "vieras": {
+   "id": 61073543,
+   "nimi": "Jesper Myrenberg"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701483": {
+  "koti": {
+   "id": 32581335,
+   "nimi": "Rasmus Korhonen"
+  },
+  "vieras": {
+   "id": 31635062,
+   "nimi": "Oskari Salminen"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701484": {
+  "koti": {
+   "id": 31267715,
+   "nimi": "Eetu Randelin"
+  },
+  "vieras": {
+   "id": 61073586,
+   "nimi": "Jakob Crespin"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701488": {
+  "koti": {
+   "id": 21589720,
+   "nimi": "Christian Heljanko"
+  },
+  "vieras": {
+   "id": 40176719,
+   "nimi": "Petteri Rimpinen"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701487": {
+  "koti": {
+   "id": 61072734,
+   "nimi": "Tim Juel"
+  },
+  "vieras": {
+   "id": 60897658,
+   "nimi": "Gustavs Grigals"
+  },
+  "vaihtoja": 0
  }
 }
