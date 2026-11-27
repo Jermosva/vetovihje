@@ -2189,5 +2189,37 @@
     "tila": "ei osunut",
     "versio": 9,
     "voitto": -10
+  },
+  {
+    "sarja": "Liiga",
+    "id": "d16cf666e4cff386db33b108ba6ff174",
+    "alkaa": "2026-11-27T15:30:00Z",
+    "ottelu": "Lukko - Jukurit",
+    "tyyppi": "Yli/alle 4.5",
+    "valinta": "Over",
+    "kerroin": 1.87,
+    "yhtio": "Coolbet",
+    "value": 3.1,
+    "lahde": "keskiarvo",
+    "pvm": "2026-11-27",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "978dfc077c2cba5159882a1f65088b8d",
+    "alkaa": "2026-11-27T18:00:00Z",
+    "ottelu": "New Jersey Devils - Calgary Flames",
+    "tyyppi": "1X2",
+    "valinta": "Calgary Flames",
+    "kerroin": 4.9,
+    "yhtio": "Tipico",
+    "value": 4.7,
+    "lahde": "Poisson-malli",
+    "pvm": "2026-11-27",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
   }
 ]
