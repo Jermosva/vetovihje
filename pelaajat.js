@@ -958,8 +958,9 @@ function onPelattu(pelaajaId, vetotyyppi) {
 }
 
 // Pienet "tn + rajakerroin" -solut yleiskatsaukseen
+// Todennäköisyys ja rajakerroin omiin sarakkeisiinsa, samaan tapaan kuin valitulla vetotyypillä
 function tnSolu(tn) {
-  return `<td class="tn-solu">${tnTekstina(tn)}<small>${rajakerroinTekstina(tn)}</small></td>`;
+  return `<td>${tnTekstina(tn)}</td><td>${rajakerroinTekstina(tn)}</td>`;
 }
 
 function pelaajaRivi(ottelu, pelaaja) {
@@ -1039,7 +1040,7 @@ function naytaOttelut() {
                 <tr>
                   <th class="nimi">Nimi</th><th>Joukkue</th><th>PP</th><th>Ketju</th>
                   <th>Kausi O/M/S/P</th><th>Viime ${suojaa(viimePelit)} M+S</th>
-                  <th>Maali 1+</th><th>Syöttö 1+</th><th>Piste 1+</th>
+                  <th>Maali 1+</th><th>Raja</th><th>Syöttö 1+</th><th>Raja</th><th>Piste 1+</th><th>Raja</th>
                   <th class="valittu">${tyypinNimi}</th><th class="valittu">Raja</th>
                   <th class="valittu">Kerroin</th><th class="valittu">Value</th><th></th>
                 </tr>
@@ -1139,7 +1140,7 @@ function avaaTallennuslomake(rivi) {
   const lomakerivi = document.createElement("tr");
   lomakerivi.className = "lomakerivi";
   lomakerivi.innerHTML = `
-    <td colspan="14">
+    <td colspan="17">
       <form class="tallennuslomake">
         <label>Yhtiö <select name="yhtio">${vaihtoehdot}</select></label>
         <label>Panos <input name="panos" type="text" inputmode="decimal" value="${OLETUS_PANOS}"></label>

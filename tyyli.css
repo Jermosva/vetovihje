@@ -373,13 +373,6 @@ li {
   font-weight: 600;
 }
 
-/* Prosentti ylhäällä, rajakerroin pienellä alla */
-.tn-solu small {
-  display: block;
-  font-size: 12px;
-  color: var(--heikko);
-}
-
 /* Valitun vetotyypin sarakkeet erottuvat vähän */
 .pelaajataulukko .valittu {
   background: #e8edf1;
