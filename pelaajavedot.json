@@ -457,5 +457,22 @@
     "panos": 10,
     "tn": 0.616,
     "value": 10.9
+  },
+  {
+    "id": "pv-20261127-61067273-pisteet_1-lx6r",
+    "pvm": "2026-11-27",
+    "avain": "2027_2701488",
+    "alkaa": "2026-11-27T16:30:00Z",
+    "ottelu": "Tappara - K-Espoo",
+    "pelaaja_id": 61067273,
+    "pelaaja": "Mathias From",
+    "joukkue": "K-Espoo",
+    "tyyppi": "pisteet",
+    "raja": 1,
+    "kerroin": 2.32,
+    "yhtio": "EpicBet",
+    "panos": 10,
+    "tn": 0.5197,
+    "value": 20.6
   }
 ]
