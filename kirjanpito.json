@@ -2203,8 +2203,9 @@
     "lahde": "keskiarvo",
     "pvm": "2026-11-27",
     "panos": 10,
-    "tila": "avoin",
-    "versio": 9
+    "tila": "osui",
+    "versio": 9,
+    "voitto": 8.7
   },
   {
     "sarja": "NHL",
@@ -2217,6 +2218,23 @@
     "yhtio": "Tipico",
     "value": 4.7,
     "lahde": "Poisson-malli",
+    "pvm": "2026-11-27",
+    "panos": 10,
+    "tila": "ei osunut",
+    "versio": 9,
+    "voitto": -10
+  },
+  {
+    "sarja": "Liiga",
+    "id": "0163d65094ded47d5cfb47cff6266953",
+    "alkaa": "2026-11-28T15:00:00Z",
+    "ottelu": "JYP - KalPa",
+    "tyyppi": "Voittaja",
+    "valinta": "KalPa",
+    "kerroin": 3.2,
+    "yhtio": "Veikkaus (FI)",
+    "value": 5.7,
+    "lahde": "Pinnacle",
     "pvm": "2026-11-27",
     "panos": 10,
     "tila": "avoin",
