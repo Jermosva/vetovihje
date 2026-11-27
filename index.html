@@ -5,23 +5,22 @@
   <!-- viewport: sivu skaalautuu oikein puhelimella -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vetovihje</title>
-  <link rel="stylesheet" href="tyyli.css?v=10">
+  <link rel="stylesheet" href="tyyli.css?v=11">
 </head>
 <body>
   <h1>Vetovihje</h1>
 
-  <!-- Välilehdet: #pelaajat osoitteen lopussa avaa Pelaajavedot suoraan -->
+  <!-- Välilehdet: #pelaajat tai #statsit osoitteen lopussa avaa välilehden suoraan -->
   <nav class="valilehdet">
     <a href="#vedot" id="valilehti-vedot" class="valilehti aktiivinen">Vedot</a>
     <a href="#pelaajat" id="valilehti-pelaajat" class="valilehti">Pelaajavedot</a>
+    <a href="#statsit" id="valilehti-statsit" class="valilehti">Statsit</a>
   </nav>
 
-  <!-- Vedot-välilehti (entinen sivu sellaisenaan) -->
+  <!-- Vedot-välilehti: yhteenveto ja vedot päivittäin (tilastot Statsit-välilehdellä) -->
   <div id="nakyma-vedot">
     <!-- Nämä ovat tyhjiä "laatikoita", jotka JavaScript täyttää -->
     <section id="yhteenveto"></section>
-    <section id="erittely"></section>
-    <section id="clv"></section>
     <section id="paivat">Ladataan...</section>
   </div>
 
@@ -36,11 +35,24 @@
     <section id="pelaaja-vihjeet"></section>
     <section id="pelaaja-suodattimet"></section>
     <section id="pelaaja-ottelut">Ladataan...</section>
+    <!-- Pelatut pelaajavedot (saldo ja tilastot Statsit-välilehdellä) -->
+    <section id="pelaaja-vetolista"></section>
+  </div>
+
+  <!-- Statsit-välilehti: molempien puolten tilastot -->
+  <div id="nakyma-statsit" hidden>
+    <h2 class="osio-otsikko">Ottelukerroinvedot</h2>
+    <p class="selite valkoinen">Osumat = osuneet / ratkaistut vedot. Saldo on leikkirahaa, 10 € panoksella per veto.
+      ROI = saldo suhteessa panoksiin yhteensä (+10 % = jokainen pelattu euro on tuottanut keskimäärin 10 senttiä voittoa).</p>
+    <section id="erittely"></section>
+    <section id="clv"></section>
+
+    <h2 class="osio-otsikko">Pelaajavedot</h2>
     <section id="pelaaja-saldo"></section>
     <section id="pelaaja-kalibraatio"></section>
   </div>
 
-  <script src="sovellus.js?v=8"></script>
-  <script src="pelaajat.js?v=6"></script>
+  <script src="sovellus.js?v=9"></script>
+  <script src="pelaajat.js?v=7"></script>
 </body>
 </html>

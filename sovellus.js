@@ -178,7 +178,7 @@ function laskeRyhmat(vedot, ryhmanNimi) {
 }
 
 // Rakentaa yhden taulukon HTML:n
-function erittelyTaulukko(otsikko, ryhmat) {
+function erittelyTaulukko(otsikko, ryhmat, selite) {
   let rivit = "";
 
   for (const nimi in ryhmat) {
@@ -198,6 +198,7 @@ function erittelyTaulukko(otsikko, ryhmat) {
   return `
     <div class="erittely-kortti">
       <h2>${otsikko}</h2>
+      <p class="selite">${selite}</p>
       <table>
         <thead>
           <tr><th></th><th>Osumat</th><th>Saldo</th><th>ROI</th></tr>
@@ -221,9 +222,12 @@ function naytaErittely(vedot) {
   const versiot = laskeRyhmat(vedot, veto => "Versio " + (veto.versio || 1));
 
   document.getElementById("erittely").innerHTML =
-    erittelyTaulukko("Menetelmittäin", menetelmat) +
-    erittelyTaulukko("Sarjoittain", sarjat) +
-    erittelyTaulukko("Versioittain", versiot);
+    erittelyTaulukko("Menetelmittäin", menetelmat,
+      "Kerroinvertailu = jonkin yhtiön kerroin on parempi kuin markkinan yhteinen arvio. " +
+      "Poisson-malli = oma maalimalli näkee ylikertoimen.") +
+    erittelyTaulukko("Sarjoittain", sarjat, "Kaikki ratkaistut vedot sarjoittain.") +
+    erittelyTaulukko("Versioittain", versiot,
+      "Sovelluksen versio vetohetkellä. Uusin versio kertoo parhaiten nykyisen sovelluksen tuloksesta.");
 }
 
 function naytaClv(vedot) {
@@ -270,7 +274,10 @@ function naytaClv(vedot) {
   document.getElementById("clv").innerHTML = `
     <div class="erittely-kortti">
       <h2>Kertoimen liike (CLV)</h2>
-      <p class="selite">Kaikki ehdokkaat. Plus = saimme paremman kertoimen kuin markkinan viimeisin arvio ennen peliä.</p>
+      <p class="selite">Kaikki ehdokkaat (myös pelaamattomat). CLV = kuinka paljon parempi saamamme kerroin oli kuin
+        markkinan viimeisin arvio ennen peliä. Plus pitkällä aikavälillä = vedot löytävät oikeasti ylikertoimia,
+        vaikka yksittäiset vedot häviäisivät. Mitattu = vetoja, joille CLV on mitattu. Value = arvioitu etu vetohetkellä.
+        CLV &gt; 0 = osuus vedoista, joissa kerroin oli parempi kuin markkinan loppuarvio.</p>
       <table>
         <thead>
           <tr><th></th><th>Mitattu</th><th>Value</th><th>CLV</th><th>CLV&nbsp;&gt;&nbsp;0</th></tr>

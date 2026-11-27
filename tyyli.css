@@ -220,6 +220,21 @@ li {
   margin-bottom: 16px;
 }
 
+/* ---------- Statsit ---------- */
+#nakyma-statsit > section {
+  margin-bottom: 16px;
+}
+
+/* Kalibraatiorivi, jossa on vähän ennusteita (sattuma heiluttaa) */
+.vahan-dataa td {
+  opacity: 0.45;
+}
+
+/* Väli Ottelukerroinvedot- ja Pelaajavedot-osioiden välissä */
+#nakyma-statsit .osio-otsikko {
+  margin-top: 8px;
+}
+
 /* Otsikkorivi tummalla taustalla: päivä vasemmalla, Asetukset oikealla */
 .pelaaja-ylapalkki {
   display: flex;

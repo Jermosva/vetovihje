@@ -27,6 +27,7 @@ const VIHJE_TYYPIT = ["maalit_1", "syotot_1", "pisteet_1", "pisteet_2"];
 // (esim. ketju vaihtunut, loukkaantuminen), merkitään varoituksella
 const VIHJE_RISTIRIITA = 0.10;
 const VIHJEITA_NAKYVISSA = 10;    // loput "Näytä kaikki" -napin takana
+const KALIBRAATIO_MIN_N = 50;     // tätä pienemmät kalibraatiorivit näytetään himmeinä
 // liiga.fi:n nimi -> Kambin nimen osa (muut nimet täsmäävät sellaisenaan, esim. "Sport" ~ "Vaasan Sport")
 const KAMBI_JOUKKUEET = { "K-Espoo": "Espoo" };
 
@@ -1286,10 +1287,14 @@ function kytkeOttelutapahtumat() {
 
 // ---------- Näkymä: saldo ja vetolista ----------
 
+// Saldotaulukko Statsit-välilehdelle ja vetolista Pelaajavedot-välilehdelle
 function naytaPelaajasaldo(tuloksetVirhe) {
   const kohde = document.getElementById("pelaaja-saldo");
+  const listaKohde = document.getElementById("pelaaja-vetolista");
   if (!pelaajaData.vedotLadattu) {
-    kohde.innerHTML = `<div class="viestikortti">Pelaajavetojen lataus epäonnistui. Yritä hetken päästä uudelleen.</div>`;
+    const virhe = `<div class="viestikortti">Pelaajavetojen lataus epäonnistui. Yritä hetken päästä uudelleen.</div>`;
+    kohde.innerHTML = virhe;
+    listaKohde.innerHTML = virhe;
     return;
   }
 
@@ -1348,7 +1353,9 @@ function naytaPelaajasaldo(tuloksetVirhe) {
 
   kohde.innerHTML = `
     <div class="erittely-kortti">
-      <h2>Pelaajavetojen saldo</h2>
+      <h2>Pelaamiesi pelaajavetojen saldo</h2>
+      <p class="selite">Osumat = osuneet / ratkaistut vedot. Mitätöidyt (pelaaja ei pelannut) eivät ole mukana.
+        ROI = saldo suhteessa panoksiin. Avoimet = vielä ratkaisemattomat vedot.</p>
       ${virheteksti}
       <table>
         <thead>
@@ -1356,7 +1363,10 @@ function naytaPelaajasaldo(tuloksetVirhe) {
         </thead>
         <tbody>${rivit}</tbody>
       </table>
-    </div>
+    </div>`;
+
+  listaKohde.innerHTML = `
+    <h2 class="osio-otsikko">Pelaamasi pelaajavedot</h2>
     <div class="pelaajavetolista">
       <ul>${lista}</ul>
     </div>`;
@@ -1449,8 +1459,12 @@ function seurantaKortti(varjo) {
   return `
     <div class="erittely-kortti">
       <h2>Vihjeiden seuranta (${KAMBI_YHTIOT})</h2>
-      <p class="selite">Mitä vihjelista olisi tuottanut, jos jokaiseen vihjeeseen olisi laittanut saman panoksen.
-        Luotettava arvio vaatii satoja vihjeitä.</p>
+      <p class="selite">Mitä Pelaajavedot-sivun vihjelista olisi tuottanut, jos jokaiseen vihjeeseen olisi laittanut
+        saman panoksen Unibetin kertoimella (kerroin tallennetaan automaattisesti ennen peliä). Mukana myös vihjeet,
+        joita et pelannut.</p>
+      <p class="selite">Osumat = osuneet vihjeet / kaikki ratkaistut vihjeet. ROI = tuotto suhteessa panoksiin
+        (+10 % = jokainen euro tuotti keskimäärin 10 senttiä voittoa). ⚠-vihjeet = malli selvästi yhtiötä optimistisempi.
+        Luotettava arvio vaatii satoja vihjeitä: alle sadalla tulos on vielä pitkälti sattumaa.</p>
       <table>
         <thead><tr><th></th><th>Osumat</th><th>ROI</th></tr></thead>
         <tbody>${rivit}</tbody>
@@ -1478,8 +1492,10 @@ function naytaKalibraatio(varjoTulos) {
     let rivit = "";
     valit[avain].forEach((v, i) => {
       if (v.n === 0) return;                      // tyhjiä välejä ei näytetä
+      // Alle 50 ennusteen välillä sattuma heiluttaa tulosta paljon: näytetään himmeämpänä
+      const vahan = v.n < KALIBRAATIO_MIN_N ? ` class="vahan-dataa"` : "";
       rivit += `
-        <tr>
+        <tr${vahan}>
           <td>${i * 10}–${i * 10 + 10} %</td>
           <td>${v.n}</td>
           <td>${desimaali(v.malli / v.n * 100, 1)} %</td>
@@ -1490,7 +1506,7 @@ function naytaKalibraatio(varjoTulos) {
       <div class="erittely-kortti">
         <h2>${nimet[avain]}</h2>
         <table>
-          <thead><tr><th></th><th>n</th><th>Malli</th><th>Toteutui</th></tr></thead>
+          <thead><tr><th>Mallin arvio</th><th>Ennusteita</th><th>Malli sanoi</th><th>Toteutui</th></tr></thead>
           <tbody>${rivit}</tbody>
         </table>
       </div>`;
@@ -1498,8 +1514,15 @@ function naytaKalibraatio(varjoTulos) {
 
   kohde.innerHTML = `
     ${seurantaKortti(varjoTulos.data)}
-    <h2 class="osio-otsikko">Mallin kalibraatio</h2>
-    <p class="selite valkoinen">Kun malli sanoo 40 %, pitäisi toteutua noin 40 %. Ratkaistuja pelejä ${pelit}.</p>
+    <h3 class="osio-otsikko">Osuvatko mallin todennäköisyydet? (kalibraatio)</h3>
+    <p class="selite valkoinen">Kaikki kokoonpanoissa olleet pelaajat ${pelit} ratkaistusta pelistä on ryhmitelty sen mukaan,
+      minkä todennäköisyyden malli antoi ennen peliä.</p>
+    <p class="selite valkoinen">Esimerkki: rivi "30–40 %" Piste 1+ -taulukossa = kaikki ne pelaajat, joille malli antoi
+      30–40 % mahdollisuuden tehdä pisteen. <b>Ennusteita</b> = montako tällaista pelaajaa oli,
+      <b>Malli sanoi</b> = mallin keskimääräinen todennäköisyys heille ja <b>Toteutui</b> = kuinka moni heistä oikeasti teki pisteen.</p>
+    <p class="selite valkoinen">Hyvä malli: Malli sanoi ja Toteutui ovat lähellä toisiaan. Jos Toteutui on selvästi pienempi,
+      malli on liian optimistinen (ja vihjeet näyttävät parempia kuin ovat). Himmeät rivit = alle ${KALIBRAATIO_MIN_N}
+      ennustetta, jolloin sattuma voi heiluttaa tulosta kymmeniä prosenttiyksiköitä.</p>
     <div class="kalibraatio-ruudukko">${kortit}</div>`;
 }
 
@@ -1556,7 +1579,7 @@ function kytkeAsetukset() {
     if (pelaajadataLadattu) naytaPelaajasaldo(false);
   });
 
-  document.getElementById("pelaaja-saldo").addEventListener("click", tapahtuma => {
+  document.getElementById("pelaaja-vetolista").addEventListener("click", tapahtuma => {
     if (tapahtuma.target.classList.contains("poista-veto")) poistaVeto(tapahtuma.target);
   });
 }
@@ -1565,14 +1588,16 @@ function kytkeAsetukset() {
 
 // #pelaajat osoitteen lopussa = Pelaajavedot auki (toimii myös kirjanmerkkinä)
 function naytaValilehti() {
-  const pelaajat = location.hash === "#pelaajat";
-  document.getElementById("nakyma-vedot").hidden = pelaajat;
-  document.getElementById("nakyma-pelaajat").hidden = !pelaajat;
-  document.getElementById("valilehti-vedot").classList.toggle("aktiivinen", !pelaajat);
-  document.getElementById("valilehti-pelaajat").classList.toggle("aktiivinen", pelaajat);
+  // #pelaajat, #statsit tai muuten Vedot
+  const valittu = ["#pelaajat", "#statsit"].includes(location.hash) ? location.hash.slice(1) : "vedot";
+  for (const nimi of ["vedot", "pelaajat", "statsit"]) {
+    document.getElementById("nakyma-" + nimi).hidden = nimi !== valittu;
+    document.getElementById("valilehti-" + nimi).classList.toggle("aktiivinen", nimi === valittu);
+  }
 
-  // Pelaajadata ladataan vasta, kun välilehti avataan ensimmäisen kerran
-  if (pelaajat && !pelaajadataLadattu) {
+  // Pelaajadata (myös Statsit-välilehden pelaajatilastot) ladataan vasta, kun
+  // jompikumpi välilehti avataan ensimmäisen kerran
+  if (valittu !== "vedot" && !pelaajadataLadattu) {
     lataaPelaajadata();
   }
 }
