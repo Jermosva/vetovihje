@@ -525,5 +525,22 @@
     "panos": 10,
     "tn": 0.621,
     "value": 4.3
+  },
+  {
+    "id": "pv-20261128-31275998-pisteet_1-prvm",
+    "pvm": "2026-11-28",
+    "avain": "2027_2701492",
+    "alkaa": "2026-11-28T15:00:00Z",
+    "ottelu": "SaiPa - Jokerit",
+    "pelaaja_id": 31275998,
+    "pelaaja": "Alexander Forslund",
+    "joukkue": "Jokerit",
+    "tyyppi": "pisteet",
+    "raja": 1,
+    "kerroin": 1.9,
+    "yhtio": "EpicBet",
+    "panos": 10,
+    "tn": 0.5996,
+    "value": 13.9
   }
 ]
