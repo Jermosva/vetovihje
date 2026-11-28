@@ -559,5 +559,22 @@
     "panos": 10,
     "tn": 0.5285,
     "value": 4.6
+  },
+  {
+    "id": "pv-20261128-60952399-pisteet_1-63c6",
+    "pvm": "2026-11-28",
+    "avain": "2027_2701495",
+    "alkaa": "2026-11-28T15:00:00Z",
+    "ottelu": "Ässät - Kärpät",
+    "pelaaja_id": 60952399,
+    "pelaaja": "Jiri Tichacek",
+    "joukkue": "Kärpät",
+    "tyyppi": "pisteet",
+    "raja": 1,
+    "kerroin": 2.23,
+    "yhtio": "EpicBet",
+    "panos": 10,
+    "tn": 0.4122,
+    "value": -8.1
   }
 ]
