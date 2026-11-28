@@ -2238,6 +2238,69 @@
     "pvm": "2026-11-27",
     "panos": 10,
     "tila": "avoin",
+    "versio": 9,
+    "reilu_nyt": 0.3136,
+    "clv": 0.4,
+    "clv_aika": "2026-11-28T11:45:57.425441+00:00"
+  },
+  {
+    "sarja": "NHL",
+    "id": "79a04197d6f55ccaf3fbccea1207874b",
+    "alkaa": "2026-11-29T00:10:00Z",
+    "ottelu": "New York Rangers - Calgary Flames",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.75,
+    "yhtio": "LeoVegas (FI)",
+    "value": 5.4,
+    "lahde": "Poisson-malli",
+    "odotetut": [
+      3.03,
+      2.4
+    ],
+    "pvm": "2026-11-28",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "e52a03fb10019b305f480dbb4b76f824",
+    "alkaa": "2026-11-29T00:10:00Z",
+    "ottelu": "Carolina Hurricanes - Ottawa Senators",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 5.3,
+    "yhtio": "Unibet (FI)",
+    "value": 6.4,
+    "lahde": "Poisson-malli",
+    "odotetut": [
+      3.6,
+      2.51
+    ],
+    "pvm": "2026-11-28",
+    "panos": 10,
+    "tila": "avoin",
+    "versio": 9
+  },
+  {
+    "sarja": "NHL",
+    "id": "c7d8345f0df3b99a79c00eefada5673a",
+    "alkaa": "2026-11-29T01:10:00Z",
+    "ottelu": "Dallas Stars - Utah Mammoth",
+    "tyyppi": "1X2",
+    "valinta": "Draw",
+    "kerroin": 4.6,
+    "yhtio": "LeoVegas (FI)",
+    "value": 4.1,
+    "lahde": "Poisson-malli",
+    "odotetut": [
+      2.95,
+      2.7
+    ],
+    "pvm": "2026-11-28",
+    "panos": 10,
+    "tila": "avoin",
     "versio": 9
   }
 ]
