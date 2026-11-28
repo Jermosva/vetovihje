@@ -542,5 +542,22 @@
     "panos": 10,
     "tn": 0.5996,
     "value": 13.9
+  },
+  {
+    "id": "pv-20261128-31296980-pisteet_1-9yrp",
+    "pvm": "2026-11-28",
+    "avain": "2027_2701493",
+    "alkaa": "2026-11-28T15:00:00Z",
+    "ottelu": "TPS - K-Espoo",
+    "pelaaja_id": 31296980,
+    "pelaaja": "Jere Väisänen",
+    "joukkue": "K-Espoo",
+    "tyyppi": "pisteet",
+    "raja": 1,
+    "kerroin": 1.98,
+    "yhtio": "EpicBet",
+    "panos": 10,
+    "tn": 0.5285,
+    "value": 4.6
   }
 ]
