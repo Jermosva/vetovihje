@@ -17851,5 +17851,82 @@
    "nimi": "Gustavs Grigals"
   },
   "vaihtoja": 0
+ },
+ "2027_2701489": {
+  "koti": {
+   "id": 61011727,
+   "nimi": "Mantas Armalis"
+  },
+  "vieras": {
+   "id": 61072734,
+   "nimi": "Tim Juel"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701490": {
+  "koti": {
+   "id": 31635062,
+   "nimi": "Oskari Salminen"
+  },
+  "vieras": {
+   "id": 60760868,
+   "nimi": "Stefanos Lekkas"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701491": {
+  "koti": {
+   "id": 24158200,
+   "nimi": "Jussi Olkinuora"
+  },
+  "vieras": {
+   "id": 29933802,
+   "nimi": "Jasper Patrikainen"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701492": {
+  "koti": {
+   "id": 33502782,
+   "nimi": "Kari Piiroinen"
+  },
+  "vieras": {
+   "id": 61074401,
+   "nimi": "Olle Eriksson Ek"
+  },
+  "vaihtoja": 1
+ },
+ "2027_2701493": {
+  "koti": {
+   "id": 29857823,
+   "nimi": "Markus Ruusu"
+  },
+  "vieras": {
+   "id": 40176719,
+   "nimi": "Petteri Rimpinen"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701495": {
+  "koti": {
+   "id": 60960744,
+   "nimi": "Jan Bednar"
+  },
+  "vieras": {
+   "id": 60660609,
+   "nimi": "Niklas Rubin"
+  },
+  "vaihtoja": 0
+ },
+ "2027_2701615": {
+  "koti": {
+   "id": 40130882,
+   "nimi": "Matthieu Herpin"
+  },
+  "vieras": {
+   "id": 40050277,
+   "nimi": "Daniel Salonen"
+  },
+  "vaihtoja": 0
  }
 }
