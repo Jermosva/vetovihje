@@ -2237,11 +2237,12 @@
     "lahde": "Pinnacle",
     "pvm": "2026-11-27",
     "panos": 10,
-    "tila": "avoin",
+    "tila": "osui",
     "versio": 9,
     "reilu_nyt": 0.3136,
     "clv": 0.4,
-    "clv_aika": "2026-11-28T11:45:57.425441+00:00"
+    "clv_aika": "2026-11-28T11:45:57.425441+00:00",
+    "voitto": 22.0
   },
   {
     "sarja": "NHL",
@@ -2261,7 +2262,10 @@
     "pvm": "2026-11-28",
     "panos": 10,
     "tila": "avoin",
-    "versio": 9
+    "versio": 9,
+    "reilu_nyt": 0.2161,
+    "clv": 2.7,
+    "clv_aika": "2026-11-28T20:45:49.080170+00:00"
   },
   {
     "sarja": "NHL",
@@ -2281,7 +2285,10 @@
     "pvm": "2026-11-28",
     "panos": 10,
     "tila": "avoin",
-    "versio": 9
+    "versio": 9,
+    "reilu_nyt": 0.1904,
+    "clv": 0.9,
+    "clv_aika": "2026-11-28T20:45:49.080170+00:00"
   },
   {
     "sarja": "NHL",
@@ -2301,6 +2308,9 @@
     "pvm": "2026-11-28",
     "panos": 10,
     "tila": "avoin",
-    "versio": 9
+    "versio": 9,
+    "reilu_nyt": 0.2199,
+    "clv": 1.2,
+    "clv_aika": "2026-11-28T20:45:49.080170+00:00"
   }
 ]
