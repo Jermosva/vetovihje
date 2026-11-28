@@ -508,5 +508,22 @@
     "panos": 10,
     "tn": 0.61,
     "value": 12.2
+  },
+  {
+    "id": "pv-20261128-61083288-pisteet_1-yo5h",
+    "pvm": "2026-11-28",
+    "avain": "2027_2701491",
+    "alkaa": "2026-11-28T15:00:00Z",
+    "ottelu": "Pelicans - KooKoo",
+    "pelaaja_id": 61083288,
+    "pelaaja": "Liam Hawel",
+    "joukkue": "Pelicans",
+    "tyyppi": "pisteet",
+    "raja": 1,
+    "kerroin": 1.68,
+    "yhtio": "EpicBet",
+    "panos": 10,
+    "tn": 0.621,
+    "value": 4.3
   }
 ]
